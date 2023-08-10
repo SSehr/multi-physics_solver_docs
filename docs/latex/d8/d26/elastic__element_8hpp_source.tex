@@ -1,0 +1,81 @@
+\hypertarget{elastic__element_8hpp_source}{}\doxysection{elastic\+\_\+element.\+hpp}
+\label{elastic__element_8hpp_source}\index{src/support\_files/hpp/elastic\_element.hpp@{src/support\_files/hpp/elastic\_element.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef ELASTIC\_ELEMENT}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define ELASTIC\_ELEMENT}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <chrono>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}triangular\_element.hpp"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classelastic__element}{elastic\_element}} : \textcolor{keyword}{virtual} \textcolor{keyword}{public} \mbox{\hyperlink{classtriangular__element}{triangular\_element}}}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21     \textcolor{keyword}{public}:}
+\DoxyCodeLine{22     }
+\DoxyCodeLine{23         \textcolor{keywordtype}{double} \mbox{\hyperlink{classelastic__element_a955231b086f45f36d2a96983bd3ac99b}{E}}; }
+\DoxyCodeLine{24         \textcolor{keywordtype}{double} \mbox{\hyperlink{classelastic__element_a67514413e741cb2cc7ca8d934d47ddee}{nu}}; }
+\DoxyCodeLine{25         \textcolor{keywordtype}{double} \mbox{\hyperlink{classelastic__element_ade931cb91ceba208ab6bd23d846a7987}{alpha}}; }
+\DoxyCodeLine{26         \textcolor{keywordtype}{double} \mbox{\hyperlink{classelastic__element_a004fc6bc3c385ad30f721ab13e2e63ec}{s11}} = 0; }
+\DoxyCodeLine{27         \textcolor{keywordtype}{double} \mbox{\hyperlink{classelastic__element_a83255490fd3a4ce53379b0eebcde3fb4}{s22}} = 0; }
+\DoxyCodeLine{28         \textcolor{keywordtype}{double} \mbox{\hyperlink{classelastic__element_ac59c14132728901e35f09c8fafc88f62}{s12}} = 0; }
+\DoxyCodeLine{29         \textcolor{keywordtype}{double} \mbox{\hyperlink{classelastic__element_afd7cc7eaab5bd7b803650643c5249c4c}{eps\_trans}} = 0; }
+\DoxyCodeLine{30         \textcolor{keywordtype}{double} \mbox{\hyperlink{classelastic__element_ac86d8fd3baf85b44756b2fddc5ad3c19}{eps11\_cr}} = 0; }
+\DoxyCodeLine{31         \textcolor{keywordtype}{double} \mbox{\hyperlink{classelastic__element_a89acc5c073337b6683c7200cc0c894c0}{eps22\_cr}} = 0; }
+\DoxyCodeLine{32         \textcolor{keywordtype}{double} \mbox{\hyperlink{classelastic__element_abef604a7ce8c5c68e0cbc3a3d082441b}{eps12\_cr}} = 0; }
+\DoxyCodeLine{33         \textcolor{keywordtype}{double} \mbox{\hyperlink{classelastic__element_af74dc86d87623058f63f912a497ce7e6}{eps11\_m}} = 0; }
+\DoxyCodeLine{34         \textcolor{keywordtype}{double} \mbox{\hyperlink{classelastic__element_ac1c6686109002e9f5993f350470a7087}{eps22\_m}} = 0; }
+\DoxyCodeLine{35         \textcolor{keywordtype}{double} \mbox{\hyperlink{classelastic__element_a4349f0f356249751171f4dc3ee6fb93d}{eps12\_m}} = 0; }
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37         \textcolor{keywordtype}{double} eps11\_crs[6] = \{0,0,0,0,0,0\}, eps22\_crs[6] = \{0,0,0,0,0,0\}, eps12\_crs[6] = \{0,0,0,0,0,0\};}
+\DoxyCodeLine{38         \textcolor{keywordtype}{double} eps11\_ms[6] = \{0,0,0,0,0,0\}, eps22\_ms[6] = \{0,0,0,0,0,0\}, eps12\_ms[6] = \{0,0,0,0,0,0\};}
+\DoxyCodeLine{39         \textcolor{keywordtype}{double} s11s[6] = \{0,0,0,0,0,0\}, s22s[6] = \{0,0,0,0,0,0\}, s12s[6] = \{0,0,0,0,0,0\};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41         \textcolor{keyword}{static} \textcolor{keywordtype}{double} \mbox{\hyperlink{classelastic__element_a1bb243e45ca350e51d25ff2b2cffd679}{delta\_T}}; }
+\DoxyCodeLine{42         \textcolor{keyword}{static} \textcolor{keywordtype}{double} \mbox{\hyperlink{classelastic__element_a7361d82792e48475d81c4e6043de8d6f}{Temperature}}; }
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44         \mbox{\hyperlink{classelastic__element}{elastic\_element}}();}
+\DoxyCodeLine{45         \mbox{\hyperlink{classelastic__element}{elastic\_element}}(\textcolor{keywordtype}{double} E\_, \textcolor{keywordtype}{double} nu\_, \textcolor{keywordtype}{double} alpha\_);}
+\DoxyCodeLine{46         \mbox{\hyperlink{classelastic__element}{elastic\_element}}(\textcolor{keywordtype}{int} ns[6], \mbox{\hyperlink{classpoint}{point}} p\_[6], \textcolor{keywordtype}{int} neighs[3], \textcolor{keywordtype}{int} in\_reg, element\_type::type el\_type\_, symmetry\_type::type plane\_type\_, \textcolor{keywordtype}{double} E\_, \textcolor{keywordtype}{double} nu\_, \textcolor{keywordtype}{double} alpha\_);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49         \textcolor{keywordtype}{double} \mbox{\hyperlink{classelastic__element_a843d1e7cf4808b99ad4588584cd07155}{local\_k}}[12][12]; }
+\DoxyCodeLine{50         \textcolor{keywordtype}{void} \mbox{\hyperlink{classelastic__element_a7c7da78b8f1438aec183c2836c2ca363}{Calc\_local\_k}}();}
+\DoxyCodeLine{51         \textcolor{keywordtype}{double} \mbox{\hyperlink{classelastic__element_ae26d34d0a21b425ba9fef259a6705056}{local\_F}}[12]; }
+\DoxyCodeLine{52         \textcolor{keywordtype}{void} \mbox{\hyperlink{classelastic__element_a7a48c35d52f0a031975ac5f3fccc8890}{Calc\_local\_F}}();}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54         \textcolor{keywordtype}{void} get\_stresses(\textcolor{keywordtype}{double} ux0, \textcolor{keywordtype}{double} uy0, \textcolor{keywordtype}{double} ux1, \textcolor{keywordtype}{double} uy1, \textcolor{keywordtype}{double} ux2, \textcolor{keywordtype}{double} uy2, \textcolor{keywordtype}{double} ux3, \textcolor{keywordtype}{double} uy3, \textcolor{keywordtype}{double} ux4, \textcolor{keywordtype}{double} uy4, \textcolor{keywordtype}{double} ux5, \textcolor{keywordtype}{double} uy5, \textcolor{keyword}{const} \mbox{\hyperlink{classpoint}{point}} \&test\_pt, \textcolor{keywordtype}{double} f\_stresses[]);}
+\DoxyCodeLine{55         \textcolor{keywordtype}{void} \mbox{\hyperlink{classelastic__element_acce8199a451c49829a9886864549c307}{Calc\_stress}}(\textcolor{keywordtype}{double} ux0, \textcolor{keywordtype}{double} uy0, \textcolor{keywordtype}{double} ux1, \textcolor{keywordtype}{double} uy1, \textcolor{keywordtype}{double} ux2, \textcolor{keywordtype}{double} uy2);}
+\DoxyCodeLine{56         \textcolor{keywordtype}{void} \mbox{\hyperlink{classelastic__element_acce8199a451c49829a9886864549c307}{Calc\_stress}}(\textcolor{keywordtype}{double} ux0, \textcolor{keywordtype}{double} uy0, \textcolor{keywordtype}{double} ux1, \textcolor{keywordtype}{double} uy1, \textcolor{keywordtype}{double} ux2, \textcolor{keywordtype}{double} uy2, \textcolor{keywordtype}{double} ux3, \textcolor{keywordtype}{double} uy3, \textcolor{keywordtype}{double} ux4, \textcolor{keywordtype}{double} uy4, \textcolor{keywordtype}{double} ux5, \textcolor{keywordtype}{double} uy5);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58         std::vector<double>get\_stored\_strains(\textcolor{keywordtype}{double} u0, \textcolor{keywordtype}{double} u1, \textcolor{keywordtype}{double} u2, \textcolor{keywordtype}{double} u3, \textcolor{keywordtype}{double} u4, \textcolor{keywordtype}{double} u5);}
+\DoxyCodeLine{59         std::vector<double>get\_stored\_strains(\textcolor{keywordtype}{double} u0, \textcolor{keywordtype}{double} u1, \textcolor{keywordtype}{double} u2, \textcolor{keywordtype}{double} u3, \textcolor{keywordtype}{double} u4, \textcolor{keywordtype}{double} u5, \textcolor{keywordtype}{double} u6, \textcolor{keywordtype}{double} u7, \textcolor{keywordtype}{double} u8, \textcolor{keywordtype}{double} u9, \textcolor{keywordtype}{double} u10, \textcolor{keywordtype}{double} u11, \mbox{\hyperlink{classpoint}{point}} \&test\_pt);}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61         \textcolor{keywordtype}{void} \mbox{\hyperlink{classelastic__element_a71cfe9d2dd42c72a2da04d8ca985e728}{Calc\_stored\_strains}}(\textcolor{keywordtype}{double} u0, \textcolor{keywordtype}{double} u1, \textcolor{keywordtype}{double} u2, \textcolor{keywordtype}{double} u3, \textcolor{keywordtype}{double} u4, \textcolor{keywordtype}{double} u5);}
+\DoxyCodeLine{62         \textcolor{keywordtype}{void} \mbox{\hyperlink{classelastic__element_a71cfe9d2dd42c72a2da04d8ca985e728}{Calc\_stored\_strains}}(\textcolor{keywordtype}{double} u0, \textcolor{keywordtype}{double} u1, \textcolor{keywordtype}{double} u2, \textcolor{keywordtype}{double} u3, \textcolor{keywordtype}{double} u4, \textcolor{keywordtype}{double} u5, \textcolor{keywordtype}{double} u6, \textcolor{keywordtype}{double} u7, \textcolor{keywordtype}{double} u8, \textcolor{keywordtype}{double} u9, \textcolor{keywordtype}{double} u10, \textcolor{keywordtype}{double} u11);}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64         \textcolor{keywordtype}{double} local\_dk[12][12];}
+\DoxyCodeLine{65         \textcolor{keywordtype}{void} Calc\_local\_dk(\textcolor{keyword}{const} \mbox{\hyperlink{classpoint}{point}} \&crack\_tip, \mbox{\hyperlink{classpoint}{point}} \&shift, \textcolor{keywordtype}{double} shift\_radius);}
+\DoxyCodeLine{66         \textcolor{keywordtype}{double} local\_dF[12];}
+\DoxyCodeLine{67         \textcolor{keywordtype}{void} Calc\_local\_dF(\textcolor{keyword}{const} \mbox{\hyperlink{classpoint}{point}} \&crack\_tip, \mbox{\hyperlink{classpoint}{point}} \&shift, \textcolor{keywordtype}{double} shift\_radius);}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69         \textcolor{keywordtype}{void} Assemble\_global\_F(\textcolor{keywordtype}{double} * F);}
+\DoxyCodeLine{70         \textcolor{keywordtype}{void} Remove\_local\_F(\textcolor{keywordtype}{double} * F);}
+\DoxyCodeLine{71     }
+\DoxyCodeLine{72 \};}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,8 @@
+<map id="oxide_mesh::remove_pts" name="oxide_mesh::remove_pts">
+<area shape="rect" id="node1" title="remove points from pts list that are withing threshold_length of removed_pts" alt="" coords="860,46,1027,73"/>
+<area shape="rect" id="node2" href="$de/d0a/classoxide__mesh.html#abda9a1d2b75d90c5529986f165d06a33" title="simplify a polygon removing points that are too close to each other or roughness" alt="" coords="667,39,812,81"/>
+<area shape="rect" id="node3" href="$de/d0a/classoxide__mesh.html#af44fdd459a2c7933d6dab3c7be44a63d" title="find new polygons" alt="" coords="468,5,619,47"/>
+<area shape="rect" id="node6" href="$de/d0a/classoxide__mesh.html#aea79c0e884912bee52e292e93b85dfac" title="update the points used to determine the element size" alt="" coords="475,72,613,114"/>
+<area shape="rect" id="node4" href="$de/d0a/classoxide__mesh.html#ad3c124e5fd82ca502fe791baaa108048" title="run the main loop" alt="" coords="237,46,420,73"/>
+<area shape="rect" id="node5" href="$de/d0a/classoxide__mesh.html#a0478903f72d483ab779af8443ffbc48b" title="run a simulation" alt="" coords="5,46,189,73"/>
+</map>

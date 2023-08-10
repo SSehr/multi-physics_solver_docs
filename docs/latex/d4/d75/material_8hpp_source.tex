@@ -1,0 +1,70 @@
+\hypertarget{material_8hpp_source}{}\doxysection{material.\+hpp}
+\label{material_8hpp_source}\index{src/support\_files/hpp/material.hpp@{src/support\_files/hpp/material.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef MATERIAL}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define MATERIAL}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <new>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}geometry.hpp"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}property.hpp"{}}}
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classmaterial}{material}}}
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     \textcolor{keyword}{public}:}
+\DoxyCodeLine{22         \mbox{\hyperlink{classmaterial}{material}}();}
+\DoxyCodeLine{23         \mbox{\hyperlink{classmaterial}{material}}\& operator= (\textcolor{keyword}{const} \mbox{\hyperlink{classmaterial}{material}} \&src\_matl);}
+\DoxyCodeLine{24         \mbox{\hyperlink{classmaterial}{material}}(\textcolor{keywordtype}{double} in\_E, \textcolor{keywordtype}{double} in\_nu, \textcolor{keywordtype}{double} in\_D, \textcolor{keywordtype}{double} in\_eps, \textcolor{keywordtype}{double} in\_rxn\_rate);}
+\DoxyCodeLine{25         \mbox{\hyperlink{classmaterial}{material}}(\textcolor{keywordtype}{double} (*in\_E\_func)(\textcolor{keywordtype}{double} \mbox{\hyperlink{classparam}{param}}), \textcolor{keywordtype}{double} (*in\_nu\_func)(\textcolor{keywordtype}{double} \mbox{\hyperlink{classparam}{param}}), \textcolor{keywordtype}{double} (*in\_D\_func)(\textcolor{keywordtype}{double} \mbox{\hyperlink{classparam}{param}}), \textcolor{keywordtype}{double} (*in\_eps\_func)(\textcolor{keywordtype}{double} \mbox{\hyperlink{classparam}{param}}), \textcolor{keywordtype}{double} (*in\_rxn\_rate\_func)(\textcolor{keywordtype}{double} \mbox{\hyperlink{classparam}{param}}));}
+\DoxyCodeLine{26         \mbox{\hyperlink{classmaterial}{material}}(\textcolor{keywordtype}{double} in\_E, \textcolor{keywordtype}{double} in\_nu, \textcolor{keywordtype}{double} in\_D, \textcolor{keywordtype}{double} in\_eps, \textcolor{keywordtype}{double} in\_rxn\_rate, std::vector<point> in\_geom);}
+\DoxyCodeLine{27         \mbox{\hyperlink{classmaterial}{material}}(\textcolor{keywordtype}{double} in\_E, \textcolor{keywordtype}{double} in\_nu, \textcolor{keywordtype}{double} in\_D, \textcolor{keywordtype}{double} in\_eps, \textcolor{keywordtype}{double} in\_alpha, \textcolor{keywordtype}{double} in\_rxn\_rate, std::vector<point> in\_geom);}
+\DoxyCodeLine{28         \mbox{\hyperlink{classmaterial}{material}}(\textcolor{keywordtype}{double} in\_E, \textcolor{keywordtype}{double} in\_nu, \textcolor{keywordtype}{double} in\_D, \textcolor{keywordtype}{double} in\_eps, \textcolor{keywordtype}{double} in\_rxn\_rate, std::vector<point> in\_geom, \mbox{\hyperlink{classpoint}{point}} region\_pt\_, \textcolor{keywordtype}{int} region\_, \textcolor{keywordtype}{double} min\_area\_);}
+\DoxyCodeLine{29         \mbox{\hyperlink{classmaterial}{material}}(\textcolor{keywordtype}{double} E\_, \textcolor{keywordtype}{double} nu\_, \textcolor{keywordtype}{double} rho\_, \textcolor{keywordtype}{double} alpha\_, \textcolor{keywordtype}{double} alpha\_d\_, \textcolor{keywordtype}{double} beta\_d\_, std::vector<point> in\_geom, \mbox{\hyperlink{classpoint}{point}} region\_pt\_, \textcolor{keywordtype}{int} region\_, \textcolor{keywordtype}{double} min\_area\_);}
+\DoxyCodeLine{30         \mbox{\hyperlink{classmaterial}{material}}(\textcolor{keywordtype}{double} E\_, \textcolor{keywordtype}{double} nu\_, \textcolor{keywordtype}{double} rho\_, \textcolor{keywordtype}{double} alpha\_, \textcolor{keywordtype}{double} alpha\_d\_, \textcolor{keywordtype}{double} beta\_d\_, \textcolor{keywordtype}{double} D\_, \textcolor{keywordtype}{double} eps\_, \textcolor{keywordtype}{double} rxn\_rate\_, std::vector<point> in\_geom, \mbox{\hyperlink{classpoint}{point}} region\_pt\_, \textcolor{keywordtype}{int} region\_, \textcolor{keywordtype}{double} min\_area\_);}
+\DoxyCodeLine{31         \textcolor{comment}{// double E; ///< Young's Modulus}}
+\DoxyCodeLine{32         \textcolor{comment}{// double nu; ///< Poisson's ratio}}
+\DoxyCodeLine{33         \textcolor{comment}{// double D; ///< oxidant diffusivity}}
+\DoxyCodeLine{34         \textcolor{comment}{// double eps; ///< applied linear eigen strain}}
+\DoxyCodeLine{35         \textcolor{comment}{// double rxn\_rate; ///< surface reaction rate (Deal-\/Grove k\_s)}}
+\DoxyCodeLine{36         \textcolor{keywordtype}{double} \mbox{\hyperlink{classmaterial_ab524d05254220a2b6fa1b356c2d7ac37}{rho}}; }
+\DoxyCodeLine{37         \textcolor{keywordtype}{double} \mbox{\hyperlink{classmaterial_ac0b4d3377472b4efe9bd3ed6d159c21d}{alpha}}; }
+\DoxyCodeLine{38         \textcolor{keywordtype}{double} \mbox{\hyperlink{classmaterial_ac12737c20b9cae2a6f78e4da39f7976e}{alpha\_d}}; }
+\DoxyCodeLine{39         \textcolor{keywordtype}{double} \mbox{\hyperlink{classmaterial_afe77f6c2c00d38d8463a7066169e6ca8}{beta\_d}}; }
+\DoxyCodeLine{40         \mbox{\hyperlink{classpoint}{point}} \mbox{\hyperlink{classmaterial_aac6c565f5fa01e90ec11c6c76e469fab}{region\_pt}}; }
+\DoxyCodeLine{41         \textcolor{keywordtype}{int} \mbox{\hyperlink{classmaterial_abc0e60c0c3becde8b780fb9a0bdb9605}{region}}; }
+\DoxyCodeLine{42         \textcolor{keywordtype}{double} \mbox{\hyperlink{classmaterial_a3c278cd710dcac674badef0f9c0114f8}{min\_area}}; }
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44         std::vector<point> \mbox{\hyperlink{classmaterial_a4b37882b30b6ce9699cda7d3602f67d2}{poly}}; }
+\DoxyCodeLine{45         std::vector <int> \mbox{\hyperlink{classmaterial_a54bb5d9d165938ca62494e725b17ed34}{poly\_nodes}}; }
+\DoxyCodeLine{46         }
+\DoxyCodeLine{47         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmaterial_a3b5caea229b7aac32952c1a06ebe560b}{add\_node\_to\_poly}}(\textcolor{keyword}{const} \mbox{\hyperlink{classpoint}{point}} \&\mbox{\hyperlink{classnode}{node}}, \textcolor{keywordtype}{int} i);}
+\DoxyCodeLine{48         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classmaterial_af2a5c9c8cff587143fa978cd2cc33912}{store\_property}}(std::string label,std::string in\_var\_name, std::string in\_val);}
+\DoxyCodeLine{49         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classmaterial_a08ba160b2e51514cb27680acbedbd02d}{node\_on\_poly}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} test\_node);}
+\DoxyCodeLine{50         \textcolor{keywordtype}{int} \mbox{\hyperlink{classmaterial_a5091eba4b46382b40a3a0286e996d4bf}{get\_node\_index}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} test\_node);}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52         \textcolor{keyword}{property} \mbox{\hyperlink{classmaterial_add27a60541eda5b18e3ec30a3b82d9bb}{E\_func}}; }
+\DoxyCodeLine{53         \textcolor{keyword}{property} \mbox{\hyperlink{classmaterial_ac698be9b40120aa0b303aba3b80a4e82}{nu\_func}}; }
+\DoxyCodeLine{54         \textcolor{keyword}{property} \mbox{\hyperlink{classmaterial_a90f6ae4a3e9f85d5838f4061ba604475}{D\_func}}; }
+\DoxyCodeLine{55         \textcolor{keyword}{property} \mbox{\hyperlink{classmaterial_a224c02173e6ccbf7fce226ad6ef52d7e}{eps\_func}}; }
+\DoxyCodeLine{56         \textcolor{keyword}{property} \mbox{\hyperlink{classmaterial_a1d32e4db869f9e33717cc39c6ba3a6fa}{rxn\_rate\_func}}; }
+\DoxyCodeLine{57         \textcolor{keyword}{property} \mbox{\hyperlink{classmaterial_ae1809e830a2bcaec44c8882520e2f7a3}{alpha\_func}}; }
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmaterial_aee032ffaf82b4180213c2e1a05bdb5a0}{assign\_properties}}(\mbox{\hyperlink{classmp__element}{mp\_element}} \&el); }
+\DoxyCodeLine{60         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classmaterial_a7844e680d6cf63aacadb787bc911a68e}{is\_reacting}} = \textcolor{keyword}{false}; }
+\DoxyCodeLine{61         \textcolor{keywordtype}{void} swap\_bounding\_points(std::vector<int> \& boundary, std::vector<point> \&boundary\_pts);}
+\DoxyCodeLine{62         double (*eta\_func)(\mbox{\hyperlink{classmp__element}{mp\_element}} \&el) = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

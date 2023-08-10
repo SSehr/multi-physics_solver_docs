@@ -1,0 +1,86 @@
+\hypertarget{fea_8hpp_source}{}\doxysection{fea.\+hpp}
+\label{fea_8hpp_source}\index{src/support\_files/hpp/fea.hpp@{src/support\_files/hpp/fea.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef FEA}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define FEA}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <new>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}timer.hpp"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}constraint.hpp"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#ifdef EIGEN}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <eigen3/Eigen/Sparse>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <eigen3/Eigen/SparseLU>}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <eigen3/Eigen/UmfPackSupport>}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#ifndef EIGEN}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <umfpack.h>}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <cholmod.h>}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{27 \textcolor{comment}{// \#define EIGEN}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{class }\mbox{\hyperlink{class_f_e_a__equations}{FEA\_equations}}}
+\DoxyCodeLine{30 \{}
+\DoxyCodeLine{31     \textcolor{keyword}{public}:}
+\DoxyCodeLine{32         int64\_t* \mbox{\hyperlink{class_f_e_a__equations_aaf400b1e62aa155fcbbf1d1c937ec455}{K\_row}}; }
+\DoxyCodeLine{33         int64\_t* \mbox{\hyperlink{class_f_e_a__equations_aab342e6c9f15deb289ea6b1ac66b0851}{K\_col}}; }
+\DoxyCodeLine{34         \textcolor{keywordtype}{double}* \mbox{\hyperlink{class_f_e_a__equations_a5903bb741a779d8794550383c72b1d1e}{K\_val}}; }
+\DoxyCodeLine{35         int64\_t *\mbox{\hyperlink{class_f_e_a__equations_aba283fb9aa93eee5a48b6bfcf4095ceb}{Ap}}; }
+\DoxyCodeLine{36         int64\_t *\mbox{\hyperlink{class_f_e_a__equations_a7ac731c234ce7c80633fd22e49cdedad}{Ai}}; }
+\DoxyCodeLine{37         \textcolor{keywordtype}{double} *\mbox{\hyperlink{class_f_e_a__equations_af47657b18e4a6d2738cdae498d1ba59f}{Ax}}; }
+\DoxyCodeLine{38         int64\_t \mbox{\hyperlink{class_f_e_a__equations_a380c74cd90a80aa3b9e954a0c29e10e7}{n\_K\_entries}}; }
+\DoxyCodeLine{39         int64\_t \mbox{\hyperlink{class_f_e_a__equations_abec18b08119f040a4209f48f7f0e381a}{n\_F\_entries}}; }
+\DoxyCodeLine{40         int64\_t *\mbox{\hyperlink{class_f_e_a__equations_af3bdef769ca41e53c947b9fd6c66981d}{Wi}}; }
+\DoxyCodeLine{41         \textcolor{keywordtype}{double} *\mbox{\hyperlink{class_f_e_a__equations_a8cb5c6024d4c130e548393b5866c164c}{W}};}
+\DoxyCodeLine{42         \textcolor{keywordtype}{double} \mbox{\hyperlink{class_f_e_a__equations_ab96c045f109ab095fc129d40bacd1c1b}{Control}}[UMFPACK\_CONTROL]; }
+\DoxyCodeLine{43         \textcolor{keywordtype}{double} \mbox{\hyperlink{class_f_e_a__equations_a8031b41a7daa17285ecd65fe37423633}{Info}}[UMFPACK\_INFO]; }
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#ifndef EIGEN}}
+\DoxyCodeLine{46         \textcolor{keywordtype}{double}* \mbox{\hyperlink{class_f_e_a__equations_a1bb04bf2fcb2b1991794ec461e9830e7}{F}}; }
+\DoxyCodeLine{47         \textcolor{keywordtype}{double}* \mbox{\hyperlink{class_f_e_a__equations_ac1aa13aa727c100137425c9770c73f8e}{U}}; }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{49         \textcolor{keywordtype}{void} *Symbolic, *\mbox{\hyperlink{class_f_e_a__equations_a75fcef4ba15d1437b2c6fcf0c57b14b1}{Numeric}}; }
+\DoxyCodeLine{50         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_f_e_a__equations_ab5150c6effb63e6ee0061e0b8dec8bb1}{arrays\_initialized}} = \textcolor{keyword}{false}; }
+\DoxyCodeLine{51         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_f_e_a__equations_a8f20d8c2550ad57cc0fa47cbf296d3cb}{symbolic\_alloc}} = \textcolor{keyword}{false}; }
+\DoxyCodeLine{52         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_f_e_a__equations_adbed3fda283044a83bffa2baf8dfcf9f}{numeric\_alloc}} = \textcolor{keyword}{false}; }
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_f_e_a__equations_ad32fb85d57a21d75acbd7f3d684a8aab}{initialize\_arrays}}(\textcolor{keywordtype}{long} n\_k, \textcolor{keywordtype}{long} n\_f);}
+\DoxyCodeLine{55         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_f_e_a__equations_ae8ca7b818448a7bef81701dd011a0737}{convert\_matrix}}();}
+\DoxyCodeLine{56         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_f_e_a__equations_aa0ee8731aea304da3b13c3438041a2fe}{solve}}();}
+\DoxyCodeLine{57         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_f_e_a__equations_add8c8ae5d2db911774b657af4c2e1d91}{free\_arrays}}();}
+\DoxyCodeLine{58         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_f_e_a__equations_ada08f07bdee779d374af083df015e2a7}{add\_constraints}}(\textcolor{keywordtype}{long} n\_elements, \textcolor{keywordtype}{long} n\_nodes, std::vector <constraint> \&constraints, \textcolor{keywordtype}{int} n\_nodes\_per\_tri, \textcolor{keywordtype}{int} dim = 1);}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_f_e_a__equations_a1e2c6e6e26b81b44755ca3a860dee7e0}{transpose\_initialized}} = \textcolor{keyword}{false}; }
+\DoxyCodeLine{61         int64\_t *\mbox{\hyperlink{class_f_e_a__equations_aae590bd7e9115aa38e4e325ec9b48b2f}{Rp}}; }
+\DoxyCodeLine{62         int64\_t *\mbox{\hyperlink{class_f_e_a__equations_addd7dd65930d7c8a8373f15ce2fa96dc}{Ri}}; }
+\DoxyCodeLine{63         \textcolor{keywordtype}{double} *\mbox{\hyperlink{class_f_e_a__equations_acd5267cee402af67197152f7566f22df}{Rx}}; }
+\DoxyCodeLine{64         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_f_e_a__equations_a58b59608ab554df4a040f3465cd599bd}{transpose}}();}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#ifdef EIGEN}}
+\DoxyCodeLine{69     \textcolor{comment}{// eigen}}
+\DoxyCodeLine{70     std::vector<Eigen::Triplet<double>> K\_trip;}
+\DoxyCodeLine{71     Eigen::SparseMatrix<double> K\_sparse;}
+\DoxyCodeLine{72     Eigen::VectorXd \mbox{\hyperlink{class_f_e_a__equations_ac1aa13aa727c100137425c9770c73f8e}{U}}, \mbox{\hyperlink{class_f_e_a__equations_a1bb04bf2fcb2b1991794ec461e9830e7}{F}};}
+\DoxyCodeLine{73     Eigen::UmfPackLU<Eigen::SparseMatrix<double>> solver;}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \};}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

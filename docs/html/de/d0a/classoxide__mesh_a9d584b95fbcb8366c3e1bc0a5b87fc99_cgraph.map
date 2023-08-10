@@ -1,0 +1,4 @@
+<map id="oxide_mesh::load_mesh" name="oxide_mesh::load_mesh">
+<area shape="rect" id="node1" title="load output file from file_path" alt="" coords="5,5,168,32"/>
+<area shape="rect" id="node2" href="$dc/d8a/classmaterial.html#aee032ffaf82b4180213c2e1a05bdb5a0" title="assign material properties to element" alt="" coords="216,5,393,32"/>
+</map>

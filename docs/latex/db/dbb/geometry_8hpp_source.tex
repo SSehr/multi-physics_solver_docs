@@ -1,0 +1,52 @@
+\hypertarget{geometry_8hpp_source}{}\doxysection{geometry.\+hpp}
+\label{geometry_8hpp_source}\index{src/support\_files/hpp/geometry.hpp@{src/support\_files/hpp/geometry.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef GEOMETRY}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define GEOMETRY}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <new>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}point.hpp"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}vtu.hpp"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keywordtype}{double} geometric\_distance2(\textcolor{keyword}{const} std::vector<point> \&seg, \textcolor{keyword}{const} \mbox{\hyperlink{classpoint}{point}} \&test\_pt);}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keywordtype}{double} geometric\_distance2(std::vector<std::vector<point>> \&segs, \textcolor{keyword}{const} \mbox{\hyperlink{classpoint}{point}} \&test\_pt);}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keywordtype}{bool} on\_geometry(\textcolor{keyword}{const} std::vector<point> \&seg, \textcolor{keyword}{const} \mbox{\hyperlink{classpoint}{point}} \&test\_pt);}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keywordtype}{bool} on\_geometry(std::vector<std::vector<point>> \&segs, \textcolor{keyword}{const} \mbox{\hyperlink{classpoint}{point}} \&test\_pt);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \mbox{\hyperlink{classpoint}{point}} get\_point\_on\_geometry(\textcolor{keyword}{const} std::vector<point> \&seg, \textcolor{keyword}{const} \mbox{\hyperlink{classpoint}{point}} \&test\_pt);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 std::ostream \&operator<<(std::ostream \&os, std::vector<point> \textcolor{keyword}{const} \&ls);}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{keywordtype}{void} save\_polygon(\textcolor{keyword}{const} std::vector<point> \&poly, std::string file\_path);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keywordtype}{void} load\_polygon(std::vector<point> \&poly, std::string file\_path);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keywordtype}{void} add\_node\_to\_boundary(\textcolor{keyword}{const} \mbox{\hyperlink{classpoint}{point}} \&test\_pt, \textcolor{keywordtype}{int} i, std::vector<point> \&boundary, std::vector<int> \&boundary\_nodes);}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keywordtype}{int} get\_orientation(\textcolor{keyword}{const} \mbox{\hyperlink{classpoint}{point}} p, \textcolor{keyword}{const} \mbox{\hyperlink{classpoint}{point}} q, \textcolor{keyword}{const} \mbox{\hyperlink{classpoint}{point}} r);}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{keywordtype}{bool} segment\_intersect(std::vector<point> \&seg1, std::vector<point> \&seg2);}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{keywordtype}{bool} within\_polygon(\textcolor{keyword}{const} std::vector<point> \& poly, \textcolor{keyword}{const} \mbox{\hyperlink{classpoint}{point}} test\_pt);}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \mbox{\hyperlink{classpoint}{point}} get\_projection\_a\_on\_b(\mbox{\hyperlink{classpoint}{point}} \&a, \mbox{\hyperlink{classpoint}{point}} \&b);}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

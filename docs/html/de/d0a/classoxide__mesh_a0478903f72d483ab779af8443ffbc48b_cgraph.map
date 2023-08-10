@@ -1,0 +1,52 @@
+<map id="oxide_mesh::run_simulation" name="oxide_mesh::run_simulation">
+<area shape="rect" id="node1" title="run a simulation" alt="" coords="5,544,189,571"/>
+<area shape="rect" id="node2" href="$de/d0a/classoxide__mesh.html#a255e3658ecb32e0f1fcd21503b884170" title="close log files" alt="" coords="251,99,406,141"/>
+<area shape="rect" id="node3" href="$de/d0a/classoxide__mesh.html#a1d9833bc2988e9bf7c8d5babcbef684a" title="find the outer boundary of the geometry" alt="" coords="714,595,871,637"/>
+<area shape="rect" id="node5" href="$de/d0a/classoxide__mesh.html#a775ec658df3c09a8d29b73602cdc6ab5" title="free both mechanics and diffusion arrays" alt="" coords="479,224,643,251"/>
+<area shape="rect" id="node7" href="$de/d0a/classoxide__mesh.html#a61f0bd675dca291d42cc253dcdc7170d" title="open the log files" alt="" coords="253,166,404,208"/>
+<area shape="rect" id="node12" href="$de/d0a/classoxide__mesh.html#acab234e4c42f388fc2c30e772e0bc3f8" title="output files if theres an error thrown" alt="" coords="261,326,396,368"/>
+<area shape="rect" id="node20" href="$de/d0a/classoxide__mesh.html#a8097c7ac7a07cb4e3bc93e0e58b698d0" title="return output streams to defaults" alt="" coords="243,1683,414,1725"/>
+<area shape="rect" id="node21" href="$de/d0a/classoxide__mesh.html#ad3c124e5fd82ca502fe791baaa108048" title="run the main loop" alt="" coords="237,937,420,964"/>
+<area shape="rect" id="node24" href="$d6/d88/classtimer.html#a3218d61649e284071544b17c8c915ecc" title=" " alt="" coords="751,1444,834,1471"/>
+<area shape="rect" id="node50" href="$d6/d88/classtimer.html#a804d780498a78114651fa61ee7bcfacf" title=" " alt="" coords="271,1749,386,1776"/>
+<area shape="rect" id="node4" href="$de/d0a/classoxide__mesh.html#ace6d9495c95364ee6f41846d4fd93a79" title="save polygons to a file defined as file_prefix + lable + out_ctr.vtu" alt="" coords="931,544,1117,571"/>
+<area shape="rect" id="node6" href="$dd/d4d/class_f_e_a__equations.html#add8c8ae5d2db911774b657af4c2e1d91" title=" " alt="" coords="722,174,863,216"/>
+<area shape="rect" id="node8" href="$d6/d88/classtimer.html#aa92b07c8266c52b4f4de61342946cd9d" title=" " alt="" coords="743,240,842,267"/>
+<area shape="rect" id="node9" href="$de/d0a/classoxide__mesh.html#a9d584b95fbcb8366c3e1bc0a5b87fc99" title="load output file from file_path" alt="" coords="480,5,642,32"/>
+<area shape="rect" id="node11" href="$de/d0a/classoxide__mesh.html#a737c7766251d76392c77f4945380c624" title="store the default output streams" alt="" coords="490,57,632,99"/>
+<area shape="rect" id="node10" href="$dc/d8a/classmaterial.html#aee032ffaf82b4180213c2e1a05bdb5a0" title="assign material properties to element" alt="" coords="704,5,881,32"/>
+<area shape="rect" id="node13" href="$de/d0a/classoxide__mesh.html#ab51a4206e50a3ba0905cb57b291d3291" title="save output file with all data to file_path" alt="" coords="478,443,644,470"/>
+<area shape="rect" id="node19" href="$d9/df1/classbase__mesh.html#ae6a84ba2990f11c581cae898011483c5" title=" " alt="" coords="468,326,654,368"/>
+<area shape="rect" id="node14" href="$d7/d16/classvtu_file.html#a37d9f0187d7bb51032a1cbfc7b7397a6" title=" " alt="" coords="744,443,841,470"/>
+<area shape="rect" id="node15" href="$d7/d16/classvtu_file.html#aa7ae82bfdecb67785ae29b91551a5aab" title=" " alt="" coords="732,493,853,520"/>
+<area shape="rect" id="node16" href="$d7/d16/classvtu_file.html#a3dc62dc934576f60099e717f91b2348c" title=" " alt="" coords="720,291,865,318"/>
+<area shape="rect" id="node17" href="$d7/d16/classvtu_file.html#ae0bab7716fcb7c29340d2cce08194927" title=" " alt="" coords="716,341,869,368"/>
+<area shape="rect" id="node18" href="$d7/d16/classvtu_file.html#a944a2d2ef716046611d97e706dba42cd" title=" " alt="" coords="717,392,868,419"/>
+<area shape="rect" id="node22" href="$dd/d4d/class_f_e_a__equations.html#ae8ca7b818448a7bef81701dd011a0737" title=" " alt="" coords="481,1315,642,1357"/>
+<area shape="rect" id="node23" href="$d6/d88/classtimer.html#a9aa894a57748b2bdf3adce46f5736794" title=" " alt="" coords="750,1264,835,1291"/>
+<area shape="rect" id="node26" href="$d9/df1/classbase__mesh.html#a4e2e47bd6ca96042d4042c8825cafbed" title=" " alt="" coords="477,1449,646,1491"/>
+<area shape="rect" id="node27" href="$de/d0a/classoxide__mesh.html#a766c95070edf4eaec8b2f90b941373fa" title="apply the displacment step to the mesh" alt="" coords="472,1515,650,1542"/>
+<area shape="rect" id="node28" href="$de/d0a/classoxide__mesh.html#a2e0da99a4735a687d92cb60852693e12" title="deform all polygons" alt="" coords="492,662,631,704"/>
+<area shape="rect" id="node31" href="$de/d0a/classoxide__mesh.html#af44fdd459a2c7933d6dab3c7be44a63d" title="find new polygons" alt="" coords="486,1683,637,1725"/>
+<area shape="rect" id="node37" href="$de/d0a/classoxide__mesh.html#a91b059c110760c7f038760ac65b956ec" title="find the segments based on the geometry to create the mesh" alt="" coords="469,728,653,755"/>
+<area shape="rect" id="node39" href="$de/d0a/classoxide__mesh.html#a318f53c3854fd3267a87e91d3f93ddba" title="get the nodes initially on the polygon before meshing" alt="" coords="484,779,638,821"/>
+<area shape="rect" id="node40" href="$de/d0a/classoxide__mesh.html#aae30be4db2e5d49bec2f01baa9f6e6e6" title="grow oxide material" alt="" coords="479,845,644,872"/>
+<area shape="rect" id="node41" href="$de/d0a/classoxide__mesh.html#a7684d3cd9f2e1aaeb2231f0c8dd9155b" title="map data from an old mesh onto the current one" alt="" coords="483,595,640,637"/>
+<area shape="rect" id="node42" href="$de/d0a/classoxide__mesh.html#a6d9699fad6dc53f682c1e6a22ec12b32" title="prepare the mesh for mapping" alt="" coords="490,963,632,1005"/>
+<area shape="rect" id="node43" href="$de/d0a/classoxide__mesh.html#a926543deb442cfa9b203e46f7e2bea2d" title="run cracking simulation" alt="" coords="475,1030,648,1072"/>
+<area shape="rect" id="node44" href="$de/d0a/classoxide__mesh.html#adf54d280167aa9b8d9e8e6d2f8bb3adf" title="set the current temperature" alt="" coords="709,1147,876,1189"/>
+<area shape="rect" id="node45" href="$de/d0a/classoxide__mesh.html#a8dcb55265f791a7d4f438d563b4e297a" title="solve the diffusion problem" alt="" coords="484,1163,639,1190"/>
+<area shape="rect" id="node46" href="$de/d0a/classoxide__mesh.html#a9bc3bf3819d3a59f146e462f90acd003" title="main solve function modified to handle crack contact this should be rectified with the main solve_mec..." alt="" coords="477,1097,646,1139"/>
+<area shape="rect" id="node47" href="$de/d0a/classoxide__mesh.html#aac4383bbf3fabbc2aeb5415eac4be5c3" title="update the constraint boundaries with new displacements" alt="" coords="484,897,639,939"/>
+<area shape="rect" id="node48" href="$de/d0a/classoxide__mesh.html#aea79c0e884912bee52e292e93b85dfac" title="update the points used to determine the element size" alt="" coords="492,1566,630,1608"/>
+<area shape="rect" id="node49" href="$de/d0a/classoxide__mesh.html#a8dc0c876bd0f8b0e6510f2889022ddd5" title="update the region points used for mesh generation" alt="" coords="492,1382,630,1424"/>
+<area shape="rect" id="node25" href="$d6/d88/classtimer.html#a008803602e2aacdebcc10bbd72209631" title=" " alt="" coords="751,1323,834,1350"/>
+<area shape="rect" id="node29" href="$de/d0a/classoxide__mesh.html#ab28bc46025b54b8d8fd65496581f95a1" title="apply displacments to single polygon" alt="" coords="707,665,878,692"/>
+<area shape="rect" id="node30" href="$de/d0a/classoxide__mesh.html#aa8d1fd206016c3537b5d6fd34b9e815d" title="remove midside nodes used with quadratic elements" alt="" coords="721,717,864,759"/>
+<area shape="rect" id="node32" href="$dc/d8a/classmaterial.html#a08ba160b2e51514cb27680acbedbd02d" title=" " alt="" coords="715,1632,870,1659"/>
+<area shape="rect" id="node33" href="$de/d0a/classoxide__mesh.html#a0359373e7332e2bdbaf3736775b42e49" title="rebuild the crack polygon" alt="" coords="719,1683,866,1725"/>
+<area shape="rect" id="node34" href="$de/d0a/classoxide__mesh.html#ad8fcf6a6b7ae431ca7fa54b00c9eb179" title="remove deviation from flat" alt="" coords="721,1750,864,1792"/>
+<area shape="rect" id="node35" href="$de/d0a/classoxide__mesh.html#a30e04d430474d575d5230b9791945eee" title="remove one polygon from another" alt="" coords="721,1817,864,1859"/>
+<area shape="rect" id="node36" href="$de/d0a/classoxide__mesh.html#abda9a1d2b75d90c5529986f165d06a33" title="simplify a polygon removing points that are too close to each other or roughness" alt="" coords="720,1566,865,1608"/>
+<area shape="rect" id="node38" href="$d9/df1/classbase__mesh.html#a43ec9bdc633b1554c6a88ca6debf653c" title=" " alt="" coords="702,782,883,839"/>
+</map>

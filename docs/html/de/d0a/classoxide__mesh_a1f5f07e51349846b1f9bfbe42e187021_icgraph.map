@@ -1,0 +1,6 @@
+<map id="oxide_mesh::reassemble_mech_after_contact" name="oxide_mesh::reassemble_mech_after_contact">
+<area shape="rect" id="node1" title="reassemble mechanics matrix after contact" alt="" coords="685,5,852,47"/>
+<area shape="rect" id="node2" href="$de/d0a/classoxide__mesh.html#a9bc3bf3819d3a59f146e462f90acd003" title="main solve function modified to handle crack contact this should be rectified with the main solve_mec..." alt="" coords="468,5,637,47"/>
+<area shape="rect" id="node3" href="$de/d0a/classoxide__mesh.html#ad3c124e5fd82ca502fe791baaa108048" title="run the main loop" alt="" coords="237,13,420,40"/>
+<area shape="rect" id="node4" href="$de/d0a/classoxide__mesh.html#a0478903f72d483ab779af8443ffbc48b" title="run a simulation" alt="" coords="5,13,189,40"/>
+</map>

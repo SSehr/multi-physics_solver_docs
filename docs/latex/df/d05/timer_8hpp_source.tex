@@ -1,0 +1,37 @@
+\hypertarget{timer_8hpp_source}{}\doxysection{timer.\+hpp}
+\label{timer_8hpp_source}\index{src/support\_files/hpp/timer.hpp@{src/support\_files/hpp/timer.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef TIMER}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define TIMER}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <chrono>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <ctime>}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classtimer}{timer}} }
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{20     \textcolor{keyword}{private}:}
+\DoxyCodeLine{21         std::chrono::high\_resolution\_clock::time\_point start\_time;}
+\DoxyCodeLine{22         std::chrono::high\_resolution\_clock::time\_point end\_time;}
+\DoxyCodeLine{23         std::chrono::milliseconds duration;}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     \textcolor{keyword}{public}:}
+\DoxyCodeLine{26         \mbox{\hyperlink{classtimer_ae536faf93e02933cd025a6fbcbb48d0a}{timer}}();}
+\DoxyCodeLine{27         \textcolor{keywordtype}{void} \mbox{\hyperlink{classtimer_a9aa894a57748b2bdf3adce46f5736794}{start}}();}
+\DoxyCodeLine{28         \textcolor{keywordtype}{void} \mbox{\hyperlink{classtimer_a3218d61649e284071544b17c8c915ecc}{stop}}();}
+\DoxyCodeLine{29         \textcolor{keywordtype}{double} \mbox{\hyperlink{classtimer_aa92b07c8266c52b4f4de61342946cd9d}{current}}();}
+\DoxyCodeLine{30         \textcolor{keywordtype}{double} \mbox{\hyperlink{classtimer_a804d780498a78114651fa61ee7bcfacf}{total\_time}}();}
+\DoxyCodeLine{31         \textcolor{keywordtype}{void} \mbox{\hyperlink{classtimer_a008803602e2aacdebcc10bbd72209631}{zero}}();}
+\DoxyCodeLine{32 \};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

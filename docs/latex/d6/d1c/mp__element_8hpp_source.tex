@@ -1,0 +1,96 @@
+\hypertarget{mp__element_8hpp_source}{}\doxysection{mp\+\_\+element.\+hpp}
+\label{mp__element_8hpp_source}\index{src/support\_files/hpp/mp\_element.hpp@{src/support\_files/hpp/mp\_element.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef MP\_ELEMENT}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define MP\_ELEMENT}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <chrono>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}elastic\_element.hpp"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}node.hpp"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}defs.hpp"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classmp__element}{mp\_element}} : \textcolor{keyword}{virtual} \textcolor{keyword}{public} \mbox{\hyperlink{classelastic__element}{elastic\_element}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23     \textcolor{keyword}{public}:}
+\DoxyCodeLine{24         \textcolor{comment}{// for diffusion}}
+\DoxyCodeLine{25         \textcolor{keywordtype}{double} \mbox{\hyperlink{classmp__element_a40915855bc0f66b4b991fbb888624732}{D}}; }
+\DoxyCodeLine{28         \textcolor{keywordtype}{double} \mbox{\hyperlink{classmp__element_aa9808098f13b16964f34f3f7bbace806}{qx}} = 0, \mbox{\hyperlink{classmp__element_a2ffffa54cf6da106d29e0b2fc73d57cd}{qy}} = 0, \mbox{\hyperlink{classmp__element_a201c1a62032b74f4f1677d5cad50834b}{qz}} = 0;}
+\DoxyCodeLine{30         \textcolor{keywordtype}{double} \mbox{\hyperlink{classmp__element_acdfccc2ab12e559476fe1f5735f9dcac}{local\_k\_diff}}[6][6]; }
+\DoxyCodeLine{31         \textcolor{keywordtype}{double} \mbox{\hyperlink{classmp__element_a0e38677ae08b818be52d56dfdc2d063e}{local\_R\_diff}}[6]; }
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34         \mbox{\hyperlink{classmp__element}{mp\_element}}();}
+\DoxyCodeLine{35         \mbox{\hyperlink{classmp__element}{mp\_element}}(\textcolor{keywordtype}{int} ns[6], \mbox{\hyperlink{classpoint}{point}} p\_[6], \textcolor{keywordtype}{int} neighs[3], \textcolor{keywordtype}{int} in\_reg, element\_type::type el\_type\_, symmetry\_type::type plane\_type\_);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38         \textcolor{comment}{// need to redefine (for diffusion):}}
+\DoxyCodeLine{39         std::vector<double> get\_fluxes(\textcolor{keyword}{const} std::vector <node> \&n\_list, \textcolor{keyword}{const} \mbox{\hyperlink{classpoint}{point}} \&test\_pt);}
+\DoxyCodeLine{40         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmp__element_a0b1cfbcd420a52de9729772a265d19b2}{Calc\_flux}}(\textcolor{keyword}{const} std::vector <node> \&n\_list);}
+\DoxyCodeLine{41         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmp__element_ad9cdf14bbdae1c8716a357cf400dae87}{Calc\_local\_k\_diff}}();}
+\DoxyCodeLine{42         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmp__element_ab08531ddff2b8dd1955869207a03ec3c}{Calc\_local\_R\_diff}}(\textcolor{keyword}{const} std::vector <node> \&n\_list);}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44         \textcolor{comment}{// wrappers to elastic\_element functions}}
+\DoxyCodeLine{45         std::vector<double>get\_stored\_strains(\textcolor{keyword}{const} std::vector<node> \&n\_list, \mbox{\hyperlink{classpoint}{point}} \&test\_pt);}
+\DoxyCodeLine{46         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmp__element_a3f1e3b248f6fa09562ade22e696bd595}{Calc\_stored\_strains}}(\textcolor{keyword}{const} std::vector<node> \&n\_list);}
+\DoxyCodeLine{47         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmp__element_a4b4c21879c1789e632ab03688bbbe337}{Calc\_stress}}(\textcolor{keyword}{const} std::vector<node>\&n\_list);}
+\DoxyCodeLine{48     }
+\DoxyCodeLine{49         \textcolor{comment}{// need to redefine (for multiphysics, move primary functions to elastic?)}}
+\DoxyCodeLine{50         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmp__element_ac60d4a6e316c9d953a33fa9dcaa5c7f3}{Set\_creep\_strains}}(\textcolor{keyword}{const} std::vector<node> \&n\_list);}
+\DoxyCodeLine{51         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmp__element_a88c9b1f135570e13c34b5b68d8aa2e05}{Set\_mesh\_strains}}(\textcolor{keyword}{const} std::vector<node> \&n\_list);}
+\DoxyCodeLine{52         double (*user\_eta)(\mbox{\hyperlink{classmp__element}{mp\_element}} \&el) = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{53         \textcolor{keywordtype}{double} \mbox{\hyperlink{classmp__element_a7fc95e5de708f3d1d0ad151e914efd34}{Get\_eta}}();}
+\DoxyCodeLine{54         \textcolor{keywordtype}{void} \mbox{\hyperlink{classmp__element_a729feffd816d133c26d40720821e9951}{Solve\_creep}}(\textcolor{keyword}{const} std::vector<node>\&n\_list);}
+\DoxyCodeLine{55     }
+\DoxyCodeLine{56         \textcolor{comment}{// need to redefine (and move or keep in multiphysics?)}}
+\DoxyCodeLine{57         \mbox{\hyperlink{classpoint}{point}} \mbox{\hyperlink{classmp__element_aba6da5fa8ee212b96d4f5b2ba80eb550}{interpolate\_displacement}}(\mbox{\hyperlink{classpoint}{point}} pt, std::vector <node> \&nlist);}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59         \textcolor{keyword}{static} \textcolor{keywordtype}{double} \mbox{\hyperlink{classmp__element_aed9d1b0bf1db261137367202a420cf60}{dt}}; }
+\DoxyCodeLine{60         \textcolor{keyword}{static} \textcolor{keywordtype}{double} \mbox{\hyperlink{classmp__element_a490c463716581051cc5c91625ad06d7c}{eta0}}; }
+\DoxyCodeLine{61         \textcolor{keyword}{static} \textcolor{keywordtype}{double} \mbox{\hyperlink{classmp__element_a692dbcab6a53526701b03567d7f7f440}{tau\_c}}; }
+\DoxyCodeLine{62         \textcolor{keyword}{static} \textcolor{keywordtype}{double} \mbox{\hyperlink{classmp__element_a6bf96bdee779c623d14ed5f3a740dab2}{min\_eta}}; }
+\DoxyCodeLine{63         \textcolor{keyword}{static} \textcolor{keywordtype}{double} \mbox{\hyperlink{classmp__element_a230d55d90e5ef3454dd396a414ae9494}{dt\_cr}}; }
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65         \textcolor{keyword}{static} \textcolor{keywordtype}{double} \mbox{\hyperlink{classmp__element_a5950627ce42372226b7c8e49f43cde50}{eyring\_prefactor}}; }
+\DoxyCodeLine{66         \textcolor{keyword}{static} \textcolor{keywordtype}{double} \mbox{\hyperlink{classmp__element_a89e5a7c5f047c84a6bbbcb664b3451dd}{eyring\_EoverR}}; }
+\DoxyCodeLine{67         \textcolor{keyword}{static} \textcolor{keywordtype}{double} \mbox{\hyperlink{classmp__element_ab17940368b5e1b06108e96da88865f11}{eyring\_tau\_c}}; }
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69         \textcolor{keywordtype}{double} \mbox{\hyperlink{classmp__element_a8eb572ae6a9494adef1a4f9dce5ccb25}{element\_age}} = 0; }
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71         \textcolor{keywordtype}{double} \mbox{\hyperlink{classmp__element_a61d86f786d25cbc32a9275cbb64a2f55}{Get\_strain\_energy\_density}}(\textcolor{keyword}{const} std::vector<node>\&n\_list);}
+\DoxyCodeLine{72         \textcolor{keywordtype}{double} \mbox{\hyperlink{classmp__element_aa601498dd92a029f5b4a1f78d8be89cd}{Get\_strain\_energy}}(\textcolor{keyword}{const} std::vector<node>\&n\_list);}
+\DoxyCodeLine{73         \textcolor{keywordtype}{double} \mbox{\hyperlink{classmp__element_abf04d438ec65a6df91073afeb88402c3}{Get\_eyring\_eta0}}();}
+\DoxyCodeLine{74         \textcolor{keywordtype}{double} \mbox{\hyperlink{classmp__element_a857673368befe293052dbabab47e61cc}{Get\_tau0}}();}
+\DoxyCodeLine{75         \textcolor{keywordtype}{double} \mbox{\hyperlink{classmp__element_a338b46257ebafbd833de1f139e50f4b4}{Get\_eyring\_eta}}(\textcolor{keywordtype}{double} eyring\_eta0, \textcolor{keywordtype}{double} tau0);}
+\DoxyCodeLine{76         \textcolor{keywordtype}{double} \mbox{\hyperlink{classmp__element_a27fcaf967679b868538db7822e193b2d}{Get\_default\_eta}}();}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80         \textcolor{comment}{// below are for CZM cracking method}}
+\DoxyCodeLine{81         \textcolor{keywordtype}{double} rho = 1e1;}
+\DoxyCodeLine{82         \textcolor{keywordtype}{double} alpha\_d=0, beta\_d=0;}
+\DoxyCodeLine{83         \textcolor{keywordtype}{double} local\_m[6][6];}
+\DoxyCodeLine{84         \textcolor{keywordtype}{double} local\_c[6][6];}
+\DoxyCodeLine{85         \textcolor{keywordtype}{double} local\_mc[6][6];}
+\DoxyCodeLine{86         }
+\DoxyCodeLine{87         \textcolor{keywordtype}{void} Calc\_local\_m();}
+\DoxyCodeLine{88         \textcolor{keywordtype}{void} Calc\_local\_c();}
+\DoxyCodeLine{89         \textcolor{keywordtype}{void} Calc\_local\_mc(\textcolor{keywordtype}{double} dt\_czm);}
+\DoxyCodeLine{90         \textcolor{keywordtype}{double} KE = 0;}
+\DoxyCodeLine{91         \textcolor{keywordtype}{void} Calc\_KE(\textcolor{keyword}{const} \textcolor{keywordtype}{double}* velo);}
+\DoxyCodeLine{92 \};}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

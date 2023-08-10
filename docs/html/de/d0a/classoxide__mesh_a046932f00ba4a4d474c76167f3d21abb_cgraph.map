@@ -1,0 +1,7 @@
+<map id="oxide_mesh::set_params" name="oxide_mesh::set_params">
+<area shape="rect" id="node1" title="input an instance of param and split up correctly" alt="" coords="5,109,173,136"/>
+<area shape="rect" id="node2" href="$de/d0a/classoxide__mesh.html#a936f1154cec27246f4217b972b85c23a" title="set meshing parameters" alt="" coords="237,5,394,47"/>
+<area shape="rect" id="node3" href="$de/d0a/classoxide__mesh.html#a3bd5eb57d0d04a04be3c17a9f30e10a6" title="set ouput parameters" alt="" coords="235,72,396,114"/>
+<area shape="rect" id="node4" href="$de/d0a/classoxide__mesh.html#a47d2dc82446b83eea3e0ca545081d650" title="parse input parameters" alt="" coords="221,138,410,165"/>
+<area shape="rect" id="node5" href="$de/d0a/classoxide__mesh.html#a4f181fcf2c514a4c1d259c3a94ad2796" title="set file paths" alt="" coords="237,189,394,216"/>
+</map>

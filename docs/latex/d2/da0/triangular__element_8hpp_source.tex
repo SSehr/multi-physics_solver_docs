@@ -1,0 +1,65 @@
+\hypertarget{triangular__element_8hpp_source}{}\doxysection{triangular\+\_\+element.\+hpp}
+\label{triangular__element_8hpp_source}\index{src/support\_files/hpp/triangular\_element.hpp@{src/support\_files/hpp/triangular\_element.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef TRIANGULAR\_ELEMENT}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define TRIANGULAR\_ELEMENT}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <chrono>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}point.hpp"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{19 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceelement__type}{element\_type}}}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21     \textcolor{keyword}{enum} type }
+\DoxyCodeLine{22     \{}
+\DoxyCodeLine{23         linear, quadratic}
+\DoxyCodeLine{24     \};}
+\DoxyCodeLine{25 \};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{30 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacesymmetry__type}{symmetry\_type}}}
+\DoxyCodeLine{31 \{}
+\DoxyCodeLine{32     \textcolor{keyword}{enum} type}
+\DoxyCodeLine{33     \{}
+\DoxyCodeLine{34         plane\_strain, axisymmetric}
+\DoxyCodeLine{35     \};}
+\DoxyCodeLine{36 \};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{41 \textcolor{keyword}{class }\mbox{\hyperlink{classtriangular__element}{triangular\_element}}}
+\DoxyCodeLine{42 \{}
+\DoxyCodeLine{43     \textcolor{keyword}{public}:}
+\DoxyCodeLine{44         \textcolor{keywordtype}{int} \mbox{\hyperlink{classtriangular__element_aa11c63bf13d0c5cfd7cebcc6fce5197c}{nodes}}[6]; }
+\DoxyCodeLine{45         \mbox{\hyperlink{classpoint}{point}} \mbox{\hyperlink{classtriangular__element_a8a5033d266e489dcd60d2bd1f8215512}{p}}[6]; }
+\DoxyCodeLine{46         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{classtriangular__element_a57fa660bf20f4fbd852014651794f7a5}{n\_nodes}}; }
+\DoxyCodeLine{47         \textcolor{keywordtype}{int} \mbox{\hyperlink{classtriangular__element_a493bae720a6dd8c3ce42e21e59bc0c32}{neighbors}}[3]; }
+\DoxyCodeLine{48         \textcolor{keywordtype}{int} \mbox{\hyperlink{classtriangular__element_a2f340003a702951c7ced44e0edd70ed2}{region}}; }
+\DoxyCodeLine{49         \textcolor{keywordtype}{double} \mbox{\hyperlink{classtriangular__element_a6f0b3184d20a34afc3aa58dfe8bd23b7}{Area}}();}
+\DoxyCodeLine{50         \mbox{\hyperlink{classpoint}{point}} \mbox{\hyperlink{classtriangular__element_adc2c20be5558cfa7856b7253a980fc01}{centroid}}();}
+\DoxyCodeLine{51         element\_type::type \mbox{\hyperlink{classtriangular__element_ac4e6693d58c4d889ebb85ff6e236dbb8}{el\_type}}; }
+\DoxyCodeLine{52         symmetry\_type::type \mbox{\hyperlink{classtriangular__element_a2ba89aa54e92cf4a1e2cb8db18730df3}{plane\_type}}; }
+\DoxyCodeLine{53         \mbox{\hyperlink{classtriangular__element_a9a757de20485416b54fbedec072a9fe5}{triangular\_element}}();}
+\DoxyCodeLine{54         \mbox{\hyperlink{classtriangular__element_a9a757de20485416b54fbedec072a9fe5}{triangular\_element}}(\textcolor{keywordtype}{int} ns[6], \mbox{\hyperlink{classpoint}{point}} p\_[6], \textcolor{keywordtype}{int} neighs[3], \textcolor{keywordtype}{int} in\_reg, element\_type::type el\_type\_, symmetry\_type::type plane\_type\_);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56         \textcolor{keywordtype}{void} \mbox{\hyperlink{classtriangular__element_ae357b47f2cb81887c42001b9acd4c3ef}{get\_barycentric\_coordinates}}(\mbox{\hyperlink{classpoint}{point}} pt, \textcolor{keywordtype}{double} L[3]);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtriangular__element_acf144ea4ef5082002cc887e226fb3654}{element\_node}}(\textcolor{keywordtype}{int} test\_node\_no);}
+\DoxyCodeLine{59         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtriangular__element_abbcbfdc83a62a8905391a718037255dd}{bad\_shape}}; }
+\DoxyCodeLine{60         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtriangular__element_af4a7bdca4cf6dc2bb5c7c038de343d01}{keep\_element}}; }
+\DoxyCodeLine{61         \textcolor{keywordtype}{double} \mbox{\hyperlink{classtriangular__element_a9de5eb257e0963a40b1ac45582f71ff1}{crit\_edge\_ratio}} = 3; }
+\DoxyCodeLine{62         \textcolor{keywordtype}{void} \mbox{\hyperlink{classtriangular__element_a28e7589e70fb89f9e0da2b930d6e6a5b}{check\_shape}}();}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classtriangular__element_a39809dd5665dd15be56fac56f22ad6d0}{within\_circumcircle}}(\mbox{\hyperlink{classpoint}{point}} pt);}
+\DoxyCodeLine{65 \};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

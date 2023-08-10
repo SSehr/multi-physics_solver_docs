@@ -1,0 +1,5 @@
+<map id="oxide_mesh::remove_nodes_from_mechanical_constraint" name="oxide_mesh::remove_nodes_from_mechanical_constraint">
+<area shape="rect" id="node1" title="remove list of nodes from mechanical constraint denoted by constraint_index" alt="" coords="5,35,175,92"/>
+<area shape="rect" id="node2" href="$de/d0a/classoxide__mesh.html#ade7237459e203b7a287a545d358e7df0" title="convert a list of indices to points" alt="" coords="236,5,379,47"/>
+<area shape="rect" id="node3" href="$de/d0a/classoxide__mesh.html#ae31976f082b183c5a19c5f2132de64e8" title="remove list of points from mechanical constraint denoted by constraint_index" alt="" coords="223,71,392,128"/>
+</map>

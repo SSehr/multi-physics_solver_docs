@@ -1,0 +1,282 @@
+\hypertarget{oxide__mesh_8hpp_source}{}\doxysection{oxide\+\_\+mesh.\+hpp}
+\label{oxide__mesh_8hpp_source}\index{src/oxidation/hpp/oxide\_mesh.hpp@{src/oxidation/hpp/oxide\_mesh.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef OXIDE\_MESH}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define OXIDE\_MESH}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}base\_mesh.hpp"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}../../support\_files/hpp/geometry.hpp"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}../../support\_files/hpp/fea.hpp"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}../../support\_files/hpp/constraint.hpp"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}../../support\_files/hpp/node.hpp"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}../../support\_files/hpp/mp\_element.hpp"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}../../support\_files/hpp/param.hpp"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}../../support\_files/hpp/helper\_macros.hpp"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}../../support\_files/hpp/helper\_functions.hpp"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}../../support\_files/hpp/cohesive\_element.hpp"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}../../support\_files/hpp/worker.hpp"{}}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{comment}{// \#ifndef GIT\_HASH}}
+\DoxyCodeLine{28 \textcolor{comment}{// \#define GIT\_HASH "{}-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{29 \textcolor{comment}{// \#endif}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{comment}{// \#ifndef COMPILE\_TIME}}
+\DoxyCodeLine{32 \textcolor{comment}{// \#define COMPILE\_TIME "{}-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{33 \textcolor{comment}{// \#endif}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{keyword}{class }\mbox{\hyperlink{classoxide__mesh}{oxide\_mesh}} : \textcolor{keyword}{public} \textcolor{keyword}{virtual} \mbox{\hyperlink{classbase__mesh}{base\_mesh}}<node, mp\_element>}
+\DoxyCodeLine{38 \{}
+\DoxyCodeLine{39     \textcolor{keyword}{public}:}
+\DoxyCodeLine{40         }
+\DoxyCodeLine{41         \mbox{\hyperlink{class_f_e_a__equations}{FEA\_equations}} mech;}
+\DoxyCodeLine{42         \mbox{\hyperlink{class_f_e_a__equations}{FEA\_equations}} diff;}
+\DoxyCodeLine{43         }
+\DoxyCodeLine{44         \textcolor{comment}{// double N0 = 2.25e4; // millimol/nm\string^3}}
+\DoxyCodeLine{45         \textcolor{comment}{// double C0 = 5.5e-\/2; // millimol/nm\string^3}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47         \textcolor{keywordtype}{double} N0 = \_\_N0\_\_;}
+\DoxyCodeLine{48         \textcolor{keywordtype}{double} C0 = \_\_C0\_\_;}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50         \textcolor{keywordtype}{int} dump\_time;}
+\DoxyCodeLine{51         \textcolor{keywordtype}{int} run\_time;}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53         std::vector < constraint> concentration\_constraints; }
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55         std::vector < std::pair <std::vector<point>, \mbox{\hyperlink{classconstraint}{constraint}}> > in\_constraints;}
+\DoxyCodeLine{56         std::vector <constraint> displacement\_constraints; }
+\DoxyCodeLine{57         std::vector <constraint> force\_constraints;}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59         \mbox{\hyperlink{classmaterial}{material}} oxide;}
+\DoxyCodeLine{60         \mbox{\hyperlink{classmaterial}{material}} crack;}
+\DoxyCodeLine{61         \textcolor{keywordtype}{double} min\_he;}
+\DoxyCodeLine{62                 }
+\DoxyCodeLine{63         \textcolor{keywordtype}{bool} output\_polygons = \textcolor{keyword}{false};}
+\DoxyCodeLine{64         \textcolor{keywordtype}{bool} output\_segments = \textcolor{keyword}{false};}
+\DoxyCodeLine{65         \textcolor{keywordtype}{bool} output\_timing = \textcolor{keyword}{false};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68         \textcolor{comment}{// need to rewrite to use base\_mesh definitions:}}
+\DoxyCodeLine{69         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a1d9833bc2988e9bf7c8d5babcbef684a}{find\_outer\_bounds}}();}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71         \textcolor{comment}{// new functions to match style with dczm\_mesh:}}
+\DoxyCodeLine{72         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a91b059c110760c7f038760ac65b956ec}{find\_segments}}();}
+\DoxyCodeLine{73         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_aea79c0e884912bee52e292e93b85dfac}{update\_refined\_points}}();}
+\DoxyCodeLine{74         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a7684d3cd9f2e1aaeb2231f0c8dd9155b}{map\_from\_old\_mesh}}(\mbox{\hyperlink{classoxide__mesh}{oxide\_mesh}} \&old\_problem);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79         \textcolor{comment}{// need in this class:}}
+\DoxyCodeLine{80         \mbox{\hyperlink{classoxide__mesh_a5c65d1b777461927d6cb3d21c7627015}{oxide\_mesh}}();}
+\DoxyCodeLine{81         \mbox{\hyperlink{classoxide__mesh_a5c65d1b777461927d6cb3d21c7627015}{oxide\_mesh}}(\mbox{\hyperlink{classoxide__mesh}{oxide\_mesh}} \&src\_mesh);}
+\DoxyCodeLine{82         \mbox{\hyperlink{classoxide__mesh}{oxide\_mesh}}\& \mbox{\hyperlink{classoxide__mesh_aad38ff863fa9e3da0d037a23d7c398ad}{operator= }}(\mbox{\hyperlink{classoxide__mesh}{oxide\_mesh}} \&src\_mesh);}
+\DoxyCodeLine{83         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a1ef44e1986fe518dde38cca116634120}{copy\_mesh}}(\mbox{\hyperlink{classoxide__mesh}{oxide\_mesh}} \&src\_mesh);}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a85e810d59ec3caeea62221cdac85d4b5}{set\_geometry}}(std::vector <material> in\_materials, \mbox{\hyperlink{classmaterial}{material}} in\_oxide, \mbox{\hyperlink{classmaterial}{material}} in\_crack);}
+\DoxyCodeLine{86         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a1b72e11755b05257da6de7efd3b8bd81}{set\_boundary\_conditions}}(std::vector < std::pair <std::vector<point>, \mbox{\hyperlink{classconstraint}{constraint}}> > in\_constraints\_);}
+\DoxyCodeLine{87         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a47d2dc82446b83eea3e0ca545081d650}{set\_parameters}}(\textcolor{keywordtype}{int} in\_num\_gs, \textcolor{keywordtype}{double} in\_dt, \textcolor{keywordtype}{double} in\_dt\_cr, \textcolor{keywordtype}{double} min\_eta\_, \textcolor{keywordtype}{double} eyring\_prefactor\_, \textcolor{keywordtype}{double} eyring\_EoverR\_, \textcolor{keywordtype}{double} eyring\_tau\_c\_);}
+\DoxyCodeLine{88         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a3bd5eb57d0d04a04be3c17a9f30e10a6}{set\_output\_parameters}}(\textcolor{keywordtype}{int} dump\_int\_, \textcolor{keywordtype}{bool} timing, \textcolor{keywordtype}{bool} polys, \textcolor{keywordtype}{bool} segs);}
+\DoxyCodeLine{89         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a4f181fcf2c514a4c1d259c3a94ad2796}{set\_paths}}(std::string in\_base\_path, std::string in\_file\_prefix);}
+\DoxyCodeLine{90         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a936f1154cec27246f4217b972b85c23a}{set\_mesh\_parameters}}(\textcolor{keywordtype}{double} in\_min\_area, \textcolor{keywordtype}{double} in\_refine\_radius, \textcolor{keywordtype}{double} gr\_, element\_type::type el\_type\_, std::vector <std::vector < double> > in\_mesh\_regions);}
+\DoxyCodeLine{91         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_aa4eb55c2cddc68a951d6b31400013555}{set\_initial\_strain\_function}}(\textcolor{keywordtype}{void} (*initialize\_strain\_)(\mbox{\hyperlink{classmp__element}{mp\_element}} \&el));}
+\DoxyCodeLine{92         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a2f7b8a330a65b78d65525f104b6e5757}{set\_temperature\_function}}(\textcolor{keywordtype}{double} (*user\_Temp\_func\_)(\textcolor{keywordtype}{double} current\_time));}
+\DoxyCodeLine{93         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a046932f00ba4a4d474c76167f3d21abb}{set\_params}}(\mbox{\hyperlink{classparam}{param}} input\_params);     }
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_ab51a4206e50a3ba0905cb57b291d3291}{save\_mesh}}(std::string file\_path);}
+\DoxyCodeLine{96         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_ad91cb9cfde9d021933d5abfad467cd5e}{save\_mesh\_string}}(std::string file\_path);}
+\DoxyCodeLine{97         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a9d584b95fbcb8366c3e1bc0a5b87fc99}{load\_mesh}}(std::string file\_path);}
+\DoxyCodeLine{98         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_ace6d9495c95364ee6f41846d4fd93a79}{save\_polygons}}(std::string label, \textcolor{keywordtype}{int} out\_ctr\_);}
+\DoxyCodeLine{99         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a492e8c8274795fbe851a549ea8ecd68e}{save\_geometry}}(std::string file\_path);}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a775ec658df3c09a8d29b73602cdc6ab5}{free\_arrays}}();}
+\DoxyCodeLine{102         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a766c95070edf4eaec8b2f90b941373fa}{deform\_mesh}}();}
+\DoxyCodeLine{103         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a2e0da99a4735a687d92cb60852693e12}{deform\_polygons}}();}
+\DoxyCodeLine{104         }
+\DoxyCodeLine{105         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_af44fdd459a2c7933d6dab3c7be44a63d}{find\_new\_polygons}}();}
+\DoxyCodeLine{106         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classoxide__mesh_a55e7ce21c5b6ef91faa7e8c94bf8f10c}{seg\_on\_material}}(\textcolor{keyword}{const} std::vector<point> \&test\_seg, \textcolor{keyword}{const} \textcolor{keywordtype}{int} ignore = -\/2);}
+\DoxyCodeLine{107         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a32f164a7866456b5d0616877293aea81}{get\_free\_edges}}(\textcolor{keyword}{const} std::vector<point> \&poly, std::vector<std::vector<point>> \&free\_segments, \textcolor{keyword}{const} \textcolor{keywordtype}{int} ignore = -\/2);}
+\DoxyCodeLine{108         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a0359373e7332e2bdbaf3736775b42e49}{recreate\_crack}}();}
+\DoxyCodeLine{109         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_ade5caadbf9adc2dca6fa93737f68533c}{set\_element\_properties}}(\textcolor{keywordtype}{int} curr\_el);}
+\DoxyCodeLine{110         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_ad671f01ff18ea8813413cfd9843e8771}{create\_element}}(\textcolor{keywordtype}{int} curr\_el);}
+\DoxyCodeLine{111         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a74a3cd546a91ebf2d220fe18af9b05bb}{assemble\_all}}(\textcolor{keywordtype}{int} curr\_el);}
+\DoxyCodeLine{112         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a1c427accdf57b0a93d1a5acd37189868}{assemble\_mech}}(\textcolor{keywordtype}{int} curr\_el);}
+\DoxyCodeLine{113         \textcolor{keywordtype}{void} add\_reactions(\textcolor{keywordtype}{int} curr\_el);}
+\DoxyCodeLine{114         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a485c4738388792b4737898f303fd8d4d}{add\_reactions\_new}}(\textcolor{keywordtype}{int} curr\_el);}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116         }
+\DoxyCodeLine{117         }
+\DoxyCodeLine{118         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_aac4383bbf3fabbc2aeb5415eac4be5c3}{update\_constraint\_boundaries}}();}
+\DoxyCodeLine{119         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a8dc0c876bd0f8b0e6510f2889022ddd5}{update\_region\_pts}}();}
+\DoxyCodeLine{120         }
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classoxide__mesh_aae30be4db2e5d49bec2f01baa9f6e6e6}{grow\_oxide}}();}
+\DoxyCodeLine{123         \textcolor{keywordtype}{int} find\_next\_element(\textcolor{keywordtype}{int} curr\_node\_no, \textcolor{keywordtype}{int} next\_node\_no, \textcolor{keywordtype}{int} starting\_el\_index, \textcolor{keywordtype}{int} region);}
+\DoxyCodeLine{124         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a0478903f72d483ab779af8443ffbc48b}{run\_simulation}}(\textcolor{keywordtype}{bool} restart, \textcolor{keywordtype}{int} out\_ctr);}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_abda9a1d2b75d90c5529986f165d06a33}{simplify\_polygon}}(std::vector<point> \&poly, std::vector <point> \&removed\_pts, std::vector<point> \&kept\_pts, \textcolor{keywordtype}{double} threshold\_length, \textcolor{keywordtype}{int} m = 2);}
+\DoxyCodeLine{128         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_ad8fcf6a6b7ae431ca7fa54b00c9eb179}{remove\_deviation}}(std::vector<point> \&poly, std::vector<point> \&kept\_pts, \textcolor{keywordtype}{int} m = 2);}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a73f4c92e0a84a2d811353cb9e649953a}{remove\_pts}}(std::vector <point> \& pts, std::vector <point> \&removed\_pts, \textcolor{keywordtype}{double} threshold\_length);}
+\DoxyCodeLine{131         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a30e04d430474d575d5230b9791945eee}{remove\_polygon}}(std::vector<point> \&poly1, std::vector<point> \&poly2, \textcolor{keywordtype}{double} threshold\_length);}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133         \mbox{\hyperlink{classpoint}{point}} get\_norm\_vec(std::pair<point,point> a);}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135         std::vector<point> smooth\_boundary(std::vector<point> \&boundary, \textcolor{keyword}{const} std::vector<point> \&begin\_bound\_edge, \textcolor{keyword}{const} std::vector<point> \&end\_bound\_edge);}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137         \mbox{\hyperlink{classpoint}{point}} \mbox{\hyperlink{classoxide__mesh_a862aba983000ec3f3a3b73a96699c508}{reflect\_point}}(\textcolor{keyword}{const} \mbox{\hyperlink{classpoint}{point}} \&pt, \textcolor{keyword}{const} std::vector<point> \&boundary);}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139         \mbox{\hyperlink{classpoint}{point}} \mbox{\hyperlink{classoxide__mesh_a91a2e3cc780dbf94e541ee823447d83e}{reflect\_flux}}(\textcolor{keywordtype}{int} index, std::vector<point> \&boundary);}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a7d54fdcc09b1b4a3c21149981997d16d}{find\_poly\_nodes}}(\mbox{\hyperlink{classmaterial}{material}} \&matl, \textcolor{keywordtype}{double} min\_seg\_length);}
+\DoxyCodeLine{143         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_ab28bc46025b54b8d8fd65496581f95a1}{deform\_poly}}(\mbox{\hyperlink{classmaterial}{material}} \&matl);}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a8dcb55265f791a7d4f438d563b4e297a}{solve\_diff}}();}
+\DoxyCodeLine{147         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a384a713239018cb3c5b2c6affa6ffb3b}{solve\_mech}}();}
+\DoxyCodeLine{148         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a5fbc66dac6cc9ae4aee49c5e72ee6a66}{store\_strains\_on\_nodes}}();}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_aa8d1fd206016c3537b5d6fd34b9e815d}{remove\_midside\_nodes}}(std::vector<int> \&n\_list, std::vector<point> \&pt\_list);}
+\DoxyCodeLine{151         std::vector<std::vector<point>> els\_to\_keep;}
+\DoxyCodeLine{152         std::vector<std::vector<int>> segs\_to\_keep;}
+\DoxyCodeLine{153         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a5be9d8cd4b25c53d35ae7507df7918f7}{find\_elements\_to\_keep}}();}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155         \textcolor{comment}{// function to initialize strains in the oxide elements}}
+\DoxyCodeLine{156         void (*initialize\_strain)(\mbox{\hyperlink{classmp__element}{mp\_element}} \&el) = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158         \textcolor{comment}{// define the temperature and functions to determine the temperature}}
+\DoxyCodeLine{159         \textcolor{comment}{// double Temperature = 1273; ///< current temperature}}
+\DoxyCodeLine{160         \textcolor{keywordtype}{int} master\_time = 0;}
+\DoxyCodeLine{161         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_adf54d280167aa9b8d9e8e6d2f8bb3adf}{Set\_current\_Temperature}}();}
+\DoxyCodeLine{162         double (*user\_Temp\_func)(\textcolor{keywordtype}{double} current\_time);}
+\DoxyCodeLine{163         \textcolor{keywordtype}{void} set\_eta0();}
+\DoxyCodeLine{164         \textcolor{keywordtype}{int} \mbox{\hyperlink{classoxide__mesh_a3dfeb68a59e0fc277a6ce4d428373524}{crit\_n\_nodes}} = 3; }
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a3e3bf68832adf49423313d920576e21f}{find\_connected\_elements}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} node\_index, std::vector<int> \&connected\_elements);}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a111a93b21c8b864d9bfe8587960d0075}{load\_input\_file}}(std::string file\_path);}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_ae65f5b22c12608fe284c4da72e4e05d0}{create\_input\_file}}(std::string file\_dir);}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173         \textcolor{comment}{// new Nov. 2022 to split up main function and loop}}
+\DoxyCodeLine{174         std::streambuf * \mbox{\hyperlink{classoxide__mesh_a0a4e697599a3dc31c458d4b2efcf98ae}{stream\_buffer\_cerr}}; }
+\DoxyCodeLine{175         std::streambuf * \mbox{\hyperlink{classoxide__mesh_a4b6f7b816fb49d99e0b2b07d96467ab8}{stream\_buffer\_clog}}; }
+\DoxyCodeLine{176         }
+\DoxyCodeLine{177         std::ofstream \mbox{\hyperlink{classoxide__mesh_ad44d64c99c1979ef037e4f4ca4553669}{log\_file}}; }
+\DoxyCodeLine{178         std::ofstream \mbox{\hyperlink{classoxide__mesh_ad58d6073cd204e40ffe6555d0487c341}{timing\_log}}; }
+\DoxyCodeLine{179         std::ofstream \mbox{\hyperlink{classoxide__mesh_a2ba41bf958c24ccdd10ce76dbe01e717}{error\_log}}; }
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181         \textcolor{comment}{// int out\_ctr; ///< output counter}}
+\DoxyCodeLine{182         \mbox{\hyperlink{classtimer}{timer}} \mbox{\hyperlink{classoxide__mesh_a067d5f4c49f6413c45b7d9f8aad9be62}{full\_timer}}; }
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a737c7766251d76392c77f4945380c624}{redirect\_output\_streams}}(); }
+\DoxyCodeLine{185         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a8097c7ac7a07cb4e3bc93e0e58b698d0}{reset\_output\_streams}}(); }
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187         \textcolor{keywordtype}{int} \mbox{\hyperlink{classoxide__mesh_a61f0bd675dca291d42cc253dcdc7170d}{open\_log\_files}}(\textcolor{keywordtype}{bool} restart, \textcolor{keywordtype}{int} out\_ctr);}
+\DoxyCodeLine{188         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a255e3658ecb32e0f1fcd21503b884170}{close\_log\_files}}(); }
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190         \textcolor{keywordtype}{int} \mbox{\hyperlink{classoxide__mesh_ad3c124e5fd82ca502fe791baaa108048}{run\_main\_loop}}(\textcolor{keywordtype}{bool} restart, \textcolor{keywordtype}{int} out\_ctr);}
+\DoxyCodeLine{191         }
+\DoxyCodeLine{192         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_acab234e4c42f388fc2c30e772e0bc3f8}{output\_error\_files}}(\textcolor{keywordtype}{int} out\_ctr);}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_af9bc67dc35561ad9abc6bd7ccfa755ee}{mark\_elements\_to\_keep}}();}
+\DoxyCodeLine{195         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T> \textcolor{keywordtype}{void} output\_timing\_msg(T msg, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} n\_tabs)}
+\DoxyCodeLine{196         \{}
+\DoxyCodeLine{197             \textcolor{keywordflow}{if} (output\_timing) std::clog << msg;}
+\DoxyCodeLine{198             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < n\_tabs; i++)}
+\DoxyCodeLine{199             \{}
+\DoxyCodeLine{200                 std::clog << \textcolor{stringliteral}{"{}\(\backslash\)t"{}};}
+\DoxyCodeLine{201             \}}
+\DoxyCodeLine{202             std::clog << std::flush;}
+\DoxyCodeLine{203             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{204         \}}
+\DoxyCodeLine{205 }
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207         \textcolor{keywordtype}{int} constraint\_index = -\/1;}
+\DoxyCodeLine{208         bool (*user\_advance\_crack\_func)(\mbox{\hyperlink{classoxide__mesh}{oxide\_mesh}} \&crack\_mesh, \textcolor{keywordtype}{double} G, \textcolor{keywordtype}{int} step\_ctr, std::vector<int> \&crack\_advance\_nodes) = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{209         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classoxide__mesh_aa946598bcb1c79a43806daf29962cf3f}{advance\_crack}}(\textcolor{keywordtype}{double} G, \textcolor{keywordtype}{int} step\_ctr, std::vector<int> \&crack\_advance\_nodes);}
+\DoxyCodeLine{210         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classoxide__mesh_abb927346e56117b4f2067718cd9be373}{get\_crack\_boundary}}(std::vector<point>\&boundary, \textcolor{keywordtype}{int} \&concentration\_index);}
+\DoxyCodeLine{211         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classoxide__mesh_adafce3ae3e752eff9dae8119e7ac5b0d}{get\_crack\_boundary\_nodes}}(std::vector<int>\&boundary\_nodes, \textcolor{keywordtype}{int} \&concentration\_index);}
+\DoxyCodeLine{212         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_ae31976f082b183c5a19c5f2132de64e8}{remove\_points\_from\_mechanical\_constraint}}(\textcolor{keywordtype}{bool} boundary\_reversed, std::vector<point> \&unzipped\_points);}
+\DoxyCodeLine{213         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a4ce53615a8cee99e4a513e28b04d7063}{add\_points\_to\_concentration\_constraint}}(\textcolor{keywordtype}{bool} boundary\_reversed,std::vector<point> \&unzipped\_points, \textcolor{keywordtype}{int} concentration\_index);}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{215         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a07d8163ca50aa9ace68478fd0c1e6790}{set\_cracking\_parameters}}(\textcolor{keywordtype}{bool} (*user\_run\_cracking\_simulation\_func\_)(\mbox{\hyperlink{classoxide__mesh}{oxide\_mesh}} \&original\_mesh), \textcolor{keywordtype}{bool} (*crack\_advance\_func\_)(\mbox{\hyperlink{classoxide__mesh}{oxide\_mesh}} \&crack\_mesh, \textcolor{keywordtype}{double} G, \textcolor{keywordtype}{int} step\_ctr, std::vector<int> \&crack\_advance\_nodes), \textcolor{keywordtype}{int} constraint\_index\_, \textcolor{keywordtype}{double} init\_crack\_length\_);}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{217         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classoxide__mesh_aac947d4f95b0043ca50527353293c88b}{set\_initial\_crack}}();}
+\DoxyCodeLine{218         \textcolor{keywordtype}{double} init\_crack\_length = 0.01;}
+\DoxyCodeLine{219         std::vector<point> crack\_line;}
+\DoxyCodeLine{220         \textcolor{keywordtype}{int} num\_rings = 5;}
+\DoxyCodeLine{221 }
+\DoxyCodeLine{222 }
+\DoxyCodeLine{223         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a6d1aaa3976cc65c44df4ced0720981fa}{clear\_mech\_constraints}}();}
+\DoxyCodeLine{224         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a35e80d12f12228d6a4ba546f9e9860dd}{clear\_diff\_constraints}}();}
+\DoxyCodeLine{225         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a9b3a8185370620b009c781275c10d9c9}{add\_point\_to\_constraints}}(\mbox{\hyperlink{classpoint}{point}} test\_node, \textcolor{keywordtype}{int} node\_no, \textcolor{keywordtype}{bool} add\_diff = \textcolor{keyword}{true});}
+\DoxyCodeLine{226         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a74193af0cc10b1e5b9198313f0fb3c7c}{initialize\_mech\_arrays}}(\textcolor{keywordtype}{int} n\_nodes\_per\_tri);}
+\DoxyCodeLine{227         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_aecfd65a7b48fe7f7f7f9c6d0a65754b6}{initialize\_diff\_arrays}}(\textcolor{keywordtype}{int} n\_nodes\_per\_tri);}
+\DoxyCodeLine{228 }
+\DoxyCodeLine{229         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a6d9699fad6dc53f682c1e6a22ec12b32}{prepare\_mesh\_for\_mapping}}();}
+\DoxyCodeLine{230         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a318f53c3854fd3267a87e91d3f93ddba}{get\_initial\_poly\_nodes}}();}
+\DoxyCodeLine{231 }
+\DoxyCodeLine{232 }
+\DoxyCodeLine{233         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_aa58d6c1b23a6935173bb60ed53a84ad5}{get\_neighboring\_elements\_within\_radius}}(\mbox{\hyperlink{classpoint}{point}} pt, \textcolor{keywordtype}{double} radius, std::vector<int> \& els\_in\_range);}
+\DoxyCodeLine{234         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a6724959b701306180a85a5663bd3101c}{add\_crack\_tip\_for\_refined\_mesh}}();}
+\DoxyCodeLine{235         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_afa8c8b21113ac4aab42f3271c7181026}{assemble\_mech\_for\_cracking}}();}
+\DoxyCodeLine{236         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_ab9f8342f51795d5cc7ea8b16c0d205ce}{reassemble\_both\_after\_cracking}}();}
+\DoxyCodeLine{237         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a56952c56a4d69502ca5eec6f5fc78fba}{solve\_mech\_for\_cracking}}();}
+\DoxyCodeLine{238         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a9637f36e37a4794c2eb584e234b05297}{create\_cracking\_mesh}}(\mbox{\hyperlink{classoxide__mesh}{oxide\_mesh}} \&original\_mesh, \mbox{\hyperlink{classoxide__mesh}{oxide\_mesh}} \&crack\_mesh);}
+\DoxyCodeLine{239 }
+\DoxyCodeLine{240         \textcolor{keywordtype}{double} \mbox{\hyperlink{classoxide__mesh_ad61f3452da58429a1c7c99907d8909c8}{calculate\_G}}(\mbox{\hyperlink{classpoint}{point}} crack\_tip, \textcolor{keywordtype}{double} shift\_radius, \mbox{\hyperlink{classpoint}{point}} delta\_a);}
+\DoxyCodeLine{241         \textcolor{keywordtype}{double} \mbox{\hyperlink{classoxide__mesh_ad27483b34cc29f4e2801e8b3ab6d2a1c}{d\_a}} = 2 * \mbox{\hyperlink{classpoint_aa8798ed52dc29a35d0bec4f716029994}{point::equal}}; }
+\DoxyCodeLine{242         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classoxide__mesh_a9a35c42cc5c08eb05a80116a80fca872}{check\_for\_cracking}}(\textcolor{keywordtype}{int} out\_ctr);}
+\DoxyCodeLine{243         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_aa54f1f9caa28b0f4263ab5ae34fbd4cb}{get\_crack\_advance}}(\textcolor{keywordtype}{int} out\_ctr, std::vector<int> \&crack\_advance\_nodes);}
+\DoxyCodeLine{244         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classoxide__mesh_a926543deb442cfa9b203e46f7e2bea2d}{run\_cracking\_simulation}}(\textcolor{keywordtype}{int} out\_ctr);}
+\DoxyCodeLine{245         bool (*user\_run\_cracking\_simulation\_func)(\mbox{\hyperlink{classoxide__mesh}{oxide\_mesh}} \&original\_mesh) = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{246         \textcolor{keywordtype}{double} \mbox{\hyperlink{classoxide__mesh_ac8e1fc3823211e78e81b391617d57f96}{get\_thickness\_along\_constraint}}(\textcolor{keywordtype}{int} index, \textcolor{keywordtype}{int} region\_tag);}
+\DoxyCodeLine{247         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classoxide__mesh_a2b35a625d60b84747c162b428bebb166}{check\_for\_crack\_face\_contact}}(std::vector<int> \&crack\_advance\_nodes);}
+\DoxyCodeLine{248         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classoxide__mesh_aa71cae5d7aec1ae73e6340a441a332d3}{check\_for\_crack\_in\_SiC}}(std::vector<int> \&crack\_advance\_nodes);}
+\DoxyCodeLine{249         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classoxide__mesh_aa945ecb81b26ddbb4059e72ddcb82f9c}{check\_for\_healing}}(\textcolor{keywordtype}{int} out\_ctr);}
+\DoxyCodeLine{250         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classoxide__mesh_a2cf3f773238f718fe0d6430ed9ffe8c6}{get\_crack\_retreat}}(std::vector<point> \&crack\_retreat, std::vector<point> \& sym\_boundary);}
+\DoxyCodeLine{251         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a75ee65b66ef2459fcdc0cdc2a5edb25a}{shorten\_crack}}(std::vector<point> \&crack\_retreat, std::vector<point> \&sym\_boundary);}
+\DoxyCodeLine{252         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a21615ffbc2e28832ed28b59277c4e5a1}{shorten\_crack\_nodes}}(std::vector<int> \&crack\_retreat\_nodes, std::vector<point> \&sym\_boundary);}
+\DoxyCodeLine{253         \textcolor{keywordtype}{int} \mbox{\hyperlink{classoxide__mesh_a41501b35a068a1fec431fbeaa141f0e4}{get\_concentration\_constraint\_index}}();}
+\DoxyCodeLine{254         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_ad025b69b56c646f71b4f6a561ac7da1c}{get\_element\_boundary}}(std::vector<int> \& els\_in\_range, \textcolor{keywordtype}{int} end\_pt\_1, \textcolor{keywordtype}{int} end\_pt\_2, std::vector<int> \&boundary);}
+\DoxyCodeLine{255 }
+\DoxyCodeLine{256         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classoxide__mesh_a8ef1417ccaaeb8179f265c359361f513}{run\_cracking\_simulation\_CZM}}(\textcolor{keywordtype}{int} out\_ctr);}
+\DoxyCodeLine{257         \textcolor{keywordtype}{bool} CZM\_cracking = \textcolor{keyword}{false};}
+\DoxyCodeLine{258 }
+\DoxyCodeLine{259         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a9bc3bf3819d3a59f146e462f90acd003}{solve\_mech\_contact}}();}
+\DoxyCodeLine{260         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classoxide__mesh_a1f3775b85d438f79909c56ce8b6e991e}{check\_point\_for\_contact}}(\mbox{\hyperlink{classpoint}{point}} \& test\_point, \mbox{\hyperlink{classpoint}{point}} \& mid\_point, std::vector<point> \& sym\_boundary);}
+\DoxyCodeLine{261         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a1f5f07e51349846b1f9bfbe42e187021}{reassemble\_mech\_after\_contact}}(std::vector<int> \&crack\_retreat\_nodes);}
+\DoxyCodeLine{262         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_afea76799d1775c1eaa633cc100de21c1}{get\_symmetry\_boundary}}(std::vector<point> \&sym\_boundary);}
+\DoxyCodeLine{263         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a1921ed64426311619aaa665efeb35130}{convert\_points\_to\_indices}}(\textcolor{keyword}{const} std::vector<point> \& boundary\_pts, std::vector<int> \& boundary\_nodes);}
+\DoxyCodeLine{264         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_ade7237459e203b7a287a545d358e7df0}{convert\_indices\_to\_points}}(\textcolor{keyword}{const} std::vector<int> \& boundary\_nodes, std::vector<point> \& boundary\_pts);}
+\DoxyCodeLine{265         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_ac76e5714b9a139b84bdd810119512c8d}{remove\_nodes\_from\_mechanical\_constraint}}(\textcolor{keywordtype}{bool} boundary\_reversed, std::vector<int> \&unzipped\_nodes);}
+\DoxyCodeLine{266         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a57553f59b4b26b01a54f8649331b2dc1}{add\_nodes\_to\_concentration\_constraint}}(\textcolor{keywordtype}{bool} boundary\_reversed,std::vector<int> \&unzipped\_nodes, \textcolor{keywordtype}{int} concentration\_index);}
+\DoxyCodeLine{267         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a966d48eb52443047d205992dcdcbca2e}{rebuild\_after\_growth\_or\_healing}}();}
+\DoxyCodeLine{268         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_ae5ed73f4ddec09af1ff8cd5358be996f}{get\_crack\_retreat\_nodes}}(std::vector<int> \&crack\_retreat\_nodes, std::vector<point> \& sym\_boundary);}
+\DoxyCodeLine{269         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a5f2e74fe853dfbec4353db91b7b1b9b7}{update\_element\_points}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} node\_no, \mbox{\hyperlink{classpoint}{point}} \&old\_pt, \textcolor{keyword}{const} \mbox{\hyperlink{classpoint}{point}} \&new\_pt);}
+\DoxyCodeLine{270         \textcolor{keywordtype}{void} \mbox{\hyperlink{classoxide__mesh_a7f742594832b4b94e92776eb36c7382a}{update\_point\_location}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} node\_no, std::vector<point> \&sym\_boundary);}
+\DoxyCodeLine{271 }
+\DoxyCodeLine{272         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classoxide__mesh_a4af8eed80cb3a80d9ef67f7de061afb4}{get\_boundary\_reversed}}();}
+\DoxyCodeLine{273 }
+\DoxyCodeLine{274 \};}
+\DoxyCodeLine{275 }
+\DoxyCodeLine{276 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

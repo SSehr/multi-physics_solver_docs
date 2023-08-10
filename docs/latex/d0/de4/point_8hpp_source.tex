@@ -1,0 +1,70 @@
+\hypertarget{point_8hpp_source}{}\doxysection{point.\+hpp}
+\label{point_8hpp_source}\index{src/support\_files/hpp/point.hpp@{src/support\_files/hpp/point.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef POINT}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define POINT}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <new>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classpoint}{point}}}
+\DoxyCodeLine{18 \{}
+\DoxyCodeLine{19     \textcolor{keyword}{public}:}
+\DoxyCodeLine{20         \textcolor{keywordtype}{double} \mbox{\hyperlink{classpoint_a9c6b34deaf4900ad4193c17935fd384a}{x}} = 0; }
+\DoxyCodeLine{21         \textcolor{keywordtype}{double} \mbox{\hyperlink{classpoint_a613f8f0d7352731638b0094e1b958b87}{y}} = 0; }
+\DoxyCodeLine{22         \textcolor{keywordtype}{double} \mbox{\hyperlink{classpoint_aab1f0c3682401083b5bf252e7001874f}{z}} = 0; }
+\DoxyCodeLine{23         \textcolor{keywordtype}{double} \mbox{\hyperlink{classpoint_a07e03afbdcc1a51890b72ced5eea8a34}{mag}}();}
+\DoxyCodeLine{24         \textcolor{keyword}{static} \textcolor{keywordtype}{double} \mbox{\hyperlink{classpoint_aa8798ed52dc29a35d0bec4f716029994}{equal}}; }
+\DoxyCodeLine{25         \textcolor{keyword}{static} \textcolor{keywordtype}{double} \mbox{\hyperlink{classpoint_a1157e81849782c6c863981dc43eaaee5}{equal2}}; }
+\DoxyCodeLine{26         \mbox{\hyperlink{classpoint_a5fe21d4a4539320bf0f5caf1218d31c8}{point}}(\textcolor{keywordtype}{double} x\_in, \textcolor{keywordtype}{double} y\_in);}
+\DoxyCodeLine{27         \mbox{\hyperlink{classpoint_a5fe21d4a4539320bf0f5caf1218d31c8}{point}}();}
+\DoxyCodeLine{28         \textcolor{keywordtype}{void} \mbox{\hyperlink{classpoint_a2e6587f35b9596aa034084ca83497e02}{clean}}();}
+\DoxyCodeLine{29         \textcolor{keywordtype}{double} \mbox{\hyperlink{classpoint_a9dfe9a21b69b8ff260361a99cf0d9e15}{dist}}(\textcolor{keyword}{const} \mbox{\hyperlink{classpoint}{point}} \&pt);}
+\DoxyCodeLine{30         \textcolor{keywordtype}{double} \mbox{\hyperlink{classpoint_acf810557f603b4da2ad4f15806a201bf}{dot}}(\mbox{\hyperlink{classpoint}{point}} \&pt);}
+\DoxyCodeLine{31 \};}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \mbox{\hyperlink{classpoint}{point}} project(\mbox{\hyperlink{classpoint}{point}} \&a, \mbox{\hyperlink{classpoint}{point}} \&b);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \mbox{\hyperlink{classpoint}{point}} get\_normal(\textcolor{keyword}{const} \mbox{\hyperlink{classpoint}{point}} \&a, \textcolor{keyword}{const} std::pair<point,point> \&b);}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \mbox{\hyperlink{classpoint}{point}} get\_tangential(\textcolor{keyword}{const} \mbox{\hyperlink{classpoint}{point}} \&a, \textcolor{keyword}{const} std::pair<point,point> \&b);}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{keywordtype}{double} pt\_distance(\textcolor{keyword}{const} \mbox{\hyperlink{classpoint}{point}} \&p1, \textcolor{keyword}{const} \mbox{\hyperlink{classpoint}{point}} \&p2);}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{keywordtype}{bool} operator ==(\textcolor{keyword}{const} \mbox{\hyperlink{classpoint}{point}} \&pt1, \textcolor{keyword}{const} \mbox{\hyperlink{classpoint}{point}} \&pt2);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{keywordtype}{bool} operator !=(\textcolor{keyword}{const} \mbox{\hyperlink{classpoint}{point}} \&pt1, \textcolor{keyword}{const} \mbox{\hyperlink{classpoint}{point}} \&pt2);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 std::ostream \&operator<<(std::ostream \&os, \mbox{\hyperlink{classpoint}{point}} \textcolor{keyword}{const} \&pt);}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{keyword}{inline} \mbox{\hyperlink{classpoint}{point}} operator +(\textcolor{keyword}{const} \mbox{\hyperlink{classpoint}{point}} \&p1, \textcolor{keyword}{const} \mbox{\hyperlink{classpoint}{point}} \&p2)}
+\DoxyCodeLine{53 \{}
+\DoxyCodeLine{54     \textcolor{keywordflow}{return} \mbox{\hyperlink{classpoint}{point}} (p1.\mbox{\hyperlink{classpoint_a9c6b34deaf4900ad4193c17935fd384a}{x}} + p2.\mbox{\hyperlink{classpoint_a9c6b34deaf4900ad4193c17935fd384a}{x}}, p1.\mbox{\hyperlink{classpoint_a613f8f0d7352731638b0094e1b958b87}{y}} + p2.\mbox{\hyperlink{classpoint_a613f8f0d7352731638b0094e1b958b87}{y}});}
+\DoxyCodeLine{55 \}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{keyword}{inline} \mbox{\hyperlink{classpoint}{point}} operator -\/(\textcolor{keyword}{const} \mbox{\hyperlink{classpoint}{point}} \&p1, \textcolor{keyword}{const} \mbox{\hyperlink{classpoint}{point}} \&p2)}
+\DoxyCodeLine{58 \{}
+\DoxyCodeLine{59     \textcolor{keywordflow}{return} \mbox{\hyperlink{classpoint}{point}} (p1.\mbox{\hyperlink{classpoint_a9c6b34deaf4900ad4193c17935fd384a}{x}} -\/ p2.\mbox{\hyperlink{classpoint_a9c6b34deaf4900ad4193c17935fd384a}{x}}, p1.\mbox{\hyperlink{classpoint_a613f8f0d7352731638b0094e1b958b87}{y}} -\/ p2.\mbox{\hyperlink{classpoint_a613f8f0d7352731638b0094e1b958b87}{y}});}
+\DoxyCodeLine{60 \}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{keyword}{inline} \mbox{\hyperlink{classpoint}{point}} operator *(\textcolor{keyword}{const} \textcolor{keywordtype}{double} val, \textcolor{keyword}{const} \mbox{\hyperlink{classpoint}{point}} \&p1)}
+\DoxyCodeLine{63 \{}
+\DoxyCodeLine{64     \textcolor{keywordflow}{return} \mbox{\hyperlink{classpoint}{point}} (val * p1.\mbox{\hyperlink{classpoint_a9c6b34deaf4900ad4193c17935fd384a}{x}}, val * p1.\mbox{\hyperlink{classpoint_a613f8f0d7352731638b0094e1b958b87}{y}});}
+\DoxyCodeLine{65 \}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

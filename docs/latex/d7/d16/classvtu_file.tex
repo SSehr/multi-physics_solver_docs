@@ -1,0 +1,222 @@
+\hypertarget{classvtu_file}{}\doxysection{vtu\+File Class Reference}
+\label{classvtu_file}\index{vtuFile@{vtuFile}}
+
+
+{\ttfamily \#include $<$vtu.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classvtu_file_a0de780d55daf99bd0ef16e307f90a898}{vtu\+File}} (int n\+\_\+cells, int n\+\_\+nodes)
+\item 
+tinyxml2\+::\+XMLElement $\ast$ \mbox{\hyperlink{classvtu_file_ae4e084a0bfe1869c196bbeb738b8b461}{Create\+\_\+element}} (std\+::string name, const char $\ast$t, int n=1)
+\item 
+\mbox{\Hypertarget{classvtu_file_a308ee165ce8bf699a457126b7b49c029}\label{classvtu_file_a308ee165ce8bf699a457126b7b49c029}} 
+void {\bfseries set\+\_\+and\+\_\+insert} (const char $\ast$text, tinyxml2\+::\+XMLElement $\ast$p, tinyxml2\+::\+XMLElement $\ast$parent)
+\begin{DoxyCompactList}\small\item\em inserts text into an element and then inserts the element into the document tree \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classvtu_file_aa7ae82bfdecb67785ae29b91551a5aab}{set\+\_\+base}} ()
+\item 
+void \mbox{\hyperlink{classvtu_file_a944a2d2ef716046611d97e706dba42cd}{set\+\_\+\+Point\+Data}} (const char $\ast$text, std\+::string name, const char $\ast$t, int n=1)
+\item 
+void \mbox{\hyperlink{classvtu_file_a3dc62dc934576f60099e717f91b2348c}{set\+\_\+\+Cell\+Data}} (const char $\ast$text, std\+::string name, const char $\ast$t, int n=1)
+\item 
+void \mbox{\hyperlink{classvtu_file_ae0bab7716fcb7c29340d2cce08194927}{set\+\_\+\+Extra\+Data}} (const char $\ast$text, std\+::string name, int index=0)
+\item 
+void \mbox{\hyperlink{classvtu_file_a37d9f0187d7bb51032a1cbfc7b7397a6}{save}} (std\+::string file\+\_\+path)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classvtu_file_a02245cfaf6b1286f77dc1d01e6764e36}\label{classvtu_file_a02245cfaf6b1286f77dc1d01e6764e36}} 
+tinyxml2\+::\+XMLDocument {\bfseries doc}
+\item 
+\mbox{\Hypertarget{classvtu_file_ad44c2fbc76c1b304b504b4a9d1cc1aee}\label{classvtu_file_ad44c2fbc76c1b304b504b4a9d1cc1aee}} 
+tinyxml2\+::\+XMLElement $\ast$ {\bfseries p\+Root}
+\item 
+\mbox{\Hypertarget{classvtu_file_a70ff1f7652c6ed10657a8e3dd01c729e}\label{classvtu_file_a70ff1f7652c6ed10657a8e3dd01c729e}} 
+tinyxml2\+::\+XMLElement $\ast$ {\bfseries p\+UG}
+\item 
+\mbox{\Hypertarget{classvtu_file_a2f667f1ac4fcaa17fd754c3fff89c317}\label{classvtu_file_a2f667f1ac4fcaa17fd754c3fff89c317}} 
+tinyxml2\+::\+XMLElement $\ast$ {\bfseries p\+Piece}
+\item 
+\mbox{\Hypertarget{classvtu_file_a045fdbf043699edc2ec2dc32d894ae86}\label{classvtu_file_a045fdbf043699edc2ec2dc32d894ae86}} 
+tinyxml2\+::\+XMLElement $\ast$ {\bfseries p\+Point\+Data}
+\item 
+\mbox{\Hypertarget{classvtu_file_a567e0a29da48effa483598a17c9d86ab}\label{classvtu_file_a567e0a29da48effa483598a17c9d86ab}} 
+tinyxml2\+::\+XMLElement $\ast$ {\bfseries p\+Cell\+Data}
+\item 
+\mbox{\Hypertarget{classvtu_file_a95143e9e368743aa233d4cb5e96926f1}\label{classvtu_file_a95143e9e368743aa233d4cb5e96926f1}} 
+tinyxml2\+::\+XMLElement $\ast$ {\bfseries p\+Points}
+\item 
+\mbox{\Hypertarget{classvtu_file_a6406466405e19cfeeafa4c3c63c52956}\label{classvtu_file_a6406466405e19cfeeafa4c3c63c52956}} 
+tinyxml2\+::\+XMLElement $\ast$ {\bfseries p\+Cells}
+\item 
+\mbox{\Hypertarget{classvtu_file_ab32dfae3ca4e69bf17847da17a0d601e}\label{classvtu_file_ab32dfae3ca4e69bf17847da17a0d601e}} 
+tinyxml2\+::\+XMLElement $\ast$ {\bfseries p\+Connectivity}
+\item 
+\mbox{\Hypertarget{classvtu_file_aae4653b5ebd131101be3ccd06bb66c90}\label{classvtu_file_aae4653b5ebd131101be3ccd06bb66c90}} 
+tinyxml2\+::\+XMLElement $\ast$ {\bfseries p\+Offsets}
+\item 
+\mbox{\Hypertarget{classvtu_file_a405be6093740a0ed7f5f96979c45e14b}\label{classvtu_file_a405be6093740a0ed7f5f96979c45e14b}} 
+tinyxml2\+::\+XMLElement $\ast$ {\bfseries p\+Types}
+\item 
+\mbox{\Hypertarget{classvtu_file_a06c17ead25429af4657cff02cfd6ac64}\label{classvtu_file_a06c17ead25429af4657cff02cfd6ac64}} 
+tinyxml2\+::\+XMLElement $\ast$ {\bfseries p\+Points\+List}
+\item 
+\mbox{\Hypertarget{classvtu_file_ac19ad8be756036301b87b15e9c3f7752}\label{classvtu_file_ac19ad8be756036301b87b15e9c3f7752}} 
+std\+::stringstream {\bfseries connectivity}
+\item 
+\mbox{\Hypertarget{classvtu_file_a930df732bd49baa2136a1f689a7ae063}\label{classvtu_file_a930df732bd49baa2136a1f689a7ae063}} 
+std\+::stringstream {\bfseries offsets}
+\item 
+\mbox{\Hypertarget{classvtu_file_a5dfdc5481a4f7587abcc6a5223ad2043}\label{classvtu_file_a5dfdc5481a4f7587abcc6a5223ad2043}} 
+std\+::stringstream {\bfseries types}
+\item 
+\mbox{\Hypertarget{classvtu_file_a105fecaa3eabad930821886ba4b6a813}\label{classvtu_file_a105fecaa3eabad930821886ba4b6a813}} 
+std\+::stringstream {\bfseries points}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class used to define a .vtu file that can be read by Para\+View 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classvtu_file_a0de780d55daf99bd0ef16e307f90a898}\label{classvtu_file_a0de780d55daf99bd0ef16e307f90a898}} 
+\index{vtuFile@{vtuFile}!vtuFile@{vtuFile}}
+\index{vtuFile@{vtuFile}!vtuFile@{vtuFile}}
+\doxysubsubsection{\texorpdfstring{vtuFile()}{vtuFile()}}
+{\footnotesize\ttfamily vtu\+File\+::vtu\+File (\begin{DoxyParamCaption}\item[{int}]{n\+\_\+cells,  }\item[{int}]{n\+\_\+nodes }\end{DoxyParamCaption})}
+
+constructor that creates the necessary document tree for the file Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{d7/d16/classvtu_file_a0de780d55daf99bd0ef16e307f90a898_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classvtu_file_ae4e084a0bfe1869c196bbeb738b8b461}\label{classvtu_file_ae4e084a0bfe1869c196bbeb738b8b461}} 
+\index{vtuFile@{vtuFile}!Create\_element@{Create\_element}}
+\index{Create\_element@{Create\_element}!vtuFile@{vtuFile}}
+\doxysubsubsection{\texorpdfstring{Create\_element()}{Create\_element()}}
+{\footnotesize\ttfamily tinyxml2\+::\+XMLElement $\ast$ vtu\+File\+::\+Create\+\_\+element (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{const char $\ast$}]{t,  }\item[{int}]{n = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+creates an element to be filled and then inserted into the document tree Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d16/classvtu_file_ae4e084a0bfe1869c196bbeb738b8b461_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvtu_file_a37d9f0187d7bb51032a1cbfc7b7397a6}\label{classvtu_file_a37d9f0187d7bb51032a1cbfc7b7397a6}} 
+\index{vtuFile@{vtuFile}!save@{save}}
+\index{save@{save}!vtuFile@{vtuFile}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily void vtu\+File\+::save (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+\_\+path }\end{DoxyParamCaption})}
+
+save the file to disk Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d16/classvtu_file_a37d9f0187d7bb51032a1cbfc7b7397a6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvtu_file_aa7ae82bfdecb67785ae29b91551a5aab}\label{classvtu_file_aa7ae82bfdecb67785ae29b91551a5aab}} 
+\index{vtuFile@{vtuFile}!set\_base@{set\_base}}
+\index{set\_base@{set\_base}!vtuFile@{vtuFile}}
+\doxysubsubsection{\texorpdfstring{set\_base()}{set\_base()}}
+{\footnotesize\ttfamily void vtu\+File\+::set\+\_\+base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+sets the base structure that must be in the file for Para\+View to read it correctly Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{d7/d16/classvtu_file_aa7ae82bfdecb67785ae29b91551a5aab_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d16/classvtu_file_aa7ae82bfdecb67785ae29b91551a5aab_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvtu_file_a3dc62dc934576f60099e717f91b2348c}\label{classvtu_file_a3dc62dc934576f60099e717f91b2348c}} 
+\index{vtuFile@{vtuFile}!set\_CellData@{set\_CellData}}
+\index{set\_CellData@{set\_CellData}!vtuFile@{vtuFile}}
+\doxysubsubsection{\texorpdfstring{set\_CellData()}{set\_CellData()}}
+{\footnotesize\ttfamily void vtu\+File\+::set\+\_\+\+Cell\+Data (\begin{DoxyParamCaption}\item[{const char $\ast$}]{text,  }\item[{std\+::string}]{name,  }\item[{const char $\ast$}]{t,  }\item[{int}]{n = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+store data associated with elements Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{d7/d16/classvtu_file_a3dc62dc934576f60099e717f91b2348c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d16/classvtu_file_a3dc62dc934576f60099e717f91b2348c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvtu_file_ae0bab7716fcb7c29340d2cce08194927}\label{classvtu_file_ae0bab7716fcb7c29340d2cce08194927}} 
+\index{vtuFile@{vtuFile}!set\_ExtraData@{set\_ExtraData}}
+\index{set\_ExtraData@{set\_ExtraData}!vtuFile@{vtuFile}}
+\doxysubsubsection{\texorpdfstring{set\_ExtraData()}{set\_ExtraData()}}
+{\footnotesize\ttfamily void vtu\+File\+::set\+\_\+\+Extra\+Data (\begin{DoxyParamCaption}\item[{const char $\ast$}]{text,  }\item[{std\+::string}]{name,  }\item[{int}]{index = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+store extraneous data that is NOT read by Para\+View but is used to store simulation data Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{d7/d16/classvtu_file_ae0bab7716fcb7c29340d2cce08194927_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d16/classvtu_file_ae0bab7716fcb7c29340d2cce08194927_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvtu_file_a944a2d2ef716046611d97e706dba42cd}\label{classvtu_file_a944a2d2ef716046611d97e706dba42cd}} 
+\index{vtuFile@{vtuFile}!set\_PointData@{set\_PointData}}
+\index{set\_PointData@{set\_PointData}!vtuFile@{vtuFile}}
+\doxysubsubsection{\texorpdfstring{set\_PointData()}{set\_PointData()}}
+{\footnotesize\ttfamily void vtu\+File\+::set\+\_\+\+Point\+Data (\begin{DoxyParamCaption}\item[{const char $\ast$}]{text,  }\item[{std\+::string}]{name,  }\item[{const char $\ast$}]{t,  }\item[{int}]{n = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+store data associated with points Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d16/classvtu_file_a944a2d2ef716046611d97e706dba42cd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d16/classvtu_file_a944a2d2ef716046611d97e706dba42cd_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/support\+\_\+files/hpp/vtu.\+hpp\item 
+src/support\+\_\+files/cpp/vtu.\+cpp\end{DoxyCompactItemize}

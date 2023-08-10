@@ -1,0 +1,405 @@
+\hypertarget{classmp__element}{}\doxysection{mp\+\_\+element Class Reference}
+\label{classmp__element}\index{mp\_element@{mp\_element}}
+
+
+{\ttfamily \#include $<$mp\+\_\+element.\+hpp$>$}
+
+
+
+Inheritance diagram for mp\+\_\+element\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{de/dc2/classmp__element__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for mp\+\_\+element\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{db/db4/classmp__element__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmp__element_a94a992320188719eca8da2701badb610}\label{classmp__element_a94a992320188719eca8da2701badb610}} 
+{\bfseries mp\+\_\+element} (int ns\mbox{[}6\mbox{]}, \mbox{\hyperlink{classpoint}{point}} p\+\_\+\mbox{[}6\mbox{]}, int neighs\mbox{[}3\mbox{]}, int in\+\_\+reg, element\+\_\+type\+::type el\+\_\+type\+\_\+, symmetry\+\_\+type\+::type plane\+\_\+type\+\_\+)
+\item 
+\mbox{\Hypertarget{classmp__element_a4d286aa039ebb5cdc81d376d839c3275}\label{classmp__element_a4d286aa039ebb5cdc81d376d839c3275}} 
+std\+::vector$<$ double $>$ {\bfseries get\+\_\+fluxes} (const std\+::vector$<$ \mbox{\hyperlink{classnode}{node}} $>$ \&n\+\_\+list, const \mbox{\hyperlink{classpoint}{point}} \&test\+\_\+pt)
+\item 
+void \mbox{\hyperlink{classmp__element_a0b1cfbcd420a52de9729772a265d19b2}{Calc\+\_\+flux}} (const std\+::vector$<$ \mbox{\hyperlink{classnode}{node}} $>$ \&n\+\_\+list)
+\item 
+void \mbox{\hyperlink{classmp__element_ad9cdf14bbdae1c8716a357cf400dae87}{Calc\+\_\+local\+\_\+k\+\_\+diff}} ()
+\item 
+void \mbox{\hyperlink{classmp__element_ab08531ddff2b8dd1955869207a03ec3c}{Calc\+\_\+local\+\_\+\+R\+\_\+diff}} (const std\+::vector$<$ \mbox{\hyperlink{classnode}{node}} $>$ \&n\+\_\+list)
+\item 
+\mbox{\Hypertarget{classmp__element_a400feeabec355555645169cf1d134de8}\label{classmp__element_a400feeabec355555645169cf1d134de8}} 
+std\+::vector$<$ double $>$ {\bfseries get\+\_\+stored\+\_\+strains} (const std\+::vector$<$ \mbox{\hyperlink{classnode}{node}} $>$ \&n\+\_\+list, \mbox{\hyperlink{classpoint}{point}} \&test\+\_\+pt)
+\item 
+void \mbox{\hyperlink{classmp__element_a3f1e3b248f6fa09562ade22e696bd595}{Calc\+\_\+stored\+\_\+strains}} (const std\+::vector$<$ \mbox{\hyperlink{classnode}{node}} $>$ \&n\+\_\+list)
+\item 
+void \mbox{\hyperlink{classmp__element_a4b4c21879c1789e632ab03688bbbe337}{Calc\+\_\+stress}} (const std\+::vector$<$ \mbox{\hyperlink{classnode}{node}} $>$ \&n\+\_\+list)
+\item 
+void \mbox{\hyperlink{classmp__element_ac60d4a6e316c9d953a33fa9dcaa5c7f3}{Set\+\_\+creep\+\_\+strains}} (const std\+::vector$<$ \mbox{\hyperlink{classnode}{node}} $>$ \&n\+\_\+list)
+\item 
+void \mbox{\hyperlink{classmp__element_a88c9b1f135570e13c34b5b68d8aa2e05}{Set\+\_\+mesh\+\_\+strains}} (const std\+::vector$<$ \mbox{\hyperlink{classnode}{node}} $>$ \&n\+\_\+list)
+\item 
+double \mbox{\hyperlink{classmp__element_a7fc95e5de708f3d1d0ad151e914efd34}{Get\+\_\+eta}} ()
+\item 
+void \mbox{\hyperlink{classmp__element_a729feffd816d133c26d40720821e9951}{Solve\+\_\+creep}} (const std\+::vector$<$ \mbox{\hyperlink{classnode}{node}} $>$ \&n\+\_\+list)
+\item 
+\mbox{\hyperlink{classpoint}{point}} \mbox{\hyperlink{classmp__element_aba6da5fa8ee212b96d4f5b2ba80eb550}{interpolate\+\_\+displacement}} (\mbox{\hyperlink{classpoint}{point}} pt, std\+::vector$<$ \mbox{\hyperlink{classnode}{node}} $>$ \&nlist)
+\item 
+double \mbox{\hyperlink{classmp__element_a61d86f786d25cbc32a9275cbb64a2f55}{Get\+\_\+strain\+\_\+energy\+\_\+density}} (const std\+::vector$<$ \mbox{\hyperlink{classnode}{node}} $>$ \&n\+\_\+list)
+\item 
+double \mbox{\hyperlink{classmp__element_aa601498dd92a029f5b4a1f78d8be89cd}{Get\+\_\+strain\+\_\+energy}} (const std\+::vector$<$ \mbox{\hyperlink{classnode}{node}} $>$ \&n\+\_\+list)
+\item 
+double \mbox{\hyperlink{classmp__element_abf04d438ec65a6df91073afeb88402c3}{Get\+\_\+eyring\+\_\+eta0}} ()
+\item 
+double \mbox{\hyperlink{classmp__element_a857673368befe293052dbabab47e61cc}{Get\+\_\+tau0}} ()
+\item 
+double \mbox{\hyperlink{classmp__element_a338b46257ebafbd833de1f139e50f4b4}{Get\+\_\+eyring\+\_\+eta}} (double eyring\+\_\+eta0, double tau0)
+\item 
+double \mbox{\hyperlink{classmp__element_a27fcaf967679b868538db7822e193b2d}{Get\+\_\+default\+\_\+eta}} ()
+\item 
+\mbox{\Hypertarget{classmp__element_a8a15d041d4320707259b37e152a7569b}\label{classmp__element_a8a15d041d4320707259b37e152a7569b}} 
+void {\bfseries Calc\+\_\+local\+\_\+m} ()
+\item 
+\mbox{\Hypertarget{classmp__element_abc4b0c4e5555a2bcedd03cef81636e64}\label{classmp__element_abc4b0c4e5555a2bcedd03cef81636e64}} 
+void {\bfseries Calc\+\_\+local\+\_\+c} ()
+\item 
+\mbox{\Hypertarget{classmp__element_a3174b6a39f0df952994604aac422afc2}\label{classmp__element_a3174b6a39f0df952994604aac422afc2}} 
+void {\bfseries Calc\+\_\+local\+\_\+mc} (double dt\+\_\+czm)
+\item 
+\mbox{\Hypertarget{classmp__element_a551aed4441f2387f4130a8e1a96b226f}\label{classmp__element_a551aed4441f2387f4130a8e1a96b226f}} 
+void {\bfseries Calc\+\_\+\+KE} (const double $\ast$velo)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classmp__element_a40915855bc0f66b4b991fbb888624732}{D}}
+\item 
+\mbox{\Hypertarget{classmp__element_acdfccc2ab12e559476fe1f5735f9dcac}\label{classmp__element_acdfccc2ab12e559476fe1f5735f9dcac}} 
+double {\bfseries local\+\_\+k\+\_\+diff} \mbox{[}6\mbox{]}\mbox{[}6\mbox{]}
+\begin{DoxyCompactList}\small\item\em diffusivity matrix \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmp__element_a0e38677ae08b818be52d56dfdc2d063e}\label{classmp__element_a0e38677ae08b818be52d56dfdc2d063e}} 
+double {\bfseries local\+\_\+\+R\+\_\+diff} \mbox{[}6\mbox{]}
+\begin{DoxyCompactList}\small\item\em diffusion RHS vector \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmp__element_a2eb99b97fcd930e335e4ec421791d40d}\label{classmp__element_a2eb99b97fcd930e335e4ec421791d40d}} 
+double($\ast$ {\bfseries user\+\_\+eta} )(\mbox{\hyperlink{classmp__element}{mp\+\_\+element}} \&el) = nullptr
+\item 
+\mbox{\Hypertarget{classmp__element_a8eb572ae6a9494adef1a4f9dce5ccb25}\label{classmp__element_a8eb572ae6a9494adef1a4f9dce5ccb25}} 
+double {\bfseries element\+\_\+age} = 0
+\begin{DoxyCompactList}\small\item\em time since the oxide element has been created \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmp__element_af0a1992339a5965300baad7603eff225}\label{classmp__element_af0a1992339a5965300baad7603eff225}} 
+double {\bfseries rho} = 1e1
+\item 
+\mbox{\Hypertarget{classmp__element_afafcf0e8d161cd28688cc0c5630d84ee}\label{classmp__element_afafcf0e8d161cd28688cc0c5630d84ee}} 
+double {\bfseries alpha\+\_\+d} =0
+\item 
+\mbox{\Hypertarget{classmp__element_acfe350a2a696934b6312f20acac0d5f1}\label{classmp__element_acfe350a2a696934b6312f20acac0d5f1}} 
+double {\bfseries beta\+\_\+d} =0
+\item 
+\mbox{\Hypertarget{classmp__element_a064290a9102cbd20e2de7dd05ebcc0ab}\label{classmp__element_a064290a9102cbd20e2de7dd05ebcc0ab}} 
+double {\bfseries local\+\_\+m} \mbox{[}6\mbox{]}\mbox{[}6\mbox{]}
+\item 
+\mbox{\Hypertarget{classmp__element_a21ae6ac9b789baec8a95cc18204b33fd}\label{classmp__element_a21ae6ac9b789baec8a95cc18204b33fd}} 
+double {\bfseries local\+\_\+c} \mbox{[}6\mbox{]}\mbox{[}6\mbox{]}
+\item 
+\mbox{\Hypertarget{classmp__element_a651572174709646094ff5c98defa00d5}\label{classmp__element_a651572174709646094ff5c98defa00d5}} 
+double {\bfseries local\+\_\+mc} \mbox{[}6\mbox{]}\mbox{[}6\mbox{]}
+\item 
+\mbox{\Hypertarget{classmp__element_a52151b639cb897e1c6b999a33205a951}\label{classmp__element_a52151b639cb897e1c6b999a33205a951}} 
+double {\bfseries KE} = 0
+\end{DoxyCompactItemize}
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmp__element_aa9808098f13b16964f34f3f7bbace806}\label{classmp__element_aa9808098f13b16964f34f3f7bbace806}} 
+double {\bfseries qx} = 0
+\begin{DoxyCompactList}\small\item\em oxidant flux \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmp__element_a2ffffa54cf6da106d29e0b2fc73d57cd}\label{classmp__element_a2ffffa54cf6da106d29e0b2fc73d57cd}} 
+double {\bfseries qy} = 0
+\begin{DoxyCompactList}\small\item\em oxidant flux \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmp__element_a201c1a62032b74f4f1677d5cad50834b}\label{classmp__element_a201c1a62032b74f4f1677d5cad50834b}} 
+double {\bfseries qz} = 0
+\begin{DoxyCompactList}\small\item\em oxidant flux \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmp__element_aed9d1b0bf1db261137367202a420cf60}\label{classmp__element_aed9d1b0bf1db261137367202a420cf60}} 
+static double {\bfseries dt}
+\begin{DoxyCompactList}\small\item\em time step for diffusion/oxidation \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmp__element_a490c463716581051cc5c91625ad06d7c}\label{classmp__element_a490c463716581051cc5c91625ad06d7c}} 
+static double {\bfseries eta0}
+\begin{DoxyCompactList}\small\item\em stress free viscosity \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmp__element_a692dbcab6a53526701b03567d7f7f440}\label{classmp__element_a692dbcab6a53526701b03567d7f7f440}} 
+static double {\bfseries tau\+\_\+c}
+\begin{DoxyCompactList}\small\item\em critical stress \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmp__element_a6bf96bdee779c623d14ed5f3a740dab2}\label{classmp__element_a6bf96bdee779c623d14ed5f3a740dab2}} 
+static double {\bfseries min\+\_\+eta}
+\begin{DoxyCompactList}\small\item\em minimum viscosity allowed \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmp__element_a230d55d90e5ef3454dd396a414ae9494}\label{classmp__element_a230d55d90e5ef3454dd396a414ae9494}} 
+static double {\bfseries dt\+\_\+cr}
+\begin{DoxyCompactList}\small\item\em time step for creep \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmp__element_a5950627ce42372226b7c8e49f43cde50}\label{classmp__element_a5950627ce42372226b7c8e49f43cde50}} 
+static double {\bfseries eyring\+\_\+prefactor}
+\begin{DoxyCompactList}\small\item\em Eyring model parameter = 3.\+8e-\/23;. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmp__element_a89e5a7c5f047c84a6bbbcb664b3451dd}\label{classmp__element_a89e5a7c5f047c84a6bbbcb664b3451dd}} 
+static double {\bfseries eyring\+\_\+\+EoverR}
+\begin{DoxyCompactList}\small\item\em Eyring model parameter = 85638.\+7;. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmp__element_ab17940368b5e1b06108e96da88865f11}\label{classmp__element_ab17940368b5e1b06108e96da88865f11}} 
+static double {\bfseries eyring\+\_\+tau\+\_\+c}
+\begin{DoxyCompactList}\small\item\em Eyring model parameter = 0.\+1;. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class the inherits from elastic element but adds on diffusion and oxidation functionality 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmp__element_a0b1cfbcd420a52de9729772a265d19b2}\label{classmp__element_a0b1cfbcd420a52de9729772a265d19b2}} 
+\index{mp\_element@{mp\_element}!Calc\_flux@{Calc\_flux}}
+\index{Calc\_flux@{Calc\_flux}!mp\_element@{mp\_element}}
+\doxysubsubsection{\texorpdfstring{Calc\_flux()}{Calc\_flux()}}
+{\footnotesize\ttfamily void mp\+\_\+element\+::\+Calc\+\_\+flux (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classnode}{node}} $>$ \&}]{n\+\_\+list }\end{DoxyParamCaption})}
+
+calculate and store the element fluxes Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{dd/d8f/classmp__element_a0b1cfbcd420a52de9729772a265d19b2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmp__element_ad9cdf14bbdae1c8716a357cf400dae87}\label{classmp__element_ad9cdf14bbdae1c8716a357cf400dae87}} 
+\index{mp\_element@{mp\_element}!Calc\_local\_k\_diff@{Calc\_local\_k\_diff}}
+\index{Calc\_local\_k\_diff@{Calc\_local\_k\_diff}!mp\_element@{mp\_element}}
+\doxysubsubsection{\texorpdfstring{Calc\_local\_k\_diff()}{Calc\_local\_k\_diff()}}
+{\footnotesize\ttfamily void mp\+\_\+element\+::\+Calc\+\_\+local\+\_\+k\+\_\+diff (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+calculate and store the diffusivity matrix \mbox{\Hypertarget{classmp__element_ab08531ddff2b8dd1955869207a03ec3c}\label{classmp__element_ab08531ddff2b8dd1955869207a03ec3c}} 
+\index{mp\_element@{mp\_element}!Calc\_local\_R\_diff@{Calc\_local\_R\_diff}}
+\index{Calc\_local\_R\_diff@{Calc\_local\_R\_diff}!mp\_element@{mp\_element}}
+\doxysubsubsection{\texorpdfstring{Calc\_local\_R\_diff()}{Calc\_local\_R\_diff()}}
+{\footnotesize\ttfamily void mp\+\_\+element\+::\+Calc\+\_\+local\+\_\+\+R\+\_\+diff (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classnode}{node}} $>$ \&}]{n\+\_\+list }\end{DoxyParamCaption})}
+
+calculate and store the diffusivty RHS \mbox{\Hypertarget{classmp__element_a3f1e3b248f6fa09562ade22e696bd595}\label{classmp__element_a3f1e3b248f6fa09562ade22e696bd595}} 
+\index{mp\_element@{mp\_element}!Calc\_stored\_strains@{Calc\_stored\_strains}}
+\index{Calc\_stored\_strains@{Calc\_stored\_strains}!mp\_element@{mp\_element}}
+\doxysubsubsection{\texorpdfstring{Calc\_stored\_strains()}{Calc\_stored\_strains()}}
+{\footnotesize\ttfamily void mp\+\_\+element\+::\+Calc\+\_\+stored\+\_\+strains (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classnode}{node}} $>$ \&}]{n\+\_\+list }\end{DoxyParamCaption})}
+
+Calculate and store the stored strains, calls \mbox{\hyperlink{classelastic__element_a71cfe9d2dd42c72a2da04d8ca985e728}{elastic\+\_\+element\+::\+Calc\+\_\+stored\+\_\+strains}} Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d8f/classmp__element_a3f1e3b248f6fa09562ade22e696bd595_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmp__element_a4b4c21879c1789e632ab03688bbbe337}\label{classmp__element_a4b4c21879c1789e632ab03688bbbe337}} 
+\index{mp\_element@{mp\_element}!Calc\_stress@{Calc\_stress}}
+\index{Calc\_stress@{Calc\_stress}!mp\_element@{mp\_element}}
+\doxysubsubsection{\texorpdfstring{Calc\_stress()}{Calc\_stress()}}
+{\footnotesize\ttfamily void mp\+\_\+element\+::\+Calc\+\_\+stress (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classnode}{node}} $>$ \&}]{n\+\_\+list }\end{DoxyParamCaption})}
+
+calculate the stresses Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d8f/classmp__element_a4b4c21879c1789e632ab03688bbbe337_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d8f/classmp__element_a4b4c21879c1789e632ab03688bbbe337_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmp__element_a27fcaf967679b868538db7822e193b2d}\label{classmp__element_a27fcaf967679b868538db7822e193b2d}} 
+\index{mp\_element@{mp\_element}!Get\_default\_eta@{Get\_default\_eta}}
+\index{Get\_default\_eta@{Get\_default\_eta}!mp\_element@{mp\_element}}
+\doxysubsubsection{\texorpdfstring{Get\_default\_eta()}{Get\_default\_eta()}}
+{\footnotesize\ttfamily double mp\+\_\+element\+::\+Get\+\_\+default\+\_\+eta (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+function to calculate default eta Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d8f/classmp__element_a27fcaf967679b868538db7822e193b2d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d8f/classmp__element_a27fcaf967679b868538db7822e193b2d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmp__element_a7fc95e5de708f3d1d0ad151e914efd34}\label{classmp__element_a7fc95e5de708f3d1d0ad151e914efd34}} 
+\index{mp\_element@{mp\_element}!Get\_eta@{Get\_eta}}
+\index{Get\_eta@{Get\_eta}!mp\_element@{mp\_element}}
+\doxysubsubsection{\texorpdfstring{Get\_eta()}{Get\_eta()}}
+{\footnotesize\ttfamily double mp\+\_\+element\+::\+Get\+\_\+eta (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+function to calculate eta Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d8f/classmp__element_a7fc95e5de708f3d1d0ad151e914efd34_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d8f/classmp__element_a7fc95e5de708f3d1d0ad151e914efd34_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmp__element_a338b46257ebafbd833de1f139e50f4b4}\label{classmp__element_a338b46257ebafbd833de1f139e50f4b4}} 
+\index{mp\_element@{mp\_element}!Get\_eyring\_eta@{Get\_eyring\_eta}}
+\index{Get\_eyring\_eta@{Get\_eyring\_eta}!mp\_element@{mp\_element}}
+\doxysubsubsection{\texorpdfstring{Get\_eyring\_eta()}{Get\_eyring\_eta()}}
+{\footnotesize\ttfamily double mp\+\_\+element\+::\+Get\+\_\+eyring\+\_\+eta (\begin{DoxyParamCaption}\item[{double}]{eyring\+\_\+eta0,  }\item[{double}]{tau0 }\end{DoxyParamCaption})}
+
+function to calculate default eyring eta Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d8f/classmp__element_a338b46257ebafbd833de1f139e50f4b4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmp__element_abf04d438ec65a6df91073afeb88402c3}\label{classmp__element_abf04d438ec65a6df91073afeb88402c3}} 
+\index{mp\_element@{mp\_element}!Get\_eyring\_eta0@{Get\_eyring\_eta0}}
+\index{Get\_eyring\_eta0@{Get\_eyring\_eta0}!mp\_element@{mp\_element}}
+\doxysubsubsection{\texorpdfstring{Get\_eyring\_eta0()}{Get\_eyring\_eta0()}}
+{\footnotesize\ttfamily double mp\+\_\+element\+::\+Get\+\_\+eyring\+\_\+eta0 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+function to calculate eyring eta0 Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d8f/classmp__element_abf04d438ec65a6df91073afeb88402c3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmp__element_aa601498dd92a029f5b4a1f78d8be89cd}\label{classmp__element_aa601498dd92a029f5b4a1f78d8be89cd}} 
+\index{mp\_element@{mp\_element}!Get\_strain\_energy@{Get\_strain\_energy}}
+\index{Get\_strain\_energy@{Get\_strain\_energy}!mp\_element@{mp\_element}}
+\doxysubsubsection{\texorpdfstring{Get\_strain\_energy()}{Get\_strain\_energy()}}
+{\footnotesize\ttfamily double mp\+\_\+element\+::\+Get\+\_\+strain\+\_\+energy (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classnode}{node}} $>$ \&}]{n\+\_\+list }\end{DoxyParamCaption})}
+
+function to calculate the strain energy Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d8f/classmp__element_aa601498dd92a029f5b4a1f78d8be89cd_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmp__element_a61d86f786d25cbc32a9275cbb64a2f55}\label{classmp__element_a61d86f786d25cbc32a9275cbb64a2f55}} 
+\index{mp\_element@{mp\_element}!Get\_strain\_energy\_density@{Get\_strain\_energy\_density}}
+\index{Get\_strain\_energy\_density@{Get\_strain\_energy\_density}!mp\_element@{mp\_element}}
+\doxysubsubsection{\texorpdfstring{Get\_strain\_energy\_density()}{Get\_strain\_energy\_density()}}
+{\footnotesize\ttfamily double mp\+\_\+element\+::\+Get\+\_\+strain\+\_\+energy\+\_\+density (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classnode}{node}} $>$ \&}]{n\+\_\+list }\end{DoxyParamCaption})}
+
+function to get the strain energy density Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d8f/classmp__element_a61d86f786d25cbc32a9275cbb64a2f55_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d8f/classmp__element_a61d86f786d25cbc32a9275cbb64a2f55_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmp__element_a857673368befe293052dbabab47e61cc}\label{classmp__element_a857673368befe293052dbabab47e61cc}} 
+\index{mp\_element@{mp\_element}!Get\_tau0@{Get\_tau0}}
+\index{Get\_tau0@{Get\_tau0}!mp\_element@{mp\_element}}
+\doxysubsubsection{\texorpdfstring{Get\_tau0()}{Get\_tau0()}}
+{\footnotesize\ttfamily double mp\+\_\+element\+::\+Get\+\_\+tau0 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+function to calculate tau0 Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d8f/classmp__element_a857673368befe293052dbabab47e61cc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmp__element_aba6da5fa8ee212b96d4f5b2ba80eb550}\label{classmp__element_aba6da5fa8ee212b96d4f5b2ba80eb550}} 
+\index{mp\_element@{mp\_element}!interpolate\_displacement@{interpolate\_displacement}}
+\index{interpolate\_displacement@{interpolate\_displacement}!mp\_element@{mp\_element}}
+\doxysubsubsection{\texorpdfstring{interpolate\_displacement()}{interpolate\_displacement()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classpoint}{point}} mp\+\_\+element\+::interpolate\+\_\+displacement (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpoint}{point}}}]{pt,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classnode}{node}} $>$ \&}]{nlist }\end{DoxyParamCaption})}
+
+interpolate displacement at point pt Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d8f/classmp__element_aba6da5fa8ee212b96d4f5b2ba80eb550_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmp__element_ac60d4a6e316c9d953a33fa9dcaa5c7f3}\label{classmp__element_ac60d4a6e316c9d953a33fa9dcaa5c7f3}} 
+\index{mp\_element@{mp\_element}!Set\_creep\_strains@{Set\_creep\_strains}}
+\index{Set\_creep\_strains@{Set\_creep\_strains}!mp\_element@{mp\_element}}
+\doxysubsubsection{\texorpdfstring{Set\_creep\_strains()}{Set\_creep\_strains()}}
+{\footnotesize\ttfamily void mp\+\_\+element\+::\+Set\+\_\+creep\+\_\+strains (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classnode}{node}} $>$ \&}]{n\+\_\+list }\end{DoxyParamCaption})}
+
+set the creep strains from the mapped nodal values \mbox{\Hypertarget{classmp__element_a88c9b1f135570e13c34b5b68d8aa2e05}\label{classmp__element_a88c9b1f135570e13c34b5b68d8aa2e05}} 
+\index{mp\_element@{mp\_element}!Set\_mesh\_strains@{Set\_mesh\_strains}}
+\index{Set\_mesh\_strains@{Set\_mesh\_strains}!mp\_element@{mp\_element}}
+\doxysubsubsection{\texorpdfstring{Set\_mesh\_strains()}{Set\_mesh\_strains()}}
+{\footnotesize\ttfamily void mp\+\_\+element\+::\+Set\+\_\+mesh\+\_\+strains (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classnode}{node}} $>$ \&}]{n\+\_\+list }\end{DoxyParamCaption})}
+
+set the stored mesh strains from mapped nodal values \mbox{\Hypertarget{classmp__element_a729feffd816d133c26d40720821e9951}\label{classmp__element_a729feffd816d133c26d40720821e9951}} 
+\index{mp\_element@{mp\_element}!Solve\_creep@{Solve\_creep}}
+\index{Solve\_creep@{Solve\_creep}!mp\_element@{mp\_element}}
+\doxysubsubsection{\texorpdfstring{Solve\_creep()}{Solve\_creep()}}
+{\footnotesize\ttfamily void mp\+\_\+element\+::\+Solve\+\_\+creep (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classnode}{node}} $>$ \&}]{n\+\_\+list }\end{DoxyParamCaption})}
+
+solve the creep problem Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d8f/classmp__element_a729feffd816d133c26d40720821e9951_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmp__element_a40915855bc0f66b4b991fbb888624732}\label{classmp__element_a40915855bc0f66b4b991fbb888624732}} 
+\index{mp\_element@{mp\_element}!D@{D}}
+\index{D@{D}!mp\_element@{mp\_element}}
+\doxysubsubsection{\texorpdfstring{D}{D}}
+{\footnotesize\ttfamily double mp\+\_\+element\+::D}
+
+Diffusivity 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/support\+\_\+files/hpp/mp\+\_\+element.\+hpp\item 
+src/support\+\_\+files/cpp/mp\+\_\+element.\+cpp\end{DoxyCompactItemize}

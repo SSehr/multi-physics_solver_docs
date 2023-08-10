@@ -1,0 +1,63 @@
+\hypertarget{vtu_8hpp_source}{}\doxysection{vtu.\+hpp}
+\label{vtu_8hpp_source}\index{src/support\_files/hpp/vtu.hpp@{src/support\_files/hpp/vtu.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// header file for vtu file handling}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#ifndef VTU}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#define VTU}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}../../third\_party/tinyxml2.h"{}}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }\mbox{\hyperlink{classvtu_file}{vtuFile}}}
+\DoxyCodeLine{16 \{}
+\DoxyCodeLine{17     \textcolor{keyword}{public}:}
+\DoxyCodeLine{18         tinyxml2::XMLDocument doc;}
+\DoxyCodeLine{19         tinyxml2::XMLElement * pRoot;}
+\DoxyCodeLine{20         tinyxml2::XMLElement * pUG;}
+\DoxyCodeLine{21         tinyxml2::XMLElement * pPiece;}
+\DoxyCodeLine{22         tinyxml2::XMLElement * pPointData;}
+\DoxyCodeLine{23         tinyxml2::XMLElement * pCellData;}
+\DoxyCodeLine{24         tinyxml2::XMLElement * pPoints;}
+\DoxyCodeLine{25         tinyxml2::XMLElement * pCells;}
+\DoxyCodeLine{26         }
+\DoxyCodeLine{27         tinyxml2::XMLElement * pConnectivity;}
+\DoxyCodeLine{28         tinyxml2::XMLElement * pOffsets;}
+\DoxyCodeLine{29         tinyxml2::XMLElement * pTypes;}
+\DoxyCodeLine{30         tinyxml2::XMLElement * pPointsList;}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33         std::stringstream connectivity;}
+\DoxyCodeLine{34         std::stringstream offsets;}
+\DoxyCodeLine{35         std::stringstream types;}
+\DoxyCodeLine{36         std::stringstream points;}
+\DoxyCodeLine{37         }
+\DoxyCodeLine{38         \mbox{\hyperlink{classvtu_file_a0de780d55daf99bd0ef16e307f90a898}{vtuFile}}(\textcolor{keywordtype}{int} n\_cells, \textcolor{keywordtype}{int} n\_nodes);}
+\DoxyCodeLine{39         tinyxml2::XMLElement* \mbox{\hyperlink{classvtu_file_ae4e084a0bfe1869c196bbeb738b8b461}{Create\_element}}(std::string name, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* t, \textcolor{keywordtype}{int} n = 1);}
+\DoxyCodeLine{40         \textcolor{keywordtype}{void} \mbox{\hyperlink{classvtu_file_a308ee165ce8bf699a457126b7b49c029}{set\_and\_insert}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* text, tinyxml2::XMLElement * p, tinyxml2::XMLElement* parent);}
+\DoxyCodeLine{41         \textcolor{keywordtype}{void} \mbox{\hyperlink{classvtu_file_aa7ae82bfdecb67785ae29b91551a5aab}{set\_base}}();}
+\DoxyCodeLine{42         \textcolor{keywordtype}{void} \mbox{\hyperlink{classvtu_file_a944a2d2ef716046611d97e706dba42cd}{set\_PointData}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* text, std::string name, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* t, \textcolor{keywordtype}{int} n = 1);}
+\DoxyCodeLine{43         \textcolor{keywordtype}{void} \mbox{\hyperlink{classvtu_file_a3dc62dc934576f60099e717f91b2348c}{set\_CellData}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* text, std::string name, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* t, \textcolor{keywordtype}{int} n = 1);}
+\DoxyCodeLine{44         \textcolor{keywordtype}{void} \mbox{\hyperlink{classvtu_file_ae0bab7716fcb7c29340d2cce08194927}{set\_ExtraData}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* text, std::string name, \textcolor{keywordtype}{int} index = 0);}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46         \textcolor{keywordtype}{void} \mbox{\hyperlink{classvtu_file_a37d9f0187d7bb51032a1cbfc7b7397a6}{save}}(std::string file\_path);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{53 \textcolor{keyword}{inline} \textcolor{keywordtype}{double} clean\_value(\textcolor{keywordtype}{double} value)}
+\DoxyCodeLine{54 \{}
+\DoxyCodeLine{55     \textcolor{keywordflow}{if} (fabs(value) < 1e-\/20)}
+\DoxyCodeLine{56     \{}
+\DoxyCodeLine{57         value = 0;}
+\DoxyCodeLine{58     \}}
+\DoxyCodeLine{59     \textcolor{keywordflow}{return} value;}
+\DoxyCodeLine{60 \}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

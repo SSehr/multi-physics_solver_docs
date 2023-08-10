@@ -1,0 +1,70 @@
+\hypertarget{classconstraint}{}\doxysection{constraint Class Reference}
+\label{classconstraint}\index{constraint@{constraint}}
+
+
+{\ttfamily \#include $<$constraint.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classconstraint_af9fd04fc57740c37255a37a103b128bb}{constraint}} ()
+\item 
+double \mbox{\hyperlink{classconstraint_a2439398e48ad6cbaa14ad3cc82ca6bd9}{get\+\_\+value}} (double time)
+\item 
+\mbox{\hyperlink{classconstraint_a48f6372cfd09ccf4422525d943ce0bf2}{constraint}} (\mbox{\hyperlink{namespaceconstraint__type_a8a6187c745812b5023718836eaaf293f}{constraint\+\_\+type\+::type}} c\+\_\+type\+\_\+, double initial\+\_\+value\+\_\+, double rate\+\_\+, int node\+\_\+=0, int element\+\_\+=0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classconstraint_a369bd3dbf6c4f8678ece745649cd8f2d}\label{classconstraint_a369bd3dbf6c4f8678ece745649cd8f2d}} 
+int {\bfseries node} = 0
+\begin{DoxyCompactList}\small\item\em node number \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classconstraint_a3d471f7ad07bf19dfdf2e1f0ebd69b59}\label{classconstraint_a3d471f7ad07bf19dfdf2e1f0ebd69b59}} 
+int {\bfseries element} = 0
+\begin{DoxyCompactList}\small\item\em element index \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classconstraint_affee79c372a00ff8a41c43a8a2bb828f}\label{classconstraint_affee79c372a00ff8a41c43a8a2bb828f}} 
+double {\bfseries initial\+\_\+value} = 0
+\begin{DoxyCompactList}\small\item\em initial value \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classconstraint_a1d54bb9b258d8d90378c625ce951ded5}\label{classconstraint_a1d54bb9b258d8d90378c625ce951ded5}} 
+double {\bfseries rate} = 0
+\begin{DoxyCompactList}\small\item\em rate \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classconstraint_a4f0ad4b56227c15e77dc2d880db5e7e0}\label{classconstraint_a4f0ad4b56227c15e77dc2d880db5e7e0}} 
+\mbox{\hyperlink{namespaceconstraint__type_a8a6187c745812b5023718836eaaf293f}{constraint\+\_\+type\+::type}} {\bfseries c\+\_\+type}
+\begin{DoxyCompactList}\small\item\em type of constraint, see \mbox{\hyperlink{namespaceconstraint__type}{constraint\+\_\+type}} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classconstraint_a34d8ca83981fd9a80a568cb6a9a16562}\label{classconstraint_a34d8ca83981fd9a80a568cb6a9a16562}} 
+int {\bfseries offset} = 0
+\begin{DoxyCompactList}\small\item\em offset to account for multiple solution values at specific points. i.\+e. offset = 0 for concentration or constraints on x, 1 for constraints on y \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to apply a specific constraints to the finite element equations. ~\newline
+ Constraints follow a linear function with an initial value and rate. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classconstraint_af9fd04fc57740c37255a37a103b128bb}\label{classconstraint_af9fd04fc57740c37255a37a103b128bb}} 
+\index{constraint@{constraint}!constraint@{constraint}}
+\index{constraint@{constraint}!constraint@{constraint}}
+\doxysubsubsection{\texorpdfstring{constraint()}{constraint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily constraint\+::constraint (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+blank constructor \mbox{\Hypertarget{classconstraint_a48f6372cfd09ccf4422525d943ce0bf2}\label{classconstraint_a48f6372cfd09ccf4422525d943ce0bf2}} 
+\index{constraint@{constraint}!constraint@{constraint}}
+\index{constraint@{constraint}!constraint@{constraint}}
+\doxysubsubsection{\texorpdfstring{constraint()}{constraint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily constraint\+::constraint (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceconstraint__type_a8a6187c745812b5023718836eaaf293f}{constraint\+\_\+type\+::type}}}]{c\+\_\+type\+\_\+,  }\item[{double}]{initial\+\_\+value\+\_\+,  }\item[{double}]{rate\+\_\+,  }\item[{int}]{node\+\_\+ = {\ttfamily 0},  }\item[{int}]{element\+\_\+ = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+typically used constructor 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classconstraint_a2439398e48ad6cbaa14ad3cc82ca6bd9}\label{classconstraint_a2439398e48ad6cbaa14ad3cc82ca6bd9}} 
+\index{constraint@{constraint}!get\_value@{get\_value}}
+\index{get\_value@{get\_value}!constraint@{constraint}}
+\doxysubsubsection{\texorpdfstring{get\_value()}{get\_value()}}
+{\footnotesize\ttfamily double constraint\+::get\+\_\+value (\begin{DoxyParamCaption}\item[{double}]{time }\end{DoxyParamCaption})}
+
+returns constraint value at specific time 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/support\+\_\+files/hpp/constraint.\+hpp\item 
+src/support\+\_\+files/cpp/constraint.\+cpp\end{DoxyCompactItemize}

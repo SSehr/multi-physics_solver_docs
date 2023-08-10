@@ -1,0 +1,13 @@
+<map id="oxide_mesh::set_element_properties" name="oxide_mesh::set_element_properties">
+<area shape="rect" id="node1" title="set element properties" alt="" coords="1322,97,1493,139"/>
+<area shape="rect" id="node2" href="$de/d0a/classoxide__mesh.html#afa8c8b21113ac4aab42f3271c7181026" title="reassemble just the mechanics FEA arrays" alt="" coords="1114,97,1269,139"/>
+<area shape="rect" id="node8" href="$de/d0a/classoxide__mesh.html#a7684d3cd9f2e1aaeb2231f0c8dd9155b" title="map data from an old mesh onto the current one" alt="" coords="476,160,633,202"/>
+<area shape="rect" id="node9" href="$de/d0a/classoxide__mesh.html#ab9f8342f51795d5cc7ea8b16c0d205ce" title="reassemble both mechanics and diffusion FEA arrays" alt="" coords="1108,19,1274,61"/>
+<area shape="rect" id="node3" href="$de/d0a/classoxide__mesh.html#a9a35c42cc5c08eb05a80116a80fca872" title="check for crack growth" alt="" coords="689,72,846,114"/>
+<area shape="rect" id="node7" href="$de/d0a/classoxide__mesh.html#aa54f1f9caa28b0f4263ab5ae34fbd4cb" title="get the node numbers of the crack advance" alt="" coords="899,72,1055,114"/>
+<area shape="rect" id="node4" href="$de/d0a/classoxide__mesh.html#a926543deb442cfa9b203e46f7e2bea2d" title="run cracking simulation" alt="" coords="468,72,641,114"/>
+<area shape="rect" id="node5" href="$de/d0a/classoxide__mesh.html#ad3c124e5fd82ca502fe791baaa108048" title="run the main loop" alt="" coords="237,134,420,161"/>
+<area shape="rect" id="node6" href="$de/d0a/classoxide__mesh.html#a0478903f72d483ab779af8443ffbc48b" title="run a simulation" alt="" coords="5,134,189,161"/>
+<area shape="rect" id="node10" href="$de/d0a/classoxide__mesh.html#a966d48eb52443047d205992dcdcbca2e" title="rebuild arrays after crack changes used if crack is longer or shorter" alt="" coords="894,5,1060,47"/>
+<area shape="rect" id="node11" href="$de/d0a/classoxide__mesh.html#aa945ecb81b26ddbb4059e72ddcb82f9c" title="check to see if there is crack healing via contact IS THIS NEEDED???" alt="" coords="689,5,846,47"/>
+</map>

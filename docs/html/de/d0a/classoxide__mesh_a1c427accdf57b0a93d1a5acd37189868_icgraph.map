@@ -1,0 +1,11 @@
+<map id="oxide_mesh::assemble_mech" name="oxide_mesh::assemble_mech">
+<area shape="rect" id="node1" title="assemble just the mechanics problem" alt="" coords="1325,60,1520,87"/>
+<area shape="rect" id="node2" href="$de/d0a/classoxide__mesh.html#afa8c8b21113ac4aab42f3271c7181026" title="reassemble just the mechanics FEA arrays" alt="" coords="1117,19,1272,61"/>
+<area shape="rect" id="node8" href="$de/d0a/classoxide__mesh.html#a1f5f07e51349846b1f9bfbe42e187021" title="reassemble mechanics matrix after contact" alt="" coords="1111,86,1277,128"/>
+<area shape="rect" id="node3" href="$de/d0a/classoxide__mesh.html#a9a35c42cc5c08eb05a80116a80fca872" title="check for crack growth" alt="" coords="696,19,852,61"/>
+<area shape="rect" id="node7" href="$de/d0a/classoxide__mesh.html#aa54f1f9caa28b0f4263ab5ae34fbd4cb" title="get the node numbers of the crack advance" alt="" coords="907,23,1063,65"/>
+<area shape="rect" id="node4" href="$de/d0a/classoxide__mesh.html#a926543deb442cfa9b203e46f7e2bea2d" title="run cracking simulation" alt="" coords="468,22,641,64"/>
+<area shape="rect" id="node5" href="$de/d0a/classoxide__mesh.html#ad3c124e5fd82ca502fe791baaa108048" title="run the main loop" alt="" coords="237,60,420,87"/>
+<area shape="rect" id="node6" href="$de/d0a/classoxide__mesh.html#a0478903f72d483ab779af8443ffbc48b" title="run a simulation" alt="" coords="5,60,189,87"/>
+<area shape="rect" id="node9" href="$de/d0a/classoxide__mesh.html#a9bc3bf3819d3a59f146e462f90acd003" title="main solve function modified to handle crack contact this should be rectified with the main solve_mec..." alt="" coords="689,86,859,128"/>
+</map>

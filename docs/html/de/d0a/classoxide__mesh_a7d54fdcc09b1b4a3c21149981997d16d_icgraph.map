@@ -1,0 +1,6 @@
+<map id="oxide_mesh::find_poly_nodes" name="oxide_mesh::find_poly_nodes">
+<area shape="rect" id="node1" title="find the nodes on the material polygon" alt="" coords="670,5,822,47"/>
+<area shape="rect" id="node2" href="$de/d0a/classoxide__mesh.html#a318f53c3854fd3267a87e91d3f93ddba" title="get the nodes initially on the polygon before meshing" alt="" coords="468,5,622,47"/>
+<area shape="rect" id="node3" href="$de/d0a/classoxide__mesh.html#ad3c124e5fd82ca502fe791baaa108048" title="run the main loop" alt="" coords="237,13,420,40"/>
+<area shape="rect" id="node4" href="$de/d0a/classoxide__mesh.html#a0478903f72d483ab779af8443ffbc48b" title="run a simulation" alt="" coords="5,13,189,40"/>
+</map>

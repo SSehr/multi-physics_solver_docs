@@ -1,0 +1,5 @@
+<map id="oxide_mesh::copy_mesh" name="oxide_mesh::copy_mesh">
+<area shape="rect" id="node1" title="copy data from src mesh" alt="" coords="223,31,389,58"/>
+<area shape="rect" id="node2" href="$de/d0a/classoxide__mesh.html#aad38ff863fa9e3da0d037a23d7c398ad" title="copy mesh and clear arrays from src_mesh" alt="" coords="13,5,167,32"/>
+<area shape="rect" id="node3" href="$de/d0a/classoxide__mesh.html#aeb3f64b4e8acd2dd52d441b4ef95eef4" title="copy constructor" alt="" coords="5,56,175,83"/>
+</map>

@@ -1,0 +1,68 @@
+\hypertarget{semaphore_8hpp_source}{}\doxysection{semaphore.\+hpp}
+\label{semaphore_8hpp_source}\index{src/support\_files/hpp/semaphore.hpp@{src/support\_files/hpp/semaphore.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef SEMAPHORE}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define SEMAPHORE}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <chrono>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <ctime>}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <mutex>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <condition\_variable>}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classsemaphore}{semaphore}}}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22     \textcolor{keyword}{private}:}
+\DoxyCodeLine{23         \textcolor{comment}{// bool count = false;}}
+\DoxyCodeLine{24         \textcolor{keywordtype}{int} count = 0;}
+\DoxyCodeLine{25         std::mutex mtx;}
+\DoxyCodeLine{26         std::condition\_variable cv;}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \textcolor{keyword}{public}:}
+\DoxyCodeLine{29         \mbox{\hyperlink{classsemaphore}{semaphore}}(\textcolor{keywordtype}{int} count\_ = 0)}
+\DoxyCodeLine{30         \{}
+\DoxyCodeLine{31             count = count\_;}
+\DoxyCodeLine{32         \}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} notify()}
+\DoxyCodeLine{35         \{}
+\DoxyCodeLine{36             std::unique\_lock<std::mutex> lock(mtx);}
+\DoxyCodeLine{37             \textcolor{comment}{// count = true;}}
+\DoxyCodeLine{38             \textcolor{comment}{// std::stringstream msg;}}
+\DoxyCodeLine{39             \textcolor{comment}{// msg << "{}pre-\/notify count: "{} << count << "{} "{};}}
+\DoxyCodeLine{40             ++count;}
+\DoxyCodeLine{41             \textcolor{comment}{// msg << "{}post: "{} << count << std::endl;}}
+\DoxyCodeLine{42             \textcolor{comment}{// std::cout << msg.str();}}
+\DoxyCodeLine{43             cv.notify\_one();}
+\DoxyCodeLine{44             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{45         \}}
+\DoxyCodeLine{46         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} wait()}
+\DoxyCodeLine{47         \{}
+\DoxyCodeLine{48             \textcolor{comment}{// std::stringstream msg;}}
+\DoxyCodeLine{49             \textcolor{comment}{// msg << "{}wait count value: "{} << count << std::endl;}}
+\DoxyCodeLine{50             \textcolor{comment}{// std::cout << msg.str();}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52             std::unique\_lock<std::mutex> lock\_(mtx);}
+\DoxyCodeLine{53             cv.wait(lock\_, [\textcolor{keyword}{this}]() \{ \textcolor{keywordflow}{return} count == 1; \});}
+\DoxyCodeLine{54             \textcolor{comment}{// count = false;}}
+\DoxyCodeLine{55             -\/-\/count;}
+\DoxyCodeLine{56             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{57         \}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \};}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

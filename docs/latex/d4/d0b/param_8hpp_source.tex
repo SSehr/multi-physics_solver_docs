@@ -1,0 +1,44 @@
+\hypertarget{param_8hpp_source}{}\doxysection{param.\+hpp}
+\label{param_8hpp_source}\index{src/support\_files/hpp/param.hpp@{src/support\_files/hpp/param.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef PARAM}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define PARAM}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}triangular\_element.hpp"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{classparam}{param}}}
+\DoxyCodeLine{11 \{}
+\DoxyCodeLine{12     \textcolor{keyword}{public}:}
+\DoxyCodeLine{13         std::string \mbox{\hyperlink{classparam_a3658cc23183bbcf1bb53b8e6ad340135}{base\_path}}; }
+\DoxyCodeLine{14         std::string \mbox{\hyperlink{classparam_a898056ada0f91d0faa92c3dd5665cfbe}{file\_prefix}}; }
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16         \textcolor{keywordtype}{int} \mbox{\hyperlink{classparam_aee4e894493d0be7e746c947074dbd48b}{num\_growth\_steps}}; }
+\DoxyCodeLine{17         \textcolor{keywordtype}{int} \mbox{\hyperlink{classparam_ae42f387cfd0922b6fd9b12edbabceeef}{dump\_int}}; }
+\DoxyCodeLine{18         \textcolor{keywordtype}{double} \mbox{\hyperlink{classparam_a1c2e2c00d02319584576c3f1b1500da1}{dt}}; }
+\DoxyCodeLine{19         \textcolor{keywordtype}{double} \mbox{\hyperlink{classparam_a5b39941cfea40520f32dfe50855b6385}{dt\_cr}}; }
+\DoxyCodeLine{20         element\_type::type \mbox{\hyperlink{classparam_a95567a863206dd89c1aacdadcaea24f9}{el\_type}}; }
+\DoxyCodeLine{21         \textcolor{keywordtype}{double} \mbox{\hyperlink{classparam_a59c358ab0a13928fa758e384a5c52bdd}{min\_area}}; }
+\DoxyCodeLine{22         \textcolor{keywordtype}{double} \mbox{\hyperlink{classparam_a491d7654eed5f38a4dc589f9122ca544}{refine\_radius}}; }
+\DoxyCodeLine{23         \textcolor{keywordtype}{double} \mbox{\hyperlink{classparam_a500bd80e1cdf3efeaa3ada21197838cc}{grad\_rate}}; }
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25         \textcolor{keywordtype}{double} \mbox{\hyperlink{classparam_aa047c9c6d7fb87e3419e4c962e1f0df1}{min\_eta}}; }
+\DoxyCodeLine{26         \textcolor{keywordtype}{double} \mbox{\hyperlink{classparam_a3799b3b6f8a5ec1c4f6629d163374ca5}{eyring\_prefactor}}; }
+\DoxyCodeLine{27         \textcolor{keywordtype}{double} \mbox{\hyperlink{classparam_ae56abd6eeb56c39915675016ac97e74e}{eyring\_EoverR}}; }
+\DoxyCodeLine{28         \textcolor{keywordtype}{double} \mbox{\hyperlink{classparam_aa3aba995ad7cc786b53637dcce0de110}{eyring\_tau\_c}}; }
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classparam_a48a129686d76cfb65e6c8f96fd52ba5e}{output\_polygons}}; }
+\DoxyCodeLine{31         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classparam_aa5d4209dfe644c4f921ac9778356628b}{output\_timing}}; }
+\DoxyCodeLine{32         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classparam_acc9319c4733ae14684be2d0111703de5}{output\_segments}}; }
+\DoxyCodeLine{33         std::vector <std::vector <double>> \mbox{\hyperlink{classparam_aa4d1901afc9f7b6a0cb4ea792183524a}{mesh\_regions}}; }
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36         \mbox{\hyperlink{classparam_af854395e1a1976357881b9c9fb9b3d3e}{param}}();}
+\DoxyCodeLine{37         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classparam_ae5231462e47431bf69c9c7386e45d4c9}{store\_parameter}}(std::string in\_var\_name, std::string in\_val);}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

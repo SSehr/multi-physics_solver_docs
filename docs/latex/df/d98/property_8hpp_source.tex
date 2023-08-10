@@ -1,0 +1,47 @@
+\hypertarget{property_8hpp_source}{}\doxysection{property.\+hpp}
+\label{property_8hpp_source}\index{src/support\_files/hpp/property.hpp@{src/support\_files/hpp/property.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef PROPERTY}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define PROPERTY}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}mp\_element.hpp"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{typedef} double (*dfptr)(double);}
+\DoxyCodeLine{8 \textcolor{keyword}{typedef} double (*elfptr)(\mbox{\hyperlink{classmp__element}{mp\_element}} \&);}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{classproperty}{property}}}
+\DoxyCodeLine{11 \{}
+\DoxyCodeLine{12 \textcolor{keyword}{private}:}
+\DoxyCodeLine{13     \textcolor{comment}{/* data */}}
+\DoxyCodeLine{14     \textcolor{keywordtype}{double} default\_value;}
+\DoxyCodeLine{15     double (*user\_value\_function)(\textcolor{keywordtype}{double} \mbox{\hyperlink{classparam}{param}}) = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{16     double (*user\_value\_function2)(\mbox{\hyperlink{classmp__element}{mp\_element}} \&el) = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{17 \textcolor{keyword}{public}:}
+\DoxyCodeLine{18     \mbox{\hyperlink{classproperty}{property}}(\textcolor{keywordtype}{double} val\_);}
+\DoxyCodeLine{19     \mbox{\hyperlink{classproperty}{property}}(\textcolor{keywordtype}{double} (*user\_value\_function\_)(\textcolor{keywordtype}{double} param\_));}
+\DoxyCodeLine{20     \mbox{\hyperlink{classproperty}{property}}();}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \textcolor{keyword}{property}\& operator= (\textcolor{keyword}{const} \mbox{\hyperlink{classproperty}{property}} \&src\_prop);}
+\DoxyCodeLine{23     }
+\DoxyCodeLine{24     \textcolor{keywordtype}{double} get(\textcolor{keywordtype}{double} param\_ = 0);}
+\DoxyCodeLine{25     \textcolor{keywordtype}{void} set(\textcolor{keywordtype}{double} val\_);}
+\DoxyCodeLine{26     \textcolor{keywordtype}{void} set(\textcolor{keywordtype}{double} (*user\_value\_function\_)(\textcolor{keywordtype}{double} param\_));}
+\DoxyCodeLine{27     dfptr get\_function();}
+\DoxyCodeLine{28     elfptr get\_function2();}
+\DoxyCodeLine{29     \textcolor{keywordtype}{bool} store\_property(std::string prop\_name, std::string in\_var\_name, std::string in\_val);}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     \mbox{\hyperlink{classproperty}{property}}(\textcolor{keywordtype}{double} (*user\_value\_function2\_)(\mbox{\hyperlink{classmp__element}{mp\_element}} \&el\_));}
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} set(\textcolor{keywordtype}{double} (*user\_value\_function2\_)(\mbox{\hyperlink{classmp__element}{mp\_element}} \&el\_));}
+\DoxyCodeLine{33     \textcolor{keywordtype}{double} get(\mbox{\hyperlink{classmp__element}{mp\_element}} \&el);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     }
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

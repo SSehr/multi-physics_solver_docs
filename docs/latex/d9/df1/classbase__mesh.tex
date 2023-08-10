@@ -1,0 +1,219 @@
+\hypertarget{classbase__mesh}{}\doxysection{base\+\_\+mesh\texorpdfstring{$<$}{<} nclass, elclass \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classbase__mesh}\index{base\_mesh$<$ nclass, elclass $>$@{base\_mesh$<$ nclass, elclass $>$}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classbase__mesh_aeac7609881f89b1567c9ea6e8deb3d41}{save\+\_\+base\+\_\+mesh}} (std\+::string file\+\_\+path)
+\item 
+void \mbox{\hyperlink{classbase__mesh_a2be6fe9bede200f5bffc472a0d845b13}{load\+\_\+base\+\_\+mesh}} (std\+::string file\+\_\+path)
+\item 
+\mbox{\Hypertarget{classbase__mesh_adae76ccf67df1a1927766edd0b3ebaeb}\label{classbase__mesh_adae76ccf67df1a1927766edd0b3ebaeb}} 
+\mbox{\hyperlink{classbase__mesh}{base\+\_\+mesh}}$<$ nclass, elclass $>$ \& {\bfseries operator=} (const \mbox{\hyperlink{classbase__mesh}{base\+\_\+mesh}}$<$ nclass, elclass $>$ \&src\+\_\+mesh)
+\item 
+void \mbox{\hyperlink{classbase__mesh_ae6a84ba2990f11c581cae898011483c5}{save\+\_\+segments}} (std\+::string file\+\_\+path)
+\item 
+int \mbox{\hyperlink{classbase__mesh_aa5d09f7aad92b89f45f401cff16bbb9f}{pt\+\_\+in\+\_\+list}} (const \mbox{\hyperlink{classpoint}{point}} \&pt)
+\item 
+int \mbox{\hyperlink{classbase__mesh_a1cc96b26afdebb1b1f7426cc9e951d56}{locate\+\_\+point}} (\mbox{\hyperlink{classpoint}{point}} \&pt, int el\+\_\+index=0)
+\item 
+void \mbox{\hyperlink{classbase__mesh_a2b3320a5d15eee43a2ac0760a463e819}{find\+\_\+outer\+\_\+bounds}} ()
+\item 
+void \mbox{\hyperlink{classbase__mesh_a7dcead034ae859249aa85dd91a255e4c}{clean\+\_\+polygon}} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&poly)
+\item 
+void \mbox{\hyperlink{classbase__mesh_af48dbc2b81f42b06d6562355a7602a82}{merge\+\_\+segments}} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&new\+\_\+geometry)
+\item 
+void \mbox{\hyperlink{classbase__mesh_a43ec9bdc633b1554c6a88ca6debf653c}{create\+\_\+mesher\+\_\+inputs}} (std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \&new\+\_\+geometries)
+\item 
+void \mbox{\hyperlink{classbase__mesh_a4e2e47bd6ca96042d4042c8825cafbed}{create\+\_\+mesh}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbase__mesh_a3c508e03ecf595311e36b9dea597b3c3}\label{classbase__mesh_a3c508e03ecf595311e36b9dea597b3c3}} 
+std\+::vector$<$ nclass $>$ {\bfseries nodes}
+\begin{DoxyCompactList}\small\item\em vector of nodes \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbase__mesh_a34fa89b6885c145bd41ea8d8c2a821c0}\label{classbase__mesh_a34fa89b6885c145bd41ea8d8c2a821c0}} 
+std\+::vector$<$ elclass $>$ {\bfseries elements}
+\begin{DoxyCompactList}\small\item\em vector of elements \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbase__mesh_a0b2b77227027a2189ba71e6a9d27195c}\label{classbase__mesh_a0b2b77227027a2189ba71e6a9d27195c}} 
+unsigned int {\bfseries n\+\_\+nodes} = 0
+\begin{DoxyCompactList}\small\item\em number of nodes \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbase__mesh_a4f7571147bad19ccbca9b6d35b528948}\label{classbase__mesh_a4f7571147bad19ccbca9b6d35b528948}} 
+unsigned int {\bfseries n\+\_\+elements} = 0
+\begin{DoxyCompactList}\small\item\em number of elements \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbase__mesh_aaab541ee6be36ae81ee1a55685620207}\label{classbase__mesh_aaab541ee6be36ae81ee1a55685620207}} 
+std\+::vector$<$ std\+::vector$<$ int $>$ $>$ {\bfseries segments}
+\begin{DoxyCompactList}\small\item\em segments used to define geometry used for triangulation \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbase__mesh_af84cd39c5bf4c008233ff0366c2a5366}\label{classbase__mesh_af84cd39c5bf4c008233ff0366c2a5366}} 
+std\+::vector$<$ int $>$ {\bfseries segment\+\_\+markers}
+\begin{DoxyCompactList}\small\item\em list of segment markers for Triangle \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbase__mesh_aaab5355735cb0584af7572bb400990c7}\label{classbase__mesh_aaab5355735cb0584af7572bb400990c7}} 
+std\+::vector$<$ std\+::vector$<$ int $>$ $>$ {\bfseries outer\+\_\+segments}
+\begin{DoxyCompactList}\small\item\em list of the outer segments \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbase__mesh_ac45d6ce7e271c8a103c329dbd3ae052d}\label{classbase__mesh_ac45d6ce7e271c8a103c329dbd3ae052d}} 
+std\+::vector$<$ \mbox{\hyperlink{classmaterial}{material}} $>$ {\bfseries materials}
+\begin{DoxyCompactList}\small\item\em vector of the material domains \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbase__mesh_a3b0988a7117f8768e4f5879d0b305667}\label{classbase__mesh_a3b0988a7117f8768e4f5879d0b305667}} 
+element\+\_\+type\+::type {\bfseries el\+\_\+type} = element\+\_\+type\+::linear
+\begin{DoxyCompactList}\small\item\em element interpolation order used in the mesh \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbase__mesh_a686f2561d6251b9340cf48e7e92ac99b}\label{classbase__mesh_a686f2561d6251b9340cf48e7e92ac99b}} 
+symmetry\+\_\+type\+::type {\bfseries plane\+\_\+type} = symmetry\+\_\+type\+::plane\+\_\+strain
+\begin{DoxyCompactList}\small\item\em symmetry type used for elements in the mesh \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbase__mesh_acd930e366e4fc95ec1c04f6135372330}\label{classbase__mesh_acd930e366e4fc95ec1c04f6135372330}} 
+int {\bfseries base\+\_\+mesh\+\_\+ctr} = 0
+\begin{DoxyCompactList}\small\item\em counter for successive base meshes \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbase__mesh_a12823be9f274b46a43e7dd706ac944e7}\label{classbase__mesh_a12823be9f274b46a43e7dd706ac944e7}} 
+std\+::string {\bfseries base\+\_\+path}
+\begin{DoxyCompactList}\small\item\em base file path to store files \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbase__mesh_a93366695f8ea166a3cf663fae32f9508}\label{classbase__mesh_a93366695f8ea166a3cf663fae32f9508}} 
+std\+::string {\bfseries file\+\_\+prefix}
+\begin{DoxyCompactList}\small\item\em file prefix used to prepend to files \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbase__mesh_a09faee56fabb3dd851b420c3cbc4ed44}\label{classbase__mesh_a09faee56fabb3dd851b420c3cbc4ed44}} 
+std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ {\bfseries outer\+\_\+bounds}
+\begin{DoxyCompactList}\small\item\em outer bounds of the mesh \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbase__mesh_afcc7cb12170ff8c78ba2e59726e14151}\label{classbase__mesh_afcc7cb12170ff8c78ba2e59726e14151}} 
+double {\bfseries default\+\_\+growth\+\_\+rate}
+\begin{DoxyCompactList}\small\item\em rate at which element size is allowed to grow \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbase__mesh_a64d37b1f606423e438deeee6682c3098}\label{classbase__mesh_a64d37b1f606423e438deeee6682c3098}} 
+double {\bfseries default\+\_\+refined\+\_\+zone\+\_\+size}
+\begin{DoxyCompactList}\small\item\em size of area using smallest elements \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbase__mesh_ae63a71cce641bb6bf100f3dd460e7d51}\label{classbase__mesh_ae63a71cce641bb6bf100f3dd460e7d51}} 
+std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ {\bfseries refined\+\_\+pts}
+\begin{DoxyCompactList}\small\item\em list of points to refine from \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbase__mesh_af1b28460ab4782f963ad611c890f5315}\label{classbase__mesh_af1b28460ab4782f963ad611c890f5315}} 
+std\+::vector$<$ double $>$ {\bfseries refined\+\_\+zone\+\_\+sizes}
+\begin{DoxyCompactList}\small\item\em list of different refined zone sizes \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbase__mesh_ac86f9dcc61813e7d61c29003429e3909}\label{classbase__mesh_ac86f9dcc61813e7d61c29003429e3909}} 
+double {\bfseries min\+\_\+area}
+\begin{DoxyCompactList}\small\item\em smallest element area for line refinement \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbase__mesh_a1618b2dd4f6050329908cf83488f1a2b}\label{classbase__mesh_a1618b2dd4f6050329908cf83488f1a2b}} 
+double {\bfseries min\+\_\+area\+\_\+tip}
+\begin{DoxyCompactList}\small\item\em smallest element area for point refinement \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbase__mesh_ae1ec297f56fbf9407171842d91485919}\label{classbase__mesh_ae1ec297f56fbf9407171842d91485919}} 
+std\+::vector$<$ double $>$ {\bfseries growth\+\_\+rates}
+\begin{DoxyCompactList}\small\item\em rates element sizes can grow \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbase__mesh_aa9a11a1a47fbafb00b36b959f5bd0c8c}\label{classbase__mesh_aa9a11a1a47fbafb00b36b959f5bd0c8c}} 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ {\bfseries mesh\+\_\+regions}
+\begin{DoxyCompactList}\small\item\em regions for different mesh \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbase__mesh_a8d36389d57ccfb0f9bcba4ed39f911e4}\label{classbase__mesh_a8d36389d57ccfb0f9bcba4ed39f911e4}} 
+std\+::string {\bfseries flags} = \char`\"{}pz\+AQnuaq\char`\"{}
+\begin{DoxyCompactList}\small\item\em flags for Triangle with linear elements \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbase__mesh_a86012390fc7815bf0714346c98ba6763}\label{classbase__mesh_a86012390fc7815bf0714346c98ba6763}} 
+std\+::string {\bfseries quad\+\_\+flags} = \char`\"{}pzq15\+AQnuao2\char`\"{}
+\begin{DoxyCompactList}\small\item\em flags for Triangle with quadratic elements \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbase__mesh_a07b3837133fd26a4b9b7c10379ce1296}\label{classbase__mesh_a07b3837133fd26a4b9b7c10379ce1296}} 
+std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ {\bfseries refined\+\_\+line}
+\begin{DoxyCompactList}\small\item\em line of points to refine elemente near \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbase__mesh_affe9db04fe81cb56fbca7ae374fef028}\label{classbase__mesh_affe9db04fe81cb56fbca7ae374fef028}} 
+double {\bfseries min\+\_\+angle} = 15
+\begin{DoxyCompactList}\small\item\em minimum angle an element is allowed to have \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classbase__mesh_a7dcead034ae859249aa85dd91a255e4c}\label{classbase__mesh_a7dcead034ae859249aa85dd91a255e4c}} 
+\index{base\_mesh$<$ nclass, elclass $>$@{base\_mesh$<$ nclass, elclass $>$}!clean\_polygon@{clean\_polygon}}
+\index{clean\_polygon@{clean\_polygon}!base\_mesh$<$ nclass, elclass $>$@{base\_mesh$<$ nclass, elclass $>$}}
+\doxysubsubsection{\texorpdfstring{clean\_polygon()}{clean\_polygon()}}
+{\footnotesize\ttfamily template$<$class nclass , class elclass $>$ \\
+void \mbox{\hyperlink{classbase__mesh}{base\+\_\+mesh}}$<$ nclass, elclass $>$\+::clean\+\_\+polygon (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{poly }\end{DoxyParamCaption})}
+
+remove extraneous points or those too close to others from a polygon \mbox{\Hypertarget{classbase__mesh_a4e2e47bd6ca96042d4042c8825cafbed}\label{classbase__mesh_a4e2e47bd6ca96042d4042c8825cafbed}} 
+\index{base\_mesh$<$ nclass, elclass $>$@{base\_mesh$<$ nclass, elclass $>$}!create\_mesh@{create\_mesh}}
+\index{create\_mesh@{create\_mesh}!base\_mesh$<$ nclass, elclass $>$@{base\_mesh$<$ nclass, elclass $>$}}
+\doxysubsubsection{\texorpdfstring{create\_mesh()}{create\_mesh()}}
+{\footnotesize\ttfamily template$<$class nclass , class elclass $>$ \\
+void \mbox{\hyperlink{classbase__mesh}{base\+\_\+mesh}}$<$ nclass, elclass $>$\+::create\+\_\+mesh}
+
+use Triangle to create the triangulation and then store the nodes and elements Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{d9/df1/classbase__mesh_a4e2e47bd6ca96042d4042c8825cafbed_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classbase__mesh_a43ec9bdc633b1554c6a88ca6debf653c}\label{classbase__mesh_a43ec9bdc633b1554c6a88ca6debf653c}} 
+\index{base\_mesh$<$ nclass, elclass $>$@{base\_mesh$<$ nclass, elclass $>$}!create\_mesher\_inputs@{create\_mesher\_inputs}}
+\index{create\_mesher\_inputs@{create\_mesher\_inputs}!base\_mesh$<$ nclass, elclass $>$@{base\_mesh$<$ nclass, elclass $>$}}
+\doxysubsubsection{\texorpdfstring{create\_mesher\_inputs()}{create\_mesher\_inputs()}}
+{\footnotesize\ttfamily template$<$class nclass , class elclass $>$ \\
+void \mbox{\hyperlink{classbase__mesh}{base\+\_\+mesh}}$<$ nclass, elclass $>$\+::create\+\_\+mesher\+\_\+inputs (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \&}]{new\+\_\+geometries }\end{DoxyParamCaption})}
+
+create the PSLG for Triangle \mbox{\Hypertarget{classbase__mesh_a2b3320a5d15eee43a2ac0760a463e819}\label{classbase__mesh_a2b3320a5d15eee43a2ac0760a463e819}} 
+\index{base\_mesh$<$ nclass, elclass $>$@{base\_mesh$<$ nclass, elclass $>$}!find\_outer\_bounds@{find\_outer\_bounds}}
+\index{find\_outer\_bounds@{find\_outer\_bounds}!base\_mesh$<$ nclass, elclass $>$@{base\_mesh$<$ nclass, elclass $>$}}
+\doxysubsubsection{\texorpdfstring{find\_outer\_bounds()}{find\_outer\_bounds()}}
+{\footnotesize\ttfamily template$<$class nclass , class elclass $>$ \\
+void \mbox{\hyperlink{classbase__mesh}{base\+\_\+mesh}}$<$ nclass, elclass $>$\+::find\+\_\+outer\+\_\+bounds}
+
+find the outer bounds of the mesh, stored in outer\+\_\+bounds \mbox{\Hypertarget{classbase__mesh_a2be6fe9bede200f5bffc472a0d845b13}\label{classbase__mesh_a2be6fe9bede200f5bffc472a0d845b13}} 
+\index{base\_mesh$<$ nclass, elclass $>$@{base\_mesh$<$ nclass, elclass $>$}!load\_base\_mesh@{load\_base\_mesh}}
+\index{load\_base\_mesh@{load\_base\_mesh}!base\_mesh$<$ nclass, elclass $>$@{base\_mesh$<$ nclass, elclass $>$}}
+\doxysubsubsection{\texorpdfstring{load\_base\_mesh()}{load\_base\_mesh()}}
+{\footnotesize\ttfamily template$<$class nclass , class elclass $>$ \\
+void \mbox{\hyperlink{classbase__mesh}{base\+\_\+mesh}}$<$ nclass, elclass $>$\+::load\+\_\+base\+\_\+mesh (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+\_\+path }\end{DoxyParamCaption})}
+
+load the base mesh, but not anything built on the template \mbox{\Hypertarget{classbase__mesh_a1cc96b26afdebb1b1f7426cc9e951d56}\label{classbase__mesh_a1cc96b26afdebb1b1f7426cc9e951d56}} 
+\index{base\_mesh$<$ nclass, elclass $>$@{base\_mesh$<$ nclass, elclass $>$}!locate\_point@{locate\_point}}
+\index{locate\_point@{locate\_point}!base\_mesh$<$ nclass, elclass $>$@{base\_mesh$<$ nclass, elclass $>$}}
+\doxysubsubsection{\texorpdfstring{locate\_point()}{locate\_point()}}
+{\footnotesize\ttfamily template$<$class nclass , class elclass $>$ \\
+int \mbox{\hyperlink{classbase__mesh}{base\+\_\+mesh}}$<$ nclass, elclass $>$\+::locate\+\_\+point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpoint}{point}} \&}]{pt,  }\item[{int}]{el\+\_\+index = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+determine which element a point is in, potentially given a guess element index Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/df1/classbase__mesh_a1cc96b26afdebb1b1f7426cc9e951d56_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classbase__mesh_af48dbc2b81f42b06d6562355a7602a82}\label{classbase__mesh_af48dbc2b81f42b06d6562355a7602a82}} 
+\index{base\_mesh$<$ nclass, elclass $>$@{base\_mesh$<$ nclass, elclass $>$}!merge\_segments@{merge\_segments}}
+\index{merge\_segments@{merge\_segments}!base\_mesh$<$ nclass, elclass $>$@{base\_mesh$<$ nclass, elclass $>$}}
+\doxysubsubsection{\texorpdfstring{merge\_segments()}{merge\_segments()}}
+{\footnotesize\ttfamily template$<$class nclass , class elclass $>$ \\
+void \mbox{\hyperlink{classbase__mesh}{base\+\_\+mesh}}$<$ nclass, elclass $>$\+::merge\+\_\+segments (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{new\+\_\+geometry }\end{DoxyParamCaption})}
+
+merge a new polygon into the list of segments for the PSLG \mbox{\Hypertarget{classbase__mesh_aa5d09f7aad92b89f45f401cff16bbb9f}\label{classbase__mesh_aa5d09f7aad92b89f45f401cff16bbb9f}} 
+\index{base\_mesh$<$ nclass, elclass $>$@{base\_mesh$<$ nclass, elclass $>$}!pt\_in\_list@{pt\_in\_list}}
+\index{pt\_in\_list@{pt\_in\_list}!base\_mesh$<$ nclass, elclass $>$@{base\_mesh$<$ nclass, elclass $>$}}
+\doxysubsubsection{\texorpdfstring{pt\_in\_list()}{pt\_in\_list()}}
+{\footnotesize\ttfamily template$<$class nclass , class elclass $>$ \\
+int \mbox{\hyperlink{classbase__mesh}{base\+\_\+mesh}}$<$ nclass, elclass $>$\+::pt\+\_\+in\+\_\+list (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classpoint}{point}} \&}]{pt }\end{DoxyParamCaption})}
+
+check to see if a point is in the node list, if so return the index \mbox{\Hypertarget{classbase__mesh_aeac7609881f89b1567c9ea6e8deb3d41}\label{classbase__mesh_aeac7609881f89b1567c9ea6e8deb3d41}} 
+\index{base\_mesh$<$ nclass, elclass $>$@{base\_mesh$<$ nclass, elclass $>$}!save\_base\_mesh@{save\_base\_mesh}}
+\index{save\_base\_mesh@{save\_base\_mesh}!base\_mesh$<$ nclass, elclass $>$@{base\_mesh$<$ nclass, elclass $>$}}
+\doxysubsubsection{\texorpdfstring{save\_base\_mesh()}{save\_base\_mesh()}}
+{\footnotesize\ttfamily template$<$class nclass , class elclass $>$ \\
+void \mbox{\hyperlink{classbase__mesh}{base\+\_\+mesh}}$<$ nclass, elclass $>$\+::save\+\_\+base\+\_\+mesh (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+\_\+path }\end{DoxyParamCaption})}
+
+Save the base mesh, but not anything built on the template Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/df1/classbase__mesh_aeac7609881f89b1567c9ea6e8deb3d41_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classbase__mesh_ae6a84ba2990f11c581cae898011483c5}\label{classbase__mesh_ae6a84ba2990f11c581cae898011483c5}} 
+\index{base\_mesh$<$ nclass, elclass $>$@{base\_mesh$<$ nclass, elclass $>$}!save\_segments@{save\_segments}}
+\index{save\_segments@{save\_segments}!base\_mesh$<$ nclass, elclass $>$@{base\_mesh$<$ nclass, elclass $>$}}
+\doxysubsubsection{\texorpdfstring{save\_segments()}{save\_segments()}}
+{\footnotesize\ttfamily template$<$class nclass , class elclass $>$ \\
+void \mbox{\hyperlink{classbase__mesh}{base\+\_\+mesh}}$<$ nclass, elclass $>$\+::save\+\_\+segments (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+\_\+path }\end{DoxyParamCaption})}
+
+save the segments used in the PSLG Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/df1/classbase__mesh_ae6a84ba2990f11c581cae898011483c5_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/oxidation/hpp/base\+\_\+mesh.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,825 @@
+\hypertarget{base__mesh_8hpp_source}{}\doxysection{base\+\_\+mesh.\+hpp}
+\label{base__mesh_8hpp_source}\index{src/oxidation/hpp/base\_mesh.hpp@{src/oxidation/hpp/base\_mesh.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef BASE\_MESH}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define BASE\_MESH}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#ifdef SINGLE}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define REAL float}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#else }\textcolor{comment}{/* not SINGLE */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define REAL double}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* not SINGLE */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{18 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{20 \textcolor{preprocessor}{    \#include "{}../../third\_party/triangle.h"{}}}
+\DoxyCodeLine{21 \}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}../../support\_files/hpp/point.hpp"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}../../support\_files/hpp/triangular\_element.hpp"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}../../support\_files/hpp/vtu.hpp"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}../../support\_files/hpp/material.hpp"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}../../support\_files/hpp/timer.hpp"{}}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{extern} \textcolor{keywordtype}{double} *xtips, *ytips, *rcs, *minArea0s, *grs;}
+\DoxyCodeLine{30 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} ntips;}
+\DoxyCodeLine{31 \textcolor{keyword}{extern} \textcolor{keywordtype}{double} *xpts, *ypts, rc, minArea0, gr;}
+\DoxyCodeLine{32 \textcolor{keyword}{extern} \textcolor{keywordtype}{int} npts;}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{template} <\textcolor{keyword}{class} n\textcolor{keyword}{class}, \textcolor{keyword}{class} el\textcolor{keyword}{class}>}
+\DoxyCodeLine{35 \textcolor{keyword}{class }\mbox{\hyperlink{classbase__mesh}{base\_mesh}}}
+\DoxyCodeLine{36 \{}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \textcolor{keyword}{public}:}
+\DoxyCodeLine{39         std::vector<nclass> \mbox{\hyperlink{classbase__mesh_a3c508e03ecf595311e36b9dea597b3c3}{nodes}}; }
+\DoxyCodeLine{40         std::vector<elclass> \mbox{\hyperlink{classbase__mesh_a34fa89b6885c145bd41ea8d8c2a821c0}{elements}}; }
+\DoxyCodeLine{41         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{classbase__mesh_a0b2b77227027a2189ba71e6a9d27195c}{n\_nodes}} = 0; }
+\DoxyCodeLine{42         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{classbase__mesh_a4f7571147bad19ccbca9b6d35b528948}{n\_elements}} = 0; }
+\DoxyCodeLine{43         std::vector < std::vector <int> > \mbox{\hyperlink{classbase__mesh_aaab541ee6be36ae81ee1a55685620207}{segments}}; }
+\DoxyCodeLine{44         std::vector<int> \mbox{\hyperlink{classbase__mesh_af84cd39c5bf4c008233ff0366c2a5366}{segment\_markers}}; }
+\DoxyCodeLine{45         std::vector<std::vector<int>> \mbox{\hyperlink{classbase__mesh_aaab5355735cb0584af7572bb400990c7}{outer\_segments}}; }
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47         std::vector <material> \mbox{\hyperlink{classbase__mesh_ac45d6ce7e271c8a103c329dbd3ae052d}{materials}}; }
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49         element\_type::type \mbox{\hyperlink{classbase__mesh_a3b0988a7117f8768e4f5879d0b305667}{el\_type}} = element\_type::linear; }
+\DoxyCodeLine{50         symmetry\_type::type \mbox{\hyperlink{classbase__mesh_a686f2561d6251b9340cf48e7e92ac99b}{plane\_type}} = symmetry\_type::plane\_strain; }
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52         \mbox{\hyperlink{classbase__mesh}{base\_mesh}}();}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbase__mesh_aeac7609881f89b1567c9ea6e8deb3d41}{save\_base\_mesh}}(std::string file\_path);}
+\DoxyCodeLine{55         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbase__mesh_a2be6fe9bede200f5bffc472a0d845b13}{load\_base\_mesh}}(std::string file\_path);}
+\DoxyCodeLine{56         \mbox{\hyperlink{classbase__mesh}{base\_mesh<nclass,elclass>}}\& operator= (\textcolor{keyword}{const} \mbox{\hyperlink{classbase__mesh}{base\_mesh<nclass,elclass>}} \&src\_mesh);}
+\DoxyCodeLine{57         }
+\DoxyCodeLine{58         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbase__mesh_ae6a84ba2990f11c581cae898011483c5}{save\_segments}}(std::string file\_path);}
+\DoxyCodeLine{59         \textcolor{keywordtype}{int} \mbox{\hyperlink{classbase__mesh_aa5d09f7aad92b89f45f401cff16bbb9f}{pt\_in\_list}}(\textcolor{keyword}{const} \mbox{\hyperlink{classpoint}{point}} \&pt);}
+\DoxyCodeLine{60         \textcolor{keywordtype}{int} \mbox{\hyperlink{classbase__mesh_a1cc96b26afdebb1b1f7426cc9e951d56}{locate\_point}}(\mbox{\hyperlink{classpoint}{point}} \&pt, \textcolor{keywordtype}{int} el\_index = 0);}
+\DoxyCodeLine{61         \textcolor{keywordtype}{int} \mbox{\hyperlink{classbase__mesh_acd930e366e4fc95ec1c04f6135372330}{base\_mesh\_ctr}} = 0; }
+\DoxyCodeLine{62         std::string \mbox{\hyperlink{classbase__mesh_a12823be9f274b46a43e7dd706ac944e7}{base\_path}}; }
+\DoxyCodeLine{63         std::string \mbox{\hyperlink{classbase__mesh_a93366695f8ea166a3cf663fae32f9508}{file\_prefix}}; }
+\DoxyCodeLine{64         std::vector<point> \mbox{\hyperlink{classbase__mesh_a09faee56fabb3dd851b420c3cbc4ed44}{outer\_bounds}}; }
+\DoxyCodeLine{65         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbase__mesh_a2b3320a5d15eee43a2ac0760a463e819}{find\_outer\_bounds}}();}
+\DoxyCodeLine{66         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbase__mesh_a7dcead034ae859249aa85dd91a255e4c}{clean\_polygon}}(std::vector<point> \&poly);}
+\DoxyCodeLine{67         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbase__mesh_af48dbc2b81f42b06d6562355a7602a82}{merge\_segments}}(std::vector<point> \&new\_geometry);}
+\DoxyCodeLine{68         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbase__mesh_a43ec9bdc633b1554c6a88ca6debf653c}{create\_mesher\_inputs}}(std::vector<std::vector<point>> \&new\_geometries);}
+\DoxyCodeLine{69         \textcolor{keywordtype}{void} \mbox{\hyperlink{classbase__mesh_a4e2e47bd6ca96042d4042c8825cafbed}{create\_mesh}}();}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71         \textcolor{keywordtype}{double} \mbox{\hyperlink{classbase__mesh_afcc7cb12170ff8c78ba2e59726e14151}{default\_growth\_rate}}; }
+\DoxyCodeLine{72         \textcolor{keywordtype}{double} \mbox{\hyperlink{classbase__mesh_a64d37b1f606423e438deeee6682c3098}{default\_refined\_zone\_size}}; }
+\DoxyCodeLine{73         std::vector<point> \mbox{\hyperlink{classbase__mesh_ae63a71cce641bb6bf100f3dd460e7d51}{refined\_pts}}; }
+\DoxyCodeLine{74         std::vector<double> \mbox{\hyperlink{classbase__mesh_af1b28460ab4782f963ad611c890f5315}{refined\_zone\_sizes}}; }
+\DoxyCodeLine{75         \textcolor{keywordtype}{double} \mbox{\hyperlink{classbase__mesh_ac86f9dcc61813e7d61c29003429e3909}{min\_area}}; }
+\DoxyCodeLine{76         \textcolor{keywordtype}{double} \mbox{\hyperlink{classbase__mesh_a1618b2dd4f6050329908cf83488f1a2b}{min\_area\_tip}}; }
+\DoxyCodeLine{77         std::vector<double> \mbox{\hyperlink{classbase__mesh_ae1ec297f56fbf9407171842d91485919}{growth\_rates}}; }
+\DoxyCodeLine{78         std::vector <std::vector <double>> \mbox{\hyperlink{classbase__mesh_aa9a11a1a47fbafb00b36b959f5bd0c8c}{mesh\_regions}}; }
+\DoxyCodeLine{79         std::string \mbox{\hyperlink{classbase__mesh_a8d36389d57ccfb0f9bcba4ed39f911e4}{flags}} = \textcolor{stringliteral}{"{}pzAQnuaq"{}}; }
+\DoxyCodeLine{80         std::string \mbox{\hyperlink{classbase__mesh_a86012390fc7815bf0714346c98ba6763}{quad\_flags}} = \textcolor{stringliteral}{"{}pzq15AQnuao2"{}}; }
+\DoxyCodeLine{81         std::vector<point> \mbox{\hyperlink{classbase__mesh_a07b3837133fd26a4b9b7c10379ce1296}{refined\_line}}; }
+\DoxyCodeLine{82         \textcolor{keywordtype}{double} \mbox{\hyperlink{classbase__mesh_affe9db04fe81cb56fbca7ae374fef028}{min\_angle}} = 15; }
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \};}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{keyword}{template} <\textcolor{keyword}{class} n\textcolor{keyword}{class}, \textcolor{keyword}{class} el\textcolor{keyword}{class}>}
+\DoxyCodeLine{87 \mbox{\hyperlink{classbase__mesh}{base\_mesh<nclass,elclass>::base\_mesh}}()}
+\DoxyCodeLine{88 \{\}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 \textcolor{keyword}{template} <\textcolor{keyword}{class} n\textcolor{keyword}{class}, \textcolor{keyword}{class} el\textcolor{keyword}{class}>}
+\DoxyCodeLine{91 \mbox{\hyperlink{classbase__mesh}{base\_mesh<nclass,elclass>}}\& \mbox{\hyperlink{classbase__mesh}{base\_mesh<nclass,elclass>::operator= }}(\textcolor{keyword}{const} \mbox{\hyperlink{classbase__mesh}{base\_mesh<nclass,elclass>}} \&src\_mesh)}
+\DoxyCodeLine{92 \{}
+\DoxyCodeLine{93     n\_nodes = src\_mesh.\mbox{\hyperlink{classbase__mesh_a0b2b77227027a2189ba71e6a9d27195c}{n\_nodes}};}
+\DoxyCodeLine{94     nodes = src\_mesh.\mbox{\hyperlink{classbase__mesh_a3c508e03ecf595311e36b9dea597b3c3}{nodes}};}
+\DoxyCodeLine{95     n\_elements = src\_mesh.\mbox{\hyperlink{classbase__mesh_a4f7571147bad19ccbca9b6d35b528948}{n\_elements}};}
+\DoxyCodeLine{96     elements = src\_mesh.\mbox{\hyperlink{classbase__mesh_a34fa89b6885c145bd41ea8d8c2a821c0}{elements}};}
+\DoxyCodeLine{97     min\_area = src\_mesh.\mbox{\hyperlink{classbase__mesh_ac86f9dcc61813e7d61c29003429e3909}{min\_area}};}
+\DoxyCodeLine{98     default\_growth\_rate = src\_mesh.\mbox{\hyperlink{classbase__mesh_afcc7cb12170ff8c78ba2e59726e14151}{default\_growth\_rate}};}
+\DoxyCodeLine{99     default\_refined\_zone\_size = src\_mesh.\mbox{\hyperlink{classbase__mesh_a64d37b1f606423e438deeee6682c3098}{default\_refined\_zone\_size}};}
+\DoxyCodeLine{100     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{101 \}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{106 \textcolor{keyword}{template} <\textcolor{keyword}{class} n\textcolor{keyword}{class}, \textcolor{keyword}{class} el\textcolor{keyword}{class}>}
+\DoxyCodeLine{107 \textcolor{keywordtype}{void} \mbox{\hyperlink{classbase__mesh_aeac7609881f89b1567c9ea6e8deb3d41}{base\_mesh<nclass,elclass>::save\_base\_mesh}}(std::string file\_path)}
+\DoxyCodeLine{108 \{}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110     std::stringstream neigh\_data, region\_data;}
+\DoxyCodeLine{111     \textcolor{keywordtype}{int} i, j;}
+\DoxyCodeLine{112     \mbox{\hyperlink{classvtu_file}{vtuFile}} meshfile(n\_elements, n\_nodes);}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114     std::string el\_type = \textcolor{stringliteral}{"{}5 "{}};}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116     std::string data\_sep = \textcolor{stringliteral}{"{} "{}};}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118     \textcolor{keywordtype}{int} max\_loop\_count = std::max(n\_elements,n\_nodes);}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120     \textcolor{keywordflow}{for} (i = 0; i < max\_loop\_count; i++)}
+\DoxyCodeLine{121     \{}
+\DoxyCodeLine{122         \textcolor{keywordflow}{if} (i < n\_elements)}
+\DoxyCodeLine{123         \{}
+\DoxyCodeLine{124             \textcolor{keywordflow}{for} (j=0; j< 3; j++)}
+\DoxyCodeLine{125             \{}
+\DoxyCodeLine{126                 meshfile.connectivity << std::to\_string(elements[i].nodes[j]) << data\_sep;  }
+\DoxyCodeLine{127                 neigh\_data << std::to\_string(elements[i].neighbors[j]) << data\_sep;}
+\DoxyCodeLine{128             \}}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130             region\_data << std::to\_string(elements[i].region) << data\_sep;}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132             meshfile.connectivity << data\_sep;}
+\DoxyCodeLine{133             neigh\_data << data\_sep;}
+\DoxyCodeLine{134             meshfile.types << el\_type;}
+\DoxyCodeLine{135             meshfile.offsets << (3 * (i + 1)) << data\_sep;}
+\DoxyCodeLine{136         \}}
+\DoxyCodeLine{137         \textcolor{keywordflow}{if} (i < n\_nodes)}
+\DoxyCodeLine{138         \{}
+\DoxyCodeLine{139             meshfile.points << std::setprecision(16) << clean\_value(nodes[i].x) << data\_sep <<  clean\_value(nodes[i].y) << \textcolor{stringliteral}{"{} 0\(\backslash\)n"{}};}
+\DoxyCodeLine{140         \}}
+\DoxyCodeLine{141     \}}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143     meshfile.\mbox{\hyperlink{classvtu_file_aa7ae82bfdecb67785ae29b91551a5aab}{set\_base}}();}
+\DoxyCodeLine{144     meshfile.\mbox{\hyperlink{classvtu_file_a3dc62dc934576f60099e717f91b2348c}{set\_CellData}}(neigh\_data.str().c\_str(), \textcolor{stringliteral}{"{}neighbors"{}}, \textcolor{stringliteral}{"{}i"{}}, 3);}
+\DoxyCodeLine{145     meshfile.\mbox{\hyperlink{classvtu_file_a3dc62dc934576f60099e717f91b2348c}{set\_CellData}}(region\_data.str().c\_str(), \textcolor{stringliteral}{"{}region"{}}, \textcolor{stringliteral}{"{}i"{}});}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147     meshfile.\mbox{\hyperlink{classvtu_file_a37d9f0187d7bb51032a1cbfc7b7397a6}{save}}(file\_path);}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{150 \}}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{155 \textcolor{keyword}{template} <\textcolor{keyword}{class} n\textcolor{keyword}{class}, \textcolor{keyword}{class} el\textcolor{keyword}{class}>}
+\DoxyCodeLine{156 \textcolor{keywordtype}{void} \mbox{\hyperlink{classbase__mesh_a2be6fe9bede200f5bffc472a0d845b13}{base\_mesh<nclass,elclass>::load\_base\_mesh}}(std::string file\_path)}
+\DoxyCodeLine{157 \{}
+\DoxyCodeLine{158     tinyxml2::XMLDocument inputXML;}
+\DoxyCodeLine{159     std::string temp\_str;}
+\DoxyCodeLine{160     std::stringstream data\_ss;}
+\DoxyCodeLine{161     \textcolor{keywordtype}{int} i, j;}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163     inputXML.LoadFile(file\_path.c\_str());}
+\DoxyCodeLine{164     }
+\DoxyCodeLine{165     tinyxml2::XMLElement * pPiece = inputXML.FirstChild()-\/>FirstChildElement(\textcolor{stringliteral}{"{}UnstructuredGrid"{}})-\/>FirstChildElement(\textcolor{stringliteral}{"{}Piece"{}});}
+\DoxyCodeLine{166     tinyxml2::XMLElement * pCellData = pPiece -\/>FirstChildElement(\textcolor{stringliteral}{"{}CellData"{}});}
+\DoxyCodeLine{167     tinyxml2::XMLElement * pPoints = pPiece-\/>FirstChildElement(\textcolor{stringliteral}{"{}Points"{}});}
+\DoxyCodeLine{168     tinyxml2::XMLElement * pCells = pPiece-\/>FirstChildElement(\textcolor{stringliteral}{"{}Cells"{}});}
+\DoxyCodeLine{169     tinyxml2::XMLElement * pDataArray;}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171     std::cout << \textcolor{stringliteral}{"{}loading "{}} << file\_path << std::endl;}
+\DoxyCodeLine{172     n\_elements = std::stoi(pPiece-\/>Attribute(\textcolor{stringliteral}{"{}NumberOfCells"{}}));}
+\DoxyCodeLine{173     n\_nodes = std::stoi(pPiece-\/>Attribute(\textcolor{stringliteral}{"{}NumberOfPoints"{}}));}
+\DoxyCodeLine{174     nodes.clear();}
+\DoxyCodeLine{175     elements.clear();}
+\DoxyCodeLine{176     elements.resize(n\_elements);}
+\DoxyCodeLine{177     nodes.resize(n\_nodes);}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179     pDataArray = pPoints-\/>FirstChildElement(\textcolor{stringliteral}{"{}DataArray"{}});}
+\DoxyCodeLine{180     i = 0;}
+\DoxyCodeLine{181     data\_ss.str(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{182     data\_ss.clear();}
+\DoxyCodeLine{183     data\_ss << (pDataArray-\/>GetText());}
+\DoxyCodeLine{184     \textcolor{keywordflow}{while} (data\_ss.good() \&\& i < n\_nodes)}
+\DoxyCodeLine{185     \{}
+\DoxyCodeLine{186         data\_ss >> temp\_str;}
+\DoxyCodeLine{187         nodes[i].x = stod(temp\_str);}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189         data\_ss >> temp\_str;}
+\DoxyCodeLine{190         nodes[i].y = stod(temp\_str);}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192         data\_ss >> temp\_str;}
+\DoxyCodeLine{193         nodes[i].z = stod(temp\_str);}
+\DoxyCodeLine{194         }
+\DoxyCodeLine{195         i++;}
+\DoxyCodeLine{196     \}}
+\DoxyCodeLine{197     }
+\DoxyCodeLine{198     pDataArray = pCells-\/>FirstChildElement(\textcolor{stringliteral}{"{}DataArray"{}});}
+\DoxyCodeLine{199     \textcolor{keywordflow}{while} (pDataArray != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{200     \{}
+\DoxyCodeLine{201         \textcolor{keywordflow}{if} (pDataArray-\/>Attribute(\textcolor{stringliteral}{"{}Name"{}}, \textcolor{stringliteral}{"{}connectivity"{}}))}
+\DoxyCodeLine{202         \{}
+\DoxyCodeLine{203             i = 0;}
+\DoxyCodeLine{204             data\_ss.str(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{205             data\_ss.clear();}
+\DoxyCodeLine{206             data\_ss << (pDataArray-\/>GetText());}
+\DoxyCodeLine{207             \textcolor{keywordflow}{while} (data\_ss.good() \&\& i < n\_elements)}
+\DoxyCodeLine{208             \{}
+\DoxyCodeLine{209                 \textcolor{keywordflow}{for} (j = 0; j < 3; j++)}
+\DoxyCodeLine{210                 \{               }
+\DoxyCodeLine{211                     data\_ss >> temp\_str;}
+\DoxyCodeLine{212                     elements[i].nodes[j] = std::stoi(temp\_str);}
+\DoxyCodeLine{213                     elements[i].p[j] = nodes[elements[i].nodes[j]];}
+\DoxyCodeLine{214                 \}               }
+\DoxyCodeLine{215                 i++;}
+\DoxyCodeLine{216             \}}
+\DoxyCodeLine{217         \}}
+\DoxyCodeLine{218 }
+\DoxyCodeLine{219         pDataArray = pDataArray-\/>NextSiblingElement(\textcolor{stringliteral}{"{}DataArray"{}});}
+\DoxyCodeLine{220     \}}
+\DoxyCodeLine{221 }
+\DoxyCodeLine{222     }
+\DoxyCodeLine{223 }
+\DoxyCodeLine{224     pDataArray = pCellData-\/>FirstChildElement(\textcolor{stringliteral}{"{}DataArray"{}});}
+\DoxyCodeLine{225     \textcolor{keywordflow}{while} (pDataArray !=\textcolor{keyword}{nullptr})}
+\DoxyCodeLine{226     \{}
+\DoxyCodeLine{227         \textcolor{keywordflow}{if} (pDataArray-\/>Attribute(\textcolor{stringliteral}{"{}Name"{}}, \textcolor{stringliteral}{"{}region"{}}))}
+\DoxyCodeLine{228         \{}
+\DoxyCodeLine{229             i = 0;}
+\DoxyCodeLine{230             data\_ss.str(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{231             data\_ss.clear();}
+\DoxyCodeLine{232             data\_ss << (pDataArray-\/>GetText());}
+\DoxyCodeLine{233             \textcolor{keywordflow}{while} (data\_ss.good() \&\& i < n\_elements)}
+\DoxyCodeLine{234             \{}
+\DoxyCodeLine{235                 data\_ss >> temp\_str;}
+\DoxyCodeLine{236                 elements[i].region = stoi(temp\_str);}
+\DoxyCodeLine{237                 i++;}
+\DoxyCodeLine{238             \}}
+\DoxyCodeLine{239         \}}
+\DoxyCodeLine{240         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (pDataArray-\/>Attribute(\textcolor{stringliteral}{"{}Name"{}}, \textcolor{stringliteral}{"{}neighbors"{}}))}
+\DoxyCodeLine{241         \{}
+\DoxyCodeLine{242             i = 0;}
+\DoxyCodeLine{243             data\_ss.str(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{244             data\_ss.clear();}
+\DoxyCodeLine{245             data\_ss << (pDataArray-\/>GetText());}
+\DoxyCodeLine{246             \textcolor{keywordflow}{while} (data\_ss.good() \&\& i < n\_elements)}
+\DoxyCodeLine{247             \{}
+\DoxyCodeLine{248                 \textcolor{keywordflow}{for} (j = 0; j < 3; j++)}
+\DoxyCodeLine{249                 \{               }
+\DoxyCodeLine{250                     data\_ss >> temp\_str;}
+\DoxyCodeLine{251                     elements[i].neighbors[j] = std::stoi(temp\_str);}
+\DoxyCodeLine{252                 \}}
+\DoxyCodeLine{253                 i++;}
+\DoxyCodeLine{254             \}}
+\DoxyCodeLine{255         \}}
+\DoxyCodeLine{256         pDataArray = pDataArray-\/>NextSiblingElement(\textcolor{stringliteral}{"{}DataArray"{}});}
+\DoxyCodeLine{257     \}}
+\DoxyCodeLine{258 }
+\DoxyCodeLine{259     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{260 \}}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{265 \textcolor{keyword}{template} <\textcolor{keyword}{class} n\textcolor{keyword}{class}, \textcolor{keyword}{class} el\textcolor{keyword}{class}>}
+\DoxyCodeLine{266 \textcolor{keywordtype}{int} \mbox{\hyperlink{classbase__mesh_aa5d09f7aad92b89f45f401cff16bbb9f}{base\_mesh<nclass,elclass>::pt\_in\_list}}(\textcolor{keyword}{const} \mbox{\hyperlink{classpoint}{point}} \&pt)}
+\DoxyCodeLine{267 \{}
+\DoxyCodeLine{268     \textcolor{keywordtype}{int} i = 0;}
+\DoxyCodeLine{269     \mbox{\hyperlink{classpoint}{point}} test\_node;}
+\DoxyCodeLine{270     \textcolor{keywordflow}{for} (i = 0; i < nodes.size(); i++)}
+\DoxyCodeLine{271     \{}
+\DoxyCodeLine{272         test\_node.\mbox{\hyperlink{classpoint_a9c6b34deaf4900ad4193c17935fd384a}{x}} = nodes[i].x;}
+\DoxyCodeLine{273         test\_node.\mbox{\hyperlink{classpoint_a613f8f0d7352731638b0094e1b958b87}{y}} = nodes[i].y;}
+\DoxyCodeLine{274         \textcolor{keywordflow}{if} (pt\_distance(test\_node, pt) <= \mbox{\hyperlink{classpoint_aa8798ed52dc29a35d0bec4f716029994}{point::equal}})}
+\DoxyCodeLine{275         \{}
+\DoxyCodeLine{276             \textcolor{keywordflow}{return} i;}
+\DoxyCodeLine{277         \}}
+\DoxyCodeLine{278     \}}
+\DoxyCodeLine{279     \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{280 \}}
+\DoxyCodeLine{281 }
+\DoxyCodeLine{285 \textcolor{keyword}{template} <\textcolor{keyword}{class} n\textcolor{keyword}{class}, \textcolor{keyword}{class} el\textcolor{keyword}{class}>}
+\DoxyCodeLine{286 \textcolor{keywordtype}{void} \mbox{\hyperlink{classbase__mesh_ae6a84ba2990f11c581cae898011483c5}{base\_mesh<nclass,elclass>::save\_segments}}(std::string file\_path)}
+\DoxyCodeLine{287 \{}
+\DoxyCodeLine{288     \textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{289     \textcolor{keywordtype}{int} j;}
+\DoxyCodeLine{290     \textcolor{keywordtype}{int} n\_nodes = nodes.size();}
+\DoxyCodeLine{291     \textcolor{keywordtype}{int} n\_segs = segments.size();}
+\DoxyCodeLine{292 }
+\DoxyCodeLine{293     std::stringstream cdstream;}
+\DoxyCodeLine{294     std::stringstream pdstream; }
+\DoxyCodeLine{295 }
+\DoxyCodeLine{296     \mbox{\hyperlink{classvtu_file}{vtuFile}} segmentfile(n\_segs, n\_nodes);}
+\DoxyCodeLine{297 }
+\DoxyCodeLine{298     \textcolor{keywordflow}{for} (i = 0; i < segments.size(); i++)}
+\DoxyCodeLine{299     \{}
+\DoxyCodeLine{300         \textcolor{keywordflow}{for} (j=0; j< 2; j++)}
+\DoxyCodeLine{301         \{}
+\DoxyCodeLine{302             segmentfile.connectivity << segments[i][j] << \textcolor{stringliteral}{"{} "{}};  }
+\DoxyCodeLine{303         \}}
+\DoxyCodeLine{304         segmentfile.connectivity << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{305         segmentfile.types << \textcolor{stringliteral}{"{}3 "{}};}
+\DoxyCodeLine{306         segmentfile.offsets << 2 * (i + 1) << \textcolor{stringliteral}{"{} "{}};}
+\DoxyCodeLine{307 }
+\DoxyCodeLine{308         cdstream << std::to\_string(segment\_markers[i]) << \textcolor{stringliteral}{"{} "{}};}
+\DoxyCodeLine{309     \}}
+\DoxyCodeLine{310 }
+\DoxyCodeLine{311     \textcolor{keywordflow}{for} (i = 0; i < nodes.size(); i++)}
+\DoxyCodeLine{312     \{}
+\DoxyCodeLine{313         segmentfile.points << std::setprecision(16) << clean\_value(nodes[i].x) << \textcolor{stringliteral}{"{} "{}} << std::setprecision(16) << clean\_value(nodes[i].y) << \textcolor{stringliteral}{"{} 0\(\backslash\)n"{}};}
+\DoxyCodeLine{314         pdstream << \textcolor{stringliteral}{"{}1 "{}};}
+\DoxyCodeLine{315     \}}
+\DoxyCodeLine{316 }
+\DoxyCodeLine{317     segmentfile.\mbox{\hyperlink{classvtu_file_aa7ae82bfdecb67785ae29b91551a5aab}{set\_base}}();}
+\DoxyCodeLine{318     segmentfile.\mbox{\hyperlink{classvtu_file_a3dc62dc934576f60099e717f91b2348c}{set\_CellData}}(cdstream.str().c\_str(), \textcolor{stringliteral}{"{}segment markers"{}}, \textcolor{stringliteral}{"{}d"{}});}
+\DoxyCodeLine{319     segmentfile.\mbox{\hyperlink{classvtu_file_a944a2d2ef716046611d97e706dba42cd}{set\_PointData}}(pdstream.str().c\_str(), \textcolor{stringliteral}{"{}points"{}}, \textcolor{stringliteral}{"{}d"{}});}
+\DoxyCodeLine{320 }
+\DoxyCodeLine{321     segmentfile.\mbox{\hyperlink{classvtu_file_ae0bab7716fcb7c29340d2cce08194927}{set\_ExtraData}}(std::to\_string(base\_mesh\_ctr).c\_str(), \textcolor{stringliteral}{"{}base mesh"{}});}
+\DoxyCodeLine{322 }
+\DoxyCodeLine{323     segmentfile.\mbox{\hyperlink{classvtu_file_a37d9f0187d7bb51032a1cbfc7b7397a6}{save}}(file\_path);}
+\DoxyCodeLine{324     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{325 }
+\DoxyCodeLine{326 \}}
+\DoxyCodeLine{327 }
+\DoxyCodeLine{331 \textcolor{keyword}{template} <\textcolor{keyword}{class} n\textcolor{keyword}{class}, \textcolor{keyword}{class} el\textcolor{keyword}{class}>}
+\DoxyCodeLine{332 \textcolor{keywordtype}{int} \mbox{\hyperlink{classbase__mesh_a1cc96b26afdebb1b1f7426cc9e951d56}{base\_mesh<nclass,elclass>::locate\_point}}(\mbox{\hyperlink{classpoint}{point}} \&pt, \textcolor{keywordtype}{int} el\_index)}
+\DoxyCodeLine{333 \{}
+\DoxyCodeLine{334     \textcolor{keywordtype}{int} el\_found = 0;}
+\DoxyCodeLine{335     \textcolor{keywordtype}{int} prev\_el\_index = 0;}
+\DoxyCodeLine{336     \textcolor{keywordtype}{int} els\_searched = 0;}
+\DoxyCodeLine{337     \textcolor{keywordtype}{double} L[3];}
+\DoxyCodeLine{338     \textcolor{keywordtype}{double} tol = 1e-\/3;}
+\DoxyCodeLine{339 }
+\DoxyCodeLine{340     \textcolor{keywordflow}{if} (el\_index >= n\_elements)}
+\DoxyCodeLine{341     \{}
+\DoxyCodeLine{342         el\_index = el\_index \% n\_elements;}
+\DoxyCodeLine{343     \}}
+\DoxyCodeLine{344 }
+\DoxyCodeLine{345     \textcolor{keywordflow}{while} (el\_found == 0 \&\& el\_index < n\_elements)}
+\DoxyCodeLine{346     \{}
+\DoxyCodeLine{347 }
+\DoxyCodeLine{348         \textcolor{keywordflow}{if} (els\_searched > n\_elements)}
+\DoxyCodeLine{349         \{}
+\DoxyCodeLine{350             el\_index = rand() \% n\_elements;}
+\DoxyCodeLine{351             els\_searched = 0;}
+\DoxyCodeLine{352             tol += 1e-\/3;}
+\DoxyCodeLine{353         \}}
+\DoxyCodeLine{354         }
+\DoxyCodeLine{355         elements[el\_index].get\_barycentric\_coordinates(pt, L);}
+\DoxyCodeLine{356 }
+\DoxyCodeLine{357         \textcolor{keywordflow}{if} (L[0] >= -\/tol \&\& L[0] <= 1 + tol \&\& L[1] >= -\/tol \&\& L[1] <= 1 + tol \&\& L[2] >= -\/tol \&\& L[2] <= 1 + tol)}
+\DoxyCodeLine{358         \{}
+\DoxyCodeLine{359             el\_found = 1;}
+\DoxyCodeLine{360         \}}
+\DoxyCodeLine{361         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{362         \{}
+\DoxyCodeLine{363             \textcolor{keywordflow}{if} (L[0] <= L[1] \&\& L[0] <=L[2] \&\& elements[el\_index].neighbors[0] > -\/1 \&\& elements[el\_index].neighbors[0] != prev\_el\_index)}
+\DoxyCodeLine{364             \{}
+\DoxyCodeLine{365                 prev\_el\_index = el\_index;}
+\DoxyCodeLine{366                 el\_index = elements[el\_index].neighbors[0];}
+\DoxyCodeLine{367             \}}
+\DoxyCodeLine{368             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (L[1] <= L[0] \&\& L[1] <=L[2] \&\& elements[el\_index].neighbors[1] > -\/1 \&\& elements[el\_index].neighbors[1] != prev\_el\_index)}
+\DoxyCodeLine{369             \{}
+\DoxyCodeLine{370                 prev\_el\_index = el\_index;}
+\DoxyCodeLine{371                 el\_index = elements[el\_index].neighbors[1];}
+\DoxyCodeLine{372             \}}
+\DoxyCodeLine{373             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (L[2] <= L[0] \&\& L[2] <=L[1] \&\& elements[el\_index].neighbors[2] > -\/1 \&\& elements[el\_index].neighbors[2] != prev\_el\_index)}
+\DoxyCodeLine{374             \{}
+\DoxyCodeLine{375                 prev\_el\_index = el\_index;}
+\DoxyCodeLine{376                 el\_index = elements[el\_index].neighbors[2];}
+\DoxyCodeLine{377             \}}
+\DoxyCodeLine{378             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{379             \{}
+\DoxyCodeLine{380                 \textcolor{keywordflow}{if} (elements[el\_index].neighbors[0] > -\/1 \&\& elements[el\_index].neighbors[0] != prev\_el\_index)}
+\DoxyCodeLine{381                 \{}
+\DoxyCodeLine{382                     prev\_el\_index = el\_index;}
+\DoxyCodeLine{383                     el\_index = elements[el\_index].neighbors[0];}
+\DoxyCodeLine{384                 \}}
+\DoxyCodeLine{385                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (elements[el\_index].neighbors[1] > -\/1 \&\& elements[el\_index].neighbors[1] != prev\_el\_index)}
+\DoxyCodeLine{386                 \{}
+\DoxyCodeLine{387                     prev\_el\_index = el\_index;}
+\DoxyCodeLine{388                     el\_index = elements[el\_index].neighbors[1];}
+\DoxyCodeLine{389                 \}}
+\DoxyCodeLine{390                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (elements[el\_index].neighbors[2] > -\/1 \&\& elements[el\_index].neighbors[2] != prev\_el\_index)}
+\DoxyCodeLine{391                 \{}
+\DoxyCodeLine{392                     prev\_el\_index = el\_index;}
+\DoxyCodeLine{393                     el\_index = elements[el\_index].neighbors[2];}
+\DoxyCodeLine{394                 \}}
+\DoxyCodeLine{395                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{396                 \{}
+\DoxyCodeLine{397                     el\_index = rand() \% n\_elements;}
+\DoxyCodeLine{398                     els\_searched = 0;}
+\DoxyCodeLine{399                     tol += 1e-\/3;}
+\DoxyCodeLine{400                 \}}
+\DoxyCodeLine{401                 }
+\DoxyCodeLine{402             \}}
+\DoxyCodeLine{403 }
+\DoxyCodeLine{404         \}}
+\DoxyCodeLine{405         els\_searched++;}
+\DoxyCodeLine{406     \}}
+\DoxyCodeLine{407     \textcolor{keywordflow}{if} (el\_index >= n\_elements)}
+\DoxyCodeLine{408     \{}
+\DoxyCodeLine{409         std::cerr << \textcolor{stringliteral}{"{}ERROR LOCATING POINT"{}} << std::endl;}
+\DoxyCodeLine{410         \textcolor{keywordflow}{throw} 7;}
+\DoxyCodeLine{411     \}}
+\DoxyCodeLine{412     \textcolor{keywordflow}{return} el\_index;}
+\DoxyCodeLine{413 \}}
+\DoxyCodeLine{414 }
+\DoxyCodeLine{418 \textcolor{keyword}{template} <\textcolor{keyword}{class} n\textcolor{keyword}{class}, \textcolor{keyword}{class} el\textcolor{keyword}{class}>}
+\DoxyCodeLine{419 \textcolor{keywordtype}{void} \mbox{\hyperlink{classbase__mesh_a7dcead034ae859249aa85dd91a255e4c}{base\_mesh<nclass,elclass>::clean\_polygon}}(std::vector<point> \&poly)}
+\DoxyCodeLine{420 \{}
+\DoxyCodeLine{421     \textcolor{keywordtype}{double} threshold\_length2 = \mbox{\hyperlink{classpoint_aa8798ed52dc29a35d0bec4f716029994}{point::equal}} * \mbox{\hyperlink{classpoint_aa8798ed52dc29a35d0bec4f716029994}{point::equal}};}
+\DoxyCodeLine{422     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 1; i < poly.size() -\/ 2; i++)}
+\DoxyCodeLine{423     \{}
+\DoxyCodeLine{424         \textcolor{keywordtype}{bool} first\_pt\_on\_outer\_bounds = on\_geometry(outer\_bounds,poly[i]);}
+\DoxyCodeLine{425         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = i + 1;}
+\DoxyCodeLine{426         \textcolor{keywordflow}{while} (j < poly.size() -\/ 1)}
+\DoxyCodeLine{427         \{}
+\DoxyCodeLine{428             \textcolor{keywordflow}{if} (pt\_distance(poly[i], poly[j]) <= threshold\_length2)}
+\DoxyCodeLine{429             \{}
+\DoxyCodeLine{430                 \textcolor{keywordflow}{if} (on\_geometry(outer\_bounds, poly[j]) == first\_pt\_on\_outer\_bounds)}
+\DoxyCodeLine{431                 \{}
+\DoxyCodeLine{432                     poly.erase(poly.begin() + i, poly.begin() + j);}
+\DoxyCodeLine{433                 \}}
+\DoxyCodeLine{434                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{435                 \{}
+\DoxyCodeLine{436                     j++;}
+\DoxyCodeLine{437                 \}}
+\DoxyCodeLine{438                 }
+\DoxyCodeLine{439             \} }
+\DoxyCodeLine{440             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{441             \{}
+\DoxyCodeLine{442                 j++;}
+\DoxyCodeLine{443             \}}
+\DoxyCodeLine{444         \} }
+\DoxyCodeLine{445     \}}
+\DoxyCodeLine{446     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{447 \}}
+\DoxyCodeLine{448 }
+\DoxyCodeLine{452 \textcolor{keyword}{template} <\textcolor{keyword}{class} n\textcolor{keyword}{class}, \textcolor{keyword}{class} el\textcolor{keyword}{class}>}
+\DoxyCodeLine{453 \textcolor{keywordtype}{void} \mbox{\hyperlink{classbase__mesh_af48dbc2b81f42b06d6562355a7602a82}{base\_mesh<nclass,elclass>::merge\_segments}}(std::vector<point> \&new\_geometry)}
+\DoxyCodeLine{454 \{}
+\DoxyCodeLine{455     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i,j,k;}
+\DoxyCodeLine{456     std::vector<point> new\_seg = \{\mbox{\hyperlink{classpoint}{point}}(0,0), \mbox{\hyperlink{classpoint}{point}}(0,0)\}, test\_seg = \{\mbox{\hyperlink{classpoint}{point}}(0,0), \mbox{\hyperlink{classpoint}{point}}(0,0)\}, test\_ls = \{\mbox{\hyperlink{classpoint}{point}}(0,0), \mbox{\hyperlink{classpoint}{point}}(0,0)\};}
+\DoxyCodeLine{457     std::vector <int> mapped\_new\_seg(2);}
+\DoxyCodeLine{458     \textcolor{keywordtype}{int} new\_node\_number;}
+\DoxyCodeLine{459     \mbox{\hyperlink{classpoint}{point}} midpoint, test\_node;}
+\DoxyCodeLine{460 }
+\DoxyCodeLine{461 }
+\DoxyCodeLine{462     \textcolor{comment}{// need to clean new\_geometry, snapping points to existing nodes and then cleaning them up}}
+\DoxyCodeLine{463 }
+\DoxyCodeLine{464     \textcolor{keywordflow}{for} (i = 0; i < new\_geometry.size(); i++)}
+\DoxyCodeLine{465     \{}
+\DoxyCodeLine{466         \textcolor{keywordflow}{for} (j = 0; j < nodes.size(); j++)}
+\DoxyCodeLine{467         \{}
+\DoxyCodeLine{468             test\_node.\mbox{\hyperlink{classpoint_a9c6b34deaf4900ad4193c17935fd384a}{x}} = nodes[j].x;}
+\DoxyCodeLine{469             test\_node.\mbox{\hyperlink{classpoint_a613f8f0d7352731638b0094e1b958b87}{y}} = nodes[j].y;}
+\DoxyCodeLine{470             \textcolor{keywordflow}{if} (pt\_distance(new\_geometry[i], test\_node) <= \mbox{\hyperlink{classpoint_aa8798ed52dc29a35d0bec4f716029994}{point::equal}})}
+\DoxyCodeLine{471             \{               }
+\DoxyCodeLine{472                 \textcolor{keywordflow}{if} (on\_geometry(outer\_bounds, new\_geometry[i]))}
+\DoxyCodeLine{473                 \{}
+\DoxyCodeLine{474                     \textcolor{keywordflow}{if} (!on\_geometry(outer\_bounds, test\_node))}
+\DoxyCodeLine{475                     \{}
+\DoxyCodeLine{476                         \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{477                     \}}
+\DoxyCodeLine{478                 \}}
+\DoxyCodeLine{479                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{480                 \{}
+\DoxyCodeLine{481                     \textcolor{keywordflow}{if} (on\_geometry(outer\_bounds, test\_node))}
+\DoxyCodeLine{482                     \{}
+\DoxyCodeLine{483                         \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{484                     \}}
+\DoxyCodeLine{485                 \}}
+\DoxyCodeLine{486                 }
+\DoxyCodeLine{487                 new\_geometry[i] = test\_node;}
+\DoxyCodeLine{488                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{489             \}}
+\DoxyCodeLine{490         \}}
+\DoxyCodeLine{491     \}}
+\DoxyCodeLine{492     clean\_polygon(new\_geometry);}
+\DoxyCodeLine{493 }
+\DoxyCodeLine{494     i = 0;}
+\DoxyCodeLine{495     \textcolor{keywordflow}{while} (i < new\_geometry.size() -\/ 1)}
+\DoxyCodeLine{496     \{}
+\DoxyCodeLine{497         \textcolor{keywordtype}{bool} seg\_not\_in\_list = \textcolor{keyword}{true};}
+\DoxyCodeLine{498         new\_seg[0] = new\_geometry[i];}
+\DoxyCodeLine{499         new\_seg[1] = new\_geometry[i + 1];}
+\DoxyCodeLine{500 }
+\DoxyCodeLine{501         \textcolor{keywordflow}{for} (j = 0; j < 2; j++)}
+\DoxyCodeLine{502         \{}
+\DoxyCodeLine{503             new\_node\_number = pt\_in\_list(new\_seg[j]);}
+\DoxyCodeLine{504 }
+\DoxyCodeLine{505             \textcolor{keywordflow}{if} (new\_node\_number == -\/1)}
+\DoxyCodeLine{506             \{}
+\DoxyCodeLine{507                 new\_node\_number = nodes.size();}
+\DoxyCodeLine{508                 nodes.push\_back(new\_seg[j]);}
+\DoxyCodeLine{509 }
+\DoxyCodeLine{510                 \textcolor{comment}{// point is new, might be on previous segment}}
+\DoxyCodeLine{511                 \textcolor{keywordflow}{for} (k = 0; k < segments.size(); k++)}
+\DoxyCodeLine{512                 \{}
+\DoxyCodeLine{513                     test\_ls.front() = nodes[segments[k][0]];}
+\DoxyCodeLine{514                     test\_ls.back() = nodes[segments[k][1]];}
+\DoxyCodeLine{515                     \textcolor{keywordflow}{if} (on\_geometry(test\_ls, new\_seg[j]))}
+\DoxyCodeLine{516                     \{}
+\DoxyCodeLine{517                         midpoint.\mbox{\hyperlink{classpoint_a9c6b34deaf4900ad4193c17935fd384a}{x}} = (nodes[segments[k][0]].x + nodes[segments[k][1]].x) / 2.;}
+\DoxyCodeLine{518                         midpoint.\mbox{\hyperlink{classpoint_a613f8f0d7352731638b0094e1b958b87}{y}} = (nodes[segments[k][0]].y + nodes[segments[k][1]].y) / 2.;}
+\DoxyCodeLine{519                         \textcolor{keywordflow}{if} (on\_geometry(outer\_bounds, midpoint) \&\& !on\_geometry(outer\_bounds, new\_seg[j]))}
+\DoxyCodeLine{520                         \{}
+\DoxyCodeLine{521                             \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{522                         \}}
+\DoxyCodeLine{523                         segments.push\_back(\{new\_node\_number, segments[k][1]\});}
+\DoxyCodeLine{524                         segments[k][1] = new\_node\_number;}
+\DoxyCodeLine{525                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{526                     \}}
+\DoxyCodeLine{527                 \}}
+\DoxyCodeLine{528             \}}
+\DoxyCodeLine{529             mapped\_new\_seg[j] = new\_node\_number;}
+\DoxyCodeLine{530         \}}
+\DoxyCodeLine{531         \textcolor{keywordflow}{if}(mapped\_new\_seg[0] == mapped\_new\_seg[1])}
+\DoxyCodeLine{532         \{}
+\DoxyCodeLine{533             std::cerr << \textcolor{stringliteral}{"{}NODES ON SEGMENT ARE THE SAME"{}} << std::endl;}
+\DoxyCodeLine{534             std::cerr << \textcolor{stringliteral}{"{}point: "{}} << nodes[mapped\_new\_seg[0]] << std::endl;}
+\DoxyCodeLine{535             \textcolor{keywordflow}{throw} 7;}
+\DoxyCodeLine{536         \}}
+\DoxyCodeLine{537 }
+\DoxyCodeLine{538 }
+\DoxyCodeLine{539         \textcolor{keywordflow}{for} (j = 0; j < segments.size(); j++)}
+\DoxyCodeLine{540         \{}
+\DoxyCodeLine{541             \textcolor{keywordflow}{if} ((mapped\_new\_seg[0] == segments[j][0] \&\& mapped\_new\_seg[1] == segments[j][1]) || (mapped\_new\_seg[0] == segments[j][1] \&\& mapped\_new\_seg[1] == segments[j][0]))}
+\DoxyCodeLine{542             \{}
+\DoxyCodeLine{543                 seg\_not\_in\_list = \textcolor{keyword}{false};}
+\DoxyCodeLine{544                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{545             \}}
+\DoxyCodeLine{546         \}}
+\DoxyCodeLine{547         \textcolor{keywordflow}{if} (seg\_not\_in\_list)}
+\DoxyCodeLine{548         \{}
+\DoxyCodeLine{549             segments.push\_back(mapped\_new\_seg);}
+\DoxyCodeLine{550         \}}
+\DoxyCodeLine{551         }
+\DoxyCodeLine{552         i++;}
+\DoxyCodeLine{553     \}}
+\DoxyCodeLine{554     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{555 \}}
+\DoxyCodeLine{556 }
+\DoxyCodeLine{560 \textcolor{keyword}{template} <\textcolor{keyword}{class} n\textcolor{keyword}{class}, \textcolor{keyword}{class} el\textcolor{keyword}{class}>}
+\DoxyCodeLine{561 \textcolor{keywordtype}{void} \mbox{\hyperlink{classbase__mesh_a43ec9bdc633b1554c6a88ca6debf653c}{base\_mesh<nclass,elclass>::create\_mesher\_inputs}}(std::vector<std::vector<point>> \&new\_geometries)}
+\DoxyCodeLine{562 \{}
+\DoxyCodeLine{563     \textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{564     \textcolor{keywordtype}{int} guess\_size = 0;}
+\DoxyCodeLine{565     \textcolor{keywordflow}{for} (i = 0; i < new\_geometries.size(); i++)}
+\DoxyCodeLine{566     \{}
+\DoxyCodeLine{567         guess\_size += new\_geometries[i].size();}
+\DoxyCodeLine{568     \}}
+\DoxyCodeLine{569     nodes.clear();}
+\DoxyCodeLine{570     segments.clear();}
+\DoxyCodeLine{571     nodes.reserve(2 * guess\_size);}
+\DoxyCodeLine{572     segments.reserve(2 * guess\_size);}
+\DoxyCodeLine{573 }
+\DoxyCodeLine{574     \textcolor{keywordflow}{for} (i = 0; i < new\_geometries.size(); i++)}
+\DoxyCodeLine{575     \{}
+\DoxyCodeLine{576         merge\_segments(new\_geometries[i]);}
+\DoxyCodeLine{577     \}}
+\DoxyCodeLine{578     segment\_markers.resize(segments.size());}
+\DoxyCodeLine{579     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{580 \}}
+\DoxyCodeLine{581 }
+\DoxyCodeLine{585 \textcolor{keyword}{template} <\textcolor{keyword}{class} n\textcolor{keyword}{class}, \textcolor{keyword}{class} el\textcolor{keyword}{class}>}
+\DoxyCodeLine{586 \textcolor{keywordtype}{void} \mbox{\hyperlink{classbase__mesh_a4e2e47bd6ca96042d4042c8825cafbed}{base\_mesh<nclass,elclass>::create\_mesh}}()}
+\DoxyCodeLine{587 \{}
+\DoxyCodeLine{588 }
+\DoxyCodeLine{589     \textcolor{keywordtype}{int} i,j;}
+\DoxyCodeLine{590     \textcolor{keyword}{struct }triangulateio in, out;}
+\DoxyCodeLine{591 }
+\DoxyCodeLine{592     in.numberofpoints = nodes.size();}
+\DoxyCodeLine{593     in.pointlist = (REAL *) malloc(in.numberofpoints * 2 * \textcolor{keyword}{sizeof}(REAL));}
+\DoxyCodeLine{594     in.numberofpointattributes = 0;}
+\DoxyCodeLine{595     in.pointattributelist = (REAL *) NULL;}
+\DoxyCodeLine{596     in.pointmarkerlist = (\textcolor{keywordtype}{int} *) NULL;}
+\DoxyCodeLine{597 }
+\DoxyCodeLine{598     \textcolor{keywordflow}{for} (i = 0; i < in.numberofpoints; i++)}
+\DoxyCodeLine{599     \{}
+\DoxyCodeLine{600         in.pointlist[2 * i] = nodes[i].x;}
+\DoxyCodeLine{601         in.pointlist[2 * i + 1] = nodes[i].y;}
+\DoxyCodeLine{602     \}}
+\DoxyCodeLine{603 }
+\DoxyCodeLine{604     in.numberoftriangles = 0;}
+\DoxyCodeLine{605     in.trianglelist = (\textcolor{keywordtype}{int} *) malloc(in.numberoftriangles * 3 * \textcolor{keyword}{sizeof}(REAL)); }
+\DoxyCodeLine{606     in.trianglearealist = (REAL *) malloc(in.numberoftriangles * \textcolor{keyword}{sizeof}(REAL)); }
+\DoxyCodeLine{607     in.numberoftriangleattributes = 0;}
+\DoxyCodeLine{608     in.triangleattributelist = (REAL *) malloc(in.numberoftriangleattributes * in.numberoftriangles * \textcolor{keyword}{sizeof}(REAL)); }
+\DoxyCodeLine{609     }
+\DoxyCodeLine{610     in.numberofcorners = 3;}
+\DoxyCodeLine{611 }
+\DoxyCodeLine{612     in.numberofsegments = segments.size();}
+\DoxyCodeLine{613     in.segmentlist = (\textcolor{keywordtype}{int} *) malloc(in.numberofsegments * 2 * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int})); }
+\DoxyCodeLine{614     in.segmentmarkerlist = (\textcolor{keywordtype}{int} *) NULL;    }
+\DoxyCodeLine{615     in.holelist = (REAL *) NULL; \textcolor{comment}{// need to free this?}}
+\DoxyCodeLine{616     in.numberofholes = 0;}
+\DoxyCodeLine{617 }
+\DoxyCodeLine{618     \textcolor{keywordflow}{for} (i = 0; i < in.numberofsegments; i++)}
+\DoxyCodeLine{619     \{}
+\DoxyCodeLine{620         \textcolor{keywordflow}{for} (j = 0; j < 2; j++)}
+\DoxyCodeLine{621         \{}
+\DoxyCodeLine{622             in.segmentlist[2 * i + j] = segments[i][j];}
+\DoxyCodeLine{623         \}}
+\DoxyCodeLine{624     \}}
+\DoxyCodeLine{625 }
+\DoxyCodeLine{626     in.numberofregions = mesh\_regions.size();}
+\DoxyCodeLine{627     in.regionlist = (REAL *) malloc(in.numberofregions * 4 * \textcolor{keyword}{sizeof}(REAL));}
+\DoxyCodeLine{628 }
+\DoxyCodeLine{629     \textcolor{keywordflow}{for} (i = 0; i < in.numberofregions; i++)}
+\DoxyCodeLine{630     \{}
+\DoxyCodeLine{631         \textcolor{keywordflow}{for} (j = 0; j < 4; j++)}
+\DoxyCodeLine{632         \{}
+\DoxyCodeLine{633             in.regionlist[4 * i + j] = mesh\_regions[i][j];}
+\DoxyCodeLine{634         \}}
+\DoxyCodeLine{635     \}}
+\DoxyCodeLine{636 }
+\DoxyCodeLine{637 }
+\DoxyCodeLine{638     ntips = refined\_pts.size();}
+\DoxyCodeLine{639 }
+\DoxyCodeLine{640     xtips = (\textcolor{keywordtype}{double}*) malloc(ntips * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{641     ytips = (\textcolor{keywordtype}{double}*) malloc(ntips * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{642     rcs = (\textcolor{keywordtype}{double}*) malloc(ntips * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{643     minArea0s = (\textcolor{keywordtype}{double}*) malloc(ntips * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{644     grs = (\textcolor{keywordtype}{double}*) malloc(ntips * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{645 }
+\DoxyCodeLine{646     \textcolor{keywordflow}{for} (i = 0; i < ntips; i++)}
+\DoxyCodeLine{647     \{}
+\DoxyCodeLine{648         xtips[i] = refined\_pts[i].x;}
+\DoxyCodeLine{649         ytips[i] = refined\_pts[i].y;}
+\DoxyCodeLine{650         rcs[i] = refined\_zone\_sizes[i];}
+\DoxyCodeLine{651         minArea0s[i] = min\_area\_tip;}
+\DoxyCodeLine{652         grs[i] = growth\_rates[i];}
+\DoxyCodeLine{653     \}}
+\DoxyCodeLine{654 }
+\DoxyCodeLine{655     \textcolor{comment}{// refined along line}}
+\DoxyCodeLine{656     npts = refined\_line.size();}
+\DoxyCodeLine{657     rc = default\_refined\_zone\_size;}
+\DoxyCodeLine{658     minArea0 = min\_area;}
+\DoxyCodeLine{659     gr = default\_growth\_rate;}
+\DoxyCodeLine{660 }
+\DoxyCodeLine{661     xpts = (\textcolor{keywordtype}{double}*) malloc(npts * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{662     ypts = (\textcolor{keywordtype}{double}*) malloc(npts * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{663 }
+\DoxyCodeLine{664     \textcolor{keywordflow}{for} (i = 0; i < npts; i++)}
+\DoxyCodeLine{665     \{}
+\DoxyCodeLine{666         xpts[i] = refined\_line[i].x;}
+\DoxyCodeLine{667         ypts[i] = refined\_line[i].y;}
+\DoxyCodeLine{668     \}}
+\DoxyCodeLine{669 }
+\DoxyCodeLine{670     out.pointlist = (REAL *) NULL; }
+\DoxyCodeLine{671     out.triangleattributelist = (REAL *) NULL; }
+\DoxyCodeLine{672     out.trianglelist = (\textcolor{keywordtype}{int} *) NULL;}
+\DoxyCodeLine{673     out.segmentlist = (\textcolor{keywordtype}{int} *) NULL;}
+\DoxyCodeLine{674     out.segmentmarkerlist = (\textcolor{keywordtype}{int} *) NULL;}
+\DoxyCodeLine{675     out.neighborlist = (\textcolor{keywordtype}{int} *) NULL;}
+\DoxyCodeLine{676     out.pointmarkerlist = (\textcolor{keywordtype}{int} *) NULL;}
+\DoxyCodeLine{677     out.edgemarkerlist = (\textcolor{keywordtype}{int} *) NULL;}
+\DoxyCodeLine{678     out.edgelist = (\textcolor{keywordtype}{int} *) NULL;}
+\DoxyCodeLine{679 }
+\DoxyCodeLine{680     \mbox{\hyperlink{classtimer}{timer}} tri\_timer;}
+\DoxyCodeLine{681     tri\_timer.\mbox{\hyperlink{classtimer_a9aa894a57748b2bdf3adce46f5736794}{start}}();}
+\DoxyCodeLine{682     std::string mesh\_flags;}
+\DoxyCodeLine{683     \textcolor{keywordflow}{if} (el\_type == element\_type::linear)}
+\DoxyCodeLine{684     \{}
+\DoxyCodeLine{685         mesh\_flags = flags + std::to\_string(min\_angle);}
+\DoxyCodeLine{686     \}}
+\DoxyCodeLine{687     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (el\_type == element\_type::quadratic)}
+\DoxyCodeLine{688     \{}
+\DoxyCodeLine{689         mesh\_flags = flags + std::to\_string(min\_angle) + \textcolor{stringliteral}{"{}o2"{}};}
+\DoxyCodeLine{690     \}}
+\DoxyCodeLine{691     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{692     \{}
+\DoxyCodeLine{693         std::cerr << \textcolor{stringliteral}{"{}ELEMENT TYPE ERROR UPON TRIANGULATION"{}} << std::endl;}
+\DoxyCodeLine{694         \textcolor{keywordflow}{throw} -\/1;}
+\DoxyCodeLine{695     \}}
+\DoxyCodeLine{696     triangulate((\textcolor{keywordtype}{char}*)mesh\_flags.c\_str(), \&in, \&out, NULL);}
+\DoxyCodeLine{697     tri\_timer.\mbox{\hyperlink{classtimer_a3218d61649e284071544b17c8c915ecc}{stop}}();}
+\DoxyCodeLine{698 }
+\DoxyCodeLine{699     segment\_markers.resize(out.numberofsegments);}
+\DoxyCodeLine{700     segments.clear();}
+\DoxyCodeLine{701     segments.reserve(out.numberofsegments);}
+\DoxyCodeLine{702     outer\_segments.clear();}
+\DoxyCodeLine{703     outer\_segments.reserve(out.numberofsegments);}
+\DoxyCodeLine{704     std::vector<int> temp\_seg(2);}
+\DoxyCodeLine{705 }
+\DoxyCodeLine{706     \textcolor{keywordflow}{for} (i = 0; i < out.numberofsegments; i++)}
+\DoxyCodeLine{707     \{}
+\DoxyCodeLine{708         }
+\DoxyCodeLine{709         segment\_markers[i] = out.segmentmarkerlist[i];}
+\DoxyCodeLine{710         \textcolor{keywordflow}{for} (j = 0; j < 2; j++)}
+\DoxyCodeLine{711         \{}
+\DoxyCodeLine{712             temp\_seg[j] = out.segmentlist[2 * i + j];}
+\DoxyCodeLine{713         \}}
+\DoxyCodeLine{714         }
+\DoxyCodeLine{715         segments.push\_back(temp\_seg);}
+\DoxyCodeLine{716 }
+\DoxyCodeLine{717         \textcolor{keywordflow}{if} (segment\_markers[i] == 1)}
+\DoxyCodeLine{718         \{}
+\DoxyCodeLine{719             outer\_segments.push\_back(temp\_seg);         }
+\DoxyCodeLine{720         \}}
+\DoxyCodeLine{721     \}}
+\DoxyCodeLine{722 }
+\DoxyCodeLine{723     nodes.resize(out.numberofpoints);}
+\DoxyCodeLine{724     n\_nodes = out.numberofpoints;}
+\DoxyCodeLine{725     \textcolor{keywordflow}{for} (i = 0; i < out.numberofpoints; i++)}
+\DoxyCodeLine{726     \{}
+\DoxyCodeLine{727         nodes[i].x = out.pointlist[2 * i];}
+\DoxyCodeLine{728         nodes[i].y = out.pointlist[2 * i + 1];}
+\DoxyCodeLine{729     \}}
+\DoxyCodeLine{730 }
+\DoxyCodeLine{731     \textcolor{keywordtype}{int} ns[6], neighs[3];}
+\DoxyCodeLine{732     \mbox{\hyperlink{classpoint}{point}} p\_[6];}
+\DoxyCodeLine{733     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} n\_nodes\_per\_tri = 3;}
+\DoxyCodeLine{734 }
+\DoxyCodeLine{735     \textcolor{keywordflow}{if} (el\_type == element\_type::quadratic)}
+\DoxyCodeLine{736     \{}
+\DoxyCodeLine{737         n\_nodes\_per\_tri = 6;}
+\DoxyCodeLine{738     \}}
+\DoxyCodeLine{739 }
+\DoxyCodeLine{740     elements.clear();}
+\DoxyCodeLine{741     elements.resize(out.numberoftriangles);}
+\DoxyCodeLine{742     n\_elements = out.numberoftriangles;}
+\DoxyCodeLine{743 }
+\DoxyCodeLine{744     \textcolor{keywordflow}{for} (i = 0; i < out.numberoftriangles; i++)}
+\DoxyCodeLine{745     \{}
+\DoxyCodeLine{746         \textcolor{keywordflow}{for} (j = 0; j < 3; j++)}
+\DoxyCodeLine{747         \{}
+\DoxyCodeLine{748 }
+\DoxyCodeLine{749             ns[j] = out.trianglelist[n\_nodes\_per\_tri * i + j];}
+\DoxyCodeLine{750             neighs[j] = out.neighborlist[3 * i + j];}
+\DoxyCodeLine{751             p\_[j] = nodes[out.trianglelist[n\_nodes\_per\_tri * i + j]];}
+\DoxyCodeLine{752 }
+\DoxyCodeLine{753         \}}
+\DoxyCodeLine{754 }
+\DoxyCodeLine{755         \textcolor{keywordflow}{if} (el\_type == element\_type::quadratic)}
+\DoxyCodeLine{756         \{}
+\DoxyCodeLine{757             ns[3] = out.trianglelist[n\_nodes\_per\_tri * i + 5];}
+\DoxyCodeLine{758             ns[4] = out.trianglelist[n\_nodes\_per\_tri * i + 3];}
+\DoxyCodeLine{759             ns[5] = out.trianglelist[n\_nodes\_per\_tri * i + 4];}
+\DoxyCodeLine{760             p\_[3] = nodes[out.trianglelist[n\_nodes\_per\_tri * i + 5]];}
+\DoxyCodeLine{761             p\_[4] = nodes[out.trianglelist[n\_nodes\_per\_tri * i + 3]];}
+\DoxyCodeLine{762             p\_[5] = nodes[out.trianglelist[n\_nodes\_per\_tri * i + 4]];}
+\DoxyCodeLine{763         \}}
+\DoxyCodeLine{764 }
+\DoxyCodeLine{765         \textcolor{keywordtype}{int} reg\_ = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(out.triangleattributelist[i]);}
+\DoxyCodeLine{766 }
+\DoxyCodeLine{767         elements[i] = elclass(ns, p\_, neighs, reg\_, el\_type, plane\_type);}
+\DoxyCodeLine{768 }
+\DoxyCodeLine{769     \}}
+\DoxyCodeLine{770 }
+\DoxyCodeLine{771     find\_outer\_bounds();}
+\DoxyCodeLine{772 }
+\DoxyCodeLine{773     free (in.pointlist);}
+\DoxyCodeLine{774     free (in.segmentlist);}
+\DoxyCodeLine{775     free (in.regionlist);}
+\DoxyCodeLine{776     free (in.pointattributelist);}
+\DoxyCodeLine{777     free (in.pointmarkerlist);}
+\DoxyCodeLine{778     free (in.trianglelist);}
+\DoxyCodeLine{779     free (in.triangleattributelist); }
+\DoxyCodeLine{780     free (in.trianglearealist);}
+\DoxyCodeLine{781     free (in.segmentmarkerlist);}
+\DoxyCodeLine{782     free (in.holelist);}
+\DoxyCodeLine{783 }
+\DoxyCodeLine{784     free (xtips);}
+\DoxyCodeLine{785     free (ytips);}
+\DoxyCodeLine{786     free (rcs);}
+\DoxyCodeLine{787     free (minArea0s);}
+\DoxyCodeLine{788     free (grs);}
+\DoxyCodeLine{789 }
+\DoxyCodeLine{790     free (xpts);}
+\DoxyCodeLine{791     free (ypts);}
+\DoxyCodeLine{792     }
+\DoxyCodeLine{793     free (out.pointlist);}
+\DoxyCodeLine{794     free (out.trianglelist);}
+\DoxyCodeLine{795     free (out.segmentlist);}
+\DoxyCodeLine{796     free (out.segmentmarkerlist);}
+\DoxyCodeLine{797     free (out.neighborlist);}
+\DoxyCodeLine{798     free (out.pointmarkerlist);}
+\DoxyCodeLine{799     free (out.triangleattributelist); }
+\DoxyCodeLine{800     free (out.holelist);}
+\DoxyCodeLine{801     free (out.edgelist);}
+\DoxyCodeLine{802     free (out.edgemarkerlist);}
+\DoxyCodeLine{803 }
+\DoxyCodeLine{804 }
+\DoxyCodeLine{805     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{806 \}}
+\DoxyCodeLine{807 }
+\DoxyCodeLine{811 \textcolor{keyword}{template} <\textcolor{keyword}{class} n\textcolor{keyword}{class}, \textcolor{keyword}{class} el\textcolor{keyword}{class}>}
+\DoxyCodeLine{812 \textcolor{keywordtype}{void} \mbox{\hyperlink{classbase__mesh_a2b3320a5d15eee43a2ac0760a463e819}{base\_mesh<nclass,elclass>::find\_outer\_bounds}}()}
+\DoxyCodeLine{813 \{}
+\DoxyCodeLine{814     \textcolor{keywordtype}{int} i, j;}
+\DoxyCodeLine{815     \textcolor{keywordtype}{int} first\_node, curr\_node, node\_to\_find;}
+\DoxyCodeLine{816 }
+\DoxyCodeLine{817     curr\_node = outer\_segments[0][0];}
+\DoxyCodeLine{818     node\_to\_find = outer\_segments[0][1];}
+\DoxyCodeLine{819 }
+\DoxyCodeLine{820     first\_node = curr\_node;}
+\DoxyCodeLine{821 }
+\DoxyCodeLine{822     outer\_bounds.clear();}
+\DoxyCodeLine{823     outer\_bounds.reserve(outer\_segments.size() + 1);}
+\DoxyCodeLine{824     outer\_bounds.push\_back(nodes[curr\_node]);}
+\DoxyCodeLine{825     \textcolor{keywordflow}{while} (node\_to\_find != first\_node)}
+\DoxyCodeLine{826     \{}
+\DoxyCodeLine{827         \textcolor{keywordflow}{for} (i = 1; i < outer\_segments.size(); i++)}
+\DoxyCodeLine{828         \{}
+\DoxyCodeLine{829             \textcolor{keywordflow}{for} (j = 0; j < 2; j++)}
+\DoxyCodeLine{830             \{}
+\DoxyCodeLine{831                 \textcolor{keywordflow}{if} (outer\_segments[i][j] == node\_to\_find \&\& outer\_segments[i][(j + 1) \% 2] != curr\_node)}
+\DoxyCodeLine{832                 \{}
+\DoxyCodeLine{833                     curr\_node = node\_to\_find;}
+\DoxyCodeLine{834                     node\_to\_find = outer\_segments[i][(j + 1) \% 2];}
+\DoxyCodeLine{835                     }
+\DoxyCodeLine{836                     outer\_bounds.push\_back(nodes[curr\_node]);}
+\DoxyCodeLine{837 }
+\DoxyCodeLine{838                     i = outer\_segments.size();}
+\DoxyCodeLine{839                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{840                 \}}
+\DoxyCodeLine{841             \}}
+\DoxyCodeLine{842         \}}
+\DoxyCodeLine{843     \}}
+\DoxyCodeLine{844 }
+\DoxyCodeLine{845     outer\_bounds.push\_back(nodes[first\_node]);}
+\DoxyCodeLine{846     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{847 \}}
+\DoxyCodeLine{848 }
+\DoxyCodeLine{849 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

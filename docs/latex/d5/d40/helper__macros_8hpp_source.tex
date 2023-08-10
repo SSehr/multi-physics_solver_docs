@@ -1,0 +1,164 @@
+\hypertarget{helper__macros_8hpp_source}{}\doxysection{helper\+\_\+macros.\+hpp}
+\label{helper__macros_8hpp_source}\index{src/support\_files/hpp/helper\_macros.hpp@{src/support\_files/hpp/helper\_macros.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef HELPERMACROS}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define HELPERMACROS}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#define trace(code) code; std::cout<<\#code<<"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#ifndef \_\_C0\_\_}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define \_\_C0\_\_ 5.5e-\/2}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifndef \_\_N0\_\_}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define \_\_N0\_\_ 2.25e4}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#ifndef GIT\_HASH}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define GIT\_HASH "{}-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#ifndef COMPILE\_TIME}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define COMPILE\_TIME "{}-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{comment}{// macro to create functions that ramps a parameter}}
+\DoxyCodeLine{26 \textcolor{comment}{// name is function name, init\_val is initial value, rate is growth rate}}
+\DoxyCodeLine{27 \textcolor{comment}{// based on element age}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#ifndef EL\_AGE\_RAMP\_FUNCTION}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define EL\_AGE\_RAMP\_FUNCTION(name, init\_val, rate)\(\backslash\)}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{    static double name\#\#\_init\_val\_ = init\_val; \(\backslash\)}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{    static double name\#\#\_rate\_ = rate;\(\backslash\)}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{    auto name = [](mp\_element \&el) \{return name\#\#\_init\_val\_ + name\#\#\_rate\_ * el.element\_age;\};}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{comment}{// macro to define a step function at a cut off temperature}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#ifndef EL\_TEMP\_STEP\_FUNC}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define EL\_TEMP\_STEP\_FUNC(name,init\_val, crit\_temp, low\_val)\(\backslash\)}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{    static double name\#\#\_init\_val\_ = init\_val;\(\backslash\)}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{    static double name\#\#\_crit\_temp\_ = crit\_temp;\(\backslash\)}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{    static double name\#\#\_low\_val\_ = low\_val;\(\backslash\)}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{    auto name = [](mp\_element \&el)\(\backslash\)}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{    \{\(\backslash\)}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{        if (el.Temperature >= name\#\#\_crit\_temp\_) return name\#\#\_init\_val\_;\(\backslash\)}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{        else return name\#\#\_low\_val\_;\(\backslash\)}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{    \};}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{comment}{// macro to define a step function at a cut off temperature and age}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#ifndef EL\_TEMP\_AGE\_STEP\_FUNC}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define EL\_TEMP\_AGE\_STEP\_FUNC(name,init\_val, crit\_temp, crit\_age, low\_val)\(\backslash\)}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{    static double name\#\#\_init\_val\_ = init\_val;\(\backslash\)}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{    static double name\#\#\_crit\_temp\_ = crit\_temp;\(\backslash\)}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{    static double name\#\#\_crit\_age\_ = crit\_age;\(\backslash\)}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{    static double name\#\#\_low\_val\_ = low\_val;\(\backslash\)}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{    auto name = [](mp\_element \&el)\(\backslash\)}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{    \{\(\backslash\)}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{        if (el.Temperature >= name\#\#\_crit\_temp\_ || el.element\_age < name\#\#\_crit\_age\_) return name\#\#\_init\_val\_;\(\backslash\)}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{        else return name\#\#\_low\_val\_;\(\backslash\)}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{    \};}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{comment}{// macro to create function for temperature dependent D\_eff based on pp\_O2 and pp\_H20}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#ifndef D\_EFF\_FUNC}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define D\_EFF\_FUNC(name, pp\_O2, pp\_H2O, C0, N0)\(\backslash\)}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{    static double name\#\#\_pp\_O2\_ = pp\_O2; \(\backslash\)}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{    static double name\#\#\_pp\_H2O\_ = pp\_H2O; \(\backslash\)}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{    static double name\#\#\_C0\_ = C0;\(\backslash\)}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{    static double name\#\#\_N0\_ = N0;\(\backslash\)}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{    auto name = [](mp\_element \&el) \(\backslash\)}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{    \{\(\backslash\)}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{        double bo2 = 5.5e4 * exp(-\/245e3/(8.314*el.Temperature));\(\backslash\)}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{        double bh2o = 4.8e-\/2 * exp(-\/75e3/(8.314*el.Temperature));\(\backslash\)}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{        double B\_eff = (bo2*name\#\#\_pp\_O2\_*(1. -\/ name\#\#\_pp\_H2O\_) + bh2o * name\#\#\_pp\_H2O\_ * (1. -\/ name\#\#\_pp\_O2\_));\(\backslash\)}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{        return B\_eff * name\#\#\_N0\_ / name\#\#\_C0\_ / 2.;\(\backslash\)}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{    \};}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \textcolor{comment}{// macro to define ramp temperature loading function}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#ifndef TEMP\_RAMP\_FUNC}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define TEMP\_RAMP\_FUNC(name, initial\_temperature, cool\_rate)\(\backslash\)}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{    static double name\#\#\_initial\_Temperature\_ = initial\_temperature;\(\backslash\)}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{    static double name\#\#\_cooling\_rate\_ = cool\_rate;\(\backslash\)}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{    auto name = [](double curr\_time)\(\backslash\)}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{    \{\(\backslash\)}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{        return name\#\#\_initial\_Temperature\_ -\/ name\#\#\_cooling\_rate\_ * curr\_time;\(\backslash\)}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{    \};}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 \textcolor{comment}{// macro to define cyclical cold temperature}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#ifndef TEMP\_STEP\_FUNC}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define TEMP\_STEP\_FUNC(name, Temperature\_1, Temperature\_2, interval)\(\backslash\)}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{    static double name\#\#\_Temperature\_1\_ = Temperature\_1;\(\backslash\)}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{    static double name\#\#\_Temperature\_2\_ = Temperature\_2;\(\backslash\)}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{    static double name\#\#\_interval\_ = interval;\(\backslash\)}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{    auto name = [](double curr\_time)\(\backslash\)}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{    \{\(\backslash\)}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{        if (static\_cast<int>(curr\_time) \% static\_cast<int>(name\#\#\_interval\_) == 0 \&\& curr\_time > 0) return name\#\#\_Temperature\_2\_;\(\backslash\)}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{        else return name\#\#\_Temperature\_1\_;\(\backslash\)}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{    \};}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{comment}{// macro to define cyclical temperature loading function}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#ifndef TEMP\_CYCLE\_FUNC}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define TEMP\_CYCLE\_FUNC(name, Temperature\_1, Temp\_1\_time, rate\_1, Temperature\_2, Temp\_2\_time, rate\_2)\(\backslash\)}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{    static double name\#\#\_Temperature\_1\_ = Temperature\_1;\(\backslash\)}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{    static double name\#\#\_Temp\_1\_time\_ = Temp\_1\_time;\(\backslash\)}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{    static double name\#\#\_rate\_1\_ = rate\_1;\(\backslash\)}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{    static double name\#\#\_Temperature\_2\_ = Temperature\_2;\(\backslash\)}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{    static double name\#\#\_Temp\_2\_time\_ = Temp\_2\_time;\(\backslash\)}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{    static double name\#\#\_rate\_2\_ = rate\_2;\(\backslash\)}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{    auto name = [](double curr\_time) \(\backslash\)}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{    \{ \(\backslash\)}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{        double ramp\_1\_time = fabs((name\#\#\_Temperature\_1\_ -\/ name\#\#\_Temperature\_2\_) / name\#\#\_rate\_1\_); \(\backslash\)}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{        double ramp\_2\_time = fabs((name\#\#\_Temperature\_1\_ -\/ name\#\#\_Temperature\_2\_) / name\#\#\_rate\_2\_); \(\backslash\)}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{        double total\_cycle\_time = name\#\#\_Temp\_1\_time\_ + ramp\_1\_time + name\#\#\_Temp\_2\_time\_ + ramp\_2\_time; \(\backslash\)}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{        int current\_cycle\_time = static\_cast<int>(curr\_time) \% static\_cast<int>(total\_cycle\_time); \(\backslash\)}}
+\DoxyCodeLine{118 \textcolor{preprocessor}{        if (current\_cycle\_time <= name\#\#\_Temp\_1\_time\_) return name\#\#\_Temperature\_1\_;\(\backslash\)}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{        else if (current\_cycle\_time <= name\#\#\_Temp\_1\_time\_ + ramp\_1\_time) return name\#\#\_Temperature\_1\_ + name\#\#\_rate\_1\_ * (current\_cycle\_time -\/ name\#\#\_Temp\_1\_time\_);\(\backslash\)}}
+\DoxyCodeLine{120 \textcolor{preprocessor}{        else if (current\_cycle\_time <= name\#\#\_Temp\_1\_time\_ + ramp\_1\_time + name\#\#\_Temp\_2\_time\_) return name\#\#\_Temperature\_2\_;\(\backslash\)}}
+\DoxyCodeLine{121 \textcolor{preprocessor}{        else return name\#\#\_Temperature\_2\_ + name\#\#\_rate\_2\_ * (current\_cycle\_time -\/ name\#\#\_Temp\_1\_time\_ -\/ ramp\_1\_time -\/ name\#\#\_Temp\_2\_time\_);\(\backslash\)}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{    \};}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125 \textcolor{comment}{// macro to create intial strain function for flat, horizontal oxide layer}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#ifndef INITIAL\_HORIZONTAL\_STRAIN}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#define INITIAL\_HORIZONTAL\_STRAIN(name,eps)\(\backslash\)}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{    static double name\#\#\_eps\_ = eps;\(\backslash\)}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{    auto name = [](mp\_element \&el)\(\backslash\)}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{    \{\(\backslash\)}}
+\DoxyCodeLine{131 \textcolor{preprocessor}{        el.eps11\_cr = -\/1 * name\#\#\_eps\_;\(\backslash\)}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{        el.eps22\_cr = 2 * name\#\#\_eps\_;\(\backslash\)}}
+\DoxyCodeLine{133 \textcolor{preprocessor}{        el.eps12\_cr = 0;\(\backslash\)}}
+\DoxyCodeLine{134 \textcolor{preprocessor}{        el.eps11\_m = 0;\(\backslash\)}}
+\DoxyCodeLine{135 \textcolor{preprocessor}{        el.eps22\_m = 3 * name\#\#\_eps\_;\(\backslash\)}}
+\DoxyCodeLine{136 \textcolor{preprocessor}{        el.eps12\_m = 0;\(\backslash\)}}
+\DoxyCodeLine{137 \textcolor{preprocessor}{        return;\(\backslash\)}}
+\DoxyCodeLine{138 \textcolor{preprocessor}{    \};}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141 \textcolor{comment}{// macro to create intial strain function for flat, horizontal oxide layer}}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#ifndef INITIAL\_HORIZONTAL\_STRAIN\_NO\_CREEP}}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#define INITIAL\_HORIZONTAL\_STRAIN\_NO\_CREEP(name,eps,nu)\(\backslash\)}}
+\DoxyCodeLine{144 \textcolor{preprocessor}{    static double name\#\#\_eps\_ = eps;\(\backslash\)}}
+\DoxyCodeLine{145 \textcolor{preprocessor}{    static double name\#\#\_nu\_ = nu;\(\backslash\)}}
+\DoxyCodeLine{146 \textcolor{preprocessor}{    auto name = [](mp\_element \&el)\(\backslash\)}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{    \{\(\backslash\)}}
+\DoxyCodeLine{148 \textcolor{preprocessor}{        el.eps11\_cr = 0;\(\backslash\)}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{        el.eps22\_cr = 0;\(\backslash\)}}
+\DoxyCodeLine{150 \textcolor{preprocessor}{        el.eps12\_cr = 0;\(\backslash\)}}
+\DoxyCodeLine{151 \textcolor{preprocessor}{        el.eps11\_m = 0;\(\backslash\)}}
+\DoxyCodeLine{152 \textcolor{preprocessor}{        el.eps22\_m = (1+name\#\#\_nu\_)/(1-\/name\#\#\_nu\_) * name\#\#\_eps\_;\(\backslash\)}}
+\DoxyCodeLine{153 \textcolor{preprocessor}{        el.eps12\_m = 0;\(\backslash\)}}
+\DoxyCodeLine{154 \textcolor{preprocessor}{        return;\(\backslash\)}}
+\DoxyCodeLine{155 \textcolor{preprocessor}{    \};}}
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

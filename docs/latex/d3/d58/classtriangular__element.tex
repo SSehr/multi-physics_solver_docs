@@ -1,0 +1,165 @@
+\hypertarget{classtriangular__element}{}\doxysection{triangular\+\_\+element Class Reference}
+\label{classtriangular__element}\index{triangular\_element@{triangular\_element}}
+
+
+{\ttfamily \#include $<$triangular\+\_\+element.\+hpp$>$}
+
+
+
+Inheritance diagram for triangular\+\_\+element\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{d1/d2d/classtriangular__element__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for triangular\+\_\+element\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{d5/de7/classtriangular__element__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classtriangular__element_a6f0b3184d20a34afc3aa58dfe8bd23b7}{Area}} ()
+\item 
+\mbox{\hyperlink{classpoint}{point}} \mbox{\hyperlink{classtriangular__element_adc2c20be5558cfa7856b7253a980fc01}{centroid}} ()
+\item 
+\mbox{\hyperlink{classtriangular__element_a9a757de20485416b54fbedec072a9fe5}{triangular\+\_\+element}} ()
+\item 
+\mbox{\hyperlink{classtriangular__element_a50b8c3d26756623a7f3ac80e3ce549b2}{triangular\+\_\+element}} (int ns\mbox{[}6\mbox{]}, \mbox{\hyperlink{classpoint}{point}} p\+\_\+\mbox{[}6\mbox{]}, int neighs\mbox{[}3\mbox{]}, int in\+\_\+reg, element\+\_\+type\+::type el\+\_\+type\+\_\+, symmetry\+\_\+type\+::type plane\+\_\+type\+\_\+)
+\item 
+void \mbox{\hyperlink{classtriangular__element_ae357b47f2cb81887c42001b9acd4c3ef}{get\+\_\+barycentric\+\_\+coordinates}} (\mbox{\hyperlink{classpoint}{point}} pt, double L\mbox{[}3\mbox{]})
+\item 
+bool \mbox{\hyperlink{classtriangular__element_acf144ea4ef5082002cc887e226fb3654}{element\+\_\+node}} (int test\+\_\+node\+\_\+no)
+\item 
+void \mbox{\hyperlink{classtriangular__element_a28e7589e70fb89f9e0da2b930d6e6a5b}{check\+\_\+shape}} ()
+\item 
+bool \mbox{\hyperlink{classtriangular__element_a39809dd5665dd15be56fac56f22ad6d0}{within\+\_\+circumcircle}} (\mbox{\hyperlink{classpoint}{point}} pt)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtriangular__element_aa11c63bf13d0c5cfd7cebcc6fce5197c}\label{classtriangular__element_aa11c63bf13d0c5cfd7cebcc6fce5197c}} 
+int {\bfseries nodes} \mbox{[}6\mbox{]}
+\begin{DoxyCompactList}\small\item\em list of global node numbers that make up the element \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtriangular__element_a8a5033d266e489dcd60d2bd1f8215512}\label{classtriangular__element_a8a5033d266e489dcd60d2bd1f8215512}} 
+\mbox{\hyperlink{classpoint}{point}} {\bfseries p} \mbox{[}6\mbox{]}
+\begin{DoxyCompactList}\small\item\em list of nodal locations \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtriangular__element_a57fa660bf20f4fbd852014651794f7a5}\label{classtriangular__element_a57fa660bf20f4fbd852014651794f7a5}} 
+unsigned int {\bfseries n\+\_\+nodes}
+\begin{DoxyCompactList}\small\item\em number of nodes, 3 for linear, 6 for quadratic \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtriangular__element_a493bae720a6dd8c3ce42e21e59bc0c32}\label{classtriangular__element_a493bae720a6dd8c3ce42e21e59bc0c32}} 
+int {\bfseries neighbors} \mbox{[}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em list of indices of neighboring elements, -\/1 if no neighbor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtriangular__element_a2f340003a702951c7ced44e0edd70ed2}\label{classtriangular__element_a2f340003a702951c7ced44e0edd70ed2}} 
+int {\bfseries region}
+\begin{DoxyCompactList}\small\item\em region tag \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtriangular__element_ac4e6693d58c4d889ebb85ff6e236dbb8}\label{classtriangular__element_ac4e6693d58c4d889ebb85ff6e236dbb8}} 
+element\+\_\+type\+::type {\bfseries el\+\_\+type}
+\begin{DoxyCompactList}\small\item\em element type \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtriangular__element_a2ba89aa54e92cf4a1e2cb8db18730df3}\label{classtriangular__element_a2ba89aa54e92cf4a1e2cb8db18730df3}} 
+symmetry\+\_\+type\+::type {\bfseries plane\+\_\+type}
+\begin{DoxyCompactList}\small\item\em symmetry type \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtriangular__element_abbcbfdc83a62a8905391a718037255dd}\label{classtriangular__element_abbcbfdc83a62a8905391a718037255dd}} 
+bool {\bfseries bad\+\_\+shape}
+\begin{DoxyCompactList}\small\item\em flag to denote if element is poorly formed \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtriangular__element_af4a7bdca4cf6dc2bb5c7c038de343d01}\label{classtriangular__element_af4a7bdca4cf6dc2bb5c7c038de343d01}} 
+bool {\bfseries keep\+\_\+element}
+\begin{DoxyCompactList}\small\item\em flag to denote whether an element should be kept during a remesh \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtriangular__element_a9de5eb257e0963a40b1ac45582f71ff1}\label{classtriangular__element_a9de5eb257e0963a40b1ac45582f71ff1}} 
+double {\bfseries crit\+\_\+edge\+\_\+ratio} = 3
+\begin{DoxyCompactList}\small\item\em critical value to determine if an element is a bad shape \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+base class for triangluar elements that can have different interpolation order or symmmetry types 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtriangular__element_a9a757de20485416b54fbedec072a9fe5}\label{classtriangular__element_a9a757de20485416b54fbedec072a9fe5}} 
+\index{triangular\_element@{triangular\_element}!triangular\_element@{triangular\_element}}
+\index{triangular\_element@{triangular\_element}!triangular\_element@{triangular\_element}}
+\doxysubsubsection{\texorpdfstring{triangular\_element()}{triangular\_element()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily triangular\+\_\+element\+::triangular\+\_\+element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+default empty constructor \mbox{\Hypertarget{classtriangular__element_a50b8c3d26756623a7f3ac80e3ce549b2}\label{classtriangular__element_a50b8c3d26756623a7f3ac80e3ce549b2}} 
+\index{triangular\_element@{triangular\_element}!triangular\_element@{triangular\_element}}
+\index{triangular\_element@{triangular\_element}!triangular\_element@{triangular\_element}}
+\doxysubsubsection{\texorpdfstring{triangular\_element()}{triangular\_element()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily triangular\+\_\+element\+::triangular\+\_\+element (\begin{DoxyParamCaption}\item[{int}]{ns\mbox{[}6\mbox{]},  }\item[{\mbox{\hyperlink{classpoint}{point}}}]{p\+\_\+\mbox{[}6\mbox{]},  }\item[{int}]{neighs\mbox{[}3\mbox{]},  }\item[{int}]{in\+\_\+reg,  }\item[{element\+\_\+type\+::type}]{el\+\_\+type\+\_\+,  }\item[{symmetry\+\_\+type\+::type}]{plane\+\_\+type\+\_\+ }\end{DoxyParamCaption})}
+
+constructor that takes in relevant information 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtriangular__element_a6f0b3184d20a34afc3aa58dfe8bd23b7}\label{classtriangular__element_a6f0b3184d20a34afc3aa58dfe8bd23b7}} 
+\index{triangular\_element@{triangular\_element}!Area@{Area}}
+\index{Area@{Area}!triangular\_element@{triangular\_element}}
+\doxysubsubsection{\texorpdfstring{Area()}{Area()}}
+{\footnotesize\ttfamily double triangular\+\_\+element\+::\+Area (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+returns tha area of the element Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{d3/d58/classtriangular__element_a6f0b3184d20a34afc3aa58dfe8bd23b7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtriangular__element_adc2c20be5558cfa7856b7253a980fc01}\label{classtriangular__element_adc2c20be5558cfa7856b7253a980fc01}} 
+\index{triangular\_element@{triangular\_element}!centroid@{centroid}}
+\index{centroid@{centroid}!triangular\_element@{triangular\_element}}
+\doxysubsubsection{\texorpdfstring{centroid()}{centroid()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classpoint}{point}} triangular\+\_\+element\+::centroid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+returns the centroid of the element Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{d3/d58/classtriangular__element_adc2c20be5558cfa7856b7253a980fc01_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtriangular__element_a28e7589e70fb89f9e0da2b930d6e6a5b}\label{classtriangular__element_a28e7589e70fb89f9e0da2b930d6e6a5b}} 
+\index{triangular\_element@{triangular\_element}!check\_shape@{check\_shape}}
+\index{check\_shape@{check\_shape}!triangular\_element@{triangular\_element}}
+\doxysubsubsection{\texorpdfstring{check\_shape()}{check\_shape()}}
+{\footnotesize\ttfamily void triangular\+\_\+element\+::check\+\_\+shape (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+checks if the shape of the element is bad and sets the flag correctly if so \mbox{\Hypertarget{classtriangular__element_acf144ea4ef5082002cc887e226fb3654}\label{classtriangular__element_acf144ea4ef5082002cc887e226fb3654}} 
+\index{triangular\_element@{triangular\_element}!element\_node@{element\_node}}
+\index{element\_node@{element\_node}!triangular\_element@{triangular\_element}}
+\doxysubsubsection{\texorpdfstring{element\_node()}{element\_node()}}
+{\footnotesize\ttfamily bool triangular\+\_\+element\+::element\+\_\+node (\begin{DoxyParamCaption}\item[{int}]{test\+\_\+node\+\_\+no }\end{DoxyParamCaption})}
+
+return true if global node index test\+\_\+node\+\_\+no is one of the nodes in the element, false otherwise \mbox{\Hypertarget{classtriangular__element_ae357b47f2cb81887c42001b9acd4c3ef}\label{classtriangular__element_ae357b47f2cb81887c42001b9acd4c3ef}} 
+\index{triangular\_element@{triangular\_element}!get\_barycentric\_coordinates@{get\_barycentric\_coordinates}}
+\index{get\_barycentric\_coordinates@{get\_barycentric\_coordinates}!triangular\_element@{triangular\_element}}
+\doxysubsubsection{\texorpdfstring{get\_barycentric\_coordinates()}{get\_barycentric\_coordinates()}}
+{\footnotesize\ttfamily void triangular\+\_\+element\+::get\+\_\+barycentric\+\_\+coordinates (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpoint}{point}}}]{pt,  }\item[{double}]{L\mbox{[}3\mbox{]} }\end{DoxyParamCaption})}
+
+calculate the barycentric coordinates of the point pt and return in L Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d58/classtriangular__element_ae357b47f2cb81887c42001b9acd4c3ef_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtriangular__element_a39809dd5665dd15be56fac56f22ad6d0}\label{classtriangular__element_a39809dd5665dd15be56fac56f22ad6d0}} 
+\index{triangular\_element@{triangular\_element}!within\_circumcircle@{within\_circumcircle}}
+\index{within\_circumcircle@{within\_circumcircle}!triangular\_element@{triangular\_element}}
+\doxysubsubsection{\texorpdfstring{within\_circumcircle()}{within\_circumcircle()}}
+{\footnotesize\ttfamily bool triangular\+\_\+element\+::within\+\_\+circumcircle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpoint}{point}}}]{pt }\end{DoxyParamCaption})}
+
+returns true if the point pt is within the circumcircle of the element 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/support\+\_\+files/hpp/triangular\+\_\+element.\+hpp\item 
+src/support\+\_\+files/cpp/triangular\+\_\+element.\+cpp\end{DoxyCompactItemize}

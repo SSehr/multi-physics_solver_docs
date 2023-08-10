@@ -1,0 +1,9 @@
+<map id="oxide_mesh::get_symmetry_boundary" name="oxide_mesh::get_symmetry_boundary">
+<area shape="rect" id="node1" title="get the symmetry boundary based on the mechanical constraint defined as the crack plane" alt="" coords="894,72,1076,114"/>
+<area shape="rect" id="node2" href="$de/d0a/classoxide__mesh.html#a2b35a625d60b84747c162b428bebb166" title="check for crack face contact, may be used in user defined functions" alt="" coords="689,5,846,47"/>
+<area shape="rect" id="node3" href="$de/d0a/classoxide__mesh.html#aa945ecb81b26ddbb4059e72ddcb82f9c" title="check to see if there is crack healing via contact IS THIS NEEDED???" alt="" coords="689,72,846,114"/>
+<area shape="rect" id="node7" href="$de/d0a/classoxide__mesh.html#a9bc3bf3819d3a59f146e462f90acd003" title="main solve function modified to handle crack contact this should be rectified with the main solve_mec..." alt="" coords="470,136,639,178"/>
+<area shape="rect" id="node4" href="$de/d0a/classoxide__mesh.html#a926543deb442cfa9b203e46f7e2bea2d" title="run cracking simulation" alt="" coords="468,69,641,111"/>
+<area shape="rect" id="node5" href="$de/d0a/classoxide__mesh.html#ad3c124e5fd82ca502fe791baaa108048" title="run the main loop" alt="" coords="237,110,420,137"/>
+<area shape="rect" id="node6" href="$de/d0a/classoxide__mesh.html#a0478903f72d483ab779af8443ffbc48b" title="run a simulation" alt="" coords="5,110,189,137"/>
+</map>

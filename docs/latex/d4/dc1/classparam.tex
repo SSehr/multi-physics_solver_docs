@@ -1,0 +1,98 @@
+\hypertarget{classparam}{}\doxysection{param Class Reference}
+\label{classparam}\index{param@{param}}
+
+
+{\ttfamily \#include $<$param.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classparam_af854395e1a1976357881b9c9fb9b3d3e}{param}} ()
+\item 
+bool \mbox{\hyperlink{classparam_ae5231462e47431bf69c9c7386e45d4c9}{store\+\_\+parameter}} (std\+::string in\+\_\+var\+\_\+name, std\+::string in\+\_\+val)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classparam_a3658cc23183bbcf1bb53b8e6ad340135}\label{classparam_a3658cc23183bbcf1bb53b8e6ad340135}} 
+std\+::string {\bfseries base\+\_\+path}
+\begin{DoxyCompactList}\small\item\em base file path to store files \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classparam_a898056ada0f91d0faa92c3dd5665cfbe}\label{classparam_a898056ada0f91d0faa92c3dd5665cfbe}} 
+std\+::string {\bfseries file\+\_\+prefix}
+\begin{DoxyCompactList}\small\item\em file prefix that is prepended to file names \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classparam_aee4e894493d0be7e746c947074dbd48b}\label{classparam_aee4e894493d0be7e746c947074dbd48b}} 
+int {\bfseries num\+\_\+growth\+\_\+steps}
+\begin{DoxyCompactList}\small\item\em total number of diffusion/oxidation time steps (dt) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classparam_ae42f387cfd0922b6fd9b12edbabceeef}\label{classparam_ae42f387cfd0922b6fd9b12edbabceeef}} 
+int {\bfseries dump\+\_\+int}
+\begin{DoxyCompactList}\small\item\em number of diffusion/oxidation time steps between saving output files \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classparam_a1c2e2c00d02319584576c3f1b1500da1}\label{classparam_a1c2e2c00d02319584576c3f1b1500da1}} 
+double {\bfseries dt}
+\begin{DoxyCompactList}\small\item\em diffusion/oxidation time step \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classparam_a5b39941cfea40520f32dfe50855b6385}\label{classparam_a5b39941cfea40520f32dfe50855b6385}} 
+double {\bfseries dt\+\_\+cr}
+\begin{DoxyCompactList}\small\item\em creep time step \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classparam_a95567a863206dd89c1aacdadcaea24f9}\label{classparam_a95567a863206dd89c1aacdadcaea24f9}} 
+element\+\_\+type\+::type {\bfseries el\+\_\+type}
+\begin{DoxyCompactList}\small\item\em element interpolation order \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classparam_a59c358ab0a13928fa758e384a5c52bdd}\label{classparam_a59c358ab0a13928fa758e384a5c52bdd}} 
+double {\bfseries min\+\_\+area}
+\begin{DoxyCompactList}\small\item\em minimum element area \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classparam_a491d7654eed5f38a4dc589f9122ca544}\label{classparam_a491d7654eed5f38a4dc589f9122ca544}} 
+double {\bfseries refine\+\_\+radius}
+\begin{DoxyCompactList}\small\item\em distance from boundary that elements are kept to min\+\_\+area \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classparam_a500bd80e1cdf3efeaa3ada21197838cc}\label{classparam_a500bd80e1cdf3efeaa3ada21197838cc}} 
+double {\bfseries grad\+\_\+rate}
+\begin{DoxyCompactList}\small\item\em growth rate for the element size \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classparam_aa047c9c6d7fb87e3419e4c962e1f0df1}\label{classparam_aa047c9c6d7fb87e3419e4c962e1f0df1}} 
+double {\bfseries min\+\_\+eta}
+\begin{DoxyCompactList}\small\item\em minimum viscosity \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classparam_a3799b3b6f8a5ec1c4f6629d163374ca5}\label{classparam_a3799b3b6f8a5ec1c4f6629d163374ca5}} 
+double {\bfseries eyring\+\_\+prefactor}
+\begin{DoxyCompactList}\small\item\em Eyring model parameter = 3.\+8e-\/23;. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classparam_ae56abd6eeb56c39915675016ac97e74e}\label{classparam_ae56abd6eeb56c39915675016ac97e74e}} 
+double {\bfseries eyring\+\_\+\+EoverR}
+\begin{DoxyCompactList}\small\item\em Eyring model parameter = 85638.\+7;. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classparam_aa3aba995ad7cc786b53637dcce0de110}\label{classparam_aa3aba995ad7cc786b53637dcce0de110}} 
+double {\bfseries eyring\+\_\+tau\+\_\+c}
+\begin{DoxyCompactList}\small\item\em Eyring model parameter = 0.\+1;. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classparam_a48a129686d76cfb65e6c8f96fd52ba5e}\label{classparam_a48a129686d76cfb65e6c8f96fd52ba5e}} 
+bool {\bfseries output\+\_\+polygons}
+\begin{DoxyCompactList}\small\item\em if true, polygons are saved to vtu files \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classparam_aa5d4209dfe644c4f921ac9778356628b}\label{classparam_aa5d4209dfe644c4f921ac9778356628b}} 
+bool {\bfseries output\+\_\+timing}
+\begin{DoxyCompactList}\small\item\em if true, detailing timing output every diffusion/oxidation time step \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classparam_acc9319c4733ae14684be2d0111703de5}\label{classparam_acc9319c4733ae14684be2d0111703de5}} 
+bool {\bfseries output\+\_\+segments}
+\begin{DoxyCompactList}\small\item\em if true, save the segments used to create the mesh \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classparam_aa4d1901afc9f7b6a0cb4ea792183524a}\label{classparam_aa4d1901afc9f7b6a0cb4ea792183524a}} 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ {\bfseries mesh\+\_\+regions}
+\begin{DoxyCompactList}\small\item\em list of region pts, tags and minimum area (x,y,tag,area) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class is used to pass in parameters into the API 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classparam_af854395e1a1976357881b9c9fb9b3d3e}\label{classparam_af854395e1a1976357881b9c9fb9b3d3e}} 
+\index{param@{param}!param@{param}}
+\index{param@{param}!param@{param}}
+\doxysubsubsection{\texorpdfstring{param()}{param()}}
+{\footnotesize\ttfamily param\+::param (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+constructor sets default values 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classparam_ae5231462e47431bf69c9c7386e45d4c9}\label{classparam_ae5231462e47431bf69c9c7386e45d4c9}} 
+\index{param@{param}!store\_parameter@{store\_parameter}}
+\index{store\_parameter@{store\_parameter}!param@{param}}
+\doxysubsubsection{\texorpdfstring{store\_parameter()}{store\_parameter()}}
+{\footnotesize\ttfamily bool param\+::store\+\_\+parameter (\begin{DoxyParamCaption}\item[{std\+::string}]{in\+\_\+var\+\_\+name,  }\item[{std\+::string}]{in\+\_\+val }\end{DoxyParamCaption})}
+
+parse the string in\+\_\+var\+\_\+name to see if it matches one of the class members. ~\newline
+ if it matches, store the proper value and return true. otherwise return false 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/support\+\_\+files/hpp/param.\+hpp\item 
+src/support\+\_\+files/cpp/param.\+cpp\end{DoxyCompactItemize}

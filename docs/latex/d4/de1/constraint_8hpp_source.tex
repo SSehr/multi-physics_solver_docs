@@ -1,0 +1,44 @@
+\hypertarget{constraint_8hpp_source}{}\doxysection{constraint.\+hpp}
+\label{constraint_8hpp_source}\index{src/support\_files/hpp/constraint.hpp@{src/support\_files/hpp/constraint.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef CONSTRAINT}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define CONSTRAINT}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <new>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{17 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceconstraint__type}{constraint\_type}}}
+\DoxyCodeLine{18 \{}
+\DoxyCodeLine{22     \textcolor{keyword}{enum} \mbox{\hyperlink{namespaceconstraint__type_a8a6187c745812b5023718836eaaf293f}{type}}}
+\DoxyCodeLine{23     \{}
+\DoxyCodeLine{24         x\_displace, y\_displace, concentration, x\_tie, y\_tie, slant, x\_force, y\_force}
+\DoxyCodeLine{25     \};}
+\DoxyCodeLine{26 \};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{32 \textcolor{keyword}{class }\mbox{\hyperlink{classconstraint}{constraint}}}
+\DoxyCodeLine{33 \{}
+\DoxyCodeLine{34     \textcolor{keyword}{public}:}
+\DoxyCodeLine{35         \textcolor{keywordtype}{int} \mbox{\hyperlink{classnode}{node}} = 0; }
+\DoxyCodeLine{36         \textcolor{keywordtype}{int} \mbox{\hyperlink{classconstraint_a3d471f7ad07bf19dfdf2e1f0ebd69b59}{element}} = 0; }
+\DoxyCodeLine{37         \textcolor{keywordtype}{double} \mbox{\hyperlink{classconstraint_affee79c372a00ff8a41c43a8a2bb828f}{initial\_value}} = 0; }
+\DoxyCodeLine{38         \textcolor{keywordtype}{double} \mbox{\hyperlink{classconstraint_a1d54bb9b258d8d90378c625ce951ded5}{rate}} = 0; }
+\DoxyCodeLine{39         \mbox{\hyperlink{classconstraint_af9fd04fc57740c37255a37a103b128bb}{constraint}}();}
+\DoxyCodeLine{40         }
+\DoxyCodeLine{41         \textcolor{keywordtype}{double} \mbox{\hyperlink{classconstraint_a2439398e48ad6cbaa14ad3cc82ca6bd9}{get\_value}}(\textcolor{keywordtype}{double} time);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43         \mbox{\hyperlink{namespaceconstraint__type_a8a6187c745812b5023718836eaaf293f}{constraint\_type::type}} \mbox{\hyperlink{classconstraint_a4f0ad4b56227c15e77dc2d880db5e7e0}{c\_type}}; }
+\DoxyCodeLine{44         \mbox{\hyperlink{classconstraint_af9fd04fc57740c37255a37a103b128bb}{constraint}}(\mbox{\hyperlink{namespaceconstraint__type_a8a6187c745812b5023718836eaaf293f}{constraint\_type::type}} c\_type\_, \textcolor{keywordtype}{double} initial\_value\_, \textcolor{keywordtype}{double} rate\_, \textcolor{keywordtype}{int} node\_ = 0, \textcolor{keywordtype}{int} element\_ = 0);}
+\DoxyCodeLine{45         \textcolor{keywordtype}{int} \mbox{\hyperlink{classconstraint_a34d8ca83981fd9a80a568cb6a9a16562}{offset}} = 0; }
+\DoxyCodeLine{46 \};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

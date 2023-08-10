@@ -1,0 +1,4 @@
+<map id="oxide_mesh::find_outer_bounds" name="oxide_mesh::find_outer_bounds">
+<area shape="rect" id="node1" title="find the outer boundary of the geometry" alt="" coords="5,5,162,47"/>
+<area shape="rect" id="node2" href="$de/d0a/classoxide__mesh.html#ace6d9495c95364ee6f41846d4fd93a79" title="save polygons to a file defined as file_prefix + lable + out_ctr.vtu" alt="" coords="210,13,396,40"/>
+</map>

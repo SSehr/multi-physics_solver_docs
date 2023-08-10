@@ -1,0 +1,9 @@
+<map id="oxide_mesh::shorten_crack_nodes" name="oxide_mesh::shorten_crack_nodes">
+<area shape="rect" id="node1" title="shorten the crack using nodes as input" alt="" coords="5,64,148,106"/>
+<area shape="rect" id="node2" href="$de/d0a/classoxide__mesh.html#ade7237459e203b7a287a545d358e7df0" title="convert a list of indices to points" alt="" coords="196,5,338,47"/>
+<area shape="rect" id="node3" href="$de/d0a/classoxide__mesh.html#a41501b35a068a1fec431fbeaa141f0e4" title="get the index of in_constraints the corresponds to the concentration constraint" alt="" coords="386,64,588,106"/>
+<area shape="rect" id="node4" href="$de/d0a/classoxide__mesh.html#a7f742594832b4b94e92776eb36c7382a" title="update the point location in the various lists if the point is not on the symmetry boundary condition" alt="" coords="198,123,336,165"/>
+<area shape="rect" id="node5" href="$de/d0a/classoxide__mesh.html#a5f2e74fe853dfbec4353db91b7b1b9b7" title="update the point within the element lists MAYBE REDO THIS FUNCTION TO INTEGRATE find_connected_elemen..." alt="" coords="418,131,556,173"/>
+<area shape="rect" id="node6" href="$de/d0a/classoxide__mesh.html#a3e3bf68832adf49423313d920576e21f" title="find elements connected to node_index" alt="" coords="636,97,824,139"/>
+<area shape="rect" id="node7" href="$d9/df1/classbase__mesh.html#a1cc96b26afdebb1b1f7426cc9e951d56" title=" " alt="" coords="648,164,812,206"/>
+</map>

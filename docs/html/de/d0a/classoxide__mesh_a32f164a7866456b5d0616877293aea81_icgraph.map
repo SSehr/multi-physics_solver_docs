@@ -1,0 +1,7 @@
+<map id="oxide_mesh::get_free_edges" name="oxide_mesh::get_free_edges">
+<area shape="rect" id="node1" title="get the edges of a poly not on other surfaces" alt="" coords="862,5,1008,47"/>
+<area shape="rect" id="node2" href="$de/d0a/classoxide__mesh.html#a0359373e7332e2bdbaf3736775b42e49" title="rebuild the crack polygon" alt="" coords="667,5,814,47"/>
+<area shape="rect" id="node3" href="$de/d0a/classoxide__mesh.html#af44fdd459a2c7933d6dab3c7be44a63d" title="find new polygons" alt="" coords="468,5,619,47"/>
+<area shape="rect" id="node4" href="$de/d0a/classoxide__mesh.html#ad3c124e5fd82ca502fe791baaa108048" title="run the main loop" alt="" coords="237,13,420,40"/>
+<area shape="rect" id="node5" href="$de/d0a/classoxide__mesh.html#a0478903f72d483ab779af8443ffbc48b" title="run a simulation" alt="" coords="5,13,189,40"/>
+</map>

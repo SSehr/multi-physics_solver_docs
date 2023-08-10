@@ -1,0 +1,175 @@
+\hypertarget{classnode}{}\doxysection{node Class Reference}
+\label{classnode}\index{node@{node}}
+
+
+{\ttfamily \#include $<$node.\+hpp$>$}
+
+
+
+Inheritance diagram for node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=117pt]{dc/d65/classnode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=117pt]{d5/d81/classnode__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnode_ae06b09ddc4e173124421071fe24dae8a}\label{classnode_ae06b09ddc4e173124421071fe24dae8a}} 
+{\bfseries node} (double x\+\_\+in, double y\+\_\+in)
+\item 
+\mbox{\Hypertarget{classnode_a868cd8fba1c620b32b99f1fa15927caf}\label{classnode_a868cd8fba1c620b32b99f1fa15927caf}} 
+{\bfseries node} (\mbox{\hyperlink{classpoint}{point}} pt)
+\item 
+void \mbox{\hyperlink{classnode_a5006b2c59aa7480bc2b85b53104a1e2f}{resize\+\_\+vectors}} ()
+\item 
+void \mbox{\hyperlink{classnode_a00a51f7ddaadcd64eb54d83c94f2a88a}{store\+\_\+displacement}} (int i, double $\ast$U)
+\item 
+\mbox{\Hypertarget{classnode_a4d6a9057f3e0c75292ce6a7b28f75aea}\label{classnode_a4d6a9057f3e0c75292ce6a7b28f75aea}} 
+\mbox{\hyperlink{classpoint}{point}} {\bfseries get\+\_\+deformed\+\_\+point} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnode_a2eb0ec8c2fefd9101770e3b94dbcc3db}\label{classnode_a2eb0ec8c2fefd9101770e3b94dbcc3db}} 
+double {\bfseries ux} = 0
+\begin{DoxyCompactList}\small\item\em x displacement \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnode_a65d20bdac8be8765e7176e7a84e3aad2}\label{classnode_a65d20bdac8be8765e7176e7a84e3aad2}} 
+double {\bfseries uy} = 0
+\begin{DoxyCompactList}\small\item\em y displacement \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnode_a1db1a294a3ae4df52bc226ed15e0a937}\label{classnode_a1db1a294a3ae4df52bc226ed15e0a937}} 
+double {\bfseries uz} = 0
+\begin{DoxyCompactList}\small\item\em z displacement (not used) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnode_a63268a4bea0bc7d6622149c932e108c9}\label{classnode_a63268a4bea0bc7d6622149c932e108c9}} 
+double {\bfseries qx} = 0
+\begin{DoxyCompactList}\small\item\em x oxidant flux (for quadratic elements) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnode_a0d3b5789848c6486983ede24863fa073}\label{classnode_a0d3b5789848c6486983ede24863fa073}} 
+double {\bfseries qy} = 0
+\begin{DoxyCompactList}\small\item\em y oxidant flux (for quadratic elements) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnode_a1813dad0fc4cdac96ee93fcff5f83671}\label{classnode_a1813dad0fc4cdac96ee93fcff5f83671}} 
+double {\bfseries s11} = 0
+\begin{DoxyCompactList}\small\item\em xx stress (for quadratic elements) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnode_a3b0574d659cc009ddb646a335aa928c7}\label{classnode_a3b0574d659cc009ddb646a335aa928c7}} 
+double {\bfseries s22} = 0
+\begin{DoxyCompactList}\small\item\em yy stress (for quadratic elements) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnode_a028f1bb72cb4ac7657619cefb2d14740}\label{classnode_a028f1bb72cb4ac7657619cefb2d14740}} 
+double {\bfseries s12} = 0
+\begin{DoxyCompactList}\small\item\em xy stress (for quadratic elements) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnode_a3e2614ab0965eac3bd597723701e27e8}\label{classnode_a3e2614ab0965eac3bd597723701e27e8}} 
+double {\bfseries c} = 0
+\begin{DoxyCompactList}\small\item\em concentration \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnode_af3018b786c6b368ab5e4e637a9c41833}\label{classnode_af3018b786c6b368ab5e4e637a9c41833}} 
+double {\bfseries q} = 0
+\item 
+\mbox{\Hypertarget{classnode_a355412ad1e540f34b864f6030b8e4f6f}\label{classnode_a355412ad1e540f34b864f6030b8e4f6f}} 
+double {\bfseries total\+\_\+ux} = 0
+\begin{DoxyCompactList}\small\item\em total point x displacement history \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnode_a82bb50d3b8b0421fcf2e1a907bfe813a}\label{classnode_a82bb50d3b8b0421fcf2e1a907bfe813a}} 
+double {\bfseries total\+\_\+uy} = 0
+\begin{DoxyCompactList}\small\item\em total point y displacement history \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnode_a5fc47f6d58418de5d4b49f2f100bb1b4}\label{classnode_a5fc47f6d58418de5d4b49f2f100bb1b4}} 
+bool {\bfseries midside\+\_\+node} = false
+\begin{DoxyCompactList}\small\item\em true if midside node on quadratic element \end{DoxyCompactList}\end{DoxyCompactItemize}
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnode_aa41ed7b2efb8b8d82128cbf8759379b4}\label{classnode_aa41ed7b2efb8b8d82128cbf8759379b4}} 
+double {\bfseries ucr\+\_\+x} = 0
+\begin{DoxyCompactList}\small\item\em used for mapping \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnode_ae8c86b2020abbd605fbeef80b642f3fb}\label{classnode_ae8c86b2020abbd605fbeef80b642f3fb}} 
+double {\bfseries ucr\+\_\+y} = 0
+\begin{DoxyCompactList}\small\item\em used for mapping \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnode_acf97f40a96029d06f2ce8c170882066a}\label{classnode_acf97f40a96029d06f2ce8c170882066a}} 
+double {\bfseries ucr\+\_\+xy} = 0
+\begin{DoxyCompactList}\small\item\em used for mapping \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnode_a12543b45b4469a2ce46fd2df3f82f86a}\label{classnode_a12543b45b4469a2ce46fd2df3f82f86a}} 
+double {\bfseries At} = 0
+\begin{DoxyCompactList}\small\item\em used for mapping \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnode_aa241d2246cc8ba3578dbd8a921afc509}\label{classnode_aa241d2246cc8ba3578dbd8a921afc509}} 
+std\+::vector$<$ double $>$ {\bfseries Ats}
+\begin{DoxyCompactList}\small\item\em used for mapping \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnode_ae10b888ff20be30dd4e2014fb687277c}\label{classnode_ae10b888ff20be30dd4e2014fb687277c}} 
+std\+::vector$<$ double $>$ {\bfseries um\+\_\+x}
+\begin{DoxyCompactList}\small\item\em used for mapping \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnode_aa5c74cc3043604d19e135d977c853f3b}\label{classnode_aa5c74cc3043604d19e135d977c853f3b}} 
+std\+::vector$<$ double $>$ {\bfseries um\+\_\+y}
+\begin{DoxyCompactList}\small\item\em used for mapping \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnode_a858b8278d07c2b2d33781505edd7b8b8}\label{classnode_a858b8278d07c2b2d33781505edd7b8b8}} 
+std\+::vector$<$ double $>$ {\bfseries um\+\_\+xy}
+\begin{DoxyCompactList}\small\item\em used for mapping \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnode_af8a7c184dc76b0f61502dfcd3adc1010}\label{classnode_af8a7c184dc76b0f61502dfcd3adc1010}} 
+std\+::vector$<$ double $>$ {\bfseries s11s}
+\begin{DoxyCompactList}\small\item\em used for mapping \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnode_abbeb0905fd6b35f77658118165a742a6}\label{classnode_abbeb0905fd6b35f77658118165a742a6}} 
+std\+::vector$<$ double $>$ {\bfseries s22s}
+\begin{DoxyCompactList}\small\item\em used for mapping \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnode_ad5fb8b4aa9c6ee607e0517661c62d545}\label{classnode_ad5fb8b4aa9c6ee607e0517661c62d545}} 
+std\+::vector$<$ double $>$ {\bfseries s12s}
+\begin{DoxyCompactList}\small\item\em used for mapping \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnode_aacb4cf723be2af7130a14882961a70ab}\label{classnode_aacb4cf723be2af7130a14882961a70ab}} 
+std\+::vector$<$ double $>$ {\bfseries eps11\+\_\+ms}
+\begin{DoxyCompactList}\small\item\em used for mapping \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnode_a984156a34b7c72323c7639e9ea8e209d}\label{classnode_a984156a34b7c72323c7639e9ea8e209d}} 
+std\+::vector$<$ double $>$ {\bfseries eps22\+\_\+ms}
+\begin{DoxyCompactList}\small\item\em used for mapping \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnode_ada3fb04fa5351d489fbdbe2023b44c12}\label{classnode_ada3fb04fa5351d489fbdbe2023b44c12}} 
+std\+::vector$<$ double $>$ {\bfseries eps12\+\_\+ms}
+\begin{DoxyCompactList}\small\item\em used for mapping \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnode_a2f03c770aa25c6c8d74cb7c5ed904e08}\label{classnode_a2f03c770aa25c6c8d74cb7c5ed904e08}} 
+double {\bfseries eps11\+\_\+cr} = 0
+\begin{DoxyCompactList}\small\item\em used for mapping \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnode_a975fbdb57778fbbbe24cd730f6313a72}\label{classnode_a975fbdb57778fbbbe24cd730f6313a72}} 
+double {\bfseries eps22\+\_\+cr} = 0
+\begin{DoxyCompactList}\small\item\em used for mapping \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnode_a5c0fadec278151a7508f89691b9ef3f2}\label{classnode_a5c0fadec278151a7508f89691b9ef3f2}} 
+double {\bfseries eps12\+\_\+cr} = 0
+\begin{DoxyCompactList}\small\item\em used for mapping \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnode_a453890cac9e95dd17238f7bd28595185}\label{classnode_a453890cac9e95dd17238f7bd28595185}} 
+double {\bfseries nodal\+\_\+age} = 0
+\begin{DoxyCompactList}\small\item\em used for mapping \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnode_aab93c7d118f463c1e31829aa3fe28aa8}\label{classnode_aab93c7d118f463c1e31829aa3fe28aa8}} 
+double {\bfseries nodal\+\_\+age\+\_\+smoothed} = 0
+\begin{DoxyCompactList}\small\item\em used for mapping \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnode_a06dda39a0a3f3c140477daaa99a5d794}\label{classnode_a06dda39a0a3f3c140477daaa99a5d794}} 
+static unsigned int {\bfseries num\+\_\+regions}
+\begin{DoxyCompactList}\small\item\em total number of material regions, must be set correctly \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that defines a node object that builds off of point but adds specific values for oxidation problems 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classnode_a5006b2c59aa7480bc2b85b53104a1e2f}\label{classnode_a5006b2c59aa7480bc2b85b53104a1e2f}} 
+\index{node@{node}!resize\_vectors@{resize\_vectors}}
+\index{resize\_vectors@{resize\_vectors}!node@{node}}
+\doxysubsubsection{\texorpdfstring{resize\_vectors()}{resize\_vectors()}}
+{\footnotesize\ttfamily void node\+::resize\+\_\+vectors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+resize all the various vectors \mbox{\Hypertarget{classnode_a00a51f7ddaadcd64eb54d83c94f2a88a}\label{classnode_a00a51f7ddaadcd64eb54d83c94f2a88a}} 
+\index{node@{node}!store\_displacement@{store\_displacement}}
+\index{store\_displacement@{store\_displacement}!node@{node}}
+\doxysubsubsection{\texorpdfstring{store\_displacement()}{store\_displacement()}}
+{\footnotesize\ttfamily void node\+::store\+\_\+displacement (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{double $\ast$}]{U }\end{DoxyParamCaption})}
+
+store displacements after a solve on the nodes 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/support\+\_\+files/hpp/node.\+hpp\item 
+src/support\+\_\+files/cpp/node.\+cpp\end{DoxyCompactItemize}

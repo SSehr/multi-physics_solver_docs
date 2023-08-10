@@ -1,0 +1,111 @@
+\hypertarget{classpoint}{}\doxysection{point Class Reference}
+\label{classpoint}\index{point@{point}}
+
+
+{\ttfamily \#include $<$point.\+hpp$>$}
+
+
+
+Inheritance diagram for point\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=117pt]{d7/dea/classpoint__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classpoint_a07e03afbdcc1a51890b72ced5eea8a34}{mag}} ()
+\item 
+\mbox{\hyperlink{classpoint_aa7f3c7da3d8eab5d776d2dd4e3a4d08d}{point}} (double x\+\_\+in, double y\+\_\+in)
+\item 
+\mbox{\hyperlink{classpoint_a5fe21d4a4539320bf0f5caf1218d31c8}{point}} ()
+\item 
+void \mbox{\hyperlink{classpoint_a2e6587f35b9596aa034084ca83497e02}{clean}} ()
+\item 
+double \mbox{\hyperlink{classpoint_a9dfe9a21b69b8ff260361a99cf0d9e15}{dist}} (const \mbox{\hyperlink{classpoint}{point}} \&pt)
+\item 
+double \mbox{\hyperlink{classpoint_acf810557f603b4da2ad4f15806a201bf}{dot}} (\mbox{\hyperlink{classpoint}{point}} \&pt)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpoint_a9c6b34deaf4900ad4193c17935fd384a}\label{classpoint_a9c6b34deaf4900ad4193c17935fd384a}} 
+double {\bfseries x} = 0
+\begin{DoxyCompactList}\small\item\em x coordinate \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classpoint_a613f8f0d7352731638b0094e1b958b87}\label{classpoint_a613f8f0d7352731638b0094e1b958b87}} 
+double {\bfseries y} = 0
+\begin{DoxyCompactList}\small\item\em y coordinate \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classpoint_aab1f0c3682401083b5bf252e7001874f}\label{classpoint_aab1f0c3682401083b5bf252e7001874f}} 
+double {\bfseries z} = 0
+\begin{DoxyCompactList}\small\item\em z coordinate \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpoint_aa8798ed52dc29a35d0bec4f716029994}\label{classpoint_aa8798ed52dc29a35d0bec4f716029994}} 
+static double {\bfseries equal} = 1e-\/6
+\begin{DoxyCompactList}\small\item\em defines threshold distance to say two points are the same, defaults to 1e-\/6 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classpoint_a1157e81849782c6c863981dc43eaaee5}\label{classpoint_a1157e81849782c6c863981dc43eaaee5}} 
+static double {\bfseries equal2} = \mbox{\hyperlink{classpoint_aa8798ed52dc29a35d0bec4f716029994}{point\+::equal}} $\ast$ \mbox{\hyperlink{classpoint_aa8798ed52dc29a35d0bec4f716029994}{point\+::equal}}
+\begin{DoxyCompactList}\small\item\em threshold distance squared \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+geometric point object 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpoint_aa7f3c7da3d8eab5d776d2dd4e3a4d08d}\label{classpoint_aa7f3c7da3d8eab5d776d2dd4e3a4d08d}} 
+\index{point@{point}!point@{point}}
+\index{point@{point}!point@{point}}
+\doxysubsubsection{\texorpdfstring{point()}{point()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily point\+::point (\begin{DoxyParamCaption}\item[{double}]{x\+\_\+in,  }\item[{double}]{y\+\_\+in }\end{DoxyParamCaption})}
+
+constructor to set specific x and y values \mbox{\Hypertarget{classpoint_a5fe21d4a4539320bf0f5caf1218d31c8}\label{classpoint_a5fe21d4a4539320bf0f5caf1218d31c8}} 
+\index{point@{point}!point@{point}}
+\index{point@{point}!point@{point}}
+\doxysubsubsection{\texorpdfstring{point()}{point()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily point\+::point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+default constructor setting point to origin 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpoint_a2e6587f35b9596aa034084ca83497e02}\label{classpoint_a2e6587f35b9596aa034084ca83497e02}} 
+\index{point@{point}!clean@{clean}}
+\index{clean@{clean}!point@{point}}
+\doxysubsubsection{\texorpdfstring{clean()}{clean()}}
+{\footnotesize\ttfamily void point\+::clean (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+set values to 0 if they are less than \mbox{\hyperlink{classpoint_aa8798ed52dc29a35d0bec4f716029994}{point\+::equal}} Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/dd1/classpoint_a2e6587f35b9596aa034084ca83497e02_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classpoint_a9dfe9a21b69b8ff260361a99cf0d9e15}\label{classpoint_a9dfe9a21b69b8ff260361a99cf0d9e15}} 
+\index{point@{point}!dist@{dist}}
+\index{dist@{dist}!point@{point}}
+\doxysubsubsection{\texorpdfstring{dist()}{dist()}}
+{\footnotesize\ttfamily double point\+::dist (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classpoint}{point}} \&}]{pt }\end{DoxyParamCaption})}
+
+returns the distance between the current point and another point pt \mbox{\Hypertarget{classpoint_acf810557f603b4da2ad4f15806a201bf}\label{classpoint_acf810557f603b4da2ad4f15806a201bf}} 
+\index{point@{point}!dot@{dot}}
+\index{dot@{dot}!point@{point}}
+\doxysubsubsection{\texorpdfstring{dot()}{dot()}}
+{\footnotesize\ttfamily double point\+::dot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpoint}{point}} \&}]{pt }\end{DoxyParamCaption})}
+
+dot product \mbox{\Hypertarget{classpoint_a07e03afbdcc1a51890b72ced5eea8a34}\label{classpoint_a07e03afbdcc1a51890b72ced5eea8a34}} 
+\index{point@{point}!mag@{mag}}
+\index{mag@{mag}!point@{point}}
+\doxysubsubsection{\texorpdfstring{mag()}{mag()}}
+{\footnotesize\ttfamily double point\+::mag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the magnitude of the vector from the origin to the point 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/support\+\_\+files/hpp/point.\+hpp\item 
+src/support\+\_\+files/cpp/point.\+cpp\end{DoxyCompactItemize}

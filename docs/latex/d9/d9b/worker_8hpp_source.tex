@@ -1,0 +1,171 @@
+\hypertarget{worker_8hpp_source}{}\doxysection{worker.\+hpp}
+\label{worker_8hpp_source}\index{src/support\_files/hpp/worker.hpp@{src/support\_files/hpp/worker.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef WORKER}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define WORKER}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <chrono>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <ctime>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <mutex>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <thread>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}semaphore.hpp"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}node.hpp"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}cohesive\_element.hpp"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}mp\_element.hpp"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}fea.hpp"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classworker__thread}{worker\_thread}}}
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{26     \textcolor{keyword}{private}:}
+\DoxyCodeLine{27         std::thread thr;}
+\DoxyCodeLine{28         \mbox{\hyperlink{classsemaphore}{semaphore}} sem, main\_sem;}
+\DoxyCodeLine{29         \textcolor{keywordtype}{bool} quit = \textcolor{keyword}{false};}
+\DoxyCodeLine{30         \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = -\/1;}
+\DoxyCodeLine{31         \mbox{\hyperlink{classmp__element}{mp\_element}}* elements;}
+\DoxyCodeLine{32         \mbox{\hyperlink{classnode}{node}}* nodes;}
+\DoxyCodeLine{33         std::mutex* n\_mtxs;}
+\DoxyCodeLine{34         \mbox{\hyperlink{classpoint}{point}}* velo;}
+\DoxyCodeLine{35         \mbox{\hyperlink{classpoint}{point}}* accel;}
+\DoxyCodeLine{36         \textcolor{keywordtype}{double}* RHS;}
+\DoxyCodeLine{37         \textcolor{keywordtype}{double} dt\_czm;}
+\DoxyCodeLine{38         \textcolor{keywordtype}{double} time = 0;}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40         \mbox{\hyperlink{class_f_e_a__equations}{FEA\_equations}}* global\_MC;}
+\DoxyCodeLine{41         \mbox{\hyperlink{class_f_e_a__equations}{FEA\_equations}}* global\_C;}
+\DoxyCodeLine{42         \mbox{\hyperlink{class_f_e_a__equations}{FEA\_equations}}* global\_K;}
+\DoxyCodeLine{43         \textcolor{keywordtype}{double}* base\_RHS;}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} begin\_index, end\_index;}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} worker\_sem\_wait()}
+\DoxyCodeLine{48         \{}
+\DoxyCodeLine{49             sem.wait();}
+\DoxyCodeLine{50             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{51         \}}
+\DoxyCodeLine{52         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} main\_sem\_notify()}
+\DoxyCodeLine{53         \{}
+\DoxyCodeLine{54             main\_sem.notify();}
+\DoxyCodeLine{55             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{56         \}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59     \textcolor{keyword}{public}:}
+\DoxyCodeLine{60         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} worker\_sem\_notify()}
+\DoxyCodeLine{61         \{}
+\DoxyCodeLine{62             sem.notify();}
+\DoxyCodeLine{63             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{64         \}}
+\DoxyCodeLine{65         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} main\_sem\_wait()}
+\DoxyCodeLine{66         \{}
+\DoxyCodeLine{67             main\_sem.wait();}
+\DoxyCodeLine{68             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{69         \}}
+\DoxyCodeLine{70         }
+\DoxyCodeLine{71         \textcolor{comment}{// delete copy constructor}}
+\DoxyCodeLine{72         \mbox{\hyperlink{classworker__thread}{worker\_thread}}(\textcolor{keyword}{const} \mbox{\hyperlink{classworker__thread}{worker\_thread}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{73         }
+\DoxyCodeLine{74         \textcolor{comment}{// delete assignment operator}}
+\DoxyCodeLine{75         \mbox{\hyperlink{classworker__thread}{worker\_thread}}\& operator=(\textcolor{keyword}{const} \mbox{\hyperlink{classworker__thread}{worker\_thread}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{76         }
+\DoxyCodeLine{77         \textcolor{comment}{// Parameterized Constructor}}
+\DoxyCodeLine{78         \textcolor{comment}{// worker\_thread(std::function<void()> func) : thr(func)}}
+\DoxyCodeLine{79         \textcolor{comment}{// \{\}}}
+\DoxyCodeLine{80         }
+\DoxyCodeLine{81         \textcolor{comment}{// Move Constructor}}
+\DoxyCodeLine{82         \mbox{\hyperlink{classworker__thread}{worker\_thread}}(\mbox{\hyperlink{classworker__thread}{worker\_thread}} \&\& obj) }
+\DoxyCodeLine{83         \{}
+\DoxyCodeLine{84             thr = std::move(obj.thr);}
+\DoxyCodeLine{85             \textcolor{keywordtype}{id} = obj.id;}
+\DoxyCodeLine{86             quit = obj.quit;}
+\DoxyCodeLine{87         \}}
+\DoxyCodeLine{88         }
+\DoxyCodeLine{89         \textcolor{comment}{//Move Assignment Operator}}
+\DoxyCodeLine{90         \mbox{\hyperlink{classworker__thread}{worker\_thread}} \& operator=(\mbox{\hyperlink{classworker__thread}{worker\_thread}} \&\& obj)}
+\DoxyCodeLine{91         \{}
+\DoxyCodeLine{92             \textcolor{keywordflow}{if} (thr.joinable()) thr.join();}
+\DoxyCodeLine{93             thr = std::move(obj.thr);}
+\DoxyCodeLine{94             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{95         \}}
+\DoxyCodeLine{96         }
+\DoxyCodeLine{97         \mbox{\hyperlink{classworker__thread}{worker\_thread}}(\textcolor{keywordtype}{int} id\_ = -\/1)}
+\DoxyCodeLine{98         \{}
+\DoxyCodeLine{99             quit = \textcolor{keyword}{false};}
+\DoxyCodeLine{100             \textcolor{keywordtype}{id} = id\_;}
+\DoxyCodeLine{101         \}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103         \mbox{\hyperlink{classworker__thread}{\string~worker\_thread}}()}
+\DoxyCodeLine{104         \{}
+\DoxyCodeLine{105             \textcolor{keywordflow}{if} (thr.joinable()) thr.join();}
+\DoxyCodeLine{106         \}}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108         \textcolor{keywordtype}{void} run();}
+\DoxyCodeLine{109         \textcolor{keyword}{inline} \textcolor{keywordtype}{int} get\_id()}
+\DoxyCodeLine{110         \{}
+\DoxyCodeLine{111             \textcolor{keywordflow}{return} id;}
+\DoxyCodeLine{112         \}}
+\DoxyCodeLine{113         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} quit\_thread()}
+\DoxyCodeLine{114         \{}
+\DoxyCodeLine{115             quit = \textcolor{keyword}{true};}
+\DoxyCodeLine{116         \}}
+\DoxyCodeLine{117         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} startThread(\mbox{\hyperlink{classnode}{node}}* nodes\_, \mbox{\hyperlink{classmp__element}{mp\_element}}* elements\_, \mbox{\hyperlink{classpoint}{point}}* velo\_, \mbox{\hyperlink{classpoint}{point}}* accel\_, \textcolor{keywordtype}{double}* RHS\_, \textcolor{keywordtype}{long} begin\_index\_, \textcolor{keywordtype}{long} end\_index\_, std::mutex* n\_mtxs\_, \textcolor{keywordtype}{double} dt\_czm\_) }
+\DoxyCodeLine{118         \{}
+\DoxyCodeLine{119             nodes = nodes\_;}
+\DoxyCodeLine{120             elements = elements\_;}
+\DoxyCodeLine{121             velo = velo\_;}
+\DoxyCodeLine{122             accel = accel\_;}
+\DoxyCodeLine{123             RHS = RHS\_;}
+\DoxyCodeLine{124             begin\_index = begin\_index\_;}
+\DoxyCodeLine{125             end\_index = end\_index\_;}
+\DoxyCodeLine{126             n\_mtxs = n\_mtxs\_;}
+\DoxyCodeLine{127             dt\_czm = dt\_czm\_;}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129             thr = std::thread(\&worker\_thread::run, \textcolor{keyword}{this});}
+\DoxyCodeLine{130             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{131         \}}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} startThread(\textcolor{keywordtype}{long} begin\_index\_, \textcolor{keywordtype}{long} end\_index\_, \textcolor{keywordtype}{double} dt\_czm\_, \mbox{\hyperlink{class_f_e_a__equations}{FEA\_equations}}* global\_MC\_, \mbox{\hyperlink{class_f_e_a__equations}{FEA\_equations}}* global\_C\_, \mbox{\hyperlink{class_f_e_a__equations}{FEA\_equations}}* global\_K\_, \textcolor{keywordtype}{double}* base\_RHS\_) }
+\DoxyCodeLine{134         \{}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136             begin\_index = begin\_index\_;}
+\DoxyCodeLine{137             end\_index = end\_index\_;}
+\DoxyCodeLine{138             dt\_czm = dt\_czm\_;}
+\DoxyCodeLine{139             global\_MC = global\_MC\_;}
+\DoxyCodeLine{140             global\_C = global\_C\_;}
+\DoxyCodeLine{141             global\_K = global\_K\_;}
+\DoxyCodeLine{142             base\_RHS = base\_RHS\_;}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144             thr = std::thread(\&worker\_thread::run, \textcolor{keyword}{this});}
+\DoxyCodeLine{145             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{146         \}}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} increment()}
+\DoxyCodeLine{149         \{}
+\DoxyCodeLine{150             time += dt\_czm;}
+\DoxyCodeLine{151         \}}
+\DoxyCodeLine{152         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} set\_time(\textcolor{keywordtype}{double} time\_)}
+\DoxyCodeLine{153         \{}
+\DoxyCodeLine{154             time = time\_;}
+\DoxyCodeLine{155         \}}
+\DoxyCodeLine{156         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} join()}
+\DoxyCodeLine{157         \{}
+\DoxyCodeLine{158             thr.join();}
+\DoxyCodeLine{159         \}}
+\DoxyCodeLine{160         }
+\DoxyCodeLine{161         \textcolor{keywordtype}{bool} unstable = \textcolor{keyword}{false};}
+\DoxyCodeLine{162 \};}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

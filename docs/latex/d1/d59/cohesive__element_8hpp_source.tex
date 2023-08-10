@@ -1,0 +1,39 @@
+\hypertarget{cohesive__element_8hpp_source}{}\doxysection{cohesive\+\_\+element.\+hpp}
+\label{cohesive__element_8hpp_source}\index{src/support\_files/hpp/cohesive\_element.hpp@{src/support\_files/hpp/cohesive\_element.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef COHESIVE}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define COHESIVE}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}./node.hpp"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{class }\mbox{\hyperlink{classcohesive__element}{cohesive\_element}}}
+\DoxyCodeLine{8 \{}
+\DoxyCodeLine{9     \textcolor{keyword}{public}:}
+\DoxyCodeLine{10         \textcolor{keywordtype}{int} nodes[2];}
+\DoxyCodeLine{11         \textcolor{keywordtype}{double} k, sigma = 2, gamma = 0.025;}
+\DoxyCodeLine{12         \textcolor{keywordtype}{double} del\_0, del\_1, del\_2;}
+\DoxyCodeLine{13         \textcolor{keywordtype}{bool} intact = \textcolor{keyword}{true};}
+\DoxyCodeLine{14         \textcolor{keywordtype}{double} length;}
+\DoxyCodeLine{15         \mbox{\hyperlink{classpoint}{point}} tan\_vec;}
+\DoxyCodeLine{16         \mbox{\hyperlink{classpoint}{point}} norm\_vec;}
+\DoxyCodeLine{17         \textcolor{keywordtype}{double} E;}
+\DoxyCodeLine{18         \textcolor{keywordtype}{double} S = 1;}
+\DoxyCodeLine{19         \mbox{\hyperlink{classcohesive__element}{cohesive\_element}}();}
+\DoxyCodeLine{20         \mbox{\hyperlink{classcohesive__element}{cohesive\_element}}(\textcolor{keywordtype}{int} ns[2], std::vector<node> \&n\_list, std::vector<point> \&boundary, \textcolor{keywordtype}{double} E, \textcolor{keywordtype}{double} in\_gamma, \textcolor{keywordtype}{double} in\_sigma);}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22         \textcolor{keywordtype}{void} update\_damage(\textcolor{keyword}{const} \mbox{\hyperlink{classpoint}{point}} \&delta);}
+\DoxyCodeLine{23         \textcolor{keywordtype}{void} fracture\_element();}
+\DoxyCodeLine{24         \textcolor{keywordtype}{void} tractions(\mbox{\hyperlink{classpoint}{point}} \&delta, \mbox{\hyperlink{classpoint}{point}}\&tractions);}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26         \textcolor{keywordtype}{void} update\_cohesive\_forces(std::vector<node> \&n\_list, \textcolor{keywordtype}{double} F[]);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

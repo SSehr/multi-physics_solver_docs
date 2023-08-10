@@ -1,0 +1,171 @@
+\hypertarget{classmaterial}{}\doxysection{material Class Reference}
+\label{classmaterial}\index{material@{material}}
+
+
+{\ttfamily \#include $<$material.\+hpp$>$}
+
+
+
+Collaboration diagram for material\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{d1/d4a/classmaterial__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmaterial_a11fb82833aeac93799b50bf41b7f3346}\label{classmaterial_a11fb82833aeac93799b50bf41b7f3346}} 
+\mbox{\hyperlink{classmaterial}{material}} \& {\bfseries operator=} (const \mbox{\hyperlink{classmaterial}{material}} \&src\+\_\+matl)
+\item 
+\mbox{\Hypertarget{classmaterial_a37f9938f487b56822f90a6e52542b98a}\label{classmaterial_a37f9938f487b56822f90a6e52542b98a}} 
+{\bfseries material} (double in\+\_\+E, double in\+\_\+nu, double in\+\_\+D, double in\+\_\+eps, double in\+\_\+rxn\+\_\+rate)
+\item 
+\mbox{\Hypertarget{classmaterial_a152c6e5643d2fc619c0d2ac639c5f85b}\label{classmaterial_a152c6e5643d2fc619c0d2ac639c5f85b}} 
+{\bfseries material} (double($\ast$in\+\_\+\+E\+\_\+func)(double \mbox{\hyperlink{classparam}{param}}), double($\ast$in\+\_\+nu\+\_\+func)(double \mbox{\hyperlink{classparam}{param}}), double($\ast$in\+\_\+\+D\+\_\+func)(double \mbox{\hyperlink{classparam}{param}}), double($\ast$in\+\_\+eps\+\_\+func)(double \mbox{\hyperlink{classparam}{param}}), double($\ast$in\+\_\+rxn\+\_\+rate\+\_\+func)(double \mbox{\hyperlink{classparam}{param}}))
+\item 
+\mbox{\Hypertarget{classmaterial_a92a013ec720372162fe787670fb4cd88}\label{classmaterial_a92a013ec720372162fe787670fb4cd88}} 
+{\bfseries material} (double in\+\_\+E, double in\+\_\+nu, double in\+\_\+D, double in\+\_\+eps, double in\+\_\+rxn\+\_\+rate, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ in\+\_\+geom)
+\item 
+\mbox{\Hypertarget{classmaterial_a764393c3824125dcde95454e8299b83a}\label{classmaterial_a764393c3824125dcde95454e8299b83a}} 
+{\bfseries material} (double in\+\_\+E, double in\+\_\+nu, double in\+\_\+D, double in\+\_\+eps, double in\+\_\+alpha, double in\+\_\+rxn\+\_\+rate, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ in\+\_\+geom)
+\item 
+\mbox{\Hypertarget{classmaterial_acd97789657e269003a761b72f3d1dffd}\label{classmaterial_acd97789657e269003a761b72f3d1dffd}} 
+{\bfseries material} (double in\+\_\+E, double in\+\_\+nu, double in\+\_\+D, double in\+\_\+eps, double in\+\_\+rxn\+\_\+rate, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ in\+\_\+geom, \mbox{\hyperlink{classpoint}{point}} region\+\_\+pt\+\_\+, int region\+\_\+, double min\+\_\+area\+\_\+)
+\item 
+\mbox{\Hypertarget{classmaterial_a850d71cb226628fcc877c49f28d6df6f}\label{classmaterial_a850d71cb226628fcc877c49f28d6df6f}} 
+{\bfseries material} (double E\+\_\+, double nu\+\_\+, double rho\+\_\+, double alpha\+\_\+, double alpha\+\_\+d\+\_\+, double beta\+\_\+d\+\_\+, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ in\+\_\+geom, \mbox{\hyperlink{classpoint}{point}} region\+\_\+pt\+\_\+, int region\+\_\+, double min\+\_\+area\+\_\+)
+\item 
+\mbox{\Hypertarget{classmaterial_a5d14fc2aeb70e2693ccae30c775b9b58}\label{classmaterial_a5d14fc2aeb70e2693ccae30c775b9b58}} 
+{\bfseries material} (double E\+\_\+, double nu\+\_\+, double rho\+\_\+, double alpha\+\_\+, double alpha\+\_\+d\+\_\+, double beta\+\_\+d\+\_\+, double D\+\_\+, double eps\+\_\+, double rxn\+\_\+rate\+\_\+, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ in\+\_\+geom, \mbox{\hyperlink{classpoint}{point}} region\+\_\+pt\+\_\+, int region\+\_\+, double min\+\_\+area\+\_\+)
+\item 
+void \mbox{\hyperlink{classmaterial_a3b5caea229b7aac32952c1a06ebe560b}{add\+\_\+node\+\_\+to\+\_\+poly}} (const \mbox{\hyperlink{classpoint}{point}} \&\mbox{\hyperlink{classnode}{node}}, int i)
+\item 
+bool \mbox{\hyperlink{classmaterial_af2a5c9c8cff587143fa978cd2cc33912}{store\+\_\+property}} (std\+::string label, std\+::string in\+\_\+var\+\_\+name, std\+::string in\+\_\+val)
+\item 
+bool \mbox{\hyperlink{classmaterial_a08ba160b2e51514cb27680acbedbd02d}{node\+\_\+on\+\_\+poly}} (const int test\+\_\+node)
+\item 
+int \mbox{\hyperlink{classmaterial_a5091eba4b46382b40a3a0286e996d4bf}{get\+\_\+node\+\_\+index}} (const int test\+\_\+node)
+\item 
+\mbox{\Hypertarget{classmaterial_aee032ffaf82b4180213c2e1a05bdb5a0}\label{classmaterial_aee032ffaf82b4180213c2e1a05bdb5a0}} 
+void {\bfseries assign\+\_\+properties} (\mbox{\hyperlink{classmp__element}{mp\+\_\+element}} \&el)
+\begin{DoxyCompactList}\small\item\em assign material properties to element \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmaterial_a5dc927f8cabb3d43e462f23857878f53}\label{classmaterial_a5dc927f8cabb3d43e462f23857878f53}} 
+void {\bfseries swap\+\_\+bounding\+\_\+points} (std\+::vector$<$ int $>$ \&boundary, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&boundary\+\_\+pts)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmaterial_ab524d05254220a2b6fa1b356c2d7ac37}\label{classmaterial_ab524d05254220a2b6fa1b356c2d7ac37}} 
+double {\bfseries rho}
+\begin{DoxyCompactList}\small\item\em density (unused) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmaterial_ac0b4d3377472b4efe9bd3ed6d159c21d}\label{classmaterial_ac0b4d3377472b4efe9bd3ed6d159c21d}} 
+double {\bfseries alpha}
+\begin{DoxyCompactList}\small\item\em coefficient of thermal expansion \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmaterial_ac12737c20b9cae2a6f78e4da39f7976e}\label{classmaterial_ac12737c20b9cae2a6f78e4da39f7976e}} 
+double {\bfseries alpha\+\_\+d}
+\begin{DoxyCompactList}\small\item\em alpha damping parameter (unused) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmaterial_afe77f6c2c00d38d8463a7066169e6ca8}\label{classmaterial_afe77f6c2c00d38d8463a7066169e6ca8}} 
+double {\bfseries beta\+\_\+d}
+\begin{DoxyCompactList}\small\item\em beta damping parameter (unused) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmaterial_aac6c565f5fa01e90ec11c6c76e469fab}\label{classmaterial_aac6c565f5fa01e90ec11c6c76e469fab}} 
+\mbox{\hyperlink{classpoint}{point}} {\bfseries region\+\_\+pt}
+\begin{DoxyCompactList}\small\item\em point within the domain used with the mesher to assigned region tag \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmaterial_abc0e60c0c3becde8b780fb9a0bdb9605}\label{classmaterial_abc0e60c0c3becde8b780fb9a0bdb9605}} 
+int {\bfseries region}
+\begin{DoxyCompactList}\small\item\em region tag for ease of assigning material properties after meshing \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmaterial_a3c278cd710dcac674badef0f9c0114f8}\label{classmaterial_a3c278cd710dcac674badef0f9c0114f8}} 
+double {\bfseries min\+\_\+area}
+\begin{DoxyCompactList}\small\item\em maximum allowed element area for elements within the domain \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmaterial_a4b37882b30b6ce9699cda7d3602f67d2}\label{classmaterial_a4b37882b30b6ce9699cda7d3602f67d2}} 
+std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ {\bfseries poly}
+\begin{DoxyCompactList}\small\item\em listing of the points that make up the domain in counterclockwise order with first and last points being the same \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmaterial_a54bb5d9d165938ca62494e725b17ed34}\label{classmaterial_a54bb5d9d165938ca62494e725b17ed34}} 
+std\+::vector$<$ int $>$ {\bfseries poly\+\_\+nodes}
+\begin{DoxyCompactList}\small\item\em listing of the node numbers in the polygon domain boundary that correspond to poly \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmaterial_add27a60541eda5b18e3ec30a3b82d9bb}\label{classmaterial_add27a60541eda5b18e3ec30a3b82d9bb}} 
+\mbox{\hyperlink{classproperty}{property}} {\bfseries E\+\_\+func}
+\begin{DoxyCompactList}\small\item\em Young\textquotesingle{}s Modulus. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmaterial_ac698be9b40120aa0b303aba3b80a4e82}\label{classmaterial_ac698be9b40120aa0b303aba3b80a4e82}} 
+\mbox{\hyperlink{classproperty}{property}} {\bfseries nu\+\_\+func}
+\begin{DoxyCompactList}\small\item\em Poisson\textquotesingle{}s ratio. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmaterial_a90f6ae4a3e9f85d5838f4061ba604475}\label{classmaterial_a90f6ae4a3e9f85d5838f4061ba604475}} 
+\mbox{\hyperlink{classproperty}{property}} {\bfseries D\+\_\+func}
+\begin{DoxyCompactList}\small\item\em oxidant diffusivity \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmaterial_a224c02173e6ccbf7fce226ad6ef52d7e}\label{classmaterial_a224c02173e6ccbf7fce226ad6ef52d7e}} 
+\mbox{\hyperlink{classproperty}{property}} {\bfseries eps\+\_\+func}
+\begin{DoxyCompactList}\small\item\em applied linear eigen strain \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmaterial_a1d32e4db869f9e33717cc39c6ba3a6fa}\label{classmaterial_a1d32e4db869f9e33717cc39c6ba3a6fa}} 
+\mbox{\hyperlink{classproperty}{property}} {\bfseries rxn\+\_\+rate\+\_\+func}
+\begin{DoxyCompactList}\small\item\em surface reaction rate (Deal-\/\+Grove k\+\_\+s) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmaterial_ae1809e830a2bcaec44c8882520e2f7a3}\label{classmaterial_ae1809e830a2bcaec44c8882520e2f7a3}} 
+\mbox{\hyperlink{classproperty}{property}} {\bfseries alpha\+\_\+func}
+\begin{DoxyCompactList}\small\item\em coefficient of thermal expansion \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmaterial_a7844e680d6cf63aacadb787bc911a68e}\label{classmaterial_a7844e680d6cf63aacadb787bc911a68e}} 
+bool {\bfseries is\+\_\+reacting} = false
+\begin{DoxyCompactList}\small\item\em flag to mark a material as reacting \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmaterial_a11777c589a48ecb0f955e0f3cf97ba09}\label{classmaterial_a11777c589a48ecb0f955e0f3cf97ba09}} 
+double($\ast$ {\bfseries eta\+\_\+func} )(\mbox{\hyperlink{classmp__element}{mp\+\_\+element}} \&el) = nullptr
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This defines a domain with a specific geometry, material properties and meshing constraints 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmaterial_a3b5caea229b7aac32952c1a06ebe560b}\label{classmaterial_a3b5caea229b7aac32952c1a06ebe560b}} 
+\index{material@{material}!add\_node\_to\_poly@{add\_node\_to\_poly}}
+\index{add\_node\_to\_poly@{add\_node\_to\_poly}!material@{material}}
+\doxysubsubsection{\texorpdfstring{add\_node\_to\_poly()}{add\_node\_to\_poly()}}
+{\footnotesize\ttfamily void material\+::add\+\_\+node\+\_\+to\+\_\+poly (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classpoint}{point}} \&}]{node,  }\item[{int}]{i }\end{DoxyParamCaption})}
+
+Function takes in a point and the integer index from the global node list and then checks if the point is on the material polygon. If it is but isn\textquotesingle{}t already in the list of points, it is added. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d8a/classmaterial_a3b5caea229b7aac32952c1a06ebe560b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmaterial_a5091eba4b46382b40a3a0286e996d4bf}\label{classmaterial_a5091eba4b46382b40a3a0286e996d4bf}} 
+\index{material@{material}!get\_node\_index@{get\_node\_index}}
+\index{get\_node\_index@{get\_node\_index}!material@{material}}
+\doxysubsubsection{\texorpdfstring{get\_node\_index()}{get\_node\_index()}}
+{\footnotesize\ttfamily int material\+::get\+\_\+node\+\_\+index (\begin{DoxyParamCaption}\item[{const int}]{test\+\_\+node }\end{DoxyParamCaption})}
+
+Given a global node index, returns the index of that point in poly\+\_\+nodes if it exists. otherwise returns -\/1. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d8a/classmaterial_a5091eba4b46382b40a3a0286e996d4bf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmaterial_a08ba160b2e51514cb27680acbedbd02d}\label{classmaterial_a08ba160b2e51514cb27680acbedbd02d}} 
+\index{material@{material}!node\_on\_poly@{node\_on\_poly}}
+\index{node\_on\_poly@{node\_on\_poly}!material@{material}}
+\doxysubsubsection{\texorpdfstring{node\_on\_poly()}{node\_on\_poly()}}
+{\footnotesize\ttfamily bool material\+::node\+\_\+on\+\_\+poly (\begin{DoxyParamCaption}\item[{const int}]{test\+\_\+node }\end{DoxyParamCaption})}
+
+Given a global node index, returns true if node is in poly\+\_\+node list, false if not Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d8a/classmaterial_a08ba160b2e51514cb27680acbedbd02d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmaterial_af2a5c9c8cff587143fa978cd2cc33912}\label{classmaterial_af2a5c9c8cff587143fa978cd2cc33912}} 
+\index{material@{material}!store\_property@{store\_property}}
+\index{store\_property@{store\_property}!material@{material}}
+\doxysubsubsection{\texorpdfstring{store\_property()}{store\_property()}}
+{\footnotesize\ttfamily bool material\+::store\+\_\+property (\begin{DoxyParamCaption}\item[{std\+::string}]{label,  }\item[{std\+::string}]{in\+\_\+var\+\_\+name,  }\item[{std\+::string}]{in\+\_\+val }\end{DoxyParamCaption})}
+
+Function used to parse from plain text input files and store material properties correctly. This is only used if the framework is incorporated using the API. The label is used to differentiate between different materials. For example, the oxide would have have a label of \char`\"{}\+Si\+O2\char`\"{} and the in\+\_\+var\+\_\+name is \char`\"{}\+E\+\_\+\+Si\+O2\char`\"{} The function returns true if in\+\_\+var\+\_\+name ends with label and in\+\_\+val is properly stored. Otherwise, false is returned. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/support\+\_\+files/hpp/material.\+hpp\item 
+src/support\+\_\+files/cpp/material.\+cpp\end{DoxyCompactItemize}

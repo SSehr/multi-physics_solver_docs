@@ -1,0 +1,120 @@
+\hypertarget{helper__functions_8hpp_source}{}\doxysection{helper\+\_\+functions.\+hpp}
+\label{helper__functions_8hpp_source}\index{src/support\_files/hpp/helper\_functions.hpp@{src/support\_files/hpp/helper\_functions.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef HELPERFUNCTIONS}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define HELPERFUNCTIONS}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}geometry.hpp"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}material.hpp"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}constraint.hpp"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}../../third\_party/tinyxml2.h"{}}}
+\DoxyCodeLine{10 \textcolor{keywordtype}{bool} in\_list(\textcolor{keywordtype}{int} val, \textcolor{keyword}{const} std::vector<int> \&val\_list);}
+\DoxyCodeLine{11 \textcolor{keywordtype}{int} get\_index(\textcolor{keywordtype}{int} val, \textcolor{keyword}{const} std::vector<int> \&val\_list);}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 std::ostream \&operator<<(std::ostream \&os, std::vector<int> \textcolor{keyword}{const} \&ls);}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keywordtype}{void} remove\_points\_from\_boundary(std::vector<point> \& boundary, std::vector<point> \&pts\_to\_remove);}
+\DoxyCodeLine{16 \textcolor{keywordtype}{void} add\_points\_to\_boundary(std::vector<point> \&boundary, std::vector<point> \&pts\_to\_add);}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{19 \textcolor{keywordtype}{bool} add\_to\_list(std::vector<T> \&old\_list, std::vector<T> \&add\_list)}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21     \textcolor{keywordflow}{if} (old\_list.back() == add\_list.front())}
+\DoxyCodeLine{22     \{}
+\DoxyCodeLine{23         old\_list.insert(old\_list.end(), add\_list.begin() + 1, add\_list.end());}
+\DoxyCodeLine{24     \}}
+\DoxyCodeLine{25     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (old\_list.back() == add\_list.back())}
+\DoxyCodeLine{26     \{}
+\DoxyCodeLine{27         old\_list.insert(old\_list.end(), add\_list.rbegin() + 1, add\_list.rend());}
+\DoxyCodeLine{28     \}}
+\DoxyCodeLine{29     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (old\_list.front() == add\_list.front())}
+\DoxyCodeLine{30     \{}
+\DoxyCodeLine{31         std::reverse(add\_list.begin(), add\_list.end());}
+\DoxyCodeLine{32         old\_list.insert(old\_list.begin(), add\_list.begin(), add\_list.end() -\/ 1);}
+\DoxyCodeLine{33         std::reverse(add\_list.begin(), add\_list.end());}
+\DoxyCodeLine{34     \}}
+\DoxyCodeLine{35     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (old\_list.front() == add\_list.back())}
+\DoxyCodeLine{36     \{}
+\DoxyCodeLine{37         old\_list.insert(old\_list.begin(), add\_list.begin(), add\_list.end() -\/ 1);}
+\DoxyCodeLine{38     \}}
+\DoxyCodeLine{39     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{40     \{}
+\DoxyCodeLine{41         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{42     \}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{45 \}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{keywordtype}{int} find\_node\_number(\textcolor{keyword}{const} \mbox{\hyperlink{classpoint}{point}} \&pt, std::vector<point> \&pts);}
+\DoxyCodeLine{48 \textcolor{keywordtype}{void} renumber\_poly(\textcolor{keyword}{const} std::vector<point> \&poly, std::vector<point> \&pts, std::vector<std::vector<int>> \&node\_nums, \textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 tinyxml2::XMLElement * check\_for\_child(tinyxml2::XMLNode* pParent, std::string \textcolor{keyword}{const} \&name);}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{53 \textcolor{keyword}{inline} T check\_for\_attribute(tinyxml2::XMLElement * pElement, std::string \textcolor{keyword}{const} \&attribute)}
+\DoxyCodeLine{54 \{}
+\DoxyCodeLine{55     T temp;}
+\DoxyCodeLine{56     tinyxml2::XMLError error = pElement-\/>QueryAttribute(attribute.c\_str(),\&temp);}
+\DoxyCodeLine{57     \textcolor{keywordflow}{if} (error != tinyxml2::XML\_SUCCESS)}
+\DoxyCodeLine{58     \{}
+\DoxyCodeLine{59         \textcolor{keywordflow}{if} (error == tinyxml2::XML\_WRONG\_ATTRIBUTE\_TYPE)}
+\DoxyCodeLine{60         \{}
+\DoxyCodeLine{61             std::cout << \textcolor{stringliteral}{"{}element "{}} << pElement-\/>Value() << \textcolor{stringliteral}{"{} has incorrect type for attribute "{}} << attribute << \textcolor{stringliteral}{"{}: "{}} << pElement-\/>Attribute(attribute.c\_str()) << std::endl;}
+\DoxyCodeLine{62         \}}
+\DoxyCodeLine{63         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{64         \{}
+\DoxyCodeLine{65             std::cout << \textcolor{stringliteral}{"{}element "{}} << pElement-\/>Value() << \textcolor{stringliteral}{"{} must have attribute "{}} << attribute << std::endl;}
+\DoxyCodeLine{66         \}}
+\DoxyCodeLine{67         }
+\DoxyCodeLine{68         \textcolor{keywordflow}{throw} -\/100;}
+\DoxyCodeLine{69     \}}
+\DoxyCodeLine{70     \textcolor{keywordflow}{return} temp;}
+\DoxyCodeLine{71 \}}
+\DoxyCodeLine{72 \textcolor{keyword}{template} <>}
+\DoxyCodeLine{73 \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} check\_for\_attribute<bool>(tinyxml2::XMLElement * pElement, std::string \textcolor{keyword}{const} \&attribute)}
+\DoxyCodeLine{74 \{}
+\DoxyCodeLine{75     \textcolor{keywordflow}{if} (pElement-\/>Attribute(attribute.c\_str(),\textcolor{stringliteral}{"{}true"{}}))}
+\DoxyCodeLine{76     \{}
+\DoxyCodeLine{77         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{78     \}}
+\DoxyCodeLine{79     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (pElement-\/>Attribute(attribute.c\_str(),\textcolor{stringliteral}{"{}false"{}}))}
+\DoxyCodeLine{80     \{}
+\DoxyCodeLine{81         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{82     \}}
+\DoxyCodeLine{83     std::cout << \textcolor{stringliteral}{"{}element "{}} << pElement-\/>Value() << \textcolor{stringliteral}{"{} must have attribute "{}} << attribute << \textcolor{stringliteral}{"{} set to either true or false"{}} << std::endl;}
+\DoxyCodeLine{84     \textcolor{keywordflow}{throw} -\/100;}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \}}
+\DoxyCodeLine{87 \textcolor{keyword}{template}<>}
+\DoxyCodeLine{88 \textcolor{keyword}{inline} std::string check\_for\_attribute<std::string>(tinyxml2::XMLElement * pElement, std::string \textcolor{keyword}{const} \&attribute)}
+\DoxyCodeLine{89 \{}
+\DoxyCodeLine{90     \textcolor{keywordflow}{if} (pElement-\/>Attribute(attribute.c\_str()))}
+\DoxyCodeLine{91     \{}
+\DoxyCodeLine{92         \textcolor{keywordflow}{return} std::string(pElement-\/>Attribute(attribute.c\_str()));}
+\DoxyCodeLine{93     \}}
+\DoxyCodeLine{94     std::cout << \textcolor{stringliteral}{"{}element "{}} << pElement-\/>Value() << \textcolor{stringliteral}{"{} must have attribute "{}} << attribute << std::endl;}
+\DoxyCodeLine{95     \textcolor{keywordflow}{throw} -\/100;}
+\DoxyCodeLine{96     }
+\DoxyCodeLine{97 \}}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 std::string check\_end(std::string str, \textcolor{keywordtype}{char} end);}
+\DoxyCodeLine{101 std::string get\_text(tinyxml2::XMLNode* pParent, std::string \textcolor{keyword}{const} \&name, \textcolor{keywordtype}{char} end = \textcolor{charliteral}{' '});}
+\DoxyCodeLine{102 \textcolor{keywordtype}{void} read\_properties(tinyxml2::XMLElement *pmaterial, \mbox{\hyperlink{classmaterial}{material}} \&matl);}
+\DoxyCodeLine{103 \textcolor{keywordtype}{void} read\_points(tinyxml2::XMLElement *pElement, std::vector<point> \&poly);}
+\DoxyCodeLine{104 \textcolor{keywordtype}{void} read\_geometry(tinyxml2::XMLElement *pmaterial, \mbox{\hyperlink{classmaterial}{material}} \&matl, \textcolor{keywordtype}{int} reg);}
+\DoxyCodeLine{105 \mbox{\hyperlink{namespaceconstraint__type_a8a6187c745812b5023718836eaaf293f}{constraint\_type::type}} determine\_c\_type(std::string \textcolor{keyword}{const} \&val);}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 \textcolor{keywordtype}{void} insert\_point(tinyxml2::XMLDocument \& inputXML, tinyxml2::XMLElement * element, \textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} y);}
+\DoxyCodeLine{108 \textcolor{keywordtype}{void} add\_constraint(tinyxml2::XMLDocument \& inputXML, tinyxml2::XMLElement * pBCs, std::string \textcolor{keyword}{const} BC\_type, std::vector<double> xs, std::vector<double> ys, \textcolor{keywordtype}{double} initial\_value, \textcolor{keywordtype}{double} rate);}
+\DoxyCodeLine{109 \textcolor{keywordtype}{void} add\_to\_string(std::string \&str, \textcolor{keywordtype}{double} val, std::string \&data\_sep);}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 \textcolor{keywordtype}{void} find\_outer\_segments(\textcolor{keyword}{const} std::vector<point> \&new\_poly, std::vector<point> \&crack\_poly, std::vector<point> \&oxide\_poly, std::vector<material> \&materials, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} ignore\_index, std::vector<std::vector<point>> \&outer\_segments);}
+\DoxyCodeLine{112 \textcolor{keywordtype}{void} clean\_corners(std::vector<point> \&poly, std::vector<point> oxide\_poly, \textcolor{keywordtype}{double} threshold\_length);}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

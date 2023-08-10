@@ -1,0 +1,62 @@
+\hypertarget{classworker__thread}{}\doxysection{worker\+\_\+thread Class Reference}
+\label{classworker__thread}\index{worker\_thread@{worker\_thread}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classworker__thread_a42bf2fef4f52e2d980b3768fb111d421}\label{classworker__thread_a42bf2fef4f52e2d980b3768fb111d421}} 
+void {\bfseries worker\+\_\+sem\+\_\+notify} ()
+\item 
+\mbox{\Hypertarget{classworker__thread_ae515da0d7f087e93b359457c4e2a8d7d}\label{classworker__thread_ae515da0d7f087e93b359457c4e2a8d7d}} 
+void {\bfseries main\+\_\+sem\+\_\+wait} ()
+\item 
+\mbox{\Hypertarget{classworker__thread_a0df3b04d913726b845388953334f23b0}\label{classworker__thread_a0df3b04d913726b845388953334f23b0}} 
+{\bfseries worker\+\_\+thread} (const \mbox{\hyperlink{classworker__thread}{worker\+\_\+thread}} \&)=delete
+\item 
+\mbox{\Hypertarget{classworker__thread_ad19a7907cdb4adbc0119519e563fc241}\label{classworker__thread_ad19a7907cdb4adbc0119519e563fc241}} 
+\mbox{\hyperlink{classworker__thread}{worker\+\_\+thread}} \& {\bfseries operator=} (const \mbox{\hyperlink{classworker__thread}{worker\+\_\+thread}} \&)=delete
+\item 
+\mbox{\Hypertarget{classworker__thread_ad3069cef48cfabc535b37b7d1b944ea5}\label{classworker__thread_ad3069cef48cfabc535b37b7d1b944ea5}} 
+{\bfseries worker\+\_\+thread} (\mbox{\hyperlink{classworker__thread}{worker\+\_\+thread}} \&\&obj)
+\item 
+\mbox{\Hypertarget{classworker__thread_a1c5264a5dc99ac5c9459c2230d675c21}\label{classworker__thread_a1c5264a5dc99ac5c9459c2230d675c21}} 
+\mbox{\hyperlink{classworker__thread}{worker\+\_\+thread}} \& {\bfseries operator=} (\mbox{\hyperlink{classworker__thread}{worker\+\_\+thread}} \&\&obj)
+\item 
+\mbox{\Hypertarget{classworker__thread_ae23bdb9fd3fced92f980138f6f62b73b}\label{classworker__thread_ae23bdb9fd3fced92f980138f6f62b73b}} 
+{\bfseries worker\+\_\+thread} (int id\+\_\+=-\/1)
+\item 
+\mbox{\Hypertarget{classworker__thread_a1c525546f8db189ef97fec8605393473}\label{classworker__thread_a1c525546f8db189ef97fec8605393473}} 
+void {\bfseries run} ()
+\item 
+\mbox{\Hypertarget{classworker__thread_adf9c291b1b65876d9d4d39a337c6b93a}\label{classworker__thread_adf9c291b1b65876d9d4d39a337c6b93a}} 
+int {\bfseries get\+\_\+id} ()
+\item 
+\mbox{\Hypertarget{classworker__thread_acb1c4169aa47aee274865d2cea50d33a}\label{classworker__thread_acb1c4169aa47aee274865d2cea50d33a}} 
+void {\bfseries quit\+\_\+thread} ()
+\item 
+\mbox{\Hypertarget{classworker__thread_a6aa8c47f71c7ed2b10bd859e2ceed60e}\label{classworker__thread_a6aa8c47f71c7ed2b10bd859e2ceed60e}} 
+void {\bfseries start\+Thread} (\mbox{\hyperlink{classnode}{node}} $\ast$nodes\+\_\+, \mbox{\hyperlink{classmp__element}{mp\+\_\+element}} $\ast$elements\+\_\+, \mbox{\hyperlink{classpoint}{point}} $\ast$velo\+\_\+, \mbox{\hyperlink{classpoint}{point}} $\ast$accel\+\_\+, double $\ast$RHS\+\_\+, long begin\+\_\+index\+\_\+, long end\+\_\+index\+\_\+, std\+::mutex $\ast$n\+\_\+mtxs\+\_\+, double dt\+\_\+czm\+\_\+)
+\item 
+\mbox{\Hypertarget{classworker__thread_ad7810dfe8f1fc396564fa82bf88ce4c3}\label{classworker__thread_ad7810dfe8f1fc396564fa82bf88ce4c3}} 
+void {\bfseries start\+Thread} (long begin\+\_\+index\+\_\+, long end\+\_\+index\+\_\+, double dt\+\_\+czm\+\_\+, \mbox{\hyperlink{class_f_e_a__equations}{FEA\+\_\+equations}} $\ast$global\+\_\+\+MC\+\_\+, \mbox{\hyperlink{class_f_e_a__equations}{FEA\+\_\+equations}} $\ast$global\+\_\+\+C\+\_\+, \mbox{\hyperlink{class_f_e_a__equations}{FEA\+\_\+equations}} $\ast$global\+\_\+\+K\+\_\+, double $\ast$base\+\_\+\+RHS\+\_\+)
+\item 
+\mbox{\Hypertarget{classworker__thread_a645a16a2a995db71775d07802df1bd68}\label{classworker__thread_a645a16a2a995db71775d07802df1bd68}} 
+void {\bfseries increment} ()
+\item 
+\mbox{\Hypertarget{classworker__thread_a34beed353a117c91154978ac22ca71d0}\label{classworker__thread_a34beed353a117c91154978ac22ca71d0}} 
+void {\bfseries set\+\_\+time} (double time\+\_\+)
+\item 
+\mbox{\Hypertarget{classworker__thread_a46f7cbc5329a2edb514dcb7132aaaf16}\label{classworker__thread_a46f7cbc5329a2edb514dcb7132aaaf16}} 
+void {\bfseries join} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classworker__thread_a6cc3d96cadf36cf7f8aca04cb3c7fe3a}\label{classworker__thread_a6cc3d96cadf36cf7f8aca04cb3c7fe3a}} 
+bool {\bfseries unstable} = false
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/support\+\_\+files/hpp/worker.\+hpp\item 
+src/support\+\_\+files/cpp/worker.\+cpp\end{DoxyCompactItemize}

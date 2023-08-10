@@ -1,0 +1,6 @@
+<map id="oxide_mesh::check_for_crack_face_contact" name="oxide_mesh::check_for_crack_face_contact">
+<area shape="rect" id="node1" title="check for crack face contact, may be used in user defined functions" alt="" coords="5,39,162,81"/>
+<area shape="rect" id="node2" href="$de/d0a/classoxide__mesh.html#a1f3775b85d438f79909c56ce8b6e991e" title="check to see if a test point touches or is on the other side of the symmetry boundary from the mid_po..." alt="" coords="216,5,386,47"/>
+<area shape="rect" id="node4" href="$de/d0a/classoxide__mesh.html#afea76799d1775c1eaa633cc100de21c1" title="get the symmetry boundary based on the mechanical constraint defined as the crack plane" alt="" coords="210,72,392,114"/>
+<area shape="rect" id="node3" href="$d9/df1/classbase__mesh.html#a1cc96b26afdebb1b1f7426cc9e951d56" title=" " alt="" coords="440,5,604,47"/>
+</map>

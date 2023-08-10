@@ -1,0 +1,6 @@
+<map id="oxide_mesh::check_for_healing" name="oxide_mesh::check_for_healing">
+<area shape="rect" id="node1" title="check to see if there is crack healing via contact IS THIS NEEDED???" alt="" coords="689,5,846,47"/>
+<area shape="rect" id="node2" href="$de/d0a/classoxide__mesh.html#a926543deb442cfa9b203e46f7e2bea2d" title="run cracking simulation" alt="" coords="468,5,641,47"/>
+<area shape="rect" id="node3" href="$de/d0a/classoxide__mesh.html#ad3c124e5fd82ca502fe791baaa108048" title="run the main loop" alt="" coords="237,13,420,40"/>
+<area shape="rect" id="node4" href="$de/d0a/classoxide__mesh.html#a0478903f72d483ab779af8443ffbc48b" title="run a simulation" alt="" coords="5,13,189,40"/>
+</map>

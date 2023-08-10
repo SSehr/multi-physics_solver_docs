@@ -1,0 +1,4 @@
+<map id="oxide_mesh::simplify_polygon" name="oxide_mesh::simplify_polygon">
+<area shape="rect" id="node1" title="simplify a polygon removing points that are too close to each other or roughness" alt="" coords="5,5,150,47"/>
+<area shape="rect" id="node2" href="$de/d0a/classoxide__mesh.html#a73f4c92e0a84a2d811353cb9e649953a" title="remove points from pts list that are withing threshold_length of removed_pts" alt="" coords="198,13,365,40"/>
+</map>

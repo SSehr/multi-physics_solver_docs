@@ -1,0 +1,13 @@
+<map id="FEA_equations::solve" name="FEA_equations::solve">
+<area shape="rect" id="node1" title=" " alt="" coords="1332,120,1482,147"/>
+<area shape="rect" id="node2" href="$de/d0a/classoxide__mesh.html#a8ef1417ccaaeb8179f265c359361f513" title="way to run cracking simulation with a cohesive element method" alt="" coords="894,163,1067,205"/>
+<area shape="rect" id="node6" href="$de/d0a/classoxide__mesh.html#a8dcb55265f791a7d4f438d563b4e297a" title="solve the diffusion problem" alt="" coords="690,20,845,47"/>
+<area shape="rect" id="node7" href="$de/d0a/classoxide__mesh.html#a384a713239018cb3c5b2c6affa6ffb3b" title="solve mechanics problem with creep but no cracking" alt="" coords="1115,120,1284,147"/>
+<area shape="rect" id="node8" href="$de/d0a/classoxide__mesh.html#a9bc3bf3819d3a59f146e462f90acd003" title="main solve function modified to handle crack contact this should be rectified with the main solve_mec..." alt="" coords="470,192,639,234"/>
+<area shape="rect" id="node9" href="$de/d0a/classoxide__mesh.html#a56952c56a4d69502ca5eec6f5fc78fba" title="solve mechanics problem for crack advance" alt="" coords="1115,53,1284,95"/>
+<area shape="rect" id="node3" href="$de/d0a/classoxide__mesh.html#a926543deb442cfa9b203e46f7e2bea2d" title="run cracking simulation" alt="" coords="468,111,641,153"/>
+<area shape="rect" id="node4" href="$de/d0a/classoxide__mesh.html#ad3c124e5fd82ca502fe791baaa108048" title="run the main loop" alt="" coords="237,118,420,145"/>
+<area shape="rect" id="node5" href="$de/d0a/classoxide__mesh.html#a0478903f72d483ab779af8443ffbc48b" title="run a simulation" alt="" coords="5,118,189,145"/>
+<area shape="rect" id="node10" href="$de/d0a/classoxide__mesh.html#a9a35c42cc5c08eb05a80116a80fca872" title="check for crack growth" alt="" coords="689,96,846,138"/>
+<area shape="rect" id="node11" href="$de/d0a/classoxide__mesh.html#aa54f1f9caa28b0f4263ab5ae34fbd4cb" title="get the node numbers of the crack advance" alt="" coords="902,96,1059,138"/>
+</map>

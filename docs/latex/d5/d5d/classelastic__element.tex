@@ -1,0 +1,207 @@
+\hypertarget{classelastic__element}{}\doxysection{elastic\+\_\+element Class Reference}
+\label{classelastic__element}\index{elastic\_element@{elastic\_element}}
+
+
+{\ttfamily \#include $<$elastic\+\_\+element.\+hpp$>$}
+
+
+
+Inheritance diagram for elastic\+\_\+element\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{db/d54/classelastic__element__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for elastic\+\_\+element\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{df/dee/classelastic__element__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classelastic__element_a6f55b642c2591f630ccd15b59ac55ada}\label{classelastic__element_a6f55b642c2591f630ccd15b59ac55ada}} 
+{\bfseries elastic\+\_\+element} (double E\+\_\+, double nu\+\_\+, double alpha\+\_\+)
+\item 
+\mbox{\Hypertarget{classelastic__element_a6b23b2fdccdd92561b0141f447bc5733}\label{classelastic__element_a6b23b2fdccdd92561b0141f447bc5733}} 
+{\bfseries elastic\+\_\+element} (int ns\mbox{[}6\mbox{]}, \mbox{\hyperlink{classpoint}{point}} p\+\_\+\mbox{[}6\mbox{]}, int neighs\mbox{[}3\mbox{]}, int in\+\_\+reg, element\+\_\+type\+::type el\+\_\+type\+\_\+, symmetry\+\_\+type\+::type plane\+\_\+type\+\_\+, double E\+\_\+, double nu\+\_\+, double alpha\+\_\+)
+\item 
+void \mbox{\hyperlink{classelastic__element_a7c7da78b8f1438aec183c2836c2ca363}{Calc\+\_\+local\+\_\+k}} ()
+\item 
+\mbox{\Hypertarget{classelastic__element_a7a48c35d52f0a031975ac5f3fccc8890}\label{classelastic__element_a7a48c35d52f0a031975ac5f3fccc8890}} 
+void {\bfseries Calc\+\_\+local\+\_\+F} ()
+\begin{DoxyCompactList}\small\item\em calculate the local nodal force matrix \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classelastic__element_a8e1f9eeb60dee3ffbd3810e2678cc43f}\label{classelastic__element_a8e1f9eeb60dee3ffbd3810e2678cc43f}} 
+void {\bfseries get\+\_\+stresses} (double ux0, double uy0, double ux1, double uy1, double ux2, double uy2, double ux3, double uy3, double ux4, double uy4, double ux5, double uy5, const \mbox{\hyperlink{classpoint}{point}} \&test\+\_\+pt, double f\+\_\+stresses\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{classelastic__element_acce8199a451c49829a9886864549c307}{Calc\+\_\+stress}} (double ux0, double uy0, double ux1, double uy1, double ux2, double uy2)
+\item 
+\mbox{\Hypertarget{classelastic__element_a01421edfb1166da686def94b86e4033a}\label{classelastic__element_a01421edfb1166da686def94b86e4033a}} 
+void {\bfseries Calc\+\_\+stress} (double ux0, double uy0, double ux1, double uy1, double ux2, double uy2, double ux3, double uy3, double ux4, double uy4, double ux5, double uy5)
+\item 
+\mbox{\Hypertarget{classelastic__element_ae30b71f3ab55f2fc7fe92f41c3906111}\label{classelastic__element_ae30b71f3ab55f2fc7fe92f41c3906111}} 
+std\+::vector$<$ double $>$ {\bfseries get\+\_\+stored\+\_\+strains} (double u0, double u1, double u2, double u3, double u4, double u5)
+\item 
+\mbox{\Hypertarget{classelastic__element_a61b3b19a3a516cf8ac08c79bce707bad}\label{classelastic__element_a61b3b19a3a516cf8ac08c79bce707bad}} 
+std\+::vector$<$ double $>$ {\bfseries get\+\_\+stored\+\_\+strains} (double u0, double u1, double u2, double u3, double u4, double u5, double u6, double u7, double u8, double u9, double u10, double u11, \mbox{\hyperlink{classpoint}{point}} \&test\+\_\+pt)
+\item 
+void \mbox{\hyperlink{classelastic__element_a71cfe9d2dd42c72a2da04d8ca985e728}{Calc\+\_\+stored\+\_\+strains}} (double u0, double u1, double u2, double u3, double u4, double u5)
+\item 
+\mbox{\Hypertarget{classelastic__element_a6a22dd51746bb029f65e1aa879ab9dd6}\label{classelastic__element_a6a22dd51746bb029f65e1aa879ab9dd6}} 
+void {\bfseries Calc\+\_\+stored\+\_\+strains} (double u0, double u1, double u2, double u3, double u4, double u5, double u6, double u7, double u8, double u9, double u10, double u11)
+\item 
+\mbox{\Hypertarget{classelastic__element_a43e59ebd1b91510a165bd47742027d8b}\label{classelastic__element_a43e59ebd1b91510a165bd47742027d8b}} 
+void {\bfseries Calc\+\_\+local\+\_\+dk} (const \mbox{\hyperlink{classpoint}{point}} \&crack\+\_\+tip, \mbox{\hyperlink{classpoint}{point}} \&shift, double shift\+\_\+radius)
+\item 
+\mbox{\Hypertarget{classelastic__element_afddf7f3914acc8f0d573d8b84365a437}\label{classelastic__element_afddf7f3914acc8f0d573d8b84365a437}} 
+void {\bfseries Calc\+\_\+local\+\_\+dF} (const \mbox{\hyperlink{classpoint}{point}} \&crack\+\_\+tip, \mbox{\hyperlink{classpoint}{point}} \&shift, double shift\+\_\+radius)
+\item 
+\mbox{\Hypertarget{classelastic__element_a407dd839802178369d54e5c68db675d2}\label{classelastic__element_a407dd839802178369d54e5c68db675d2}} 
+void {\bfseries Assemble\+\_\+global\+\_\+F} (double $\ast$F)
+\item 
+\mbox{\Hypertarget{classelastic__element_a8546c53ff7634ea42bb511f5c98d6ced}\label{classelastic__element_a8546c53ff7634ea42bb511f5c98d6ced}} 
+void {\bfseries Remove\+\_\+local\+\_\+F} (double $\ast$F)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classelastic__element_a955231b086f45f36d2a96983bd3ac99b}\label{classelastic__element_a955231b086f45f36d2a96983bd3ac99b}} 
+double {\bfseries E}
+\begin{DoxyCompactList}\small\item\em Young\textquotesingle{}s modulus. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classelastic__element_a67514413e741cb2cc7ca8d934d47ddee}\label{classelastic__element_a67514413e741cb2cc7ca8d934d47ddee}} 
+double {\bfseries nu}
+\begin{DoxyCompactList}\small\item\em Poisson\textquotesingle{}s ratio. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classelastic__element_ade931cb91ceba208ab6bd23d846a7987}\label{classelastic__element_ade931cb91ceba208ab6bd23d846a7987}} 
+double {\bfseries alpha}
+\begin{DoxyCompactList}\small\item\em coefficient of thermal expansion \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classelastic__element_a004fc6bc3c385ad30f721ab13e2e63ec}\label{classelastic__element_a004fc6bc3c385ad30f721ab13e2e63ec}} 
+double {\bfseries s11} = 0
+\begin{DoxyCompactList}\small\item\em xx stress \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classelastic__element_a83255490fd3a4ce53379b0eebcde3fb4}\label{classelastic__element_a83255490fd3a4ce53379b0eebcde3fb4}} 
+double {\bfseries s22} = 0
+\begin{DoxyCompactList}\small\item\em yy stress \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classelastic__element_ac59c14132728901e35f09c8fafc88f62}\label{classelastic__element_ac59c14132728901e35f09c8fafc88f62}} 
+double {\bfseries s12} = 0
+\begin{DoxyCompactList}\small\item\em xy stress \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classelastic__element_afd7cc7eaab5bd7b803650643c5249c4c}\label{classelastic__element_afd7cc7eaab5bd7b803650643c5249c4c}} 
+double {\bfseries eps\+\_\+trans} = 0
+\begin{DoxyCompactList}\small\item\em eigen strain associated with oxidation \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classelastic__element_ac86d8fd3baf85b44756b2fddc5ad3c19}\label{classelastic__element_ac86d8fd3baf85b44756b2fddc5ad3c19}} 
+double {\bfseries eps11\+\_\+cr} = 0
+\begin{DoxyCompactList}\small\item\em xx creep strain \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classelastic__element_a89acc5c073337b6683c7200cc0c894c0}\label{classelastic__element_a89acc5c073337b6683c7200cc0c894c0}} 
+double {\bfseries eps22\+\_\+cr} = 0
+\begin{DoxyCompactList}\small\item\em yy creep strain \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classelastic__element_abef604a7ce8c5c68e0cbc3a3d082441b}\label{classelastic__element_abef604a7ce8c5c68e0cbc3a3d082441b}} 
+double {\bfseries eps12\+\_\+cr} = 0
+\begin{DoxyCompactList}\small\item\em xy creep strain \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classelastic__element_af74dc86d87623058f63f912a497ce7e6}\label{classelastic__element_af74dc86d87623058f63f912a497ce7e6}} 
+double {\bfseries eps11\+\_\+m} = 0
+\begin{DoxyCompactList}\small\item\em xx strain stored in the mesh \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classelastic__element_ac1c6686109002e9f5993f350470a7087}\label{classelastic__element_ac1c6686109002e9f5993f350470a7087}} 
+double {\bfseries eps22\+\_\+m} = 0
+\begin{DoxyCompactList}\small\item\em yy strain stored in the mesh \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classelastic__element_a4349f0f356249751171f4dc3ee6fb93d}\label{classelastic__element_a4349f0f356249751171f4dc3ee6fb93d}} 
+double {\bfseries eps12\+\_\+m} = 0
+\begin{DoxyCompactList}\small\item\em ay strain stored in the mesh \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classelastic__element_ab9e5b250b8c2d2286e8c77a32840ade0}\label{classelastic__element_ab9e5b250b8c2d2286e8c77a32840ade0}} 
+double {\bfseries eps11\+\_\+crs} \mbox{[}6\mbox{]} = \{0,0,0,0,0,0\}
+\item 
+\mbox{\Hypertarget{classelastic__element_a17c56dc26b5e335954950bcd65726f39}\label{classelastic__element_a17c56dc26b5e335954950bcd65726f39}} 
+double {\bfseries eps22\+\_\+crs} \mbox{[}6\mbox{]} = \{0,0,0,0,0,0\}
+\item 
+\mbox{\Hypertarget{classelastic__element_ad9634870476b1a423ee274b251a5723d}\label{classelastic__element_ad9634870476b1a423ee274b251a5723d}} 
+double {\bfseries eps12\+\_\+crs} \mbox{[}6\mbox{]} = \{0,0,0,0,0,0\}
+\item 
+\mbox{\Hypertarget{classelastic__element_a82300e6f605971e595057b5f63dd372b}\label{classelastic__element_a82300e6f605971e595057b5f63dd372b}} 
+double {\bfseries eps11\+\_\+ms} \mbox{[}6\mbox{]} = \{0,0,0,0,0,0\}
+\item 
+\mbox{\Hypertarget{classelastic__element_af00a111daef63768d2a1d640c01ff92b}\label{classelastic__element_af00a111daef63768d2a1d640c01ff92b}} 
+double {\bfseries eps22\+\_\+ms} \mbox{[}6\mbox{]} = \{0,0,0,0,0,0\}
+\item 
+\mbox{\Hypertarget{classelastic__element_a0b8a433dd99871d7e260d9e76017efa2}\label{classelastic__element_a0b8a433dd99871d7e260d9e76017efa2}} 
+double {\bfseries eps12\+\_\+ms} \mbox{[}6\mbox{]} = \{0,0,0,0,0,0\}
+\item 
+\mbox{\Hypertarget{classelastic__element_ad5708e6fca4e7759b8c720c1caed2644}\label{classelastic__element_ad5708e6fca4e7759b8c720c1caed2644}} 
+double {\bfseries s11s} \mbox{[}6\mbox{]} = \{0,0,0,0,0,0\}
+\item 
+\mbox{\Hypertarget{classelastic__element_ad3febbedf2c0892bf41003ead0286f5d}\label{classelastic__element_ad3febbedf2c0892bf41003ead0286f5d}} 
+double {\bfseries s22s} \mbox{[}6\mbox{]} = \{0,0,0,0,0,0\}
+\item 
+\mbox{\Hypertarget{classelastic__element_aa5ae1fb9e887a73fb31f7ee3a0a4d8f8}\label{classelastic__element_aa5ae1fb9e887a73fb31f7ee3a0a4d8f8}} 
+double {\bfseries s12s} \mbox{[}6\mbox{]} = \{0,0,0,0,0,0\}
+\item 
+\mbox{\Hypertarget{classelastic__element_a843d1e7cf4808b99ad4588584cd07155}\label{classelastic__element_a843d1e7cf4808b99ad4588584cd07155}} 
+double {\bfseries local\+\_\+k} \mbox{[}12\mbox{]}\mbox{[}12\mbox{]}
+\begin{DoxyCompactList}\small\item\em local stiffness matrix \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classelastic__element_ae26d34d0a21b425ba9fef259a6705056}\label{classelastic__element_ae26d34d0a21b425ba9fef259a6705056}} 
+double {\bfseries local\+\_\+F} \mbox{[}12\mbox{]}
+\begin{DoxyCompactList}\small\item\em local nodal force vector \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classelastic__element_aca444ad4a28d250e554bc12a8f79b757}\label{classelastic__element_aca444ad4a28d250e554bc12a8f79b757}} 
+double {\bfseries local\+\_\+dk} \mbox{[}12\mbox{]}\mbox{[}12\mbox{]}
+\item 
+\mbox{\Hypertarget{classelastic__element_abcd3045379c7f8167596895b7ac604ad}\label{classelastic__element_abcd3045379c7f8167596895b7ac604ad}} 
+double {\bfseries local\+\_\+dF} \mbox{[}12\mbox{]}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classelastic__element_a1bb243e45ca350e51d25ff2b2cffd679}\label{classelastic__element_a1bb243e45ca350e51d25ff2b2cffd679}} 
+static double {\bfseries delta\+\_\+T}
+\begin{DoxyCompactList}\small\item\em change in temperature from reference temperature \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classelastic__element_a7361d82792e48475d81c4e6043de8d6f}\label{classelastic__element_a7361d82792e48475d81c4e6043de8d6f}} 
+static double {\bfseries Temperature}
+\begin{DoxyCompactList}\small\item\em current temperature \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class defining an elastic continuum element that inherits from \mbox{\hyperlink{classtriangular__element}{triangular\+\_\+element}} 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classelastic__element_a7c7da78b8f1438aec183c2836c2ca363}\label{classelastic__element_a7c7da78b8f1438aec183c2836c2ca363}} 
+\index{elastic\_element@{elastic\_element}!Calc\_local\_k@{Calc\_local\_k}}
+\index{Calc\_local\_k@{Calc\_local\_k}!elastic\_element@{elastic\_element}}
+\doxysubsubsection{\texorpdfstring{Calc\_local\_k()}{Calc\_local\_k()}}
+{\footnotesize\ttfamily void elastic\+\_\+element\+::\+Calc\+\_\+local\+\_\+k (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+calculate the local stiffness matrix \mbox{\Hypertarget{classelastic__element_a71cfe9d2dd42c72a2da04d8ca985e728}\label{classelastic__element_a71cfe9d2dd42c72a2da04d8ca985e728}} 
+\index{elastic\_element@{elastic\_element}!Calc\_stored\_strains@{Calc\_stored\_strains}}
+\index{Calc\_stored\_strains@{Calc\_stored\_strains}!elastic\_element@{elastic\_element}}
+\doxysubsubsection{\texorpdfstring{Calc\_stored\_strains()}{Calc\_stored\_strains()}}
+{\footnotesize\ttfamily void elastic\+\_\+element\+::\+Calc\+\_\+stored\+\_\+strains (\begin{DoxyParamCaption}\item[{double}]{u0,  }\item[{double}]{u1,  }\item[{double}]{u2,  }\item[{double}]{u3,  }\item[{double}]{u4,  }\item[{double}]{u5 }\end{DoxyParamCaption})}
+
+calculate and store the new strains stored in the mesh based on the displacements Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d5d/classelastic__element_a71cfe9d2dd42c72a2da04d8ca985e728_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classelastic__element_acce8199a451c49829a9886864549c307}\label{classelastic__element_acce8199a451c49829a9886864549c307}} 
+\index{elastic\_element@{elastic\_element}!Calc\_stress@{Calc\_stress}}
+\index{Calc\_stress@{Calc\_stress}!elastic\_element@{elastic\_element}}
+\doxysubsubsection{\texorpdfstring{Calc\_stress()}{Calc\_stress()}}
+{\footnotesize\ttfamily void elastic\+\_\+element\+::\+Calc\+\_\+stress (\begin{DoxyParamCaption}\item[{double}]{ux0,  }\item[{double}]{uy0,  }\item[{double}]{ux1,  }\item[{double}]{uy1,  }\item[{double}]{ux2,  }\item[{double}]{uy2 }\end{DoxyParamCaption})}
+
+calculate the stresses and store them in s11, s22, s12 Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d5d/classelastic__element_acce8199a451c49829a9886864549c307_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/support\+\_\+files/hpp/elastic\+\_\+element.\+hpp\item 
+src/support\+\_\+files/cpp/elastic\+\_\+element.\+cpp\end{DoxyCompactItemize}

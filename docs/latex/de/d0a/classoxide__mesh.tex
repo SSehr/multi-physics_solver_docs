@@ -1,0 +1,2816 @@
+\hypertarget{classoxide__mesh}{}\doxysection{oxide\+\_\+mesh Class Reference}
+\label{classoxide__mesh}\index{oxide\_mesh@{oxide\_mesh}}
+
+
+Inheritance diagram for oxide\+\_\+mesh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{dc/d54/classoxide__mesh__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for oxide\+\_\+mesh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dc7/classoxide__mesh__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classoxide__mesh_a1d9833bc2988e9bf7c8d5babcbef684a}{find\+\_\+outer\+\_\+bounds}} ()
+\begin{DoxyCompactList}\small\item\em find the outer boundary of the geometry \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_a91b059c110760c7f038760ac65b956ec}\label{classoxide__mesh_a91b059c110760c7f038760ac65b956ec}} 
+void {\bfseries find\+\_\+segments} ()
+\begin{DoxyCompactList}\small\item\em find the segments based on the geometry to create the mesh \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_aea79c0e884912bee52e292e93b85dfac}\label{classoxide__mesh_aea79c0e884912bee52e292e93b85dfac}} 
+void {\bfseries update\+\_\+refined\+\_\+points} ()
+\begin{DoxyCompactList}\small\item\em update the points used to determine the element size \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_a7684d3cd9f2e1aaeb2231f0c8dd9155b}{map\+\_\+from\+\_\+old\+\_\+mesh}} (\mbox{\hyperlink{classoxide__mesh}{oxide\+\_\+mesh}} \&old\+\_\+problem)
+\begin{DoxyCompactList}\small\item\em map data from an old mesh onto the current one \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_a5c65d1b777461927d6cb3d21c7627015}\label{classoxide__mesh_a5c65d1b777461927d6cb3d21c7627015}} 
+{\bfseries oxide\+\_\+mesh} ()
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classoxide__mesh_aeb3f64b4e8acd2dd52d441b4ef95eef4}{oxide\+\_\+mesh}} (\mbox{\hyperlink{classoxide__mesh}{oxide\+\_\+mesh}} \&src\+\_\+mesh)
+\begin{DoxyCompactList}\small\item\em copy constructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classoxide__mesh}{oxide\+\_\+mesh}} \& \mbox{\hyperlink{classoxide__mesh_aad38ff863fa9e3da0d037a23d7c398ad}{operator=}} (\mbox{\hyperlink{classoxide__mesh}{oxide\+\_\+mesh}} \&src\+\_\+mesh)
+\begin{DoxyCompactList}\small\item\em copy mesh and clear arrays from src\+\_\+mesh \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_a1ef44e1986fe518dde38cca116634120}{copy\+\_\+mesh}} (\mbox{\hyperlink{classoxide__mesh}{oxide\+\_\+mesh}} \&src\+\_\+mesh)
+\begin{DoxyCompactList}\small\item\em copy data from src mesh \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_a85e810d59ec3caeea62221cdac85d4b5}{set\+\_\+geometry}} (std\+::vector$<$ \mbox{\hyperlink{classmaterial}{material}} $>$ in\+\_\+materials, \mbox{\hyperlink{classmaterial}{material}} in\+\_\+oxide, \mbox{\hyperlink{classmaterial}{material}} in\+\_\+crack)
+\begin{DoxyCompactList}\small\item\em set the geometry \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_a1b72e11755b05257da6de7efd3b8bd81}{set\+\_\+boundary\+\_\+conditions}} (std\+::vector$<$ std\+::pair$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$, \mbox{\hyperlink{classconstraint}{constraint}} $>$ $>$ in\+\_\+constraints\+\_\+)
+\begin{DoxyCompactList}\small\item\em set all boundary conditions \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_a47d2dc82446b83eea3e0ca545081d650}{set\+\_\+parameters}} (int in\+\_\+num\+\_\+gs, double in\+\_\+dt, double in\+\_\+dt\+\_\+cr, double min\+\_\+eta\+\_\+, double eyring\+\_\+prefactor\+\_\+, double eyring\+\_\+\+Eover\+R\+\_\+, double eyring\+\_\+tau\+\_\+c\+\_\+)
+\begin{DoxyCompactList}\small\item\em parse input parameters \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_a3bd5eb57d0d04a04be3c17a9f30e10a6}{set\+\_\+output\+\_\+parameters}} (int dump\+\_\+int\+\_\+, bool timing, bool polys, bool segs)
+\begin{DoxyCompactList}\small\item\em set ouput parameters \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_a4f181fcf2c514a4c1d259c3a94ad2796}{set\+\_\+paths}} (std\+::string in\+\_\+base\+\_\+path, std\+::string in\+\_\+file\+\_\+prefix)
+\begin{DoxyCompactList}\small\item\em set file paths \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_a936f1154cec27246f4217b972b85c23a}{set\+\_\+mesh\+\_\+parameters}} (double in\+\_\+min\+\_\+area, double in\+\_\+refine\+\_\+radius, double gr\+\_\+, element\+\_\+type\+::type el\+\_\+type\+\_\+, std\+::vector$<$ std\+::vector$<$ double $>$ $>$ in\+\_\+mesh\+\_\+regions)
+\begin{DoxyCompactList}\small\item\em set meshing parameters \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_aa4eb55c2cddc68a951d6b31400013555}{set\+\_\+initial\+\_\+strain\+\_\+function}} (void($\ast$initialize\+\_\+strain\+\_\+)(\mbox{\hyperlink{classmp__element}{mp\+\_\+element}} \&el))
+\begin{DoxyCompactList}\small\item\em set the initial strain \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_a2f7b8a330a65b78d65525f104b6e5757}{set\+\_\+temperature\+\_\+function}} (double($\ast$user\+\_\+\+Temp\+\_\+func\+\_\+)(double current\+\_\+time))
+\begin{DoxyCompactList}\small\item\em set a temperature function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_a046932f00ba4a4d474c76167f3d21abb}{set\+\_\+params}} (\mbox{\hyperlink{classparam}{param}} input\+\_\+params)
+\begin{DoxyCompactList}\small\item\em input an instance of param and split up correctly \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_ab51a4206e50a3ba0905cb57b291d3291}{save\+\_\+mesh}} (std\+::string file\+\_\+path)
+\begin{DoxyCompactList}\small\item\em save output file with all data to file\+\_\+path \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_ad91cb9cfde9d021933d5abfad467cd5e}{save\+\_\+mesh\+\_\+string}} (std\+::string file\+\_\+path)
+\begin{DoxyCompactList}\small\item\em version of save\+\_\+mesh using strings instead of stringstream, slower \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_a9d584b95fbcb8366c3e1bc0a5b87fc99}{load\+\_\+mesh}} (std\+::string file\+\_\+path)
+\begin{DoxyCompactList}\small\item\em load output file from file\+\_\+path \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_ace6d9495c95364ee6f41846d4fd93a79}{save\+\_\+polygons}} (std\+::string label, int out\+\_\+ctr\+\_\+)
+\begin{DoxyCompactList}\small\item\em save polygons to a file defined as file\+\_\+prefix + lable + out\+\_\+ctr.\+vtu \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_a492e8c8274795fbe851a549ea8ecd68e}{save\+\_\+geometry}} (std\+::string file\+\_\+path)
+\begin{DoxyCompactList}\small\item\em save the geometry into a single file \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_a775ec658df3c09a8d29b73602cdc6ab5}\label{classoxide__mesh_a775ec658df3c09a8d29b73602cdc6ab5}} 
+void {\bfseries free\+\_\+arrays} ()
+\begin{DoxyCompactList}\small\item\em free both mechanics and diffusion arrays \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_a766c95070edf4eaec8b2f90b941373fa}\label{classoxide__mesh_a766c95070edf4eaec8b2f90b941373fa}} 
+void {\bfseries deform\+\_\+mesh} ()
+\begin{DoxyCompactList}\small\item\em apply the displacment step to the mesh \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_a2e0da99a4735a687d92cb60852693e12}\label{classoxide__mesh_a2e0da99a4735a687d92cb60852693e12}} 
+void {\bfseries deform\+\_\+polygons} ()
+\begin{DoxyCompactList}\small\item\em deform all polygons \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_af44fdd459a2c7933d6dab3c7be44a63d}\label{classoxide__mesh_af44fdd459a2c7933d6dab3c7be44a63d}} 
+void {\bfseries find\+\_\+new\+\_\+polygons} ()
+\begin{DoxyCompactList}\small\item\em find new polygons \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classoxide__mesh_a55e7ce21c5b6ef91faa7e8c94bf8f10c}{seg\+\_\+on\+\_\+material}} (const std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&test\+\_\+seg, const int ignore=-\/2)
+\begin{DoxyCompactList}\small\item\em determine if test\+\_\+seg is on any material polygon except for ignore \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_a32f164a7866456b5d0616877293aea81}{get\+\_\+free\+\_\+edges}} (const std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&poly, std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \&free\+\_\+segments, const int ignore=-\/2)
+\begin{DoxyCompactList}\small\item\em get the edges of a poly not on other surfaces \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_a0359373e7332e2bdbaf3736775b42e49}\label{classoxide__mesh_a0359373e7332e2bdbaf3736775b42e49}} 
+void {\bfseries recreate\+\_\+crack} ()
+\begin{DoxyCompactList}\small\item\em rebuild the crack polygon \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_ade5caadbf9adc2dca6fa93737f68533c}{set\+\_\+element\+\_\+properties}} (int curr\+\_\+el)
+\begin{DoxyCompactList}\small\item\em set element properties \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_ad671f01ff18ea8813413cfd9843e8771}{create\+\_\+element}} (int curr\+\_\+el)
+\begin{DoxyCompactList}\small\item\em create a specific element at index curr\+\_\+el \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_a74a3cd546a91ebf2d220fe18af9b05bb}{assemble\+\_\+all}} (int curr\+\_\+el)
+\begin{DoxyCompactList}\small\item\em assemble both mechanics and diffusion matrices \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_a1c427accdf57b0a93d1a5acd37189868}{assemble\+\_\+mech}} (int curr\+\_\+el)
+\begin{DoxyCompactList}\small\item\em assemble just the mechanics problem \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_a60fad6dc353f4a59f4c8f1b62134564c}\label{classoxide__mesh_a60fad6dc353f4a59f4c8f1b62134564c}} 
+void {\bfseries add\+\_\+reactions} (int curr\+\_\+el)
+\item 
+void \mbox{\hyperlink{classoxide__mesh_a485c4738388792b4737898f303fd8d4d}{add\+\_\+reactions\+\_\+new}} (int curr\+\_\+el)
+\begin{DoxyCompactList}\small\item\em add reaction along the oxide/\+SiC boundary \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_aac4383bbf3fabbc2aeb5415eac4be5c3}\label{classoxide__mesh_aac4383bbf3fabbc2aeb5415eac4be5c3}} 
+void {\bfseries update\+\_\+constraint\+\_\+boundaries} ()
+\begin{DoxyCompactList}\small\item\em update the constraint boundaries with new displacements \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_a8dc0c876bd0f8b0e6510f2889022ddd5}\label{classoxide__mesh_a8dc0c876bd0f8b0e6510f2889022ddd5}} 
+void {\bfseries update\+\_\+region\+\_\+pts} ()
+\begin{DoxyCompactList}\small\item\em update the region points used for mesh generation \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classoxide__mesh_aae30be4db2e5d49bec2f01baa9f6e6e6}{grow\+\_\+oxide}} ()
+\begin{DoxyCompactList}\small\item\em grow oxide material \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_ac585a7c599c54873e368606ce789e5d7}\label{classoxide__mesh_ac585a7c599c54873e368606ce789e5d7}} 
+int {\bfseries find\+\_\+next\+\_\+element} (int curr\+\_\+node\+\_\+no, int next\+\_\+node\+\_\+no, int starting\+\_\+el\+\_\+index, int region)
+\item 
+void \mbox{\hyperlink{classoxide__mesh_a0478903f72d483ab779af8443ffbc48b}{run\+\_\+simulation}} (bool restart, int out\+\_\+ctr)
+\begin{DoxyCompactList}\small\item\em run a simulation \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_abda9a1d2b75d90c5529986f165d06a33}{simplify\+\_\+polygon}} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&poly, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&removed\+\_\+pts, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&kept\+\_\+pts, double threshold\+\_\+length, int m=2)
+\begin{DoxyCompactList}\small\item\em simplify a polygon removing points that are too close to each other or roughness \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_ad8fcf6a6b7ae431ca7fa54b00c9eb179}{remove\+\_\+deviation}} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&poly, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&kept\+\_\+pts, int m=2)
+\begin{DoxyCompactList}\small\item\em remove deviation from flat \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_a73f4c92e0a84a2d811353cb9e649953a}{remove\+\_\+pts}} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&pts, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&removed\+\_\+pts, double threshold\+\_\+length)
+\begin{DoxyCompactList}\small\item\em remove points from pts list that are withing threshold\+\_\+length of removed\+\_\+pts \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_a30e04d430474d575d5230b9791945eee}{remove\+\_\+polygon}} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&poly1, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&poly2, double threshold\+\_\+length)
+\begin{DoxyCompactList}\small\item\em remove one polygon from another \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_ae9588ca702d77cb47c68e977772c5a31}\label{classoxide__mesh_ae9588ca702d77cb47c68e977772c5a31}} 
+\mbox{\hyperlink{classpoint}{point}} {\bfseries get\+\_\+norm\+\_\+vec} (std\+::pair$<$ \mbox{\hyperlink{classpoint}{point}}, \mbox{\hyperlink{classpoint}{point}} $>$ a)
+\item 
+\mbox{\Hypertarget{classoxide__mesh_a2327690409feb303be6739b89eb4e3d9}\label{classoxide__mesh_a2327690409feb303be6739b89eb4e3d9}} 
+std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ {\bfseries smooth\+\_\+boundary} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&boundary, const std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&begin\+\_\+bound\+\_\+edge, const std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&end\+\_\+bound\+\_\+edge)
+\item 
+\mbox{\hyperlink{classpoint}{point}} \mbox{\hyperlink{classoxide__mesh_a862aba983000ec3f3a3b73a96699c508}{reflect\+\_\+point}} (const \mbox{\hyperlink{classpoint}{point}} \&pt, const std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&boundary)
+\begin{DoxyCompactList}\small\item\em reflect point across boundary MOVE ELSEWHERE??? \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classpoint}{point}} \mbox{\hyperlink{classoxide__mesh_a91a2e3cc780dbf94e541ee823447d83e}{reflect\+\_\+flux}} (int index, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&boundary)
+\begin{DoxyCompactList}\small\item\em reflect flux across boundary JUST FLUX PROJECTION ALONG BOUNDARY??? \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_a7d54fdcc09b1b4a3c21149981997d16d}{find\+\_\+poly\+\_\+nodes}} (\mbox{\hyperlink{classmaterial}{material}} \&matl, double min\+\_\+seg\+\_\+length)
+\begin{DoxyCompactList}\small\item\em find the nodes on the material polygon \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_ab28bc46025b54b8d8fd65496581f95a1}{deform\+\_\+poly}} (\mbox{\hyperlink{classmaterial}{material}} \&matl)
+\begin{DoxyCompactList}\small\item\em apply displacments to single polygon \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_a8dcb55265f791a7d4f438d563b4e297a}\label{classoxide__mesh_a8dcb55265f791a7d4f438d563b4e297a}} 
+void {\bfseries solve\+\_\+diff} ()
+\begin{DoxyCompactList}\small\item\em solve the diffusion problem \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_a384a713239018cb3c5b2c6affa6ffb3b}\label{classoxide__mesh_a384a713239018cb3c5b2c6affa6ffb3b}} 
+void {\bfseries solve\+\_\+mech} ()
+\begin{DoxyCompactList}\small\item\em solve mechanics problem with creep but no cracking \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_a5fbc66dac6cc9ae4aee49c5e72ee6a66}\label{classoxide__mesh_a5fbc66dac6cc9ae4aee49c5e72ee6a66}} 
+void {\bfseries store\+\_\+strains\+\_\+on\+\_\+nodes} ()
+\begin{DoxyCompactList}\small\item\em store the strains on the nodes to prepare for meshing \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_aa8d1fd206016c3537b5d6fd34b9e815d}{remove\+\_\+midside\+\_\+nodes}} (std\+::vector$<$ int $>$ \&n\+\_\+list, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&pt\+\_\+list)
+\begin{DoxyCompactList}\small\item\em remove midside nodes used with quadratic elements \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_a5be9d8cd4b25c53d35ae7507df7918f7}\label{classoxide__mesh_a5be9d8cd4b25c53d35ae7507df7918f7}} 
+void {\bfseries find\+\_\+elements\+\_\+to\+\_\+keep} ()
+\begin{DoxyCompactList}\small\item\em find the elements that need to be kept with the new mesh \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_adf54d280167aa9b8d9e8e6d2f8bb3adf}\label{classoxide__mesh_adf54d280167aa9b8d9e8e6d2f8bb3adf}} 
+void {\bfseries Set\+\_\+current\+\_\+\+Temperature} ()
+\begin{DoxyCompactList}\small\item\em set the current temperature \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_acccce8061715219ce3aeda9c85bcd68e}\label{classoxide__mesh_acccce8061715219ce3aeda9c85bcd68e}} 
+void {\bfseries set\+\_\+eta0} ()
+\item 
+void \mbox{\hyperlink{classoxide__mesh_a3e3bf68832adf49423313d920576e21f}{find\+\_\+connected\+\_\+elements}} (const int node\+\_\+index, std\+::vector$<$ int $>$ \&connected\+\_\+elements)
+\begin{DoxyCompactList}\small\item\em find elements connected to node\+\_\+index \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_a111a93b21c8b864d9bfe8587960d0075}{load\+\_\+input\+\_\+file}} (std\+::string file\+\_\+path)
+\begin{DoxyCompactList}\small\item\em load and xml input file for the generic solver \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_ae65f5b22c12608fe284c4da72e4e05d0}{create\+\_\+input\+\_\+file}} (std\+::string file\+\_\+dir)
+\item 
+\mbox{\Hypertarget{classoxide__mesh_a737c7766251d76392c77f4945380c624}\label{classoxide__mesh_a737c7766251d76392c77f4945380c624}} 
+void {\bfseries redirect\+\_\+output\+\_\+streams} ()
+\begin{DoxyCompactList}\small\item\em store the default output streams \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_a8097c7ac7a07cb4e3bc93e0e58b698d0}\label{classoxide__mesh_a8097c7ac7a07cb4e3bc93e0e58b698d0}} 
+void {\bfseries reset\+\_\+output\+\_\+streams} ()
+\begin{DoxyCompactList}\small\item\em return output streams to defaults \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classoxide__mesh_a61f0bd675dca291d42cc253dcdc7170d}{open\+\_\+log\+\_\+files}} (bool restart, int out\+\_\+ctr)
+\begin{DoxyCompactList}\small\item\em open the log files \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_a255e3658ecb32e0f1fcd21503b884170}\label{classoxide__mesh_a255e3658ecb32e0f1fcd21503b884170}} 
+void {\bfseries close\+\_\+log\+\_\+files} ()
+\begin{DoxyCompactList}\small\item\em close log files \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classoxide__mesh_ad3c124e5fd82ca502fe791baaa108048}{run\+\_\+main\+\_\+loop}} (bool restart, int out\+\_\+ctr)
+\begin{DoxyCompactList}\small\item\em run the main loop \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_acab234e4c42f388fc2c30e772e0bc3f8}{output\+\_\+error\+\_\+files}} (int out\+\_\+ctr)
+\begin{DoxyCompactList}\small\item\em output files if theres an error thrown \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_af9bc67dc35561ad9abc6bd7ccfa755ee}\label{classoxide__mesh_af9bc67dc35561ad9abc6bd7ccfa755ee}} 
+void {\bfseries mark\+\_\+elements\+\_\+to\+\_\+keep} ()
+\begin{DoxyCompactList}\small\item\em mark which elements to keep \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_a4a59859a8d6329839db385b98f093214}\label{classoxide__mesh_a4a59859a8d6329839db385b98f093214}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries output\+\_\+timing\+\_\+msg} (T msg, unsigned int n\+\_\+tabs)
+\item 
+bool \mbox{\hyperlink{classoxide__mesh_aa946598bcb1c79a43806daf29962cf3f}{advance\+\_\+crack}} (double G, int step\+\_\+ctr, std\+::vector$<$ int $>$ \&crack\+\_\+advance\+\_\+nodes)
+\begin{DoxyCompactList}\small\item\em advance the crack \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classoxide__mesh_abb927346e56117b4f2067718cd9be373}{get\+\_\+crack\+\_\+boundary}} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&boundary, int \&concentration\+\_\+index)
+\item 
+bool \mbox{\hyperlink{classoxide__mesh_adafce3ae3e752eff9dae8119e7ac5b0d}{get\+\_\+crack\+\_\+boundary\+\_\+nodes}} (std\+::vector$<$ int $>$ \&boundary\+\_\+nodes, int \&concentration\+\_\+index)
+\item 
+void \mbox{\hyperlink{classoxide__mesh_ae31976f082b183c5a19c5f2132de64e8}{remove\+\_\+points\+\_\+from\+\_\+mechanical\+\_\+constraint}} (bool boundary\+\_\+reversed, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&unzipped\+\_\+points)
+\begin{DoxyCompactList}\small\item\em remove list of points from mechanical constraint denoted by constraint\+\_\+index \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_a4ce53615a8cee99e4a513e28b04d7063}{add\+\_\+points\+\_\+to\+\_\+concentration\+\_\+constraint}} (bool boundary\+\_\+reversed, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&unzipped\+\_\+points, int concentration\+\_\+index)
+\begin{DoxyCompactList}\small\item\em add list of points to concentration constraint \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_a07d8163ca50aa9ace68478fd0c1e6790}{set\+\_\+cracking\+\_\+parameters}} (bool($\ast$user\+\_\+run\+\_\+cracking\+\_\+simulation\+\_\+func\+\_\+)(\mbox{\hyperlink{classoxide__mesh}{oxide\+\_\+mesh}} \&original\+\_\+mesh), bool($\ast$crack\+\_\+advance\+\_\+func\+\_\+)(\mbox{\hyperlink{classoxide__mesh}{oxide\+\_\+mesh}} \&crack\+\_\+mesh, double G, int step\+\_\+ctr, std\+::vector$<$ int $>$ \&crack\+\_\+advance\+\_\+nodes), int constraint\+\_\+index\+\_\+, double init\+\_\+crack\+\_\+length\+\_\+)
+\begin{DoxyCompactList}\small\item\em set the cracking parameters \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classoxide__mesh_aac947d4f95b0043ca50527353293c88b}{set\+\_\+initial\+\_\+crack}} ()
+\begin{DoxyCompactList}\small\item\em set the initial crack if none is present \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_a6d1aaa3976cc65c44df4ced0720981fa}\label{classoxide__mesh_a6d1aaa3976cc65c44df4ced0720981fa}} 
+void {\bfseries clear\+\_\+mech\+\_\+constraints} ()
+\begin{DoxyCompactList}\small\item\em clear the force and displacment constraint vectors \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_a35e80d12f12228d6a4ba546f9e9860dd}\label{classoxide__mesh_a35e80d12f12228d6a4ba546f9e9860dd}} 
+void {\bfseries clear\+\_\+diff\+\_\+constraints} ()
+\begin{DoxyCompactList}\small\item\em clear the concentration constraints vector \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_a9b3a8185370620b009c781275c10d9c9}{add\+\_\+point\+\_\+to\+\_\+constraints}} (\mbox{\hyperlink{classpoint}{point}} test\+\_\+node, int node\+\_\+no, bool add\+\_\+diff=true)
+\begin{DoxyCompactList}\small\item\em check and see if a point is constrained and create the proper contraint if so \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_a74193af0cc10b1e5b9198313f0fb3c7c}{initialize\+\_\+mech\+\_\+arrays}} (int n\+\_\+nodes\+\_\+per\+\_\+tri)
+\begin{DoxyCompactList}\small\item\em initialize the mechanics problem arrays \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_aecfd65a7b48fe7f7f7f9c6d0a65754b6}{initialize\+\_\+diff\+\_\+arrays}} (int n\+\_\+nodes\+\_\+per\+\_\+tri)
+\begin{DoxyCompactList}\small\item\em initialize the diffusion problem arrays \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_a6d9699fad6dc53f682c1e6a22ec12b32}\label{classoxide__mesh_a6d9699fad6dc53f682c1e6a22ec12b32}} 
+void {\bfseries prepare\+\_\+mesh\+\_\+for\+\_\+mapping} ()
+\begin{DoxyCompactList}\small\item\em prepare the mesh for mapping \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_a318f53c3854fd3267a87e91d3f93ddba}\label{classoxide__mesh_a318f53c3854fd3267a87e91d3f93ddba}} 
+void {\bfseries get\+\_\+initial\+\_\+poly\+\_\+nodes} ()
+\begin{DoxyCompactList}\small\item\em get the nodes initially on the polygon before meshing \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_aa58d6c1b23a6935173bb60ed53a84ad5}{get\+\_\+neighboring\+\_\+elements\+\_\+within\+\_\+radius}} (\mbox{\hyperlink{classpoint}{point}} pt, double radius, std\+::vector$<$ int $>$ \&els\+\_\+in\+\_\+range)
+\begin{DoxyCompactList}\small\item\em get elements within radius of a point pt UNUSED??? \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_a6724959b701306180a85a5663bd3101c}\label{classoxide__mesh_a6724959b701306180a85a5663bd3101c}} 
+void {\bfseries add\+\_\+crack\+\_\+tip\+\_\+for\+\_\+refined\+\_\+mesh} ()
+\begin{DoxyCompactList}\small\item\em add a point for a refined mesh region UNUSED \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_afa8c8b21113ac4aab42f3271c7181026}{assemble\+\_\+mech\+\_\+for\+\_\+cracking}} ()
+\begin{DoxyCompactList}\small\item\em reassemble just the mechanics FEA arrays \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_ab9f8342f51795d5cc7ea8b16c0d205ce}{reassemble\+\_\+both\+\_\+after\+\_\+cracking}} ()
+\begin{DoxyCompactList}\small\item\em reassemble both mechanics and diffusion FEA arrays \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_a56952c56a4d69502ca5eec6f5fc78fba}{solve\+\_\+mech\+\_\+for\+\_\+cracking}} ()
+\begin{DoxyCompactList}\small\item\em solve mechanics problem for crack advance \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_a9637f36e37a4794c2eb584e234b05297}{create\+\_\+cracking\+\_\+mesh}} (\mbox{\hyperlink{classoxide__mesh}{oxide\+\_\+mesh}} \&original\+\_\+mesh, \mbox{\hyperlink{classoxide__mesh}{oxide\+\_\+mesh}} \&crack\+\_\+mesh)
+\begin{DoxyCompactList}\small\item\em create a mech specific for the cracking problem UNUSED \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classoxide__mesh_ad61f3452da58429a1c7c99907d8909c8}{calculate\+\_\+G}} (\mbox{\hyperlink{classpoint}{point}} crack\+\_\+tip, double shift\+\_\+radius, \mbox{\hyperlink{classpoint}{point}} delta\+\_\+a)
+\begin{DoxyCompactList}\small\item\em Calculate the ERR using stiffness derivative method. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classoxide__mesh_a9a35c42cc5c08eb05a80116a80fca872}{check\+\_\+for\+\_\+cracking}} (int out\+\_\+ctr)
+\begin{DoxyCompactList}\small\item\em check for crack growth \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_aa54f1f9caa28b0f4263ab5ae34fbd4cb}{get\+\_\+crack\+\_\+advance}} (int out\+\_\+ctr, std\+::vector$<$ int $>$ \&crack\+\_\+advance\+\_\+nodes)
+\begin{DoxyCompactList}\small\item\em get the node numbers of the crack advance \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classoxide__mesh_a926543deb442cfa9b203e46f7e2bea2d}{run\+\_\+cracking\+\_\+simulation}} (int out\+\_\+ctr)
+\begin{DoxyCompactList}\small\item\em run cracking simulation \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classoxide__mesh_ac8e1fc3823211e78e81b391617d57f96}{get\+\_\+thickness\+\_\+along\+\_\+constraint}} (int index, int region\+\_\+tag)
+\begin{DoxyCompactList}\small\item\em get the remaining thickness of oxide along a specific constraint \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classoxide__mesh_a2b35a625d60b84747c162b428bebb166}{check\+\_\+for\+\_\+crack\+\_\+face\+\_\+contact}} (std\+::vector$<$ int $>$ \&crack\+\_\+advance\+\_\+nodes)
+\begin{DoxyCompactList}\small\item\em check for crack face contact, may be used in user defined functions \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classoxide__mesh_aa71cae5d7aec1ae73e6340a441a332d3}{check\+\_\+for\+\_\+crack\+\_\+in\+\_\+\+SiC}} (std\+::vector$<$ int $>$ \&crack\+\_\+advance\+\_\+nodes)
+\begin{DoxyCompactList}\small\item\em check to see if the crack has left the oxide and entered the SiC material \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classoxide__mesh_aa945ecb81b26ddbb4059e72ddcb82f9c}{check\+\_\+for\+\_\+healing}} (int out\+\_\+ctr)
+\begin{DoxyCompactList}\small\item\em check to see if there is crack healing via contact IS THIS NEEDED??? \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classoxide__mesh_a2cf3f773238f718fe0d6430ed9ffe8c6}{get\+\_\+crack\+\_\+retreat}} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&crack\+\_\+retreat, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&sym\+\_\+boundary)
+\begin{DoxyCompactList}\small\item\em get the crack retreat UNNEEDED??? \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_a75ee65b66ef2459fcdc0cdc2a5edb25a}{shorten\+\_\+crack}} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&crack\+\_\+retreat, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&sym\+\_\+boundary)
+\begin{DoxyCompactList}\small\item\em reduce length of crack \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_a21615ffbc2e28832ed28b59277c4e5a1}{shorten\+\_\+crack\+\_\+nodes}} (std\+::vector$<$ int $>$ \&crack\+\_\+retreat\+\_\+nodes, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&sym\+\_\+boundary)
+\begin{DoxyCompactList}\small\item\em shorten the crack using nodes as input \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classoxide__mesh_a41501b35a068a1fec431fbeaa141f0e4}{get\+\_\+concentration\+\_\+constraint\+\_\+index}} ()
+\begin{DoxyCompactList}\small\item\em get the index of in\+\_\+constraints the corresponds to the concentration constraint \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_ad025b69b56c646f71b4f6a561ac7da1c}{get\+\_\+element\+\_\+boundary}} (std\+::vector$<$ int $>$ \&els\+\_\+in\+\_\+range, int end\+\_\+pt\+\_\+1, int end\+\_\+pt\+\_\+2, std\+::vector$<$ int $>$ \&boundary)
+\begin{DoxyCompactList}\small\item\em get boundary between defined elements and other elements \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classoxide__mesh_a8ef1417ccaaeb8179f265c359361f513}{run\+\_\+cracking\+\_\+simulation\+\_\+\+CZM}} (int out\+\_\+ctr)
+\begin{DoxyCompactList}\small\item\em way to run cracking simulation with a cohesive element method \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_a9bc3bf3819d3a59f146e462f90acd003}\label{classoxide__mesh_a9bc3bf3819d3a59f146e462f90acd003}} 
+void {\bfseries solve\+\_\+mech\+\_\+contact} ()
+\begin{DoxyCompactList}\small\item\em main solve function modified to handle crack contact this should be rectified with the main \mbox{\hyperlink{classoxide__mesh_a384a713239018cb3c5b2c6affa6ffb3b}{solve\+\_\+mech()}} function \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classoxide__mesh_a1f3775b85d438f79909c56ce8b6e991e}{check\+\_\+point\+\_\+for\+\_\+contact}} (\mbox{\hyperlink{classpoint}{point}} \&test\+\_\+point, \mbox{\hyperlink{classpoint}{point}} \&mid\+\_\+point, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&sym\+\_\+boundary)
+\begin{DoxyCompactList}\small\item\em check to see if a test point touches or is on the other side of the symmetry boundary from the mid\+\_\+point \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_a1f5f07e51349846b1f9bfbe42e187021}{reassemble\+\_\+mech\+\_\+after\+\_\+contact}} (std\+::vector$<$ int $>$ \&crack\+\_\+retreat\+\_\+nodes)
+\begin{DoxyCompactList}\small\item\em reassemble mechanics matrix after contact \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_afea76799d1775c1eaa633cc100de21c1}{get\+\_\+symmetry\+\_\+boundary}} (std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&sym\+\_\+boundary)
+\begin{DoxyCompactList}\small\item\em get the symmetry boundary based on the mechanical constraint defined as the crack plane \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_a1921ed64426311619aaa665efeb35130}{convert\+\_\+points\+\_\+to\+\_\+indices}} (const std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&boundary\+\_\+pts, std\+::vector$<$ int $>$ \&boundary\+\_\+nodes)
+\begin{DoxyCompactList}\small\item\em convert list of points to corresponding list of node nubmers \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_ade7237459e203b7a287a545d358e7df0}{convert\+\_\+indices\+\_\+to\+\_\+points}} (const std\+::vector$<$ int $>$ \&boundary\+\_\+nodes, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&boundary\+\_\+pts)
+\begin{DoxyCompactList}\small\item\em convert a list of indices to points \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_ac76e5714b9a139b84bdd810119512c8d}{remove\+\_\+nodes\+\_\+from\+\_\+mechanical\+\_\+constraint}} (bool boundary\+\_\+reversed, std\+::vector$<$ int $>$ \&unzipped\+\_\+nodes)
+\begin{DoxyCompactList}\small\item\em remove list of nodes from mechanical constraint denoted by constraint\+\_\+index \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_a57553f59b4b26b01a54f8649331b2dc1}{add\+\_\+nodes\+\_\+to\+\_\+concentration\+\_\+constraint}} (bool boundary\+\_\+reversed, std\+::vector$<$ int $>$ \&unzipped\+\_\+nodes, int concentration\+\_\+index)
+\begin{DoxyCompactList}\small\item\em add list of nodes to concentration constraint \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_a966d48eb52443047d205992dcdcbca2e}\label{classoxide__mesh_a966d48eb52443047d205992dcdcbca2e}} 
+void {\bfseries rebuild\+\_\+after\+\_\+growth\+\_\+or\+\_\+healing} ()
+\begin{DoxyCompactList}\small\item\em rebuild arrays after crack changes used if crack is longer or shorter \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_ae5ed73f4ddec09af1ff8cd5358be996f}{get\+\_\+crack\+\_\+retreat\+\_\+nodes}} (std\+::vector$<$ int $>$ \&crack\+\_\+retreat\+\_\+nodes, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&sym\+\_\+boundary)
+\begin{DoxyCompactList}\small\item\em get the crack retreat in node form \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_a5f2e74fe853dfbec4353db91b7b1b9b7}{update\+\_\+element\+\_\+points}} (const int node\+\_\+no, \mbox{\hyperlink{classpoint}{point}} \&old\+\_\+pt, const \mbox{\hyperlink{classpoint}{point}} \&new\+\_\+pt)
+\begin{DoxyCompactList}\small\item\em update the point within the element lists MAYBE REDO THIS FUNCTION TO INTEGRATE find\+\_\+connected\+\_\+elements??? \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoxide__mesh_a7f742594832b4b94e92776eb36c7382a}{update\+\_\+point\+\_\+location}} (const int node\+\_\+no, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&sym\+\_\+boundary)
+\begin{DoxyCompactList}\small\item\em update the point location in the various lists if the point is not on the symmetry boundary condition \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classoxide__mesh_a4af8eed80cb3a80d9ef67f7de061afb4}{get\+\_\+boundary\+\_\+reversed}} ()
+\begin{DoxyCompactList}\small\item\em determine in the concentration and crack plane constraint are reversed \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classoxide__mesh_a71c820edcab86b1f4d54bfeffe964725}\label{classoxide__mesh_a71c820edcab86b1f4d54bfeffe964725}} 
+\mbox{\hyperlink{class_f_e_a__equations}{FEA\+\_\+equations}} {\bfseries mech}
+\item 
+\mbox{\Hypertarget{classoxide__mesh_a812440fa6dbc45bcba9e1c72cae9673d}\label{classoxide__mesh_a812440fa6dbc45bcba9e1c72cae9673d}} 
+\mbox{\hyperlink{class_f_e_a__equations}{FEA\+\_\+equations}} {\bfseries diff}
+\item 
+\mbox{\Hypertarget{classoxide__mesh_a75def11fa4584957092e15184c117760}\label{classoxide__mesh_a75def11fa4584957092e15184c117760}} 
+double {\bfseries N0} = \+\_\+\+\_\+\+N0\+\_\+\+\_\+
+\item 
+\mbox{\Hypertarget{classoxide__mesh_a49ed67fc5ab9ab6d06ecd6396eda7614}\label{classoxide__mesh_a49ed67fc5ab9ab6d06ecd6396eda7614}} 
+double {\bfseries C0} = \+\_\+\+\_\+\+C0\+\_\+\+\_\+
+\item 
+\mbox{\Hypertarget{classoxide__mesh_a33e92dc23878d5a30d002d400258d96e}\label{classoxide__mesh_a33e92dc23878d5a30d002d400258d96e}} 
+int {\bfseries dump\+\_\+time}
+\item 
+\mbox{\Hypertarget{classoxide__mesh_a9d7116998f37880019e4017515990421}\label{classoxide__mesh_a9d7116998f37880019e4017515990421}} 
+int {\bfseries run\+\_\+time}
+\item 
+\mbox{\Hypertarget{classoxide__mesh_a3f02e2ebac2c348db24fb5875de670bd}\label{classoxide__mesh_a3f02e2ebac2c348db24fb5875de670bd}} 
+std\+::vector$<$ \mbox{\hyperlink{classconstraint}{constraint}} $>$ {\bfseries concentration\+\_\+constraints}
+\item 
+\mbox{\Hypertarget{classoxide__mesh_acf7c0e43f87557c6be2aeb409a920b67}\label{classoxide__mesh_acf7c0e43f87557c6be2aeb409a920b67}} 
+std\+::vector$<$ std\+::pair$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$, \mbox{\hyperlink{classconstraint}{constraint}} $>$ $>$ {\bfseries in\+\_\+constraints}
+\item 
+\mbox{\Hypertarget{classoxide__mesh_a02e4b5c401be3954a3551d58adb96087}\label{classoxide__mesh_a02e4b5c401be3954a3551d58adb96087}} 
+std\+::vector$<$ \mbox{\hyperlink{classconstraint}{constraint}} $>$ {\bfseries displacement\+\_\+constraints}
+\item 
+\mbox{\Hypertarget{classoxide__mesh_afda18c731706e83057e24fcf94caf6e5}\label{classoxide__mesh_afda18c731706e83057e24fcf94caf6e5}} 
+std\+::vector$<$ \mbox{\hyperlink{classconstraint}{constraint}} $>$ {\bfseries force\+\_\+constraints}
+\item 
+\mbox{\Hypertarget{classoxide__mesh_a6579b6c259fc8af3254048a5033b5de2}\label{classoxide__mesh_a6579b6c259fc8af3254048a5033b5de2}} 
+\mbox{\hyperlink{classmaterial}{material}} {\bfseries oxide}
+\item 
+\mbox{\Hypertarget{classoxide__mesh_a42c5a80579a152b0d61e30fa79bdfcc6}\label{classoxide__mesh_a42c5a80579a152b0d61e30fa79bdfcc6}} 
+\mbox{\hyperlink{classmaterial}{material}} {\bfseries crack}
+\item 
+\mbox{\Hypertarget{classoxide__mesh_a3cab930ee1e81dbcaecdf249df4e15af}\label{classoxide__mesh_a3cab930ee1e81dbcaecdf249df4e15af}} 
+double {\bfseries min\+\_\+he}
+\item 
+\mbox{\Hypertarget{classoxide__mesh_a1c920df94177ad2fc4a7e8a6500b2f7f}\label{classoxide__mesh_a1c920df94177ad2fc4a7e8a6500b2f7f}} 
+bool {\bfseries output\+\_\+polygons} = false
+\item 
+\mbox{\Hypertarget{classoxide__mesh_a10e68989f35025f9ba340a24331be0c9}\label{classoxide__mesh_a10e68989f35025f9ba340a24331be0c9}} 
+bool {\bfseries output\+\_\+segments} = false
+\item 
+\mbox{\Hypertarget{classoxide__mesh_a5446445c0345837e7eab64420a2d7ceb}\label{classoxide__mesh_a5446445c0345837e7eab64420a2d7ceb}} 
+bool {\bfseries output\+\_\+timing} = false
+\item 
+\mbox{\Hypertarget{classoxide__mesh_a45c6a19f0851b6e5710df2c8d8309f82}\label{classoxide__mesh_a45c6a19f0851b6e5710df2c8d8309f82}} 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ {\bfseries els\+\_\+to\+\_\+keep}
+\item 
+\mbox{\Hypertarget{classoxide__mesh_a396d82e921ca37b6e2e0b85577d6798b}\label{classoxide__mesh_a396d82e921ca37b6e2e0b85577d6798b}} 
+std\+::vector$<$ std\+::vector$<$ int $>$ $>$ {\bfseries segs\+\_\+to\+\_\+keep}
+\item 
+\mbox{\Hypertarget{classoxide__mesh_a83a81658b66f9430e0924f1b2cc4fd93}\label{classoxide__mesh_a83a81658b66f9430e0924f1b2cc4fd93}} 
+void($\ast$ {\bfseries initialize\+\_\+strain} )(\mbox{\hyperlink{classmp__element}{mp\+\_\+element}} \&el) = nullptr
+\item 
+\mbox{\Hypertarget{classoxide__mesh_a0f4f5ab68863c102878fba0af471af3e}\label{classoxide__mesh_a0f4f5ab68863c102878fba0af471af3e}} 
+int {\bfseries master\+\_\+time} = 0
+\item 
+\mbox{\Hypertarget{classoxide__mesh_a11c6786aceb1fd7f58519181bd22bbf0}\label{classoxide__mesh_a11c6786aceb1fd7f58519181bd22bbf0}} 
+double($\ast$ {\bfseries user\+\_\+\+Temp\+\_\+func} )(double current\+\_\+time)
+\item 
+\mbox{\Hypertarget{classoxide__mesh_a3dfeb68a59e0fc277a6ce4d428373524}\label{classoxide__mesh_a3dfeb68a59e0fc277a6ce4d428373524}} 
+int {\bfseries crit\+\_\+n\+\_\+nodes} = 3
+\begin{DoxyCompactList}\small\item\em number of nodes to needed to match an old element to take values directly \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_a0a4e697599a3dc31c458d4b2efcf98ae}\label{classoxide__mesh_a0a4e697599a3dc31c458d4b2efcf98ae}} 
+std\+::streambuf $\ast$ {\bfseries stream\+\_\+buffer\+\_\+cerr}
+\begin{DoxyCompactList}\small\item\em temporary buffer for std\+::cerr \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_a4b6f7b816fb49d99e0b2b07d96467ab8}\label{classoxide__mesh_a4b6f7b816fb49d99e0b2b07d96467ab8}} 
+std\+::streambuf $\ast$ {\bfseries stream\+\_\+buffer\+\_\+clog}
+\begin{DoxyCompactList}\small\item\em temporary buffer for std\+::clog \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_ad44d64c99c1979ef037e4f4ca4553669}\label{classoxide__mesh_ad44d64c99c1979ef037e4f4ca4553669}} 
+std\+::ofstream {\bfseries log\+\_\+file}
+\begin{DoxyCompactList}\small\item\em log file stream \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_ad58d6073cd204e40ffe6555d0487c341}\label{classoxide__mesh_ad58d6073cd204e40ffe6555d0487c341}} 
+std\+::ofstream {\bfseries timing\+\_\+log}
+\begin{DoxyCompactList}\small\item\em timing file stream \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_a2ba41bf958c24ccdd10ce76dbe01e717}\label{classoxide__mesh_a2ba41bf958c24ccdd10ce76dbe01e717}} 
+std\+::ofstream {\bfseries error\+\_\+log}
+\begin{DoxyCompactList}\small\item\em error file stream \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_a067d5f4c49f6413c45b7d9f8aad9be62}\label{classoxide__mesh_a067d5f4c49f6413c45b7d9f8aad9be62}} 
+\mbox{\hyperlink{classtimer}{timer}} {\bfseries full\+\_\+timer}
+\begin{DoxyCompactList}\small\item\em timer for full simulation \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_af4afb00af30e2f0dbc5be9806455176d}\label{classoxide__mesh_af4afb00af30e2f0dbc5be9806455176d}} 
+int {\bfseries constraint\+\_\+index} = -\/1
+\item 
+\mbox{\Hypertarget{classoxide__mesh_ade02039c8f095bafc7e02b95cd483f4f}\label{classoxide__mesh_ade02039c8f095bafc7e02b95cd483f4f}} 
+bool($\ast$ {\bfseries user\+\_\+advance\+\_\+crack\+\_\+func} )(\mbox{\hyperlink{classoxide__mesh}{oxide\+\_\+mesh}} \&crack\+\_\+mesh, double G, int step\+\_\+ctr, std\+::vector$<$ int $>$ \&crack\+\_\+advance\+\_\+nodes) = nullptr
+\item 
+\mbox{\Hypertarget{classoxide__mesh_a3374712de85af97cbc6fb9ef41ad2702}\label{classoxide__mesh_a3374712de85af97cbc6fb9ef41ad2702}} 
+double {\bfseries init\+\_\+crack\+\_\+length} = 0.\+01
+\item 
+\mbox{\Hypertarget{classoxide__mesh_a71d38036ac5425cc0496d8cc7ddf3aba}\label{classoxide__mesh_a71d38036ac5425cc0496d8cc7ddf3aba}} 
+std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ {\bfseries crack\+\_\+line}
+\item 
+\mbox{\Hypertarget{classoxide__mesh_a1eb25a9cb1e81f446d15f251168d78ea}\label{classoxide__mesh_a1eb25a9cb1e81f446d15f251168d78ea}} 
+int {\bfseries num\+\_\+rings} = 5
+\item 
+\mbox{\Hypertarget{classoxide__mesh_ad27483b34cc29f4e2801e8b3ab6d2a1c}\label{classoxide__mesh_ad27483b34cc29f4e2801e8b3ab6d2a1c}} 
+double {\bfseries d\+\_\+a} = 2 $\ast$ \mbox{\hyperlink{classpoint_aa8798ed52dc29a35d0bec4f716029994}{point\+::equal}}
+\begin{DoxyCompactList}\small\item\em change in crack length \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classoxide__mesh_af29e83f874d0dd57b6b30be7054e0f71}\label{classoxide__mesh_af29e83f874d0dd57b6b30be7054e0f71}} 
+bool($\ast$ {\bfseries user\+\_\+run\+\_\+cracking\+\_\+simulation\+\_\+func} )(\mbox{\hyperlink{classoxide__mesh}{oxide\+\_\+mesh}} \&original\+\_\+mesh) = nullptr
+\item 
+\mbox{\Hypertarget{classoxide__mesh_a793e6d86fcd7ea094b3d2189f063ea4e}\label{classoxide__mesh_a793e6d86fcd7ea094b3d2189f063ea4e}} 
+bool {\bfseries CZM\+\_\+cracking} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classoxide__mesh_aeb3f64b4e8acd2dd52d441b4ef95eef4}\label{classoxide__mesh_aeb3f64b4e8acd2dd52d441b4ef95eef4}} 
+\index{oxide\_mesh@{oxide\_mesh}!oxide\_mesh@{oxide\_mesh}}
+\index{oxide\_mesh@{oxide\_mesh}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{oxide\_mesh()}{oxide\_mesh()}}
+{\footnotesize\ttfamily oxide\+\_\+mesh\+::oxide\+\_\+mesh (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classoxide__mesh}{oxide\+\_\+mesh}} \&}]{src\+\_\+mesh }\end{DoxyParamCaption})}
+
+
+
+copy constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src\+\_\+mesh} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_aeb3f64b4e8acd2dd52d441b4ef95eef4_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classoxide__mesh_a57553f59b4b26b01a54f8649331b2dc1}\label{classoxide__mesh_a57553f59b4b26b01a54f8649331b2dc1}} 
+\index{oxide\_mesh@{oxide\_mesh}!add\_nodes\_to\_concentration\_constraint@{add\_nodes\_to\_concentration\_constraint}}
+\index{add\_nodes\_to\_concentration\_constraint@{add\_nodes\_to\_concentration\_constraint}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{add\_nodes\_to\_concentration\_constraint()}{add\_nodes\_to\_concentration\_constraint()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::add\+\_\+nodes\+\_\+to\+\_\+concentration\+\_\+constraint (\begin{DoxyParamCaption}\item[{bool}]{boundary\+\_\+reversed,  }\item[{std\+::vector$<$ int $>$ \&}]{unzipped\+\_\+nodes,  }\item[{int}]{concentration\+\_\+index }\end{DoxyParamCaption})}
+
+
+
+add list of nodes to concentration constraint 
+
+
+\begin{DoxyParams}{Parameters}
+{\em boundary\+\_\+reversed} & \\
+\hline
+{\em unzipped\+\_\+nodes} & \\
+\hline
+{\em concentration\+\_\+index} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a57553f59b4b26b01a54f8649331b2dc1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a57553f59b4b26b01a54f8649331b2dc1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a9b3a8185370620b009c781275c10d9c9}\label{classoxide__mesh_a9b3a8185370620b009c781275c10d9c9}} 
+\index{oxide\_mesh@{oxide\_mesh}!add\_point\_to\_constraints@{add\_point\_to\_constraints}}
+\index{add\_point\_to\_constraints@{add\_point\_to\_constraints}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{add\_point\_to\_constraints()}{add\_point\_to\_constraints()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::add\+\_\+point\+\_\+to\+\_\+constraints (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpoint}{point}}}]{test\+\_\+node,  }\item[{int}]{node\+\_\+no,  }\item[{bool}]{add\+\_\+diff = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+check and see if a point is constrained and create the proper contraint if so 
+
+
+\begin{DoxyParams}{Parameters}
+{\em test\+\_\+node} & \\
+\hline
+{\em node\+\_\+no} & \\
+\hline
+{\em add\+\_\+diff} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a9b3a8185370620b009c781275c10d9c9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a4ce53615a8cee99e4a513e28b04d7063}\label{classoxide__mesh_a4ce53615a8cee99e4a513e28b04d7063}} 
+\index{oxide\_mesh@{oxide\_mesh}!add\_points\_to\_concentration\_constraint@{add\_points\_to\_concentration\_constraint}}
+\index{add\_points\_to\_concentration\_constraint@{add\_points\_to\_concentration\_constraint}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{add\_points\_to\_concentration\_constraint()}{add\_points\_to\_concentration\_constraint()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::add\+\_\+points\+\_\+to\+\_\+concentration\+\_\+constraint (\begin{DoxyParamCaption}\item[{bool}]{boundary\+\_\+reversed,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{unzipped\+\_\+points,  }\item[{int}]{concentration\+\_\+index }\end{DoxyParamCaption})}
+
+
+
+add list of points to concentration constraint 
+
+
+\begin{DoxyParams}{Parameters}
+{\em boundary\+\_\+reversed} & \\
+\hline
+{\em unzipped\+\_\+points} & \\
+\hline
+{\em concentration\+\_\+index} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classoxide__mesh_a485c4738388792b4737898f303fd8d4d}\label{classoxide__mesh_a485c4738388792b4737898f303fd8d4d}} 
+\index{oxide\_mesh@{oxide\_mesh}!add\_reactions\_new@{add\_reactions\_new}}
+\index{add\_reactions\_new@{add\_reactions\_new}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{add\_reactions\_new()}{add\_reactions\_new()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::add\+\_\+reactions\+\_\+new (\begin{DoxyParamCaption}\item[{int}]{curr\+\_\+el }\end{DoxyParamCaption})}
+
+
+
+add reaction along the oxide/\+SiC boundary 
+
+
+\begin{DoxyParams}{Parameters}
+{\em curr\+\_\+el} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a485c4738388792b4737898f303fd8d4d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_aa946598bcb1c79a43806daf29962cf3f}\label{classoxide__mesh_aa946598bcb1c79a43806daf29962cf3f}} 
+\index{oxide\_mesh@{oxide\_mesh}!advance\_crack@{advance\_crack}}
+\index{advance\_crack@{advance\_crack}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{advance\_crack()}{advance\_crack()}}
+{\footnotesize\ttfamily bool oxide\+\_\+mesh\+::advance\+\_\+crack (\begin{DoxyParamCaption}\item[{double}]{G,  }\item[{int}]{step\+\_\+ctr,  }\item[{std\+::vector$<$ int $>$ \&}]{crack\+\_\+advance\+\_\+nodes }\end{DoxyParamCaption})}
+
+
+
+advance the crack 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G} & \\
+\hline
+{\em step\+\_\+ctr} & \\
+\hline
+{\em crack\+\_\+advance\+\_\+nodes} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the crack advances 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_aa946598bcb1c79a43806daf29962cf3f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a74a3cd546a91ebf2d220fe18af9b05bb}\label{classoxide__mesh_a74a3cd546a91ebf2d220fe18af9b05bb}} 
+\index{oxide\_mesh@{oxide\_mesh}!assemble\_all@{assemble\_all}}
+\index{assemble\_all@{assemble\_all}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{assemble\_all()}{assemble\_all()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::assemble\+\_\+all (\begin{DoxyParamCaption}\item[{int}]{curr\+\_\+el }\end{DoxyParamCaption})}
+
+
+
+assemble both mechanics and diffusion matrices 
+
+
+\begin{DoxyParams}{Parameters}
+{\em curr\+\_\+el} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a74a3cd546a91ebf2d220fe18af9b05bb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a1c427accdf57b0a93d1a5acd37189868}\label{classoxide__mesh_a1c427accdf57b0a93d1a5acd37189868}} 
+\index{oxide\_mesh@{oxide\_mesh}!assemble\_mech@{assemble\_mech}}
+\index{assemble\_mech@{assemble\_mech}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{assemble\_mech()}{assemble\_mech()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::assemble\+\_\+mech (\begin{DoxyParamCaption}\item[{int}]{curr\+\_\+el }\end{DoxyParamCaption})}
+
+
+
+assemble just the mechanics problem 
+
+
+\begin{DoxyParams}{Parameters}
+{\em curr\+\_\+el} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a1c427accdf57b0a93d1a5acd37189868_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_afa8c8b21113ac4aab42f3271c7181026}\label{classoxide__mesh_afa8c8b21113ac4aab42f3271c7181026}} 
+\index{oxide\_mesh@{oxide\_mesh}!assemble\_mech\_for\_cracking@{assemble\_mech\_for\_cracking}}
+\index{assemble\_mech\_for\_cracking@{assemble\_mech\_for\_cracking}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{assemble\_mech\_for\_cracking()}{assemble\_mech\_for\_cracking()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::assemble\+\_\+mech\+\_\+for\+\_\+cracking (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+reassemble just the mechanics FEA arrays 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_afa8c8b21113ac4aab42f3271c7181026_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_afa8c8b21113ac4aab42f3271c7181026_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_ad61f3452da58429a1c7c99907d8909c8}\label{classoxide__mesh_ad61f3452da58429a1c7c99907d8909c8}} 
+\index{oxide\_mesh@{oxide\_mesh}!calculate\_G@{calculate\_G}}
+\index{calculate\_G@{calculate\_G}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{calculate\_G()}{calculate\_G()}}
+{\footnotesize\ttfamily double oxide\+\_\+mesh\+::calculate\+\_\+G (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpoint}{point}}}]{crack\+\_\+tip,  }\item[{double}]{shift\+\_\+radius,  }\item[{\mbox{\hyperlink{classpoint}{point}}}]{delta\+\_\+a }\end{DoxyParamCaption})}
+
+
+
+Calculate the ERR using stiffness derivative method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em crack\+\_\+tip} & \\
+\hline
+{\em shift\+\_\+radius} & \\
+\hline
+{\em delta\+\_\+a} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+energy release rate 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_ad61f3452da58429a1c7c99907d8909c8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a2b35a625d60b84747c162b428bebb166}\label{classoxide__mesh_a2b35a625d60b84747c162b428bebb166}} 
+\index{oxide\_mesh@{oxide\_mesh}!check\_for\_crack\_face\_contact@{check\_for\_crack\_face\_contact}}
+\index{check\_for\_crack\_face\_contact@{check\_for\_crack\_face\_contact}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{check\_for\_crack\_face\_contact()}{check\_for\_crack\_face\_contact()}}
+{\footnotesize\ttfamily bool oxide\+\_\+mesh\+::check\+\_\+for\+\_\+crack\+\_\+face\+\_\+contact (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$ \&}]{crack\+\_\+advance\+\_\+nodes }\end{DoxyParamCaption})}
+
+
+
+check for crack face contact, may be used in user defined functions 
+
+
+\begin{DoxyParams}{Parameters}
+{\em crack\+\_\+advance\+\_\+nodes} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a2b35a625d60b84747c162b428bebb166_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_aa71cae5d7aec1ae73e6340a441a332d3}\label{classoxide__mesh_aa71cae5d7aec1ae73e6340a441a332d3}} 
+\index{oxide\_mesh@{oxide\_mesh}!check\_for\_crack\_in\_SiC@{check\_for\_crack\_in\_SiC}}
+\index{check\_for\_crack\_in\_SiC@{check\_for\_crack\_in\_SiC}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{check\_for\_crack\_in\_SiC()}{check\_for\_crack\_in\_SiC()}}
+{\footnotesize\ttfamily bool oxide\+\_\+mesh\+::check\+\_\+for\+\_\+crack\+\_\+in\+\_\+\+SiC (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$ \&}]{crack\+\_\+advance\+\_\+nodes }\end{DoxyParamCaption})}
+
+
+
+check to see if the crack has left the oxide and entered the SiC material 
+
+
+\begin{DoxyParams}{Parameters}
+{\em crack\+\_\+advance\+\_\+nodes} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_aa71cae5d7aec1ae73e6340a441a332d3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_aa71cae5d7aec1ae73e6340a441a332d3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a9a35c42cc5c08eb05a80116a80fca872}\label{classoxide__mesh_a9a35c42cc5c08eb05a80116a80fca872}} 
+\index{oxide\_mesh@{oxide\_mesh}!check\_for\_cracking@{check\_for\_cracking}}
+\index{check\_for\_cracking@{check\_for\_cracking}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{check\_for\_cracking()}{check\_for\_cracking()}}
+{\footnotesize\ttfamily bool oxide\+\_\+mesh\+::check\+\_\+for\+\_\+cracking (\begin{DoxyParamCaption}\item[{int}]{out\+\_\+ctr }\end{DoxyParamCaption})}
+
+
+
+check for crack growth 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+ctr} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{de/d0a/classoxide__mesh_a9a35c42cc5c08eb05a80116a80fca872_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a9a35c42cc5c08eb05a80116a80fca872_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_aa945ecb81b26ddbb4059e72ddcb82f9c}\label{classoxide__mesh_aa945ecb81b26ddbb4059e72ddcb82f9c}} 
+\index{oxide\_mesh@{oxide\_mesh}!check\_for\_healing@{check\_for\_healing}}
+\index{check\_for\_healing@{check\_for\_healing}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{check\_for\_healing()}{check\_for\_healing()}}
+{\footnotesize\ttfamily bool oxide\+\_\+mesh\+::check\+\_\+for\+\_\+healing (\begin{DoxyParamCaption}\item[{int}]{out\+\_\+ctr }\end{DoxyParamCaption})}
+
+
+
+check to see if there is crack healing via contact IS THIS NEEDED??? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+ctr} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_aa945ecb81b26ddbb4059e72ddcb82f9c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_aa945ecb81b26ddbb4059e72ddcb82f9c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a1f3775b85d438f79909c56ce8b6e991e}\label{classoxide__mesh_a1f3775b85d438f79909c56ce8b6e991e}} 
+\index{oxide\_mesh@{oxide\_mesh}!check\_point\_for\_contact@{check\_point\_for\_contact}}
+\index{check\_point\_for\_contact@{check\_point\_for\_contact}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{check\_point\_for\_contact()}{check\_point\_for\_contact()}}
+{\footnotesize\ttfamily bool oxide\+\_\+mesh\+::check\+\_\+point\+\_\+for\+\_\+contact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpoint}{point}} \&}]{test\+\_\+point,  }\item[{\mbox{\hyperlink{classpoint}{point}} \&}]{mid\+\_\+point,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{sym\+\_\+boundary }\end{DoxyParamCaption})}
+
+
+
+check to see if a test point touches or is on the other side of the symmetry boundary from the mid\+\_\+point 
+
+
+\begin{DoxyParams}{Parameters}
+{\em test\+\_\+point} & \\
+\hline
+{\em mid\+\_\+point} & \\
+\hline
+{\em sym\+\_\+boundary} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a1f3775b85d438f79909c56ce8b6e991e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a1f3775b85d438f79909c56ce8b6e991e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_ade7237459e203b7a287a545d358e7df0}\label{classoxide__mesh_ade7237459e203b7a287a545d358e7df0}} 
+\index{oxide\_mesh@{oxide\_mesh}!convert\_indices\_to\_points@{convert\_indices\_to\_points}}
+\index{convert\_indices\_to\_points@{convert\_indices\_to\_points}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{convert\_indices\_to\_points()}{convert\_indices\_to\_points()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::convert\+\_\+indices\+\_\+to\+\_\+points (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{boundary\+\_\+nodes,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{boundary\+\_\+pts }\end{DoxyParamCaption})}
+
+
+
+convert a list of indices to points 
+
+
+\begin{DoxyParams}{Parameters}
+{\em boundary\+\_\+nodes} & \\
+\hline
+{\em boundary\+\_\+pts} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_ade7237459e203b7a287a545d358e7df0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a1921ed64426311619aaa665efeb35130}\label{classoxide__mesh_a1921ed64426311619aaa665efeb35130}} 
+\index{oxide\_mesh@{oxide\_mesh}!convert\_points\_to\_indices@{convert\_points\_to\_indices}}
+\index{convert\_points\_to\_indices@{convert\_points\_to\_indices}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{convert\_points\_to\_indices()}{convert\_points\_to\_indices()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::convert\+\_\+points\+\_\+to\+\_\+indices (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{boundary\+\_\+pts,  }\item[{std\+::vector$<$ int $>$ \&}]{boundary\+\_\+nodes }\end{DoxyParamCaption})}
+
+
+
+convert list of points to corresponding list of node nubmers 
+
+
+\begin{DoxyParams}{Parameters}
+{\em boundary\+\_\+pts} & \\
+\hline
+{\em boundary\+\_\+nodes} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{de/d0a/classoxide__mesh_a1921ed64426311619aaa665efeb35130_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a1921ed64426311619aaa665efeb35130_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a1ef44e1986fe518dde38cca116634120}\label{classoxide__mesh_a1ef44e1986fe518dde38cca116634120}} 
+\index{oxide\_mesh@{oxide\_mesh}!copy\_mesh@{copy\_mesh}}
+\index{copy\_mesh@{copy\_mesh}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{copy\_mesh()}{copy\_mesh()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::copy\+\_\+mesh (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classoxide__mesh}{oxide\+\_\+mesh}} \&}]{src\+\_\+mesh }\end{DoxyParamCaption})}
+
+
+
+copy data from src mesh 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src\+\_\+mesh} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a1ef44e1986fe518dde38cca116634120_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a9637f36e37a4794c2eb584e234b05297}\label{classoxide__mesh_a9637f36e37a4794c2eb584e234b05297}} 
+\index{oxide\_mesh@{oxide\_mesh}!create\_cracking\_mesh@{create\_cracking\_mesh}}
+\index{create\_cracking\_mesh@{create\_cracking\_mesh}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{create\_cracking\_mesh()}{create\_cracking\_mesh()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::create\+\_\+cracking\+\_\+mesh (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classoxide__mesh}{oxide\+\_\+mesh}} \&}]{original\+\_\+mesh,  }\item[{\mbox{\hyperlink{classoxide__mesh}{oxide\+\_\+mesh}} \&}]{crack\+\_\+mesh }\end{DoxyParamCaption})}
+
+
+
+create a mech specific for the cracking problem UNUSED 
+
+
+\begin{DoxyParams}{Parameters}
+{\em original\+\_\+mesh} & \\
+\hline
+{\em crack\+\_\+mesh} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classoxide__mesh_ad671f01ff18ea8813413cfd9843e8771}\label{classoxide__mesh_ad671f01ff18ea8813413cfd9843e8771}} 
+\index{oxide\_mesh@{oxide\_mesh}!create\_element@{create\_element}}
+\index{create\_element@{create\_element}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{create\_element()}{create\_element()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::create\+\_\+element (\begin{DoxyParamCaption}\item[{int}]{curr\+\_\+el }\end{DoxyParamCaption})}
+
+
+
+create a specific element at index curr\+\_\+el 
+
+
+\begin{DoxyParams}{Parameters}
+{\em curr\+\_\+el} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_ad671f01ff18ea8813413cfd9843e8771_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_ae65f5b22c12608fe284c4da72e4e05d0}\label{classoxide__mesh_ae65f5b22c12608fe284c4da72e4e05d0}} 
+\index{oxide\_mesh@{oxide\_mesh}!create\_input\_file@{create\_input\_file}}
+\index{create\_input\_file@{create\_input\_file}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{create\_input\_file()}{create\_input\_file()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::create\+\_\+input\+\_\+file (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+\_\+dir }\end{DoxyParamCaption})}
+
+When given a directory, output an example xml input file for the generic solver \mbox{\Hypertarget{classoxide__mesh_ab28bc46025b54b8d8fd65496581f95a1}\label{classoxide__mesh_ab28bc46025b54b8d8fd65496581f95a1}} 
+\index{oxide\_mesh@{oxide\_mesh}!deform\_poly@{deform\_poly}}
+\index{deform\_poly@{deform\_poly}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{deform\_poly()}{deform\_poly()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::deform\+\_\+poly (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmaterial}{material}} \&}]{matl }\end{DoxyParamCaption})}
+
+
+
+apply displacments to single polygon 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matl} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_ab28bc46025b54b8d8fd65496581f95a1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a3e3bf68832adf49423313d920576e21f}\label{classoxide__mesh_a3e3bf68832adf49423313d920576e21f}} 
+\index{oxide\_mesh@{oxide\_mesh}!find\_connected\_elements@{find\_connected\_elements}}
+\index{find\_connected\_elements@{find\_connected\_elements}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{find\_connected\_elements()}{find\_connected\_elements()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::find\+\_\+connected\+\_\+elements (\begin{DoxyParamCaption}\item[{const int}]{node\+\_\+index,  }\item[{std\+::vector$<$ int $>$ \&}]{connected\+\_\+elements }\end{DoxyParamCaption})}
+
+
+
+find elements connected to node\+\_\+index 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node\+\_\+index} & \\
+\hline
+{\em connected\+\_\+elements} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{de/d0a/classoxide__mesh_a3e3bf68832adf49423313d920576e21f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a3e3bf68832adf49423313d920576e21f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a1d9833bc2988e9bf7c8d5babcbef684a}\label{classoxide__mesh_a1d9833bc2988e9bf7c8d5babcbef684a}} 
+\index{oxide\_mesh@{oxide\_mesh}!find\_outer\_bounds@{find\_outer\_bounds}}
+\index{find\_outer\_bounds@{find\_outer\_bounds}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{find\_outer\_bounds()}{find\_outer\_bounds()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::find\+\_\+outer\+\_\+bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+find the outer boundary of the geometry 
+
+\begin{DoxyReturn}{Returns}
+stored in outer\+\_\+bounds 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a1d9833bc2988e9bf7c8d5babcbef684a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a1d9833bc2988e9bf7c8d5babcbef684a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a7d54fdcc09b1b4a3c21149981997d16d}\label{classoxide__mesh_a7d54fdcc09b1b4a3c21149981997d16d}} 
+\index{oxide\_mesh@{oxide\_mesh}!find\_poly\_nodes@{find\_poly\_nodes}}
+\index{find\_poly\_nodes@{find\_poly\_nodes}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{find\_poly\_nodes()}{find\_poly\_nodes()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::find\+\_\+poly\+\_\+nodes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmaterial}{material}} \&}]{matl,  }\item[{double}]{min\+\_\+seg\+\_\+length }\end{DoxyParamCaption})}
+
+
+
+find the nodes on the material polygon 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matl} & \\
+\hline
+{\em min\+\_\+seg\+\_\+length} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a7d54fdcc09b1b4a3c21149981997d16d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a4af8eed80cb3a80d9ef67f7de061afb4}\label{classoxide__mesh_a4af8eed80cb3a80d9ef67f7de061afb4}} 
+\index{oxide\_mesh@{oxide\_mesh}!get\_boundary\_reversed@{get\_boundary\_reversed}}
+\index{get\_boundary\_reversed@{get\_boundary\_reversed}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{get\_boundary\_reversed()}{get\_boundary\_reversed()}}
+{\footnotesize\ttfamily bool oxide\+\_\+mesh\+::get\+\_\+boundary\+\_\+reversed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+determine in the concentration and crack plane constraint are reversed 
+
+\begin{DoxyReturn}{Returns}
+true if they are reversed 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a4af8eed80cb3a80d9ef67f7de061afb4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a4af8eed80cb3a80d9ef67f7de061afb4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a41501b35a068a1fec431fbeaa141f0e4}\label{classoxide__mesh_a41501b35a068a1fec431fbeaa141f0e4}} 
+\index{oxide\_mesh@{oxide\_mesh}!get\_concentration\_constraint\_index@{get\_concentration\_constraint\_index}}
+\index{get\_concentration\_constraint\_index@{get\_concentration\_constraint\_index}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{get\_concentration\_constraint\_index()}{get\_concentration\_constraint\_index()}}
+{\footnotesize\ttfamily int oxide\+\_\+mesh\+::get\+\_\+concentration\+\_\+constraint\+\_\+index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get the index of in\+\_\+constraints the corresponds to the concentration constraint 
+
+\begin{DoxyReturn}{Returns}
+constraint index 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a41501b35a068a1fec431fbeaa141f0e4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_aa54f1f9caa28b0f4263ab5ae34fbd4cb}\label{classoxide__mesh_aa54f1f9caa28b0f4263ab5ae34fbd4cb}} 
+\index{oxide\_mesh@{oxide\_mesh}!get\_crack\_advance@{get\_crack\_advance}}
+\index{get\_crack\_advance@{get\_crack\_advance}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{get\_crack\_advance()}{get\_crack\_advance()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::get\+\_\+crack\+\_\+advance (\begin{DoxyParamCaption}\item[{int}]{out\+\_\+ctr,  }\item[{std\+::vector$<$ int $>$ \&}]{crack\+\_\+advance\+\_\+nodes }\end{DoxyParamCaption})}
+
+
+
+get the node numbers of the crack advance 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+ctr} & \\
+\hline
+{\em crack\+\_\+advance\+\_\+nodes} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_aa54f1f9caa28b0f4263ab5ae34fbd4cb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_aa54f1f9caa28b0f4263ab5ae34fbd4cb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_abb927346e56117b4f2067718cd9be373}\label{classoxide__mesh_abb927346e56117b4f2067718cd9be373}} 
+\index{oxide\_mesh@{oxide\_mesh}!get\_crack\_boundary@{get\_crack\_boundary}}
+\index{get\_crack\_boundary@{get\_crack\_boundary}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{get\_crack\_boundary()}{get\_crack\_boundary()}}
+{\footnotesize\ttfamily bool oxide\+\_\+mesh\+::get\+\_\+crack\+\_\+boundary (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{boundary,  }\item[{int \&}]{concentration\+\_\+index }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em boundary} & \\
+\hline
+{\em concentration\+\_\+index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the boundary is reversed relative to constraint\+\_\+index constraint and the points in boundary only used in czm 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_abb927346e56117b4f2067718cd9be373_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_adafce3ae3e752eff9dae8119e7ac5b0d}\label{classoxide__mesh_adafce3ae3e752eff9dae8119e7ac5b0d}} 
+\index{oxide\_mesh@{oxide\_mesh}!get\_crack\_boundary\_nodes@{get\_crack\_boundary\_nodes}}
+\index{get\_crack\_boundary\_nodes@{get\_crack\_boundary\_nodes}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{get\_crack\_boundary\_nodes()}{get\_crack\_boundary\_nodes()}}
+{\footnotesize\ttfamily bool oxide\+\_\+mesh\+::get\+\_\+crack\+\_\+boundary\+\_\+nodes (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$ \&}]{boundary\+\_\+nodes,  }\item[{int \&}]{concentration\+\_\+index }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em boundary\+\_\+nodes} & \\
+\hline
+{\em concentration\+\_\+index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the boundary is reversed relative to constraint\+\_\+index constraint and the nodes in boundary\+\_\+nodes 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_adafce3ae3e752eff9dae8119e7ac5b0d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_adafce3ae3e752eff9dae8119e7ac5b0d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a2cf3f773238f718fe0d6430ed9ffe8c6}\label{classoxide__mesh_a2cf3f773238f718fe0d6430ed9ffe8c6}} 
+\index{oxide\_mesh@{oxide\_mesh}!get\_crack\_retreat@{get\_crack\_retreat}}
+\index{get\_crack\_retreat@{get\_crack\_retreat}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{get\_crack\_retreat()}{get\_crack\_retreat()}}
+{\footnotesize\ttfamily bool oxide\+\_\+mesh\+::get\+\_\+crack\+\_\+retreat (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{crack\+\_\+retreat,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{sym\+\_\+boundary }\end{DoxyParamCaption})}
+
+
+
+get the crack retreat UNNEEDED??? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em crack\+\_\+retreat} & \\
+\hline
+{\em sym\+\_\+boundary} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a2cf3f773238f718fe0d6430ed9ffe8c6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a2cf3f773238f718fe0d6430ed9ffe8c6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_ae5ed73f4ddec09af1ff8cd5358be996f}\label{classoxide__mesh_ae5ed73f4ddec09af1ff8cd5358be996f}} 
+\index{oxide\_mesh@{oxide\_mesh}!get\_crack\_retreat\_nodes@{get\_crack\_retreat\_nodes}}
+\index{get\_crack\_retreat\_nodes@{get\_crack\_retreat\_nodes}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{get\_crack\_retreat\_nodes()}{get\_crack\_retreat\_nodes()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::get\+\_\+crack\+\_\+retreat\+\_\+nodes (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$ \&}]{crack\+\_\+retreat\+\_\+nodes,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{sym\+\_\+boundary }\end{DoxyParamCaption})}
+
+
+
+get the crack retreat in node form 
+
+
+\begin{DoxyParams}{Parameters}
+{\em crack\+\_\+retreat\+\_\+nodes} & \\
+\hline
+{\em sym\+\_\+boundary} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_ae5ed73f4ddec09af1ff8cd5358be996f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_ae5ed73f4ddec09af1ff8cd5358be996f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_ad025b69b56c646f71b4f6a561ac7da1c}\label{classoxide__mesh_ad025b69b56c646f71b4f6a561ac7da1c}} 
+\index{oxide\_mesh@{oxide\_mesh}!get\_element\_boundary@{get\_element\_boundary}}
+\index{get\_element\_boundary@{get\_element\_boundary}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{get\_element\_boundary()}{get\_element\_boundary()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::get\+\_\+element\+\_\+boundary (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$ \&}]{els\+\_\+in\+\_\+range,  }\item[{int}]{end\+\_\+pt\+\_\+1,  }\item[{int}]{end\+\_\+pt\+\_\+2,  }\item[{std\+::vector$<$ int $>$ \&}]{boundary }\end{DoxyParamCaption})}
+
+
+
+get boundary between defined elements and other elements 
+
+
+\begin{DoxyParams}{Parameters}
+{\em els\+\_\+in\+\_\+range} & \\
+\hline
+{\em end\+\_\+pt\+\_\+1} & \\
+\hline
+{\em end\+\_\+pt\+\_\+2} & \\
+\hline
+{\em boundary} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_ad025b69b56c646f71b4f6a561ac7da1c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a32f164a7866456b5d0616877293aea81}\label{classoxide__mesh_a32f164a7866456b5d0616877293aea81}} 
+\index{oxide\_mesh@{oxide\_mesh}!get\_free\_edges@{get\_free\_edges}}
+\index{get\_free\_edges@{get\_free\_edges}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{get\_free\_edges()}{get\_free\_edges()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::get\+\_\+free\+\_\+edges (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{poly,  }\item[{std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ $>$ \&}]{free\+\_\+segments,  }\item[{const int}]{ignore = {\ttfamily -\/2} }\end{DoxyParamCaption})}
+
+
+
+get the edges of a poly not on other surfaces 
+
+
+\begin{DoxyParams}{Parameters}
+{\em poly} & \\
+\hline
+{\em free\+\_\+segments} & \\
+\hline
+{\em ignore} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{de/d0a/classoxide__mesh_a32f164a7866456b5d0616877293aea81_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a32f164a7866456b5d0616877293aea81_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_aa58d6c1b23a6935173bb60ed53a84ad5}\label{classoxide__mesh_aa58d6c1b23a6935173bb60ed53a84ad5}} 
+\index{oxide\_mesh@{oxide\_mesh}!get\_neighboring\_elements\_within\_radius@{get\_neighboring\_elements\_within\_radius}}
+\index{get\_neighboring\_elements\_within\_radius@{get\_neighboring\_elements\_within\_radius}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{get\_neighboring\_elements\_within\_radius()}{get\_neighboring\_elements\_within\_radius()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::get\+\_\+neighboring\+\_\+elements\+\_\+within\+\_\+radius (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpoint}{point}}}]{pt,  }\item[{double}]{radius,  }\item[{std\+::vector$<$ int $>$ \&}]{els\+\_\+in\+\_\+range }\end{DoxyParamCaption})}
+
+
+
+get elements within radius of a point pt UNUSED??? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt} & \\
+\hline
+{\em radius} & \\
+\hline
+{\em els\+\_\+in\+\_\+range} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_aa58d6c1b23a6935173bb60ed53a84ad5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{de/d0a/classoxide__mesh_aa58d6c1b23a6935173bb60ed53a84ad5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_afea76799d1775c1eaa633cc100de21c1}\label{classoxide__mesh_afea76799d1775c1eaa633cc100de21c1}} 
+\index{oxide\_mesh@{oxide\_mesh}!get\_symmetry\_boundary@{get\_symmetry\_boundary}}
+\index{get\_symmetry\_boundary@{get\_symmetry\_boundary}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{get\_symmetry\_boundary()}{get\_symmetry\_boundary()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::get\+\_\+symmetry\+\_\+boundary (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{sym\+\_\+boundary }\end{DoxyParamCaption})}
+
+
+
+get the symmetry boundary based on the mechanical constraint defined as the crack plane 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sym\+\_\+boundary} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_afea76799d1775c1eaa633cc100de21c1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_ac8e1fc3823211e78e81b391617d57f96}\label{classoxide__mesh_ac8e1fc3823211e78e81b391617d57f96}} 
+\index{oxide\_mesh@{oxide\_mesh}!get\_thickness\_along\_constraint@{get\_thickness\_along\_constraint}}
+\index{get\_thickness\_along\_constraint@{get\_thickness\_along\_constraint}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{get\_thickness\_along\_constraint()}{get\_thickness\_along\_constraint()}}
+{\footnotesize\ttfamily double oxide\+\_\+mesh\+::get\+\_\+thickness\+\_\+along\+\_\+constraint (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{int}]{region\+\_\+tag }\end{DoxyParamCaption})}
+
+
+
+get the remaining thickness of oxide along a specific constraint 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \\
+\hline
+{\em region\+\_\+tag} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classoxide__mesh_aae30be4db2e5d49bec2f01baa9f6e6e6}\label{classoxide__mesh_aae30be4db2e5d49bec2f01baa9f6e6e6}} 
+\index{oxide\_mesh@{oxide\_mesh}!grow\_oxide@{grow\_oxide}}
+\index{grow\_oxide@{grow\_oxide}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{grow\_oxide()}{grow\_oxide()}}
+{\footnotesize\ttfamily bool oxide\+\_\+mesh\+::grow\+\_\+oxide (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+grow oxide material 
+
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_aae30be4db2e5d49bec2f01baa9f6e6e6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_aae30be4db2e5d49bec2f01baa9f6e6e6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_aecfd65a7b48fe7f7f7f9c6d0a65754b6}\label{classoxide__mesh_aecfd65a7b48fe7f7f7f9c6d0a65754b6}} 
+\index{oxide\_mesh@{oxide\_mesh}!initialize\_diff\_arrays@{initialize\_diff\_arrays}}
+\index{initialize\_diff\_arrays@{initialize\_diff\_arrays}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{initialize\_diff\_arrays()}{initialize\_diff\_arrays()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::initialize\+\_\+diff\+\_\+arrays (\begin{DoxyParamCaption}\item[{int}]{n\+\_\+nodes\+\_\+per\+\_\+tri }\end{DoxyParamCaption})}
+
+
+
+initialize the diffusion problem arrays 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n\+\_\+nodes\+\_\+per\+\_\+tri} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_aecfd65a7b48fe7f7f7f9c6d0a65754b6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_aecfd65a7b48fe7f7f7f9c6d0a65754b6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a74193af0cc10b1e5b9198313f0fb3c7c}\label{classoxide__mesh_a74193af0cc10b1e5b9198313f0fb3c7c}} 
+\index{oxide\_mesh@{oxide\_mesh}!initialize\_mech\_arrays@{initialize\_mech\_arrays}}
+\index{initialize\_mech\_arrays@{initialize\_mech\_arrays}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{initialize\_mech\_arrays()}{initialize\_mech\_arrays()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::initialize\+\_\+mech\+\_\+arrays (\begin{DoxyParamCaption}\item[{int}]{n\+\_\+nodes\+\_\+per\+\_\+tri }\end{DoxyParamCaption})}
+
+
+
+initialize the mechanics problem arrays 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n\+\_\+nodes\+\_\+per\+\_\+tri} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a74193af0cc10b1e5b9198313f0fb3c7c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a74193af0cc10b1e5b9198313f0fb3c7c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a111a93b21c8b864d9bfe8587960d0075}\label{classoxide__mesh_a111a93b21c8b864d9bfe8587960d0075}} 
+\index{oxide\_mesh@{oxide\_mesh}!load\_input\_file@{load\_input\_file}}
+\index{load\_input\_file@{load\_input\_file}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{load\_input\_file()}{load\_input\_file()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::load\+\_\+input\+\_\+file (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+load and xml input file for the generic solver 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+path} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a111a93b21c8b864d9bfe8587960d0075_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a9d584b95fbcb8366c3e1bc0a5b87fc99}\label{classoxide__mesh_a9d584b95fbcb8366c3e1bc0a5b87fc99}} 
+\index{oxide\_mesh@{oxide\_mesh}!load\_mesh@{load\_mesh}}
+\index{load\_mesh@{load\_mesh}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{load\_mesh()}{load\_mesh()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::load\+\_\+mesh (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+load output file from file\+\_\+path 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+path} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a9d584b95fbcb8366c3e1bc0a5b87fc99_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a9d584b95fbcb8366c3e1bc0a5b87fc99_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a7684d3cd9f2e1aaeb2231f0c8dd9155b}\label{classoxide__mesh_a7684d3cd9f2e1aaeb2231f0c8dd9155b}} 
+\index{oxide\_mesh@{oxide\_mesh}!map\_from\_old\_mesh@{map\_from\_old\_mesh}}
+\index{map\_from\_old\_mesh@{map\_from\_old\_mesh}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{map\_from\_old\_mesh()}{map\_from\_old\_mesh()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::map\+\_\+from\+\_\+old\+\_\+mesh (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classoxide__mesh}{oxide\+\_\+mesh}} \&}]{old\+\_\+problem }\end{DoxyParamCaption})}
+
+
+
+map data from an old mesh onto the current one 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+\_\+problem} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a7684d3cd9f2e1aaeb2231f0c8dd9155b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a7684d3cd9f2e1aaeb2231f0c8dd9155b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a61f0bd675dca291d42cc253dcdc7170d}\label{classoxide__mesh_a61f0bd675dca291d42cc253dcdc7170d}} 
+\index{oxide\_mesh@{oxide\_mesh}!open\_log\_files@{open\_log\_files}}
+\index{open\_log\_files@{open\_log\_files}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{open\_log\_files()}{open\_log\_files()}}
+{\footnotesize\ttfamily int oxide\+\_\+mesh\+::open\+\_\+log\+\_\+files (\begin{DoxyParamCaption}\item[{bool}]{restart,  }\item[{int}]{out\+\_\+ctr }\end{DoxyParamCaption})}
+
+
+
+open the log files 
+
+
+\begin{DoxyParams}{Parameters}
+{\em restart} & \\
+\hline
+{\em out\+\_\+ctr} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a61f0bd675dca291d42cc253dcdc7170d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a61f0bd675dca291d42cc253dcdc7170d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_aad38ff863fa9e3da0d037a23d7c398ad}\label{classoxide__mesh_aad38ff863fa9e3da0d037a23d7c398ad}} 
+\index{oxide\_mesh@{oxide\_mesh}!operator=@{operator=}}
+\index{operator=@{operator=}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoxide__mesh}{oxide\+\_\+mesh}} \& oxide\+\_\+mesh\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classoxide__mesh}{oxide\+\_\+mesh}} \&}]{src\+\_\+mesh }\end{DoxyParamCaption})}
+
+
+
+copy mesh and clear arrays from src\+\_\+mesh 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src\+\_\+mesh} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_aad38ff863fa9e3da0d037a23d7c398ad_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_acab234e4c42f388fc2c30e772e0bc3f8}\label{classoxide__mesh_acab234e4c42f388fc2c30e772e0bc3f8}} 
+\index{oxide\_mesh@{oxide\_mesh}!output\_error\_files@{output\_error\_files}}
+\index{output\_error\_files@{output\_error\_files}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{output\_error\_files()}{output\_error\_files()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::output\+\_\+error\+\_\+files (\begin{DoxyParamCaption}\item[{int}]{out\+\_\+ctr }\end{DoxyParamCaption})}
+
+
+
+output files if theres an error thrown 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+ctr} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_acab234e4c42f388fc2c30e772e0bc3f8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_acab234e4c42f388fc2c30e772e0bc3f8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_ab9f8342f51795d5cc7ea8b16c0d205ce}\label{classoxide__mesh_ab9f8342f51795d5cc7ea8b16c0d205ce}} 
+\index{oxide\_mesh@{oxide\_mesh}!reassemble\_both\_after\_cracking@{reassemble\_both\_after\_cracking}}
+\index{reassemble\_both\_after\_cracking@{reassemble\_both\_after\_cracking}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{reassemble\_both\_after\_cracking()}{reassemble\_both\_after\_cracking()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::reassemble\+\_\+both\+\_\+after\+\_\+cracking (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+reassemble both mechanics and diffusion FEA arrays 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_ab9f8342f51795d5cc7ea8b16c0d205ce_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_ab9f8342f51795d5cc7ea8b16c0d205ce_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a1f5f07e51349846b1f9bfbe42e187021}\label{classoxide__mesh_a1f5f07e51349846b1f9bfbe42e187021}} 
+\index{oxide\_mesh@{oxide\_mesh}!reassemble\_mech\_after\_contact@{reassemble\_mech\_after\_contact}}
+\index{reassemble\_mech\_after\_contact@{reassemble\_mech\_after\_contact}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{reassemble\_mech\_after\_contact()}{reassemble\_mech\_after\_contact()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::reassemble\+\_\+mech\+\_\+after\+\_\+contact (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$ \&}]{crack\+\_\+retreat\+\_\+nodes }\end{DoxyParamCaption})}
+
+
+
+reassemble mechanics matrix after contact 
+
+
+\begin{DoxyParams}{Parameters}
+{\em crack\+\_\+retreat\+\_\+nodes} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a1f5f07e51349846b1f9bfbe42e187021_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a1f5f07e51349846b1f9bfbe42e187021_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a91a2e3cc780dbf94e541ee823447d83e}\label{classoxide__mesh_a91a2e3cc780dbf94e541ee823447d83e}} 
+\index{oxide\_mesh@{oxide\_mesh}!reflect\_flux@{reflect\_flux}}
+\index{reflect\_flux@{reflect\_flux}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{reflect\_flux()}{reflect\_flux()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classpoint}{point}} oxide\+\_\+mesh\+::reflect\+\_\+flux (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{boundary }\end{DoxyParamCaption})}
+
+
+
+reflect flux across boundary JUST FLUX PROJECTION ALONG BOUNDARY??? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \\
+\hline
+{\em boundary} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classoxide__mesh_a862aba983000ec3f3a3b73a96699c508}\label{classoxide__mesh_a862aba983000ec3f3a3b73a96699c508}} 
+\index{oxide\_mesh@{oxide\_mesh}!reflect\_point@{reflect\_point}}
+\index{reflect\_point@{reflect\_point}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{reflect\_point()}{reflect\_point()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classpoint}{point}} oxide\+\_\+mesh\+::reflect\+\_\+point (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classpoint}{point}} \&}]{pt,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{boundary }\end{DoxyParamCaption})}
+
+
+
+reflect point across boundary MOVE ELSEWHERE??? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt} & \\
+\hline
+{\em boundary} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classoxide__mesh_ad8fcf6a6b7ae431ca7fa54b00c9eb179}\label{classoxide__mesh_ad8fcf6a6b7ae431ca7fa54b00c9eb179}} 
+\index{oxide\_mesh@{oxide\_mesh}!remove\_deviation@{remove\_deviation}}
+\index{remove\_deviation@{remove\_deviation}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{remove\_deviation()}{remove\_deviation()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::remove\+\_\+deviation (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{poly,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{kept\+\_\+pts,  }\item[{int}]{m = {\ttfamily 2} }\end{DoxyParamCaption})}
+
+
+
+remove deviation from flat 
+
+
+\begin{DoxyParams}{Parameters}
+{\em poly} & \\
+\hline
+{\em kept\+\_\+pts} & \\
+\hline
+{\em m} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_ad8fcf6a6b7ae431ca7fa54b00c9eb179_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_aa8d1fd206016c3537b5d6fd34b9e815d}\label{classoxide__mesh_aa8d1fd206016c3537b5d6fd34b9e815d}} 
+\index{oxide\_mesh@{oxide\_mesh}!remove\_midside\_nodes@{remove\_midside\_nodes}}
+\index{remove\_midside\_nodes@{remove\_midside\_nodes}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{remove\_midside\_nodes()}{remove\_midside\_nodes()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::remove\+\_\+midside\+\_\+nodes (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$ \&}]{n\+\_\+list,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{pt\+\_\+list }\end{DoxyParamCaption})}
+
+
+
+remove midside nodes used with quadratic elements 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n\+\_\+list} & \\
+\hline
+{\em pt\+\_\+list} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{de/d0a/classoxide__mesh_aa8d1fd206016c3537b5d6fd34b9e815d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_aa8d1fd206016c3537b5d6fd34b9e815d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_ac76e5714b9a139b84bdd810119512c8d}\label{classoxide__mesh_ac76e5714b9a139b84bdd810119512c8d}} 
+\index{oxide\_mesh@{oxide\_mesh}!remove\_nodes\_from\_mechanical\_constraint@{remove\_nodes\_from\_mechanical\_constraint}}
+\index{remove\_nodes\_from\_mechanical\_constraint@{remove\_nodes\_from\_mechanical\_constraint}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{remove\_nodes\_from\_mechanical\_constraint()}{remove\_nodes\_from\_mechanical\_constraint()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::remove\+\_\+nodes\+\_\+from\+\_\+mechanical\+\_\+constraint (\begin{DoxyParamCaption}\item[{bool}]{boundary\+\_\+reversed,  }\item[{std\+::vector$<$ int $>$ \&}]{unzipped\+\_\+nodes }\end{DoxyParamCaption})}
+
+
+
+remove list of nodes from mechanical constraint denoted by constraint\+\_\+index 
+
+
+\begin{DoxyParams}{Parameters}
+{\em boundary\+\_\+reversed} & \\
+\hline
+{\em unzipped\+\_\+nodes} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_ac76e5714b9a139b84bdd810119512c8d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_ac76e5714b9a139b84bdd810119512c8d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_ae31976f082b183c5a19c5f2132de64e8}\label{classoxide__mesh_ae31976f082b183c5a19c5f2132de64e8}} 
+\index{oxide\_mesh@{oxide\_mesh}!remove\_points\_from\_mechanical\_constraint@{remove\_points\_from\_mechanical\_constraint}}
+\index{remove\_points\_from\_mechanical\_constraint@{remove\_points\_from\_mechanical\_constraint}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{remove\_points\_from\_mechanical\_constraint()}{remove\_points\_from\_mechanical\_constraint()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::remove\+\_\+points\+\_\+from\+\_\+mechanical\+\_\+constraint (\begin{DoxyParamCaption}\item[{bool}]{boundary\+\_\+reversed,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{unzipped\+\_\+points }\end{DoxyParamCaption})}
+
+
+
+remove list of points from mechanical constraint denoted by constraint\+\_\+index 
+
+
+\begin{DoxyParams}{Parameters}
+{\em boundary\+\_\+reversed} & \\
+\hline
+{\em unzipped\+\_\+points} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_ae31976f082b183c5a19c5f2132de64e8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a30e04d430474d575d5230b9791945eee}\label{classoxide__mesh_a30e04d430474d575d5230b9791945eee}} 
+\index{oxide\_mesh@{oxide\_mesh}!remove\_polygon@{remove\_polygon}}
+\index{remove\_polygon@{remove\_polygon}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{remove\_polygon()}{remove\_polygon()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::remove\+\_\+polygon (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{poly1,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{poly2,  }\item[{double}]{threshold\+\_\+length }\end{DoxyParamCaption})}
+
+
+
+remove one polygon from another 
+
+
+\begin{DoxyParams}{Parameters}
+{\em poly1} & \\
+\hline
+{\em poly2} & \\
+\hline
+{\em threshold\+\_\+length} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a30e04d430474d575d5230b9791945eee_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a73f4c92e0a84a2d811353cb9e649953a}\label{classoxide__mesh_a73f4c92e0a84a2d811353cb9e649953a}} 
+\index{oxide\_mesh@{oxide\_mesh}!remove\_pts@{remove\_pts}}
+\index{remove\_pts@{remove\_pts}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{remove\_pts()}{remove\_pts()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::remove\+\_\+pts (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{pts,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{removed\+\_\+pts,  }\item[{double}]{threshold\+\_\+length }\end{DoxyParamCaption})}
+
+
+
+remove points from pts list that are withing threshold\+\_\+length of removed\+\_\+pts 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pts} & \\
+\hline
+{\em removed\+\_\+pts} & \\
+\hline
+{\em threshold\+\_\+length} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a73f4c92e0a84a2d811353cb9e649953a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a926543deb442cfa9b203e46f7e2bea2d}\label{classoxide__mesh_a926543deb442cfa9b203e46f7e2bea2d}} 
+\index{oxide\_mesh@{oxide\_mesh}!run\_cracking\_simulation@{run\_cracking\_simulation}}
+\index{run\_cracking\_simulation@{run\_cracking\_simulation}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{run\_cracking\_simulation()}{run\_cracking\_simulation()}}
+{\footnotesize\ttfamily bool oxide\+\_\+mesh\+::run\+\_\+cracking\+\_\+simulation (\begin{DoxyParamCaption}\item[{int}]{out\+\_\+ctr }\end{DoxyParamCaption})}
+
+
+
+run cracking simulation 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+ctr} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if crack changes 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a926543deb442cfa9b203e46f7e2bea2d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a926543deb442cfa9b203e46f7e2bea2d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a8ef1417ccaaeb8179f265c359361f513}\label{classoxide__mesh_a8ef1417ccaaeb8179f265c359361f513}} 
+\index{oxide\_mesh@{oxide\_mesh}!run\_cracking\_simulation\_CZM@{run\_cracking\_simulation\_CZM}}
+\index{run\_cracking\_simulation\_CZM@{run\_cracking\_simulation\_CZM}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{run\_cracking\_simulation\_CZM()}{run\_cracking\_simulation\_CZM()}}
+{\footnotesize\ttfamily bool oxide\+\_\+mesh\+::run\+\_\+cracking\+\_\+simulation\+\_\+\+CZM (\begin{DoxyParamCaption}\item[{int}]{out\+\_\+ctr }\end{DoxyParamCaption})}
+
+
+
+way to run cracking simulation with a cohesive element method 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+ctr} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+\texorpdfstring{$<$}{<} used global\+\_\+\+MC.\+U as accelerations
+
+\texorpdfstring{$<$}{<} use global\+\_\+\+C.\+U as velocities
+
+\texorpdfstring{$<$}{<} use global\+\_\+\+K.\+U as displacementsHere is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a8ef1417ccaaeb8179f265c359361f513_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a8ef1417ccaaeb8179f265c359361f513_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_ad3c124e5fd82ca502fe791baaa108048}\label{classoxide__mesh_ad3c124e5fd82ca502fe791baaa108048}} 
+\index{oxide\_mesh@{oxide\_mesh}!run\_main\_loop@{run\_main\_loop}}
+\index{run\_main\_loop@{run\_main\_loop}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{run\_main\_loop()}{run\_main\_loop()}}
+{\footnotesize\ttfamily int oxide\+\_\+mesh\+::run\+\_\+main\+\_\+loop (\begin{DoxyParamCaption}\item[{bool}]{restart,  }\item[{int}]{out\+\_\+ctr }\end{DoxyParamCaption})}
+
+
+
+run the main loop 
+
+
+\begin{DoxyParams}{Parameters}
+{\em restart} & \\
+\hline
+{\em out\+\_\+ctr} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{de/d0a/classoxide__mesh_ad3c124e5fd82ca502fe791baaa108048_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_ad3c124e5fd82ca502fe791baaa108048_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a0478903f72d483ab779af8443ffbc48b}\label{classoxide__mesh_a0478903f72d483ab779af8443ffbc48b}} 
+\index{oxide\_mesh@{oxide\_mesh}!run\_simulation@{run\_simulation}}
+\index{run\_simulation@{run\_simulation}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{run\_simulation()}{run\_simulation()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::run\+\_\+simulation (\begin{DoxyParamCaption}\item[{bool}]{restart,  }\item[{int}]{out\+\_\+ctr }\end{DoxyParamCaption})}
+
+
+
+run a simulation 
+
+
+\begin{DoxyParams}{Parameters}
+{\em restart} & \\
+\hline
+{\em out\+\_\+ctr} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{de/d0a/classoxide__mesh_a0478903f72d483ab779af8443ffbc48b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a492e8c8274795fbe851a549ea8ecd68e}\label{classoxide__mesh_a492e8c8274795fbe851a549ea8ecd68e}} 
+\index{oxide\_mesh@{oxide\_mesh}!save\_geometry@{save\_geometry}}
+\index{save\_geometry@{save\_geometry}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{save\_geometry()}{save\_geometry()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::save\+\_\+geometry (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+save the geometry into a single file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+path} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a492e8c8274795fbe851a549ea8ecd68e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_ab51a4206e50a3ba0905cb57b291d3291}\label{classoxide__mesh_ab51a4206e50a3ba0905cb57b291d3291}} 
+\index{oxide\_mesh@{oxide\_mesh}!save\_mesh@{save\_mesh}}
+\index{save\_mesh@{save\_mesh}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{save\_mesh()}{save\_mesh()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::save\+\_\+mesh (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+save output file with all data to file\+\_\+path 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+path} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_ab51a4206e50a3ba0905cb57b291d3291_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_ab51a4206e50a3ba0905cb57b291d3291_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_ad91cb9cfde9d021933d5abfad467cd5e}\label{classoxide__mesh_ad91cb9cfde9d021933d5abfad467cd5e}} 
+\index{oxide\_mesh@{oxide\_mesh}!save\_mesh\_string@{save\_mesh\_string}}
+\index{save\_mesh\_string@{save\_mesh\_string}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{save\_mesh\_string()}{save\_mesh\_string()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::save\+\_\+mesh\+\_\+string (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+version of save\+\_\+mesh using strings instead of stringstream, slower 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+path} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_ad91cb9cfde9d021933d5abfad467cd5e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_ace6d9495c95364ee6f41846d4fd93a79}\label{classoxide__mesh_ace6d9495c95364ee6f41846d4fd93a79}} 
+\index{oxide\_mesh@{oxide\_mesh}!save\_polygons@{save\_polygons}}
+\index{save\_polygons@{save\_polygons}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{save\_polygons()}{save\_polygons()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::save\+\_\+polygons (\begin{DoxyParamCaption}\item[{std\+::string}]{label,  }\item[{int}]{out\+\_\+ctr }\end{DoxyParamCaption})}
+
+
+
+save polygons to a file defined as file\+\_\+prefix + lable + out\+\_\+ctr.\+vtu 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & \\
+\hline
+{\em out\+\_\+ctr} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_ace6d9495c95364ee6f41846d4fd93a79_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a55e7ce21c5b6ef91faa7e8c94bf8f10c}\label{classoxide__mesh_a55e7ce21c5b6ef91faa7e8c94bf8f10c}} 
+\index{oxide\_mesh@{oxide\_mesh}!seg\_on\_material@{seg\_on\_material}}
+\index{seg\_on\_material@{seg\_on\_material}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{seg\_on\_material()}{seg\_on\_material()}}
+{\footnotesize\ttfamily bool oxide\+\_\+mesh\+::seg\+\_\+on\+\_\+material (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{test\+\_\+seg,  }\item[{const int}]{ignore = {\ttfamily -\/2} }\end{DoxyParamCaption})}
+
+
+
+determine if test\+\_\+seg is on any material polygon except for ignore 
+
+
+\begin{DoxyParams}{Parameters}
+{\em test\+\_\+seg} & \\
+\hline
+{\em ignore} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a55e7ce21c5b6ef91faa7e8c94bf8f10c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a1b72e11755b05257da6de7efd3b8bd81}\label{classoxide__mesh_a1b72e11755b05257da6de7efd3b8bd81}} 
+\index{oxide\_mesh@{oxide\_mesh}!set\_boundary\_conditions@{set\_boundary\_conditions}}
+\index{set\_boundary\_conditions@{set\_boundary\_conditions}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{set\_boundary\_conditions()}{set\_boundary\_conditions()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::set\+\_\+boundary\+\_\+conditions (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::pair$<$ std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$, \mbox{\hyperlink{classconstraint}{constraint}} $>$ $>$}]{in\+\_\+constraints\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+set all boundary conditions 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in\+\_\+constraints\+\_\+} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classoxide__mesh_a07d8163ca50aa9ace68478fd0c1e6790}\label{classoxide__mesh_a07d8163ca50aa9ace68478fd0c1e6790}} 
+\index{oxide\_mesh@{oxide\_mesh}!set\_cracking\_parameters@{set\_cracking\_parameters}}
+\index{set\_cracking\_parameters@{set\_cracking\_parameters}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{set\_cracking\_parameters()}{set\_cracking\_parameters()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::set\+\_\+cracking\+\_\+parameters (\begin{DoxyParamCaption}\item[{bool($\ast$)(\mbox{\hyperlink{classoxide__mesh}{oxide\+\_\+mesh}} \&original\+\_\+mesh)}]{user\+\_\+run\+\_\+cracking\+\_\+simulation\+\_\+func\+\_\+,  }\item[{bool($\ast$)(\mbox{\hyperlink{classoxide__mesh}{oxide\+\_\+mesh}} \&crack\+\_\+mesh, double G, int step\+\_\+ctr, std\+::vector$<$ int $>$ \&crack\+\_\+advance\+\_\+nodes)}]{crack\+\_\+advance\+\_\+func\+\_\+,  }\item[{int}]{constraint\+\_\+index\+\_\+,  }\item[{double}]{init\+\_\+crack\+\_\+length\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+set the cracking parameters 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+\_\+run\+\_\+cracking\+\_\+simulation\+\_\+func\+\_\+} & \\
+\hline
+{\em crack\+\_\+advance\+\_\+func\+\_\+} & \\
+\hline
+{\em constraint\+\_\+index\+\_\+} & \\
+\hline
+{\em init\+\_\+crack\+\_\+length\+\_\+} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classoxide__mesh_ade5caadbf9adc2dca6fa93737f68533c}\label{classoxide__mesh_ade5caadbf9adc2dca6fa93737f68533c}} 
+\index{oxide\_mesh@{oxide\_mesh}!set\_element\_properties@{set\_element\_properties}}
+\index{set\_element\_properties@{set\_element\_properties}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{set\_element\_properties()}{set\_element\_properties()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::set\+\_\+element\+\_\+properties (\begin{DoxyParamCaption}\item[{int}]{curr\+\_\+el }\end{DoxyParamCaption})}
+
+
+
+set element properties 
+
+
+\begin{DoxyParams}{Parameters}
+{\em curr\+\_\+el} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_ade5caadbf9adc2dca6fa93737f68533c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_ade5caadbf9adc2dca6fa93737f68533c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a85e810d59ec3caeea62221cdac85d4b5}\label{classoxide__mesh_a85e810d59ec3caeea62221cdac85d4b5}} 
+\index{oxide\_mesh@{oxide\_mesh}!set\_geometry@{set\_geometry}}
+\index{set\_geometry@{set\_geometry}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{set\_geometry()}{set\_geometry()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::set\+\_\+geometry (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classmaterial}{material}} $>$}]{in\+\_\+materials,  }\item[{\mbox{\hyperlink{classmaterial}{material}}}]{in\+\_\+oxide,  }\item[{\mbox{\hyperlink{classmaterial}{material}}}]{in\+\_\+crack }\end{DoxyParamCaption})}
+
+
+
+set the geometry 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in\+\_\+materials} & \\
+\hline
+{\em in\+\_\+oxide} & \\
+\hline
+{\em in\+\_\+crack} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classoxide__mesh_aac947d4f95b0043ca50527353293c88b}\label{classoxide__mesh_aac947d4f95b0043ca50527353293c88b}} 
+\index{oxide\_mesh@{oxide\_mesh}!set\_initial\_crack@{set\_initial\_crack}}
+\index{set\_initial\_crack@{set\_initial\_crack}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{set\_initial\_crack()}{set\_initial\_crack()}}
+{\footnotesize\ttfamily bool oxide\+\_\+mesh\+::set\+\_\+initial\+\_\+crack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+set the initial crack if none is present 
+
+\begin{DoxyReturn}{Returns}
+true if crack is inserted 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_aac947d4f95b0043ca50527353293c88b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_aac947d4f95b0043ca50527353293c88b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_aa4eb55c2cddc68a951d6b31400013555}\label{classoxide__mesh_aa4eb55c2cddc68a951d6b31400013555}} 
+\index{oxide\_mesh@{oxide\_mesh}!set\_initial\_strain\_function@{set\_initial\_strain\_function}}
+\index{set\_initial\_strain\_function@{set\_initial\_strain\_function}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{set\_initial\_strain\_function()}{set\_initial\_strain\_function()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::set\+\_\+initial\+\_\+strain\+\_\+function (\begin{DoxyParamCaption}\item[{void($\ast$)(\mbox{\hyperlink{classmp__element}{mp\+\_\+element}} \&el)}]{initialize\+\_\+strain\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+set the initial strain 
+
+
+\begin{DoxyParams}{Parameters}
+{\em initialize\+\_\+strain\+\_\+} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_aa4eb55c2cddc68a951d6b31400013555_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a936f1154cec27246f4217b972b85c23a}\label{classoxide__mesh_a936f1154cec27246f4217b972b85c23a}} 
+\index{oxide\_mesh@{oxide\_mesh}!set\_mesh\_parameters@{set\_mesh\_parameters}}
+\index{set\_mesh\_parameters@{set\_mesh\_parameters}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{set\_mesh\_parameters()}{set\_mesh\_parameters()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::set\+\_\+mesh\+\_\+parameters (\begin{DoxyParamCaption}\item[{double}]{in\+\_\+min\+\_\+area,  }\item[{double}]{in\+\_\+refine\+\_\+radius,  }\item[{double}]{gr\+\_\+,  }\item[{element\+\_\+type\+::type}]{el\+\_\+type\+\_\+,  }\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{in\+\_\+mesh\+\_\+regions }\end{DoxyParamCaption})}
+
+
+
+set meshing parameters 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in\+\_\+min\+\_\+area} & \\
+\hline
+{\em in\+\_\+refine\+\_\+radius} & \\
+\hline
+{\em gr\+\_\+} & \\
+\hline
+{\em el\+\_\+type\+\_\+} & \\
+\hline
+{\em in\+\_\+mesh\+\_\+regions} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a936f1154cec27246f4217b972b85c23a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a3bd5eb57d0d04a04be3c17a9f30e10a6}\label{classoxide__mesh_a3bd5eb57d0d04a04be3c17a9f30e10a6}} 
+\index{oxide\_mesh@{oxide\_mesh}!set\_output\_parameters@{set\_output\_parameters}}
+\index{set\_output\_parameters@{set\_output\_parameters}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{set\_output\_parameters()}{set\_output\_parameters()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::set\+\_\+output\+\_\+parameters (\begin{DoxyParamCaption}\item[{int}]{dump\+\_\+int\+\_\+,  }\item[{bool}]{timing,  }\item[{bool}]{polys,  }\item[{bool}]{segs }\end{DoxyParamCaption})}
+
+
+
+set ouput parameters 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dump\+\_\+int\+\_\+} & \\
+\hline
+{\em timing} & \\
+\hline
+{\em polys} & \\
+\hline
+{\em segs} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a3bd5eb57d0d04a04be3c17a9f30e10a6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a47d2dc82446b83eea3e0ca545081d650}\label{classoxide__mesh_a47d2dc82446b83eea3e0ca545081d650}} 
+\index{oxide\_mesh@{oxide\_mesh}!set\_parameters@{set\_parameters}}
+\index{set\_parameters@{set\_parameters}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{set\_parameters()}{set\_parameters()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::set\+\_\+parameters (\begin{DoxyParamCaption}\item[{int}]{in\+\_\+num\+\_\+gs,  }\item[{double}]{in\+\_\+dt,  }\item[{double}]{in\+\_\+dt\+\_\+cr,  }\item[{double}]{min\+\_\+eta\+\_\+,  }\item[{double}]{eyring\+\_\+prefactor\+\_\+,  }\item[{double}]{eyring\+\_\+\+Eover\+R\+\_\+,  }\item[{double}]{eyring\+\_\+tau\+\_\+c\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+parse input parameters 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in\+\_\+num\+\_\+gs} & \\
+\hline
+{\em in\+\_\+dt} & \\
+\hline
+{\em in\+\_\+dt\+\_\+cr} & \\
+\hline
+{\em min\+\_\+eta\+\_\+} & \\
+\hline
+{\em eyring\+\_\+prefactor\+\_\+} & \\
+\hline
+{\em eyring\+\_\+\+Eover\+R\+\_\+} & \\
+\hline
+{\em eyring\+\_\+tau\+\_\+c\+\_\+} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a47d2dc82446b83eea3e0ca545081d650_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a046932f00ba4a4d474c76167f3d21abb}\label{classoxide__mesh_a046932f00ba4a4d474c76167f3d21abb}} 
+\index{oxide\_mesh@{oxide\_mesh}!set\_params@{set\_params}}
+\index{set\_params@{set\_params}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{set\_params()}{set\_params()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::set\+\_\+params (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classparam}{param}}}]{input\+\_\+params }\end{DoxyParamCaption})}
+
+
+
+input an instance of param and split up correctly 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+params} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a046932f00ba4a4d474c76167f3d21abb_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a4f181fcf2c514a4c1d259c3a94ad2796}\label{classoxide__mesh_a4f181fcf2c514a4c1d259c3a94ad2796}} 
+\index{oxide\_mesh@{oxide\_mesh}!set\_paths@{set\_paths}}
+\index{set\_paths@{set\_paths}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{set\_paths()}{set\_paths()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::set\+\_\+paths (\begin{DoxyParamCaption}\item[{std\+::string}]{in\+\_\+base\+\_\+path,  }\item[{std\+::string}]{in\+\_\+file\+\_\+prefix }\end{DoxyParamCaption})}
+
+
+
+set file paths 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in\+\_\+base\+\_\+path} & \\
+\hline
+{\em in\+\_\+file\+\_\+prefix} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a4f181fcf2c514a4c1d259c3a94ad2796_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a2f7b8a330a65b78d65525f104b6e5757}\label{classoxide__mesh_a2f7b8a330a65b78d65525f104b6e5757}} 
+\index{oxide\_mesh@{oxide\_mesh}!set\_temperature\_function@{set\_temperature\_function}}
+\index{set\_temperature\_function@{set\_temperature\_function}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{set\_temperature\_function()}{set\_temperature\_function()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::set\+\_\+temperature\+\_\+function (\begin{DoxyParamCaption}\item[{double($\ast$)(double current\+\_\+time)}]{user\+\_\+\+Temp\+\_\+func\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+set a temperature function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+\_\+\+Temp\+\_\+func\+\_\+} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a2f7b8a330a65b78d65525f104b6e5757_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a75ee65b66ef2459fcdc0cdc2a5edb25a}\label{classoxide__mesh_a75ee65b66ef2459fcdc0cdc2a5edb25a}} 
+\index{oxide\_mesh@{oxide\_mesh}!shorten\_crack@{shorten\_crack}}
+\index{shorten\_crack@{shorten\_crack}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{shorten\_crack()}{shorten\_crack()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::shorten\+\_\+crack (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{crack\+\_\+retreat,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{sym\+\_\+boundary }\end{DoxyParamCaption})}
+
+
+
+reduce length of crack 
+
+
+\begin{DoxyParams}{Parameters}
+{\em crack\+\_\+retreat} & \\
+\hline
+{\em sym\+\_\+boundary} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a75ee65b66ef2459fcdc0cdc2a5edb25a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a75ee65b66ef2459fcdc0cdc2a5edb25a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a21615ffbc2e28832ed28b59277c4e5a1}\label{classoxide__mesh_a21615ffbc2e28832ed28b59277c4e5a1}} 
+\index{oxide\_mesh@{oxide\_mesh}!shorten\_crack\_nodes@{shorten\_crack\_nodes}}
+\index{shorten\_crack\_nodes@{shorten\_crack\_nodes}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{shorten\_crack\_nodes()}{shorten\_crack\_nodes()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::shorten\+\_\+crack\+\_\+nodes (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$ \&}]{crack\+\_\+retreat\+\_\+nodes,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{sym\+\_\+boundary }\end{DoxyParamCaption})}
+
+
+
+shorten the crack using nodes as input 
+
+
+\begin{DoxyParams}{Parameters}
+{\em crack\+\_\+retreat\+\_\+nodes} & \\
+\hline
+{\em sym\+\_\+boundary} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a21615ffbc2e28832ed28b59277c4e5a1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a21615ffbc2e28832ed28b59277c4e5a1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_abda9a1d2b75d90c5529986f165d06a33}\label{classoxide__mesh_abda9a1d2b75d90c5529986f165d06a33}} 
+\index{oxide\_mesh@{oxide\_mesh}!simplify\_polygon@{simplify\_polygon}}
+\index{simplify\_polygon@{simplify\_polygon}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{simplify\_polygon()}{simplify\_polygon()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::simplify\+\_\+polygon (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{poly,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{removed\+\_\+pts,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{kept\+\_\+pts,  }\item[{double}]{threshold\+\_\+length,  }\item[{int}]{m = {\ttfamily 2} }\end{DoxyParamCaption})}
+
+
+
+simplify a polygon removing points that are too close to each other or roughness 
+
+
+\begin{DoxyParams}{Parameters}
+{\em poly} & \\
+\hline
+{\em removed\+\_\+pts} & \\
+\hline
+{\em kept\+\_\+pts} & \\
+\hline
+{\em threshold\+\_\+length} & \\
+\hline
+{\em m} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_abda9a1d2b75d90c5529986f165d06a33_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_abda9a1d2b75d90c5529986f165d06a33_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a56952c56a4d69502ca5eec6f5fc78fba}\label{classoxide__mesh_a56952c56a4d69502ca5eec6f5fc78fba}} 
+\index{oxide\_mesh@{oxide\_mesh}!solve\_mech\_for\_cracking@{solve\_mech\_for\_cracking}}
+\index{solve\_mech\_for\_cracking@{solve\_mech\_for\_cracking}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{solve\_mech\_for\_cracking()}{solve\_mech\_for\_cracking()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::solve\+\_\+mech\+\_\+for\+\_\+cracking (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+solve mechanics problem for crack advance 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a56952c56a4d69502ca5eec6f5fc78fba_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a56952c56a4d69502ca5eec6f5fc78fba_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a5f2e74fe853dfbec4353db91b7b1b9b7}\label{classoxide__mesh_a5f2e74fe853dfbec4353db91b7b1b9b7}} 
+\index{oxide\_mesh@{oxide\_mesh}!update\_element\_points@{update\_element\_points}}
+\index{update\_element\_points@{update\_element\_points}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{update\_element\_points()}{update\_element\_points()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::update\+\_\+element\+\_\+points (\begin{DoxyParamCaption}\item[{const int}]{node\+\_\+no,  }\item[{\mbox{\hyperlink{classpoint}{point}} \&}]{old\+\_\+pt,  }\item[{const \mbox{\hyperlink{classpoint}{point}} \&}]{new\+\_\+pt }\end{DoxyParamCaption})}
+
+
+
+update the point within the element lists MAYBE REDO THIS FUNCTION TO INTEGRATE find\+\_\+connected\+\_\+elements??? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node\+\_\+no} & \\
+\hline
+{\em old\+\_\+pt} & \\
+\hline
+{\em new\+\_\+pt} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a5f2e74fe853dfbec4353db91b7b1b9b7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a5f2e74fe853dfbec4353db91b7b1b9b7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoxide__mesh_a7f742594832b4b94e92776eb36c7382a}\label{classoxide__mesh_a7f742594832b4b94e92776eb36c7382a}} 
+\index{oxide\_mesh@{oxide\_mesh}!update\_point\_location@{update\_point\_location}}
+\index{update\_point\_location@{update\_point\_location}!oxide\_mesh@{oxide\_mesh}}
+\doxysubsubsection{\texorpdfstring{update\_point\_location()}{update\_point\_location()}}
+{\footnotesize\ttfamily void oxide\+\_\+mesh\+::update\+\_\+point\+\_\+location (\begin{DoxyParamCaption}\item[{const int}]{node\+\_\+no,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{sym\+\_\+boundary }\end{DoxyParamCaption})}
+
+
+
+update the point location in the various lists if the point is not on the symmetry boundary condition 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node\+\_\+no} & \\
+\hline
+{\em sym\+\_\+boundary} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a7f742594832b4b94e92776eb36c7382a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d0a/classoxide__mesh_a7f742594832b4b94e92776eb36c7382a_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/oxidation/hpp/oxide\+\_\+mesh.\+hpp\item 
+src/oxidation/cpp/cracking.\+cpp\item 
+src/oxidation/cpp/cracking\+\_\+\+CZM.\+cpp\item 
+src/oxidation/cpp/files.\+cpp\item 
+src/oxidation/cpp/geometry\+\_\+functions.\+cpp\item 
+src/oxidation/cpp/main\+\_\+functions.\+cpp\item 
+src/oxidation/cpp/meshing.\+cpp\end{DoxyCompactItemize}

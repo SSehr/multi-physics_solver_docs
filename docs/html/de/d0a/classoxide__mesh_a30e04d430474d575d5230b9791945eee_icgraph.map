@@ -1,0 +1,6 @@
+<map id="oxide_mesh::remove_polygon" name="oxide_mesh::remove_polygon">
+<area shape="rect" id="node1" title="remove one polygon from another" alt="" coords="667,5,810,47"/>
+<area shape="rect" id="node2" href="$de/d0a/classoxide__mesh.html#af44fdd459a2c7933d6dab3c7be44a63d" title="find new polygons" alt="" coords="468,5,619,47"/>
+<area shape="rect" id="node3" href="$de/d0a/classoxide__mesh.html#ad3c124e5fd82ca502fe791baaa108048" title="run the main loop" alt="" coords="237,13,420,40"/>
+<area shape="rect" id="node4" href="$de/d0a/classoxide__mesh.html#a0478903f72d483ab779af8443ffbc48b" title="run a simulation" alt="" coords="5,13,189,40"/>
+</map>

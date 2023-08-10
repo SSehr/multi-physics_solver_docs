@@ -1,0 +1,199 @@
+\hypertarget{class_f_e_a__equations}{}\doxysection{FEA\+\_\+equations Class Reference}
+\label{class_f_e_a__equations}\index{FEA\_equations@{FEA\_equations}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_f_e_a__equations_ad32fb85d57a21d75acbd7f3d684a8aab}{initialize\+\_\+arrays}} (long n\+\_\+k, long n\+\_\+f)
+\item 
+void \mbox{\hyperlink{class_f_e_a__equations_ae8ca7b818448a7bef81701dd011a0737}{convert\+\_\+matrix}} ()
+\item 
+void \mbox{\hyperlink{class_f_e_a__equations_aa0ee8731aea304da3b13c3438041a2fe}{solve}} ()
+\item 
+void \mbox{\hyperlink{class_f_e_a__equations_add8c8ae5d2db911774b657af4c2e1d91}{free\+\_\+arrays}} ()
+\item 
+void \mbox{\hyperlink{class_f_e_a__equations_ada08f07bdee779d374af083df015e2a7}{add\+\_\+constraints}} (long n\+\_\+elements, long n\+\_\+nodes, std\+::vector$<$ \mbox{\hyperlink{classconstraint}{constraint}} $>$ \&constraints, int n\+\_\+nodes\+\_\+per\+\_\+tri, int dim=1)
+\item 
+void \mbox{\hyperlink{class_f_e_a__equations_a58b59608ab554df4a040f3465cd599bd}{transpose}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_f_e_a__equations_aaf400b1e62aa155fcbbf1d1c937ec455}\label{class_f_e_a__equations_aaf400b1e62aa155fcbbf1d1c937ec455}} 
+int64\+\_\+t $\ast$ {\bfseries K\+\_\+row}
+\begin{DoxyCompactList}\small\item\em dynamically allocated array of row indices for entries of K matrix \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_f_e_a__equations_aab342e6c9f15deb289ea6b1ac66b0851}\label{class_f_e_a__equations_aab342e6c9f15deb289ea6b1ac66b0851}} 
+int64\+\_\+t $\ast$ {\bfseries K\+\_\+col}
+\begin{DoxyCompactList}\small\item\em dynamically allocated array of column indices for entries of K matrix \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_f_e_a__equations_a5903bb741a779d8794550383c72b1d1e}\label{class_f_e_a__equations_a5903bb741a779d8794550383c72b1d1e}} 
+double $\ast$ {\bfseries K\+\_\+val}
+\begin{DoxyCompactList}\small\item\em dynamically allocated array of values of entries in K matrix \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_f_e_a__equations_aba283fb9aa93eee5a48b6bfcf4095ceb}\label{class_f_e_a__equations_aba283fb9aa93eee5a48b6bfcf4095ceb}} 
+int64\+\_\+t $\ast$ {\bfseries Ap}
+\begin{DoxyCompactList}\small\item\em used in solver, not user facing \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_f_e_a__equations_a7ac731c234ce7c80633fd22e49cdedad}\label{class_f_e_a__equations_a7ac731c234ce7c80633fd22e49cdedad}} 
+int64\+\_\+t $\ast$ {\bfseries Ai}
+\begin{DoxyCompactList}\small\item\em used in solver, not user facing \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_f_e_a__equations_af47657b18e4a6d2738cdae498d1ba59f}\label{class_f_e_a__equations_af47657b18e4a6d2738cdae498d1ba59f}} 
+double $\ast$ {\bfseries Ax}
+\begin{DoxyCompactList}\small\item\em used in solver, not user facing \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_f_e_a__equations_a380c74cd90a80aa3b9e954a0c29e10e7}\label{class_f_e_a__equations_a380c74cd90a80aa3b9e954a0c29e10e7}} 
+int64\+\_\+t {\bfseries n\+\_\+\+K\+\_\+entries}
+\begin{DoxyCompactList}\small\item\em number of nonzero K entries \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_f_e_a__equations_abec18b08119f040a4209f48f7f0e381a}\label{class_f_e_a__equations_abec18b08119f040a4209f48f7f0e381a}} 
+int64\+\_\+t {\bfseries n\+\_\+\+F\+\_\+entries}
+\begin{DoxyCompactList}\small\item\em number of F entries \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_f_e_a__equations_af3bdef769ca41e53c947b9fd6c66981d}\label{class_f_e_a__equations_af3bdef769ca41e53c947b9fd6c66981d}} 
+int64\+\_\+t $\ast$ {\bfseries Wi}
+\begin{DoxyCompactList}\small\item\em used in solver, not user facing \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_f_e_a__equations_a8cb5c6024d4c130e548393b5866c164c}\label{class_f_e_a__equations_a8cb5c6024d4c130e548393b5866c164c}} 
+double $\ast$ {\bfseries W}
+\begin{DoxyCompactList}\small\item\em used in solver, not user facing \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_f_e_a__equations_ab96c045f109ab095fc129d40bacd1c1b}\label{class_f_e_a__equations_ab96c045f109ab095fc129d40bacd1c1b}} 
+double {\bfseries Control} \mbox{[}UMFPACK\+\_\+\+CONTROL\mbox{]}
+\begin{DoxyCompactList}\small\item\em used in solver, not user facing \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_f_e_a__equations_a8031b41a7daa17285ecd65fe37423633}\label{class_f_e_a__equations_a8031b41a7daa17285ecd65fe37423633}} 
+double {\bfseries Info} \mbox{[}UMFPACK\+\_\+\+INFO\mbox{]}
+\begin{DoxyCompactList}\small\item\em used in solver, not user facing \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_f_e_a__equations_a1bb04bf2fcb2b1991794ec461e9830e7}\label{class_f_e_a__equations_a1bb04bf2fcb2b1991794ec461e9830e7}} 
+double $\ast$ {\bfseries F}
+\begin{DoxyCompactList}\small\item\em RHS vector. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_f_e_a__equations_ac1aa13aa727c100137425c9770c73f8e}\label{class_f_e_a__equations_ac1aa13aa727c100137425c9770c73f8e}} 
+double $\ast$ {\bfseries U}
+\begin{DoxyCompactList}\small\item\em solution vector \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_f_e_a__equations_a9c0015b15b2d9ac17ea65ce22a26a259}\label{class_f_e_a__equations_a9c0015b15b2d9ac17ea65ce22a26a259}} 
+void $\ast$ {\bfseries Symbolic}
+\item 
+\mbox{\Hypertarget{class_f_e_a__equations_a75fcef4ba15d1437b2c6fcf0c57b14b1}\label{class_f_e_a__equations_a75fcef4ba15d1437b2c6fcf0c57b14b1}} 
+void $\ast$ {\bfseries Numeric}
+\begin{DoxyCompactList}\small\item\em used in solver, not user facing \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_f_e_a__equations_ab5150c6effb63e6ee0061e0b8dec8bb1}\label{class_f_e_a__equations_ab5150c6effb63e6ee0061e0b8dec8bb1}} 
+bool {\bfseries arrays\+\_\+initialized} = false
+\begin{DoxyCompactList}\small\item\em flag to see if arrays are initialized \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_f_e_a__equations_a8f20d8c2550ad57cc0fa47cbf296d3cb}\label{class_f_e_a__equations_a8f20d8c2550ad57cc0fa47cbf296d3cb}} 
+bool {\bfseries symbolic\+\_\+alloc} = false
+\begin{DoxyCompactList}\small\item\em flag to see if symbolic factorization has occured \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_f_e_a__equations_adbed3fda283044a83bffa2baf8dfcf9f}\label{class_f_e_a__equations_adbed3fda283044a83bffa2baf8dfcf9f}} 
+bool {\bfseries numeric\+\_\+alloc} = false
+\begin{DoxyCompactList}\small\item\em flag to see if numeric factorization has occured \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_f_e_a__equations_a1e2c6e6e26b81b44755ca3a860dee7e0}\label{class_f_e_a__equations_a1e2c6e6e26b81b44755ca3a860dee7e0}} 
+bool {\bfseries transpose\+\_\+initialized} = false
+\begin{DoxyCompactList}\small\item\em flag to see if transpose arrays are initialized \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_f_e_a__equations_aae590bd7e9115aa38e4e325ec9b48b2f}\label{class_f_e_a__equations_aae590bd7e9115aa38e4e325ec9b48b2f}} 
+int64\+\_\+t $\ast$ {\bfseries Rp}
+\begin{DoxyCompactList}\small\item\em used in solver, not user facing \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_f_e_a__equations_addd7dd65930d7c8a8373f15ce2fa96dc}\label{class_f_e_a__equations_addd7dd65930d7c8a8373f15ce2fa96dc}} 
+int64\+\_\+t $\ast$ {\bfseries Ri}
+\begin{DoxyCompactList}\small\item\em used in solver, not user facing \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_f_e_a__equations_acd5267cee402af67197152f7566f22df}\label{class_f_e_a__equations_acd5267cee402af67197152f7566f22df}} 
+double $\ast$ {\bfseries Rx}
+\begin{DoxyCompactList}\small\item\em used in solver, not user facing \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_f_e_a__equations_ada08f07bdee779d374af083df015e2a7}\label{class_f_e_a__equations_ada08f07bdee779d374af083df015e2a7}} 
+\index{FEA\_equations@{FEA\_equations}!add\_constraints@{add\_constraints}}
+\index{add\_constraints@{add\_constraints}!FEA\_equations@{FEA\_equations}}
+\doxysubsubsection{\texorpdfstring{add\_constraints()}{add\_constraints()}}
+{\footnotesize\ttfamily void FEA\+\_\+equations\+::add\+\_\+constraints (\begin{DoxyParamCaption}\item[{long}]{n\+\_\+elements,  }\item[{long}]{n\+\_\+nodes,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classconstraint}{constraint}} $>$ \&}]{constraints,  }\item[{int}]{n\+\_\+nodes\+\_\+per\+\_\+tri,  }\item[{int}]{dim = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+add in a vector of constraints to the K matrix and RHS vector. ~\newline
+ the total number of elements, total number of nodes, the number of nodes in each element and the dimensionality (either 1 for scalar field or 2 for vector field) is also needed Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d4d/class_f_e_a__equations_ada08f07bdee779d374af083df015e2a7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_f_e_a__equations_ae8ca7b818448a7bef81701dd011a0737}\label{class_f_e_a__equations_ae8ca7b818448a7bef81701dd011a0737}} 
+\index{FEA\_equations@{FEA\_equations}!convert\_matrix@{convert\_matrix}}
+\index{convert\_matrix@{convert\_matrix}!FEA\_equations@{FEA\_equations}}
+\doxysubsubsection{\texorpdfstring{convert\_matrix()}{convert\_matrix()}}
+{\footnotesize\ttfamily void FEA\+\_\+equations\+::convert\+\_\+matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+perform the LU factorization of the stiffness matrix Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{dd/d4d/class_f_e_a__equations_ae8ca7b818448a7bef81701dd011a0737_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d4d/class_f_e_a__equations_ae8ca7b818448a7bef81701dd011a0737_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_f_e_a__equations_add8c8ae5d2db911774b657af4c2e1d91}\label{class_f_e_a__equations_add8c8ae5d2db911774b657af4c2e1d91}} 
+\index{FEA\_equations@{FEA\_equations}!free\_arrays@{free\_arrays}}
+\index{free\_arrays@{free\_arrays}!FEA\_equations@{FEA\_equations}}
+\doxysubsubsection{\texorpdfstring{free\_arrays()}{free\_arrays()}}
+{\footnotesize\ttfamily void FEA\+\_\+equations\+::free\+\_\+arrays (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+free the dynamically allocated memory Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d4d/class_f_e_a__equations_add8c8ae5d2db911774b657af4c2e1d91_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_f_e_a__equations_ad32fb85d57a21d75acbd7f3d684a8aab}\label{class_f_e_a__equations_ad32fb85d57a21d75acbd7f3d684a8aab}} 
+\index{FEA\_equations@{FEA\_equations}!initialize\_arrays@{initialize\_arrays}}
+\index{initialize\_arrays@{initialize\_arrays}!FEA\_equations@{FEA\_equations}}
+\doxysubsubsection{\texorpdfstring{initialize\_arrays()}{initialize\_arrays()}}
+{\footnotesize\ttfamily void FEA\+\_\+equations\+::initialize\+\_\+arrays (\begin{DoxyParamCaption}\item[{long}]{n\+\_\+k,  }\item[{long}]{n\+\_\+f }\end{DoxyParamCaption})}
+
+dynamically allocate the various arrays needed for the solver Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d4d/class_f_e_a__equations_ad32fb85d57a21d75acbd7f3d684a8aab_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_f_e_a__equations_aa0ee8731aea304da3b13c3438041a2fe}\label{class_f_e_a__equations_aa0ee8731aea304da3b13c3438041a2fe}} 
+\index{FEA\_equations@{FEA\_equations}!solve@{solve}}
+\index{solve@{solve}!FEA\_equations@{FEA\_equations}}
+\doxysubsubsection{\texorpdfstring{solve()}{solve()}}
+{\footnotesize\ttfamily void FEA\+\_\+equations\+::solve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+solve the system once it is factorized Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{dd/d4d/class_f_e_a__equations_aa0ee8731aea304da3b13c3438041a2fe_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d4d/class_f_e_a__equations_aa0ee8731aea304da3b13c3438041a2fe_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_f_e_a__equations_a58b59608ab554df4a040f3465cd599bd}\label{class_f_e_a__equations_a58b59608ab554df4a040f3465cd599bd}} 
+\index{FEA\_equations@{FEA\_equations}!transpose@{transpose}}
+\index{transpose@{transpose}!FEA\_equations@{FEA\_equations}}
+\doxysubsubsection{\texorpdfstring{transpose()}{transpose()}}
+{\footnotesize\ttfamily void FEA\+\_\+equations\+::transpose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+function to find the transpose the K matrix in Compressed row format Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d4d/class_f_e_a__equations_a58b59608ab554df4a040f3465cd599bd_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/support\+\_\+files/hpp/fea.\+hpp\item 
+src/support\+\_\+files/cpp/fea.\+cpp\end{DoxyCompactItemize}

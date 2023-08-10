@@ -1,0 +1,47 @@
+\hypertarget{node_8hpp_source}{}\doxysection{node.\+hpp}
+\label{node_8hpp_source}\index{src/support\_files/hpp/node.hpp@{src/support\_files/hpp/node.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef NODE}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define NODE}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}point.hpp"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{9 \textcolor{keyword}{class }\mbox{\hyperlink{classnode}{node}} : \textcolor{keyword}{public} \mbox{\hyperlink{classpoint}{point}}}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11     \textcolor{keyword}{public}:}
+\DoxyCodeLine{12         \textcolor{keywordtype}{double} \mbox{\hyperlink{classnode_a2eb0ec8c2fefd9101770e3b94dbcc3db}{ux}} = 0; }
+\DoxyCodeLine{13         \textcolor{keywordtype}{double} \mbox{\hyperlink{classnode_a65d20bdac8be8765e7176e7a84e3aad2}{uy}} = 0; }
+\DoxyCodeLine{14         \textcolor{keywordtype}{double} \mbox{\hyperlink{classnode_a1db1a294a3ae4df52bc226ed15e0a937}{uz}} = 0; }
+\DoxyCodeLine{15         \textcolor{keywordtype}{double} \mbox{\hyperlink{classnode_a63268a4bea0bc7d6622149c932e108c9}{qx}} = 0; }
+\DoxyCodeLine{16         \textcolor{keywordtype}{double} \mbox{\hyperlink{classnode_a0d3b5789848c6486983ede24863fa073}{qy}} = 0; }
+\DoxyCodeLine{17         \textcolor{keywordtype}{double} \mbox{\hyperlink{classnode_a1813dad0fc4cdac96ee93fcff5f83671}{s11}} = 0; }
+\DoxyCodeLine{18         \textcolor{keywordtype}{double} \mbox{\hyperlink{classnode_a3b0574d659cc009ddb646a335aa928c7}{s22}} = 0; }
+\DoxyCodeLine{19         \textcolor{keywordtype}{double} \mbox{\hyperlink{classnode_a028f1bb72cb4ac7657619cefb2d14740}{s12}} = 0; }
+\DoxyCodeLine{20         \textcolor{keywordtype}{double} \mbox{\hyperlink{classnode_a3e2614ab0965eac3bd597723701e27e8}{c}} = 0; }
+\DoxyCodeLine{21         \textcolor{keywordtype}{double} q = 0;}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23         \textcolor{keywordtype}{double} \mbox{\hyperlink{classnode_a355412ad1e540f34b864f6030b8e4f6f}{total\_ux}} = 0; }
+\DoxyCodeLine{24         \textcolor{keywordtype}{double} \mbox{\hyperlink{classnode_a82bb50d3b8b0421fcf2e1a907bfe813a}{total\_uy}} = 0; }
+\DoxyCodeLine{25 }
+\DoxyCodeLine{28         \textcolor{keywordtype}{double} \mbox{\hyperlink{classnode_aa41ed7b2efb8b8d82128cbf8759379b4}{ucr\_x}} = 0, \mbox{\hyperlink{classnode_ae8c86b2020abbd605fbeef80b642f3fb}{ucr\_y}} = 0, \mbox{\hyperlink{classnode_acf97f40a96029d06f2ce8c170882066a}{ucr\_xy}} = 0;}
+\DoxyCodeLine{29         \textcolor{keywordtype}{double} \mbox{\hyperlink{classnode_a12543b45b4469a2ce46fd2df3f82f86a}{At}} = 0; }
+\DoxyCodeLine{30         std::vector <double> \mbox{\hyperlink{classnode_aa241d2246cc8ba3578dbd8a921afc509}{Ats}};}
+\DoxyCodeLine{31         std::vector<double> \mbox{\hyperlink{classnode_ae10b888ff20be30dd4e2014fb687277c}{um\_x}}, \mbox{\hyperlink{classnode_aa5c74cc3043604d19e135d977c853f3b}{um\_y}}, \mbox{\hyperlink{classnode_a858b8278d07c2b2d33781505edd7b8b8}{um\_xy}};}
+\DoxyCodeLine{32         std::vector<double> \mbox{\hyperlink{classnode_af8a7c184dc76b0f61502dfcd3adc1010}{s11s}}, \mbox{\hyperlink{classnode_abbeb0905fd6b35f77658118165a742a6}{s22s}}, \mbox{\hyperlink{classnode_ad5fb8b4aa9c6ee607e0517661c62d545}{s12s}};}
+\DoxyCodeLine{33         std::vector<double> \mbox{\hyperlink{classnode_aacb4cf723be2af7130a14882961a70ab}{eps11\_ms}}, \mbox{\hyperlink{classnode_a984156a34b7c72323c7639e9ea8e209d}{eps22\_ms}}, \mbox{\hyperlink{classnode_ada3fb04fa5351d489fbdbe2023b44c12}{eps12\_ms}};}
+\DoxyCodeLine{34         \textcolor{keywordtype}{double} \mbox{\hyperlink{classnode_a2f03c770aa25c6c8d74cb7c5ed904e08}{eps11\_cr}} = 0, \mbox{\hyperlink{classnode_a975fbdb57778fbbbe24cd730f6313a72}{eps22\_cr}} = 0 , \mbox{\hyperlink{classnode_a5c0fadec278151a7508f89691b9ef3f2}{eps12\_cr}} = 0;}
+\DoxyCodeLine{35         \textcolor{keywordtype}{double} \mbox{\hyperlink{classnode_a453890cac9e95dd17238f7bd28595185}{nodal\_age}} = 0, \mbox{\hyperlink{classnode_aab93c7d118f463c1e31829aa3fe28aa8}{nodal\_age\_smoothed}} = 0;}
+\DoxyCodeLine{37         \textcolor{keyword}{static} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{classnode_a06dda39a0a3f3c140477daaa99a5d794}{num\_regions}}; }
+\DoxyCodeLine{38         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classnode_a5fc47f6d58418de5d4b49f2f100bb1b4}{midside\_node}} = \textcolor{keyword}{false}; }
+\DoxyCodeLine{39         \mbox{\hyperlink{classnode}{node}}();}
+\DoxyCodeLine{40         \mbox{\hyperlink{classnode}{node}}(\textcolor{keywordtype}{double} x\_in, \textcolor{keywordtype}{double} y\_in);}
+\DoxyCodeLine{41         \mbox{\hyperlink{classnode}{node}}(\mbox{\hyperlink{classpoint}{point}} pt);}
+\DoxyCodeLine{42         \textcolor{keywordtype}{void} \mbox{\hyperlink{classnode_a5006b2c59aa7480bc2b85b53104a1e2f}{resize\_vectors}}();}
+\DoxyCodeLine{43         \textcolor{keywordtype}{void} \mbox{\hyperlink{classnode_a00a51f7ddaadcd64eb54d83c94f2a88a}{store\_displacement}}(\textcolor{keywordtype}{int} i, \textcolor{keywordtype}{double} * U);}
+\DoxyCodeLine{44         \mbox{\hyperlink{classpoint}{point}} get\_deformed\_point();}
+\DoxyCodeLine{45 \};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

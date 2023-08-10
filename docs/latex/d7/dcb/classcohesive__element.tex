@@ -1,0 +1,78 @@
+\hypertarget{classcohesive__element}{}\doxysection{cohesive\+\_\+element Class Reference}
+\label{classcohesive__element}\index{cohesive\_element@{cohesive\_element}}
+
+
+Collaboration diagram for cohesive\+\_\+element\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{dc/d9e/classcohesive__element__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcohesive__element_a8075e68d4bd23a9ac20d23a9f8764db0}\label{classcohesive__element_a8075e68d4bd23a9ac20d23a9f8764db0}} 
+{\bfseries cohesive\+\_\+element} (int ns\mbox{[}2\mbox{]}, std\+::vector$<$ \mbox{\hyperlink{classnode}{node}} $>$ \&n\+\_\+list, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&boundary, double E, double in\+\_\+gamma, double in\+\_\+sigma)
+\item 
+\mbox{\Hypertarget{classcohesive__element_ab2f881bf8a7f684825895aab06574e0f}\label{classcohesive__element_ab2f881bf8a7f684825895aab06574e0f}} 
+void {\bfseries update\+\_\+damage} (const \mbox{\hyperlink{classpoint}{point}} \&delta)
+\item 
+\mbox{\Hypertarget{classcohesive__element_a176a24ecc0c2fa6590d6710062694824}\label{classcohesive__element_a176a24ecc0c2fa6590d6710062694824}} 
+void {\bfseries fracture\+\_\+element} ()
+\item 
+\mbox{\Hypertarget{classcohesive__element_a9ffc256f6b3ca07072b37a56e1678c10}\label{classcohesive__element_a9ffc256f6b3ca07072b37a56e1678c10}} 
+void {\bfseries tractions} (\mbox{\hyperlink{classpoint}{point}} \&delta, \mbox{\hyperlink{classpoint}{point}} \&tractions)
+\item 
+\mbox{\Hypertarget{classcohesive__element_acd4c30428fe894008ab46112b55b0545}\label{classcohesive__element_acd4c30428fe894008ab46112b55b0545}} 
+void {\bfseries update\+\_\+cohesive\+\_\+forces} (std\+::vector$<$ \mbox{\hyperlink{classnode}{node}} $>$ \&n\+\_\+list, double F\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcohesive__element_a372aa203e560abd79ffe0bc7fea72cef}\label{classcohesive__element_a372aa203e560abd79ffe0bc7fea72cef}} 
+int {\bfseries nodes} \mbox{[}2\mbox{]}
+\item 
+\mbox{\Hypertarget{classcohesive__element_a3ff3279a66366e949384607e654131dd}\label{classcohesive__element_a3ff3279a66366e949384607e654131dd}} 
+double {\bfseries k}
+\item 
+\mbox{\Hypertarget{classcohesive__element_ad318af128c9f70159a9a17d436ec9e91}\label{classcohesive__element_ad318af128c9f70159a9a17d436ec9e91}} 
+double {\bfseries sigma} = 2
+\item 
+\mbox{\Hypertarget{classcohesive__element_a4e6b308686bed3b7e06069ac2323aa08}\label{classcohesive__element_a4e6b308686bed3b7e06069ac2323aa08}} 
+double {\bfseries gamma} = 0.\+025
+\item 
+\mbox{\Hypertarget{classcohesive__element_a93596a3a9380e01857b5dd645136b1b3}\label{classcohesive__element_a93596a3a9380e01857b5dd645136b1b3}} 
+double {\bfseries del\+\_\+0}
+\item 
+\mbox{\Hypertarget{classcohesive__element_af3f95ec5378176e4a5e8303f82d8279a}\label{classcohesive__element_af3f95ec5378176e4a5e8303f82d8279a}} 
+double {\bfseries del\+\_\+1}
+\item 
+\mbox{\Hypertarget{classcohesive__element_a3c81594297d6c0a415e339b5da8734e1}\label{classcohesive__element_a3c81594297d6c0a415e339b5da8734e1}} 
+double {\bfseries del\+\_\+2}
+\item 
+\mbox{\Hypertarget{classcohesive__element_aa40dda33b151c37baa92400e71fad044}\label{classcohesive__element_aa40dda33b151c37baa92400e71fad044}} 
+bool {\bfseries intact} = true
+\item 
+\mbox{\Hypertarget{classcohesive__element_a51f03cd6eb0157d7d43fa1a18dec1538}\label{classcohesive__element_a51f03cd6eb0157d7d43fa1a18dec1538}} 
+double {\bfseries length}
+\item 
+\mbox{\Hypertarget{classcohesive__element_acedf7d528c08ddbedcad9028579c9475}\label{classcohesive__element_acedf7d528c08ddbedcad9028579c9475}} 
+\mbox{\hyperlink{classpoint}{point}} {\bfseries tan\+\_\+vec}
+\item 
+\mbox{\Hypertarget{classcohesive__element_aa39f1c1b8596d0d0dce8aae298b2f2d3}\label{classcohesive__element_aa39f1c1b8596d0d0dce8aae298b2f2d3}} 
+\mbox{\hyperlink{classpoint}{point}} {\bfseries norm\+\_\+vec}
+\item 
+\mbox{\Hypertarget{classcohesive__element_ae2dd470c64b984eafeb7214e9b440e36}\label{classcohesive__element_ae2dd470c64b984eafeb7214e9b440e36}} 
+double {\bfseries E}
+\item 
+\mbox{\Hypertarget{classcohesive__element_a3d45cd8c03f842a1d82911d2d1350a15}\label{classcohesive__element_a3d45cd8c03f842a1d82911d2d1350a15}} 
+double {\bfseries S} = 1
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/support\+\_\+files/hpp/cohesive\+\_\+element.\+hpp\item 
+src/support\+\_\+files/cpp/cohesive\+\_\+element.\+cpp\end{DoxyCompactItemize}
