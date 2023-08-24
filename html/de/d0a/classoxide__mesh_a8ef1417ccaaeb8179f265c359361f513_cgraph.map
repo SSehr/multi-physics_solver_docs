@@ -1,5 +1,5 @@
 <map id="oxide_mesh::run_cracking_simulation_CZM" name="oxide_mesh::run_cracking_simulation_CZM">
-<area shape="rect" id="node1" title="way to run cracking simulation with a cohesive element method" alt="" coords="5,330,179,372"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,330,179,372"/>
 <area shape="rect" id="node2" href="$dd/d4d/class_f_e_a__equations.html#ae8ca7b818448a7bef81701dd011a0737" title="perform the LU factorization of the stiffness matrix" alt="" coords="234,45,395,87"/>
 <area shape="rect" id="node3" href="$d6/d88/classtimer.html#a9aa894a57748b2bdf3adce46f5736794" title=" " alt="" coords="484,56,568,83"/>
 <area shape="rect" id="node4" href="$d6/d88/classtimer.html#a3218d61649e284071544b17c8c915ecc" title=" " alt="" coords="485,111,568,138"/>

@@ -254,7 +254,7 @@ int \mbox{\hyperlink{classoxide__mesh_a41501b35a068a1fec431fbeaa141f0e4}{get\+\_
 void \mbox{\hyperlink{classoxide__mesh_ad025b69b56c646f71b4f6a561ac7da1c}{get\+\_\+element\+\_\+boundary}} (std\+::vector$<$ int $>$ \&els\+\_\+in\+\_\+range, int end\+\_\+pt\+\_\+1, int end\+\_\+pt\+\_\+2, std\+::vector$<$ int $>$ \&boundary)
 \begin{DoxyCompactList}\small\item\em get boundary between defined elements and other elements \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classoxide__mesh_a8ef1417ccaaeb8179f265c359361f513}{run\+\_\+cracking\+\_\+simulation\+\_\+\+CZM}} (int out\+\_\+ctr)
-\begin{DoxyCompactList}\small\item\em way to run cracking simulation with a cohesive element method \end{DoxyCompactList}\item 
+\item 
 \mbox{\Hypertarget{classoxide__mesh_a9bc3bf3819d3a59f146e462f90acd003}\label{classoxide__mesh_a9bc3bf3819d3a59f146e462f90acd003}} 
 void {\bfseries solve\+\_\+mech\+\_\+contact} ()
 \begin{DoxyCompactList}\small\item\em main solve function modified to handle crack contact this should be rectified with the main \mbox{\hyperlink{classoxide__mesh_a384a713239018cb3c5b2c6affa6ffb3b}{solve\+\_\+mech()}} function \end{DoxyCompactList}\item 
@@ -617,8 +617,7 @@ reassemble just the mechanics FEA arrays
 {\em none} & \\
 \hline
 \end{DoxyParams}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -706,8 +705,7 @@ check to see if the crack has left the oxide and entered the SiC material
 ~\newline
  
 \end{DoxyReturn}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -740,8 +738,7 @@ check for crack growth
 ~\newline
  
 \end{DoxyReturn}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -774,8 +771,7 @@ check to see if there is crack healing via contact IS THIS NEEDED???
 ~\newline
  
 \end{DoxyReturn}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1125,8 +1121,7 @@ get the node numbers of the crack advance
  \\
 \hline
 \end{DoxyParams}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1156,7 +1151,8 @@ Here is the caller graph for this function\+:\nopagebreak
 \begin{DoxyReturn}{Returns}
 true if the boundary is reversed relative to constraint\+\_\+index constraint and the points in boundary only used in czm 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1528,8 +1524,7 @@ load output file from file\+\_\+path
  \\
 \hline
 \end{DoxyParams}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1559,8 +1554,7 @@ map data from an old mesh onto the current one
  \\
 \hline
 \end{DoxyParams}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1595,8 +1589,7 @@ open the log files
 ~\newline
  
 \end{DoxyReturn}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1681,8 +1674,7 @@ reassemble both mechanics and diffusion FEA arrays
 {\em none} & \\
 \hline
 \end{DoxyParams}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1977,19 +1969,6 @@ Here is the caller graph for this function\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{run\_cracking\_simulation\_CZM()}{run\_cracking\_simulation\_CZM()}}
 {\footnotesize\ttfamily bool oxide\+\_\+mesh\+::run\+\_\+cracking\+\_\+simulation\+\_\+\+CZM (\begin{DoxyParamCaption}\item[{int}]{out\+\_\+ctr }\end{DoxyParamCaption})}
 
-
-
-way to run cracking simulation with a cohesive element method 
-
-
-\begin{DoxyParams}{Parameters}
-{\em out\+\_\+ctr} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-~\newline
- 
-\end{DoxyReturn}
 \texorpdfstring{$<$}{<} used global\+\_\+\+MC.\+U as accelerations
 
 \texorpdfstring{$<$}{<} use global\+\_\+\+C.\+U as velocities
@@ -2002,7 +1981,8 @@ way to run cracking simulation with a cohesive element method
 \includegraphics[width=350pt]{de/d0a/classoxide__mesh_a8ef1417ccaaeb8179f265c359361f513_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2030,8 +2010,7 @@ run the main loop
 ~\newline
  
 \end{DoxyReturn}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2063,8 +2042,7 @@ run a simulation
  \\
 \hline
 \end{DoxyParams}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2117,7 +2095,8 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{de/d0a/classoxide__mesh_ab51a4206e50a3ba0905cb57b291d3291_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2254,8 +2233,7 @@ set element properties
  \\
 \hline
 \end{DoxyParams}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
