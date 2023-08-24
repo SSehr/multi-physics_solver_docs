@@ -67,41 +67,138 @@ $(function() {
 <div class="contents">
 <div class="textblock"><p ><a class="anchor" id="md_readme"></a> The oxidation multiphysics framework is a simulation system designed to model oxidation of silicon carbide at elevated temperatures that also incorporates viscoelastic creep. The framework uses the finite element method to solve both a diffusion/oxidation problem and the mechanics problem. The expansion that occurs when silicon carbide is transformed into oxide is taken into account when computing the mechanical deformation. The computed stresses then drive viscoselastic creep.</p>
 <h1><a class="anchor" id="autotoc_md0"></a>
-Installation</h1>
+Functionality overview</h1>
 <h2><a class="anchor" id="autotoc_md1"></a>
+Primary: Model oxide formation on a reacting material and account for stress relaxation</h2>
+<h3><a class="anchor" id="autotoc_md2"></a>
+Overview</h3>
+<ul>
+<li>Multiple materials can be simulated with the oxide layer exposed to the environment or not (see Note 1)<ul>
+<li>Materials can be marked as reactive and will be consumed by oxide formation (see Note 2)</li>
+<li>Domains do not have to represent physical material, i.e. a crack or gap in an EBC can be modeled by setting mechanical properties to zero</li>
+</ul>
+</li>
+<li>Temperature is uniform through the entire space and can be constant or varied as a function of time</li>
+<li>All properties can be static values or functions of temperature, location, age since formation (for oxide), etc</li>
+<li>The simulated domain must be fully bounded by mechanical or concentration constraints<ul>
+<li>constraints can overlap or be applied within the domain</li>
+<li>mechanical constraints include:<ul>
+<li>displacement (x and y directions)</li>
+<li>force (x and y directions) (see Note 3)</li>
+<li>slant (point must move along a line that is not an axis)</li>
+</ul>
+</li>
+<li>concentration constraints are concentration of oxidant at a point/along line</li>
+<li>all constraints can be fixed values or be a function of time (see Note 4)</li>
+</ul>
+</li>
+<li>Simulations can be created by integrating the solver using an API or defining the geometry in an xml file (see Note 5)</li>
+<li>Results are output to vtu files read by ParaView</li>
+<li>Other (optional) outputs include detailed timing information, segments used for meshing,</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md3"></a>
+Notes</h3>
+<ol type="1">
+<li>A thin initial oxide layer must be present on the reacting material</li>
+<li>All reacting material domains must have the same transformation strain when converted to oxide</li>
+<li>Force constraints not fully tested</li>
+<li>Time dependent constraints not fully tested</li>
+<li>Not all functionality is available when the geometry is defined in an xml file</li>
+</ol>
+<h2><a class="anchor" id="autotoc_md4"></a>
+Secondary: Crack propagation - Stiffness derivative</h2>
+<h3><a class="anchor" id="autotoc_md5"></a>
+Overview</h3>
+<ul>
+<li>Optional cracking module can be used to model crack formation and growth within an oxide layer (see Note 1)</li>
+<li>Effectively, a separate sub-simulation is run while the primary simulation is kept unchanged</li>
+<li>The primary simulation is only modified if the sub-simulation results in crack propagation</li>
+<li>Cracks must propagate along a mechanical boundary condition that intersects with an edge that has a concentration BC applied to it (see Note 2)</li>
+<li>The crack grows by incrementally releasing the mechanical BC from the intersection with concentration BC and adding it to the concentration BC - i.e. the mechanical BC shortens and the concentration BC lengthens</li>
+<li>Crack growth can only be called for using the API</li>
+<li>User must define 2 functions that return boolean values:<ul>
+<li>a function the decides if a cracking simulation should run</li>
+<li>a function to determine if a crack should advance</li>
+</ul>
+</li>
+<li>If only one function is defined, an error will be thrown</li>
+<li>The energy release rate is calculated by the stiffness derivative method</li>
+<li>vtu files are output as the crack grows</li>
+<li>If the crack propagates into the reacting material, the elements that border the crack in the reacting material are transformed to oxide</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md6"></a>
+Notes</h3>
+<ol type="1">
+<li>Cracking functionality is still in development and is less stable than the rest of the solver. Likewise, this documentation might have some errors in it.</li>
+<li>Crack growth has only been tested along displacement BCs, but should work for force and slant</li>
+</ol>
+<h2><a class="anchor" id="autotoc_md7"></a>
+Secondary: Contact/crack healing (BETA)</h2>
+<h3><a class="anchor" id="autotoc_md8"></a>
+Overview (see note 1)</h3>
+<ul>
+<li>Under certain conditions, a crack face may close after propagation</li>
+<li>It is assumed that the oxide "heals" when this happens due to its low viscosity</li>
+<li>Contact and healing is checked for in 2 places:<ul>
+<li>during the main solve loop in the main simulation</li>
+<li>before a crack propagation step is run (if healing, crack propagation step does not occur)</li>
+</ul>
+</li>
+<li>Nodes along the crack face are checked to see if they touch or cross the boundary of the displacement constraint</li>
+<li>If contact occurs, those points are moved to the boundary and the crack is shortened back to the point farthest from the crack tip that does not see contact</li>
+<li>If in the main solve loop, time is backed up to the beginning of the solve and the mechanics are solved again</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md9"></a>
+Notes</h3>
+<ol type="1">
+<li>This functionality is still in active development and has known bugs</li>
+</ol>
+<h2><a class="anchor" id="autotoc_md10"></a>
+Secondary: Crack propagation - Cohesive zone</h2>
+<h3><a class="anchor" id="autotoc_md11"></a>
+Overview</h3>
+<ul>
+<li>Alternative way to solve for crack propagation</li>
+<li>cohesive zone elements are placed along the potential crack plane</li>
+<li>Parallelization used to speed things up, but still very slow</li>
+<li>not fully explored, but potentially combines crack propagation and contact</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md12"></a>
+Installation</h1>
+<h2><a class="anchor" id="autotoc_md13"></a>
 Required external packages</h2>
 <ul>
 <li>SuiteSparse: must be installed separately and SUITESPARSEPATH must be set correctly in the main makefile</li>
 <li>tinyXML-2 (<a href="http://www.grinninglizard.com/tinyxml2/">http://www.grinninglizard.com/tinyxml2/</a>): source is included here, but unmodified except for include paths</li>
 <li>Triangle (<a href="https://www.cs.cmu.edu/~quake/triangle.html">https://www.cs.cmu.edu/~quake/triangle.html</a>): source is included here, the function triunsuitable in triangle.c and include paths have been modified</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md2"></a>
+<h2><a class="anchor" id="autotoc_md14"></a>
 Compiliation</h2>
 <p >Once the source code is downloaded and the required external packages are installed, navigate to the top directory and run 'make examples'. This will compile the libraries (in ./lib) and two executables (in ./bin): generic and 1D. These two programs illustrate the two different methods of interacting with the framework. The generic executable reads from an input file and 1D is an example geometry which calls the framework via the API. Further instructions on running the solver in either mode are below.</p>
-<h2><a class="anchor" id="autotoc_md3"></a>
+<h2><a class="anchor" id="autotoc_md15"></a>
 License</h2>
 <p >The licenses for Triangle and tinyXML-2 are respected with this work. Limited modifications have been made to the source files and they are supplied with the rest of the source code for the framework. NEED TO FIGURE THIS OUT</p>
-<h1><a class="anchor" id="autotoc_md4"></a>
+<h1><a class="anchor" id="autotoc_md16"></a>
 How to use the framework</h1>
 <p >There are two different ways to use the simulation framework: with stand alone input file that fully defines the problem or by calling it directly in your own C++ code. The second method preovides some more specific options but is more complicated. The two methods are described below after an explanation of commonalities between the two methods and how the simulation runs.</p>
-<h2><a class="anchor" id="autotoc_md5"></a>
+<h2><a class="anchor" id="autotoc_md17"></a>
 General problem structure</h2>
 <p >No matter the way the solver is called, the problems are required to have a lot of the same features. Notably, at a minimum, there must be two material domains: oxide and some reacting material (i.e. silicon carbide). These two material domains must be joined along a single, continuous boundary. This reaction boundary between the oxide and reacting material must begin and end on the outer boundary of the full domain. Where the reaction boundary intersects the outer bounds, mechanical constraints must be applied. In fact, all exterior edges must have some combination of boundary conditions applied. For example in the case of a flat oxide film on a flat silicon carbide surface where growth is only in one direction, a concentration boundary condition must be applied to the continuous edge of the oxide that does not overlap or intersect the silicon carbide and displacement boundary conditions must be applied to the other edges. The displacement boundary conditions on the edges where the oxide and reacting material meet must be those that keep that edge straight. In other words, the oxide must not be allowed to expand past the edge of the reacting material.</p>
 <p >After the geometry is defined, an elevated temperature is applied and the simulation starts. A time stepping numerical scheme is used with the finite element method to solve both for the oxidant concentration profile and mechanical deformation, although at different time scales. Oxidation occurs on a much larger time scale than creep so it helpful to think of the numerical scheme as two separate schemes: one that operates with a time step of <img class="formulaInl" alt="$dt$" src="form_0.png" width="11" height="10"/> that solves diffusion and oxidation and a second scheme operating with a time step of <img class="formulaInl" alt="$dt_{cr}$" src="form_1.png" width="20" height="13"/> that solves for mechanical deformation. The two schemes are nested within each other such that the total time the mechanical deformation scheme is used is the diffusion/oxidation time step ( <img class="formulaInl" alt="$dt$" src="form_0.png" width="11" height="10"/>). For example, starting from time <img class="formulaInl" alt="$t = t_o$" src="form_2.png" width="31" height="11"/> time is incremented by <img class="formulaInl" alt="$dt_{cr}$" src="form_1.png" width="20" height="13"/> and the mechanical deformation found. This is repeated until <img class="formulaInl" alt="$t = t_o + dt$" src="form_3.png" width="59" height="13"/>. At that point, the diffusion and oxidation that has occured over <img class="formulaInl" alt="$dt$" src="form_0.png" width="11" height="10"/> is calculated. The new oxidation leads to an update of the geometry and a new mesh being created. Once information is moved onto this new mesh, the time stepping continues.</p>
-<h2><a class="anchor" id="autotoc_md6"></a>
+<h2><a class="anchor" id="autotoc_md18"></a>
 xml input file</h2>
 <p >The easiest way to run a simulation is to use an xml input file. In this input file, all the simulation parameters, material domains, initial conditions and boundary conditions are defined. An example input file named 'input.xml' can be created in directory &lt;file_dir&gt; by running 'bin/generic -g &lt;file_dir&gt;'. This example problem defines a rectangular silicon carbide domain constrained on three sides and an initially thin oxide layer on the fourth. This geometry can be used to validate the framework against the Deal-Grove model. To run the example file after it is created, run 'bin/generic &lt;file_dir&gt;/input.xml'. Output files will be created in &lt;file_dir&gt; including logs and a series of vtu files with simulation results viewable with ParaView (www.paraview.org).</p>
 <p >Most, but not all, of the elements in the example xml input file must be in all xml input files. Each element is described below. If a required part is missing, the solver will warn the user and stop execution. Each section of the xml file is described below. Each element, including the root of the document, must use specific names. The root must be named "InputFile" and the header titles below match to the titles of the elements. Unless otherwise noted, the attributes for each section in the example input file are required.</p>
-<h3><a class="anchor" id="autotoc_md7"></a>
+<h3><a class="anchor" id="autotoc_md19"></a>
 Paths</h3>
 <ul>
 <li>base_path: The complete path to the directory files should be written. When the example input file is generated, this path is passed in with the -g option.</li>
 <li>file_prefix: A string prepended to each vtu file (so the output vtu files are base_path/file_prefix_X.vtu where X is an integer starting at 0).</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md8"></a>
+<h3><a class="anchor" id="autotoc_md20"></a>
 Parameters</h3>
 <p >The Parameters element defines meshing, simulation and output parameters</p>
-<h4><a class="anchor" id="autotoc_md9"></a>
+<h4><a class="anchor" id="autotoc_md21"></a>
 Meshing</h4>
 <ul>
 <li>min_area: Minimum ideal element size used within the oxide domain. Depending on geometry, smaller elements may be created.</li>
@@ -109,7 +206,7 @@ Meshing</h4>
 <li>grad_rate: The rate the element area is allowed to grow from min_area as a function of distance from the edge of the refine_radius</li>
 <li>el_type: Element type. Currently only linear, plane strain elements are supported</li>
 </ul>
-<h4><a class="anchor" id="autotoc_md10"></a>
+<h4><a class="anchor" id="autotoc_md22"></a>
 Simulation</h4>
 <ul>
 <li>run_time: Total time (in whole seconds) to simulate.</li>
@@ -117,7 +214,7 @@ Simulation</h4>
 <li>dt_cr: Time step (in whole seconds) for mechanical deformation. If too large, the simulation is numerically unstable.</li>
 <li>min_eta: Minimum stress free viscosity used in the creep law. Smaller min_eta requires a smaller dt_cr.</li>
 </ul>
-<h4><a class="anchor" id="autotoc_md11"></a>
+<h4><a class="anchor" id="autotoc_md23"></a>
 Output</h4>
 <ul>
 <li>dump_time: The time interval (in whole seconds and a multiple of dt) between saving vtu files.</li>
@@ -125,7 +222,7 @@ Output</h4>
 <li>polygons: If true, outputs the polygons that define each material domain during the same time step as the main vtu files.</li>
 <li>segments: If true, outputs the poly straight line graph (PSLG) used to create the triangulation during the same time step as the main vtu files.</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md12"></a>
+<h3><a class="anchor" id="autotoc_md24"></a>
 Domains</h3>
 <p >The Domains element defines the different material domains in the simulated problem. In the example input file, there are two material domains: oxide and SiC. The name of the oxide domain must be 'oxide' while any reacting materials can have arbitrary name. The materials must have the following atributes:</p><ul>
 <li>E: Young's modulus</li>
@@ -136,7 +233,7 @@ Domains</h3>
 <li>x,y: the x and y coordinates of a point within the domain far from any reacting boundary. This point is used for meshing to assign properties correctly. Furthermore, the material must have child xml elements named 'point' with attributes x and y. These are the points that define the boundaries of the material domain in a closed loop.</li>
 </ul>
 <p >In the special case where a crack is being explicitly modelled, the material domain must be named 'crack'. Unlike oxide or any other materials, E, nu, D, eps and rxn_rate are not needed, only the geometry.</p>
-<h3><a class="anchor" id="autotoc_md13"></a>
+<h3><a class="anchor" id="autotoc_md25"></a>
 BoundaryConditions</h3>
 <p >The BoundaryConditions section lists the concentration and mechanical boundary conditions applied. Regardless of the type of boundary condition, each requires attributes of intial_value and rate leading to an instantaneous value of the boundary condition of initial_value + rate * time. Each boundary condition must also include a listing of points that define the boundary where the condition is applied. Currently, all points along the exterior of the the domains must have at least one boundary condition. The allowable constraint types are:</p><ul>
 <li>concentration: intial_value must be in the range 0 to 1 and corresponds to the fraction of the oxidant saturation concentration in the oxide. In other words, an intial value of 1 results in the oxidant saturation concentration being applied.</li>
@@ -148,15 +245,21 @@ BoundaryConditions</h3>
 <li>y_force: apply a force in the y-direction along the boundary</li>
 <li>slant: restrict displacement to along an arbitrary line (not fully tested)</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md14"></a>
+<h3><a class="anchor" id="autotoc_md26"></a>
 Temperature</h3>
 <p >The Temperature section defines the temperature function to use. Currently the child xml element must be named 'constant' with attributes of initial_temperature and cooling_rate. These values are read in such that the temperature function used is Temperature = initial_temperature - cooling_rate * time.</p>
-<h3><a class="anchor" id="autotoc_md15"></a>
+<h3><a class="anchor" id="autotoc_md27"></a>
 InitialStrain</h3>
 <p >The InitialStrain section defines the intial strain condition in the oxide. There are two types of strains: creep and mesh each with x, y, and xy components. The creep strain is that due to creep and the mesh strain is the deformation stored in the geometry itself. The example values provide a stress free oxide at time t = 0. This section is optional.</p>
-<h2><a class="anchor" id="autotoc_md16"></a>
+<h2><a class="anchor" id="autotoc_md28"></a>
 Incorporating directly into C++ code</h2>
-<p >The second method of using the framework is through a C++ API. Interacting with the framework this way provides more flexibility, notably with the temperature as a function of time and the initial strain conditions. With an xml input file, the tempature must be linearly related to time while using the API allows the use of an arbitrary function of time. For example, this allows cyclical cooling. Likewise, with the xml input file the initial strain condition must be constants and the same throughout the oxide domain. If the framework is used via the API, more complex functions can be used. Otherwise, the two methods are identical. With the API, the same data that is in the xml input file must be defined. An example file is located in the geometry directory named 1D which defines the same problem that the xml input file defines. See that source file for more information. </p>
+<p >The second method of using the framework is through a C++ API. Interacting with the framework this way provides more flexibility, notably with the temperature as a function of time and the initial strain conditions. With an xml input file, the tempature must be linearly related to time while using the API allows the use of an arbitrary function of time. For example, this allows cyclical cooling. Likewise, with the xml input file the initial strain condition must be constants and the same throughout the oxide domain. If the framework is used via the API, more complex functions can be used. Otherwise, the two methods are identical. With the API, the same data that is in the xml input file must be defined. An example file is located in the geometry directory named 1D which defines the same problem that the xml input file defines. See that source file for more information.</p>
+<h2><a class="anchor" id="autotoc_md29"></a>
+Property functions</h2>
+<p >Various material properties can be defined as functions instead of constant values. These functions can then be used to modify the property over the course of the simulation. The functions are set within the geometry definition file, either as separate functions or as lambda functions. The property functions are then assigned to a material domain through set(&lt;function_name&gt;). These functions are then called when a mesh is created and the properties are constant will that mesh is in use. I.e. the properties can only change once per diffusion time step.</p>
+<h2><a class="anchor" id="autotoc_md30"></a>
+Example functions</h2>
+<p >Example lamda functions for temperature and initial strain can be found in <a class="el" href="d5/d40/helper__macros_8hpp_source.html">helper_macros.hpp</a>. See the geometry definition files for example uses. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
