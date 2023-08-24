@@ -1,4 +1,4 @@
 <map id="mp_element::Calc_stress" name="mp_element::Calc_stress">
 <area shape="rect" id="node1" title=" " alt="" coords="5,13,176,40"/>
-<area shape="rect" id="node2" href="$d5/d5d/classelastic__element.html#acce8199a451c49829a9886864549c307" title=" " alt="" coords="224,5,371,47"/>
+<area shape="rect" id="node2" href="$d5/d5d/classelastic__element.html#acce8199a451c49829a9886864549c307" title="calculate the stresses and store them in s11, s22, s12" alt="" coords="224,5,371,47"/>
 </map>

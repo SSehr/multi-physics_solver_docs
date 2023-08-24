@@ -1,0 +1,5 @@
+<map id="point::mag" name="point::mag">
+<area shape="rect" id="node1" title=" " alt="" coords="201,46,283,73"/>
+<area shape="rect" id="node2" href="$d5/d5d/classelastic__element.html#afddf7f3914acc8f0d573d8b84365a437" title="calculate the approximate derivative of the local RHS for the stiffness derivative method" alt="" coords="5,5,153,47"/>
+<area shape="rect" id="node3" href="$d5/d5d/classelastic__element.html#a43e59ebd1b91510a165bd47742027d8b" title="calculate the approximate derivative of the k matrix for stiffness derivative method" alt="" coords="5,72,153,114"/>
+</map>

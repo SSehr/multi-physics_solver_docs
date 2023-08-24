@@ -1,6 +1,6 @@
 <map id="oxide_mesh::reassemble_both_after_cracking" name="oxide_mesh::reassemble_both_after_cracking">
 <area shape="rect" id="node1" title="reassemble both mechanics and diffusion FEA arrays" alt="" coords="5,307,172,349"/>
-<area shape="rect" id="node2" href="$dd/d4d/class_f_e_a__equations.html#ada08f07bdee779d374af083df015e2a7" title=" " alt="" coords="256,5,395,47"/>
+<area shape="rect" id="node2" href="$dd/d4d/class_f_e_a__equations.html#ada08f07bdee779d374af083df015e2a7" title="add in a vector of constraints to K matrix and RHS vector" alt="" coords="256,5,395,47"/>
 <area shape="rect" id="node3" href="$de/d0a/classoxide__mesh.html#a9b3a8185370620b009c781275c10d9c9" title="check and see if a point is constrained and create the proper contraint if so" alt="" coords="248,72,403,114"/>
 <area shape="rect" id="node4" href="$de/d0a/classoxide__mesh.html#a485c4738388792b4737898f303fd8d4d" title="add reaction along the oxide/SiC boundary" alt="" coords="220,138,431,165"/>
 <area shape="rect" id="node5" href="$de/d0a/classoxide__mesh.html#a74a3cd546a91ebf2d220fe18af9b05bb" title="assemble both mechanics and diffusion matrices" alt="" coords="238,189,413,216"/>
@@ -11,7 +11,8 @@
 <area shape="rect" id="node11" href="$de/d0a/classoxide__mesh.html#aecfd65a7b48fe7f7f7f9c6d0a65754b6" title="initialize the diffusion problem arrays" alt="" coords="252,491,399,533"/>
 <area shape="rect" id="node13" href="$de/d0a/classoxide__mesh.html#a74193af0cc10b1e5b9198313f0fb3c7c" title="initialize the mechanics problem arrays" alt="" coords="252,557,399,599"/>
 <area shape="rect" id="node14" href="$de/d0a/classoxide__mesh.html#ade5caadbf9adc2dca6fa93737f68533c" title="set element properties" alt="" coords="240,624,411,666"/>
-<area shape="rect" id="node10" href="$dd/d4d/class_f_e_a__equations.html#add8c8ae5d2db911774b657af4c2e1d91" title=" " alt="" coords="498,432,638,474"/>
-<area shape="rect" id="node12" href="$dd/d4d/class_f_e_a__equations.html#ad32fb85d57a21d75acbd7f3d684a8aab" title=" " alt="" coords="485,528,650,570"/>
+<area shape="rect" id="node10" href="$dd/d4d/class_f_e_a__equations.html#add8c8ae5d2db911774b657af4c2e1d91" title="free the dynamically allocated memory" alt="" coords="498,432,638,474"/>
+<area shape="rect" id="node12" href="$dd/d4d/class_f_e_a__equations.html#ad32fb85d57a21d75acbd7f3d684a8aab" title="dynamically allocate the various arrays needed for the solver" alt="" coords="485,528,650,570"/>
 <area shape="rect" id="node15" href="$dc/d8a/classmaterial.html#aee032ffaf82b4180213c2e1a05bdb5a0" title="assign material properties to element" alt="" coords="479,632,656,659"/>
+<area shape="rect" id="node16" href="$d6/d4d/classproperty.html#a53bf212b2cbeac50ae8b154b9efa0961" title="return the function pointer" alt="" coords="704,632,859,659"/>
 </map>

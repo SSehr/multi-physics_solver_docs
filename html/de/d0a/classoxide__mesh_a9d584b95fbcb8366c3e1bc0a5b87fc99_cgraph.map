@@ -1,4 +1,5 @@
 <map id="oxide_mesh::load_mesh" name="oxide_mesh::load_mesh">
 <area shape="rect" id="node1" title="load output file from file_path" alt="" coords="5,5,168,32"/>
 <area shape="rect" id="node2" href="$dc/d8a/classmaterial.html#aee032ffaf82b4180213c2e1a05bdb5a0" title="assign material properties to element" alt="" coords="216,5,393,32"/>
+<area shape="rect" id="node3" href="$d6/d4d/classproperty.html#a53bf212b2cbeac50ae8b154b9efa0961" title="return the function pointer" alt="" coords="441,5,595,32"/>
 </map>

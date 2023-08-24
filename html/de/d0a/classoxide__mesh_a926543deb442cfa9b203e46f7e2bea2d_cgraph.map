@@ -1,52 +1,52 @@
 <map id="oxide_mesh::run_cracking_simulation" name="oxide_mesh::run_cracking_simulation">
-<area shape="rect" id="node1" title="run cracking simulation" alt="" coords="5,1056,179,1098"/>
-<area shape="rect" id="node2" href="$de/d0a/classoxide__mesh.html#a9a35c42cc5c08eb05a80116a80fca872" title="check for crack growth" alt="" coords="227,383,383,425"/>
-<area shape="rect" id="node40" href="$de/d0a/classoxide__mesh.html#aa945ecb81b26ddbb4059e72ddcb82f9c" title="check to see if there is crack healing via contact IS THIS NEEDED???" alt="" coords="227,1056,383,1098"/>
+<area shape="rect" id="node1" title="run cracking simulation" alt="" coords="5,941,179,983"/>
+<area shape="rect" id="node2" href="$de/d0a/classoxide__mesh.html#a9a35c42cc5c08eb05a80116a80fca872" title="check for crack growth" alt="" coords="227,387,383,429"/>
+<area shape="rect" id="node40" href="$de/d0a/classoxide__mesh.html#aa945ecb81b26ddbb4059e72ddcb82f9c" title="check to see if there is crack healing via contact IS THIS NEEDED???" alt="" coords="227,941,383,983"/>
 <area shape="rect" id="node46" href="$de/d0a/classoxide__mesh.html#a8ef1417ccaaeb8179f265c359361f513" title="way to run cracking simulation with a cohesive element method" alt="" coords="669,1593,842,1635"/>
 <area shape="rect" id="node3" href="$de/d0a/classoxide__mesh.html#a57553f59b4b26b01a54f8649331b2dc1" title="add list of nodes to concentration constraint" alt="" coords="661,123,850,165"/>
-<area shape="rect" id="node4" href="$de/d0a/classoxide__mesh.html#ade7237459e203b7a287a545d358e7df0" title="convert a list of indices to points" alt="" coords="928,280,1070,322"/>
-<area shape="rect" id="node5" href="$de/d0a/classoxide__mesh.html#afa8c8b21113ac4aab42f3271c7181026" title="reassemble just the mechanics FEA arrays" alt="" coords="678,1008,833,1050"/>
+<area shape="rect" id="node4" href="$de/d0a/classoxide__mesh.html#ade7237459e203b7a287a545d358e7df0" title="convert a list of indices to points" alt="" coords="928,213,1070,255"/>
+<area shape="rect" id="node5" href="$de/d0a/classoxide__mesh.html#afa8c8b21113ac4aab42f3271c7181026" title="reassemble just the mechanics FEA arrays" alt="" coords="678,941,833,983"/>
 <area shape="rect" id="node17" href="$de/d0a/classoxide__mesh.html#aa71cae5d7aec1ae73e6340a441a332d3" title="check to see if the crack has left the oxide and entered the SiC material" alt="" coords="677,555,834,597"/>
-<area shape="rect" id="node22" href="$de/d0a/classoxide__mesh.html#a4af8eed80cb3a80d9ef67f7de061afb4" title="determine in the concentration and crack plane constraint are reversed" alt="" coords="434,5,611,47"/>
-<area shape="rect" id="node23" href="$de/d0a/classoxide__mesh.html#a41501b35a068a1fec431fbeaa141f0e4" title="get the index of in_constraints the corresponds to the concentration constraint" alt="" coords="898,99,1100,141"/>
-<area shape="rect" id="node24" href="$de/d0a/classoxide__mesh.html#aa54f1f9caa28b0f4263ab5ae34fbd4cb" title="get the node numbers of the crack advance" alt="" coords="444,467,600,509"/>
-<area shape="rect" id="node29" href="$de/d0a/classoxide__mesh.html#ac76e5714b9a139b84bdd810119512c8d" title="remove list of nodes from mechanical constraint denoted by constraint_index" alt="" coords="671,255,840,312"/>
-<area shape="rect" id="node33" href="$de/d0a/classoxide__mesh.html#a56952c56a4d69502ca5eec6f5fc78fba" title="solve mechanics problem for crack advance" alt="" coords="671,1243,840,1285"/>
-<area shape="rect" id="node35" href="$de/d0a/classoxide__mesh.html#a966d48eb52443047d205992dcdcbca2e" title="rebuild arrays after crack changes used if crack is longer or shorter" alt="" coords="439,1056,605,1098"/>
+<area shape="rect" id="node23" href="$de/d0a/classoxide__mesh.html#a4af8eed80cb3a80d9ef67f7de061afb4" title="determine in the concentration and crack plane constraint are reversed" alt="" coords="434,5,611,47"/>
+<area shape="rect" id="node24" href="$de/d0a/classoxide__mesh.html#a41501b35a068a1fec431fbeaa141f0e4" title="get the index of in_constraints the corresponds to the concentration constraint" alt="" coords="898,65,1100,107"/>
+<area shape="rect" id="node25" href="$de/d0a/classoxide__mesh.html#aa54f1f9caa28b0f4263ab5ae34fbd4cb" title="get the node numbers of the crack advance" alt="" coords="444,471,600,513"/>
+<area shape="rect" id="node30" href="$de/d0a/classoxide__mesh.html#ac76e5714b9a139b84bdd810119512c8d" title="remove list of nodes from mechanical constraint denoted by constraint_index" alt="" coords="671,255,840,312"/>
+<area shape="rect" id="node33" href="$de/d0a/classoxide__mesh.html#a56952c56a4d69502ca5eec6f5fc78fba" title="solve mechanics problem for crack advance" alt="" coords="671,1227,840,1269"/>
+<area shape="rect" id="node35" href="$de/d0a/classoxide__mesh.html#a966d48eb52443047d205992dcdcbca2e" title="rebuild arrays after crack changes used if crack is longer or shorter" alt="" coords="439,941,605,983"/>
 <area shape="rect" id="node39" href="$de/d0a/classoxide__mesh.html#aac947d4f95b0043ca50527353293c88b" title="set the initial crack if none is present" alt="" coords="445,200,599,242"/>
-<area shape="rect" id="node6" href="$dd/d4d/class_f_e_a__equations.html#ada08f07bdee779d374af083df015e2a7" title=" " alt="" coords="929,1008,1069,1050"/>
-<area shape="rect" id="node7" href="$de/d0a/classoxide__mesh.html#a9b3a8185370620b009c781275c10d9c9" title="check and see if a point is constrained and create the proper contraint if so" alt="" coords="921,1141,1077,1183"/>
-<area shape="rect" id="node8" href="$de/d0a/classoxide__mesh.html#a1c427accdf57b0a93d1a5acd37189868" title="assemble just the mechanics problem" alt="" coords="902,789,1096,816"/>
-<area shape="rect" id="node9" href="$de/d0a/classoxide__mesh.html#a6d1aaa3976cc65c44df4ced0720981fa" title="clear the force and displacment constraint vectors" alt="" coords="916,1275,1082,1317"/>
-<area shape="rect" id="node10" href="$dd/d4d/class_f_e_a__equations.html#ae8ca7b818448a7bef81701dd011a0737" title=" " alt="" coords="918,1392,1080,1434"/>
-<area shape="rect" id="node11" href="$d6/d88/classtimer.html#a9aa894a57748b2bdf3adce46f5736794" title=" " alt="" coords="1189,1401,1273,1428"/>
-<area shape="rect" id="node13" href="$dd/d4d/class_f_e_a__equations.html#add8c8ae5d2db911774b657af4c2e1d91" title=" " alt="" coords="1161,781,1301,823"/>
-<area shape="rect" id="node14" href="$de/d0a/classoxide__mesh.html#a74193af0cc10b1e5b9198313f0fb3c7c" title="initialize the mechanics problem arrays" alt="" coords="926,1208,1072,1250"/>
-<area shape="rect" id="node16" href="$de/d0a/classoxide__mesh.html#ade5caadbf9adc2dca6fa93737f68533c" title="set element properties" alt="" coords="914,1075,1084,1117"/>
-<area shape="rect" id="node12" href="$d6/d88/classtimer.html#a3218d61649e284071544b17c8c915ecc" title=" " alt="" coords="1189,1525,1272,1552"/>
-<area shape="rect" id="node15" href="$dd/d4d/class_f_e_a__equations.html#ad32fb85d57a21d75acbd7f3d684a8aab" title=" " alt="" coords="1148,1456,1313,1498"/>
+<area shape="rect" id="node6" href="$dd/d4d/class_f_e_a__equations.html#ada08f07bdee779d374af083df015e2a7" title="add in a vector of constraints to K matrix and RHS vector" alt="" coords="929,1008,1069,1050"/>
+<area shape="rect" id="node7" href="$de/d0a/classoxide__mesh.html#a9b3a8185370620b009c781275c10d9c9" title="check and see if a point is constrained and create the proper contraint if so" alt="" coords="921,1075,1077,1117"/>
+<area shape="rect" id="node8" href="$de/d0a/classoxide__mesh.html#a1c427accdf57b0a93d1a5acd37189868" title="assemble just the mechanics problem" alt="" coords="902,738,1096,765"/>
+<area shape="rect" id="node9" href="$de/d0a/classoxide__mesh.html#a6d1aaa3976cc65c44df4ced0720981fa" title="clear the force and displacment constraint vectors" alt="" coords="916,1208,1082,1250"/>
+<area shape="rect" id="node10" href="$dd/d4d/class_f_e_a__equations.html#ae8ca7b818448a7bef81701dd011a0737" title="perform the LU factorization of the stiffness matrix" alt="" coords="918,1459,1080,1501"/>
+<area shape="rect" id="node11" href="$d6/d88/classtimer.html#a9aa894a57748b2bdf3adce46f5736794" title=" " alt="" coords="1189,1466,1273,1493"/>
+<area shape="rect" id="node13" href="$dd/d4d/class_f_e_a__equations.html#add8c8ae5d2db911774b657af4c2e1d91" title="free the dynamically allocated memory" alt="" coords="1161,807,1301,849"/>
+<area shape="rect" id="node14" href="$de/d0a/classoxide__mesh.html#a74193af0cc10b1e5b9198313f0fb3c7c" title="initialize the mechanics problem arrays" alt="" coords="926,941,1072,983"/>
+<area shape="rect" id="node16" href="$de/d0a/classoxide__mesh.html#ade5caadbf9adc2dca6fa93737f68533c" title="set element properties" alt="" coords="914,1141,1084,1183"/>
+<area shape="rect" id="node12" href="$d6/d88/classtimer.html#a3218d61649e284071544b17c8c915ecc" title=" " alt="" coords="1189,1584,1272,1611"/>
+<area shape="rect" id="node15" href="$dd/d4d/class_f_e_a__equations.html#ad32fb85d57a21d75acbd7f3d684a8aab" title="dynamically allocate the various arrays needed for the solver" alt="" coords="1148,1517,1313,1559"/>
 <area shape="rect" id="node18" href="$de/d0a/classoxide__mesh.html#a3e3bf68832adf49423313d920576e21f" title="find elements connected to node_index" alt="" coords="905,555,1093,597"/>
 <area shape="rect" id="node19" href="$de/d0a/classoxide__mesh.html#ad025b69b56c646f71b4f6a561ac7da1c" title="get boundary between defined elements and other elements" alt="" coords="914,464,1084,506"/>
-<area shape="rect" id="node20" href="$dc/d8a/classmaterial.html#a5091eba4b46382b40a3a0286e996d4bf" title=" " alt="" coords="935,397,1063,439"/>
+<area shape="rect" id="node20" href="$dc/d8a/classmaterial.html#a5091eba4b46382b40a3a0286e996d4bf" title=" " alt="" coords="935,331,1063,373"/>
 <area shape="rect" id="node21" href="$d9/df1/classbase__mesh.html#a1cc96b26afdebb1b1f7426cc9e951d56" title=" " alt="" coords="917,672,1081,714"/>
-<area shape="rect" id="node25" href="$de/d0a/classoxide__mesh.html#aa946598bcb1c79a43806daf29962cf3f" title="advance the crack" alt="" coords="681,437,830,479"/>
-<area shape="rect" id="node26" href="$de/d0a/classoxide__mesh.html#ad61f3452da58429a1c7c99907d8909c8" title="Calculate the ERR using stiffness derivative method." alt="" coords="671,386,840,413"/>
-<area shape="rect" id="node27" href="$dd/dd1/classpoint.html#a2e6587f35b9596aa034084ca83497e02" title=" " alt="" coords="955,621,1043,648"/>
-<area shape="rect" id="node28" href="$de/d0a/classoxide__mesh.html#adafce3ae3e752eff9dae8119e7ac5b0d" title=" " alt="" coords="677,189,834,231"/>
-<area shape="rect" id="node31" href="$de/d0a/classoxide__mesh.html#ab51a4206e50a3ba0905cb57b291d3291" title="save output file with all data to file_path" alt="" coords="916,1946,1082,1973"/>
-<area shape="rect" id="node30" href="$de/d0a/classoxide__mesh.html#ae31976f082b183c5a19c5f2132de64e8" title="remove list of points from mechanical constraint denoted by constraint_index" alt="" coords="914,199,1084,256"/>
-<area shape="rect" id="node32" href="$d7/d16/classvtu_file.html#a37d9f0187d7bb51032a1cbfc7b7397a6" title=" " alt="" coords="1183,1946,1279,1973"/>
-<area shape="rect" id="node34" href="$dd/d4d/class_f_e_a__equations.html#aa0ee8731aea304da3b13c3438041a2fe" title=" " alt="" coords="924,1525,1074,1552"/>
-<area shape="rect" id="node36" href="$de/d0a/classoxide__mesh.html#a35e80d12f12228d6a4ba546f9e9860dd" title="clear the concentration constraints vector" alt="" coords="923,1459,1075,1501"/>
+<area shape="rect" id="node22" href="$dc/d8a/classmaterial.html#a5dc927f8cabb3d43e462f23857878f53" title="swap bounding points in a boundary" alt="" coords="916,397,1082,439"/>
+<area shape="rect" id="node26" href="$de/d0a/classoxide__mesh.html#aa946598bcb1c79a43806daf29962cf3f" title="advance the crack" alt="" coords="681,387,830,429"/>
+<area shape="rect" id="node27" href="$de/d0a/classoxide__mesh.html#ad61f3452da58429a1c7c99907d8909c8" title="Calculate the ERR using stiffness derivative method." alt="" coords="671,453,840,480"/>
+<area shape="rect" id="node28" href="$dd/dd1/classpoint.html#a2e6587f35b9596aa034084ca83497e02" title=" " alt="" coords="955,621,1043,648"/>
+<area shape="rect" id="node29" href="$de/d0a/classoxide__mesh.html#adafce3ae3e752eff9dae8119e7ac5b0d" title=" " alt="" coords="677,189,834,231"/>
+<area shape="rect" id="node32" href="$de/d0a/classoxide__mesh.html#ab51a4206e50a3ba0905cb57b291d3291" title="save output file with all data to file_path" alt="" coords="916,1525,1082,1552"/>
+<area shape="rect" id="node31" href="$de/d0a/classoxide__mesh.html#ae31976f082b183c5a19c5f2132de64e8" title="remove list of points from mechanical constraint denoted by constraint_index" alt="" coords="914,133,1084,190"/>
+<area shape="rect" id="node34" href="$dd/d4d/class_f_e_a__equations.html#aa0ee8731aea304da3b13c3438041a2fe" title="solve the system once it is factorized" alt="" coords="924,1576,1074,1603"/>
+<area shape="rect" id="node36" href="$de/d0a/classoxide__mesh.html#a35e80d12f12228d6a4ba546f9e9860dd" title="clear the concentration constraints vector" alt="" coords="923,1275,1075,1317"/>
 <area shape="rect" id="node37" href="$de/d0a/classoxide__mesh.html#a775ec658df3c09a8d29b73602cdc6ab5" title="free both mechanics and diffusion arrays" alt="" coords="917,840,1081,867"/>
-<area shape="rect" id="node38" href="$de/d0a/classoxide__mesh.html#ab9f8342f51795d5cc7ea8b16c0d205ce" title="reassemble both mechanics and diffusion FEA arrays" alt="" coords="672,1075,839,1117"/>
-<area shape="rect" id="node41" href="$de/d0a/classoxide__mesh.html#a2cf3f773238f718fe0d6430ed9ffe8c6" title="get the crack retreat UNNEEDED???" alt="" coords="444,775,600,817"/>
-<area shape="rect" id="node43" href="$de/d0a/classoxide__mesh.html#afea76799d1775c1eaa633cc100de21c1" title="get the symmetry boundary based on the mechanical constraint defined as the crack plane" alt="" coords="431,1173,613,1215"/>
+<area shape="rect" id="node38" href="$de/d0a/classoxide__mesh.html#ab9f8342f51795d5cc7ea8b16c0d205ce" title="reassemble both mechanics and diffusion FEA arrays" alt="" coords="672,1008,839,1050"/>
+<area shape="rect" id="node41" href="$de/d0a/classoxide__mesh.html#a2cf3f773238f718fe0d6430ed9ffe8c6" title="get the crack retreat UNNEEDED???" alt="" coords="444,781,600,823"/>
+<area shape="rect" id="node43" href="$de/d0a/classoxide__mesh.html#afea76799d1775c1eaa633cc100de21c1" title="get the symmetry boundary based on the mechanical constraint defined as the crack plane" alt="" coords="431,1059,613,1101"/>
 <area shape="rect" id="node44" href="$de/d0a/classoxide__mesh.html#a75ee65b66ef2459fcdc0cdc2a5edb25a" title="reduce length of crack" alt="" coords="684,672,827,714"/>
-<area shape="rect" id="node42" href="$de/d0a/classoxide__mesh.html#a1f3775b85d438f79909c56ce8b6e991e" title="check to see if a test point touches or is on the other side of the symmetry boundary from the mid_po..." alt="" coords="671,756,840,798"/>
-<area shape="rect" id="node45" href="$d9/df1/classbase__mesh.html#aa5d09f7aad92b89f45f401cff16bbb9f" title=" " alt="" coords="922,941,1076,983"/>
-<area shape="rect" id="node47" href="$d6/d88/classtimer.html#aa92b07c8266c52b4f4de61342946cd9d" title=" " alt="" coords="950,1728,1048,1755"/>
-<area shape="rect" id="node48" href="$de/d0a/classoxide__mesh.html#abb927346e56117b4f2067718cd9be373" title=" " alt="" coords="921,1779,1077,1821"/>
-<area shape="rect" id="node49" href="$d6/d88/classtimer.html#a804d780498a78114651fa61ee7bcfacf" title=" " alt="" coords="941,1845,1057,1872"/>
-<area shape="rect" id="node50" href="$dd/d4d/class_f_e_a__equations.html#a58b59608ab554df4a040f3465cd599bd" title=" " alt="" coords="911,1896,1087,1923"/>
+<area shape="rect" id="node42" href="$de/d0a/classoxide__mesh.html#a1f3775b85d438f79909c56ce8b6e991e" title="check to see if a test point touches or is on the other side of the symmetry boundary from the mid_po..." alt="" coords="671,764,840,806"/>
+<area shape="rect" id="node45" href="$d9/df1/classbase__mesh.html#aa5d09f7aad92b89f45f401cff16bbb9f" title=" " alt="" coords="922,1341,1076,1383"/>
+<area shape="rect" id="node47" href="$d6/d88/classtimer.html#aa92b07c8266c52b4f4de61342946cd9d" title=" " alt="" coords="950,1845,1048,1872"/>
+<area shape="rect" id="node48" href="$de/d0a/classoxide__mesh.html#abb927346e56117b4f2067718cd9be373" title=" " alt="" coords="921,1677,1077,1719"/>
+<area shape="rect" id="node49" href="$d6/d88/classtimer.html#a804d780498a78114651fa61ee7bcfacf" title=" " alt="" coords="941,1744,1057,1771"/>
+<area shape="rect" id="node50" href="$dd/d4d/class_f_e_a__equations.html#a58b59608ab554df4a040f3465cd599bd" title="find the transpose of the K matrix in compressed row format" alt="" coords="911,1794,1087,1821"/>
 </map>

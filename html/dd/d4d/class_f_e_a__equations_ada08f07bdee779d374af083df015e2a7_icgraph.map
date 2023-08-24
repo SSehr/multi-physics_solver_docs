@@ -1,5 +1,5 @@
 <map id="FEA_equations::add_constraints" name="FEA_equations::add_constraints">
-<area shape="rect" id="node1" title=" " alt="" coords="1328,176,1468,218"/>
+<area shape="rect" id="node1" title="add in a vector of constraints to K matrix and RHS vector" alt="" coords="1328,176,1468,218"/>
 <area shape="rect" id="node2" href="$de/d0a/classoxide__mesh.html#afa8c8b21113ac4aab42f3271c7181026" title="reassemble just the mechanics FEA arrays" alt="" coords="1118,143,1273,185"/>
 <area shape="rect" id="node8" href="$de/d0a/classoxide__mesh.html#a7684d3cd9f2e1aaeb2231f0c8dd9155b" title="map data from an old mesh onto the current one" alt="" coords="476,47,633,89"/>
 <area shape="rect" id="node9" href="$de/d0a/classoxide__mesh.html#ab9f8342f51795d5cc7ea8b16c0d205ce" title="reassemble both mechanics and diffusion FEA arrays" alt="" coords="1113,76,1279,118"/>

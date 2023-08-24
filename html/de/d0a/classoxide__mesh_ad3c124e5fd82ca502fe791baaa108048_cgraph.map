@@ -1,6 +1,6 @@
 <map id="oxide_mesh::run_main_loop" name="oxide_mesh::run_main_loop">
 <area shape="rect" id="node1" title="run the main loop" alt="" coords="5,1325,189,1352"/>
-<area shape="rect" id="node2" href="$dd/d4d/class_f_e_a__equations.html#ae8ca7b818448a7bef81701dd011a0737" title=" " alt="" coords="249,85,411,127"/>
+<area shape="rect" id="node2" href="$dd/d4d/class_f_e_a__equations.html#ae8ca7b818448a7bef81701dd011a0737" title="perform the LU factorization of the stiffness matrix" alt="" coords="249,85,411,127"/>
 <area shape="rect" id="node3" href="$d6/d88/classtimer.html#a9aa894a57748b2bdf3adce46f5736794" title=" " alt="" coords="535,107,619,134"/>
 <area shape="rect" id="node6" href="$d9/df1/classbase__mesh.html#a4e2e47bd6ca96042d4042c8825cafbed" title=" " alt="" coords="245,1318,415,1360"/>
 <area shape="rect" id="node7" href="$d6/d88/classtimer.html#aa92b07c8266c52b4f4de61342946cd9d" title=" " alt="" coords="528,549,626,576"/>
@@ -34,11 +34,11 @@
 <area shape="rect" id="node18" href="$de/d0a/classoxide__mesh.html#a30e04d430474d575d5230b9791945eee" title="remove one polygon from another" alt="" coords="506,1435,648,1477"/>
 <area shape="rect" id="node19" href="$de/d0a/classoxide__mesh.html#abda9a1d2b75d90c5529986f165d06a33" title="simplify a polygon removing points that are too close to each other or roughness" alt="" coords="505,1619,649,1661"/>
 <area shape="rect" id="node21" href="$d9/df1/classbase__mesh.html#a43ec9bdc633b1554c6a88ca6debf653c" title=" " alt="" coords="487,1685,667,1742"/>
-<area shape="rect" id="node23" href="$dd/d4d/class_f_e_a__equations.html#add8c8ae5d2db911774b657af4c2e1d91" title=" " alt="" coords="507,1766,647,1808"/>
+<area shape="rect" id="node23" href="$dd/d4d/class_f_e_a__equations.html#add8c8ae5d2db911774b657af4c2e1d91" title="free the dynamically allocated memory" alt="" coords="507,1766,647,1808"/>
 <area shape="rect" id="node25" href="$de/d0a/classoxide__mesh.html#a7d54fdcc09b1b4a3c21149981997d16d" title="find the nodes on the material polygon" alt="" coords="501,1833,652,1875"/>
 <area shape="rect" id="node27" href="$de/d0a/classoxide__mesh.html#a3e3bf68832adf49423313d920576e21f" title="find elements connected to node_index" alt="" coords="483,182,670,224"/>
 <area shape="rect" id="node28" href="$d9/df1/classbase__mesh.html#a1cc96b26afdebb1b1f7426cc9e951d56" title=" " alt="" coords="495,249,659,291"/>
-<area shape="rect" id="node30" href="$dd/d4d/class_f_e_a__equations.html#ada08f07bdee779d374af083df015e2a7" title=" " alt="" coords="507,1235,646,1277"/>
+<area shape="rect" id="node30" href="$dd/d4d/class_f_e_a__equations.html#ada08f07bdee779d374af083df015e2a7" title="add in a vector of constraints to K matrix and RHS vector" alt="" coords="507,1235,646,1277"/>
 <area shape="rect" id="node31" href="$dc/d8a/classmaterial.html#a3b5caea229b7aac32952c1a06ebe560b" title=" " alt="" coords="511,601,642,643"/>
 <area shape="rect" id="node32" href="$de/d0a/classoxide__mesh.html#a9b3a8185370620b009c781275c10d9c9" title="check and see if a point is constrained and create the proper contraint if so" alt="" coords="499,667,654,709"/>
 <area shape="rect" id="node33" href="$de/d0a/classoxide__mesh.html#a485c4738388792b4737898f303fd8d4d" title="add reaction along the oxide/SiC boundary" alt="" coords="471,733,682,760"/>

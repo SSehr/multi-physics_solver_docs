@@ -1,13 +1,13 @@
 <map id="oxide_mesh::reassemble_mech_after_contact" name="oxide_mesh::reassemble_mech_after_contact">
 <area shape="rect" id="node1" title="reassemble mechanics matrix after contact" alt="" coords="5,160,172,202"/>
-<area shape="rect" id="node2" href="$dd/d4d/class_f_e_a__equations.html#ada08f07bdee779d374af083df015e2a7" title=" " alt="" coords="247,5,387,47"/>
+<area shape="rect" id="node2" href="$dd/d4d/class_f_e_a__equations.html#ada08f07bdee779d374af083df015e2a7" title="add in a vector of constraints to K matrix and RHS vector" alt="" coords="247,5,387,47"/>
 <area shape="rect" id="node3" href="$de/d0a/classoxide__mesh.html#a9b3a8185370620b009c781275c10d9c9" title="check and see if a point is constrained and create the proper contraint if so" alt="" coords="239,72,395,114"/>
 <area shape="rect" id="node4" href="$de/d0a/classoxide__mesh.html#a1c427accdf57b0a93d1a5acd37189868" title="assemble just the mechanics problem" alt="" coords="220,138,414,165"/>
-<area shape="rect" id="node5" href="$dd/d4d/class_f_e_a__equations.html#ae8ca7b818448a7bef81701dd011a0737" title=" " alt="" coords="236,189,398,231"/>
-<area shape="rect" id="node9" href="$dd/d4d/class_f_e_a__equations.html#add8c8ae5d2db911774b657af4c2e1d91" title=" " alt="" coords="247,256,387,298"/>
+<area shape="rect" id="node5" href="$dd/d4d/class_f_e_a__equations.html#ae8ca7b818448a7bef81701dd011a0737" title="perform the LU factorization of the stiffness matrix" alt="" coords="236,189,398,231"/>
+<area shape="rect" id="node9" href="$dd/d4d/class_f_e_a__equations.html#add8c8ae5d2db911774b657af4c2e1d91" title="free the dynamically allocated memory" alt="" coords="247,256,387,298"/>
 <area shape="rect" id="node10" href="$de/d0a/classoxide__mesh.html#a74193af0cc10b1e5b9198313f0fb3c7c" title="initialize the mechanics problem arrays" alt="" coords="244,323,390,365"/>
 <area shape="rect" id="node6" href="$d6/d88/classtimer.html#a9aa894a57748b2bdf3adce46f5736794" title=" " alt="" coords="503,146,587,173"/>
 <area shape="rect" id="node7" href="$d6/d88/classtimer.html#a3218d61649e284071544b17c8c915ecc" title=" " alt="" coords="503,197,586,224"/>
 <area shape="rect" id="node8" href="$d6/d88/classtimer.html#a008803602e2aacdebcc10bbd72209631" title=" " alt="" coords="503,248,586,275"/>
-<area shape="rect" id="node11" href="$dd/d4d/class_f_e_a__equations.html#ad32fb85d57a21d75acbd7f3d684a8aab" title=" " alt="" coords="462,323,627,365"/>
+<area shape="rect" id="node11" href="$dd/d4d/class_f_e_a__equations.html#ad32fb85d57a21d75acbd7f3d684a8aab" title="dynamically allocate the various arrays needed for the solver" alt="" coords="462,323,627,365"/>
 </map>

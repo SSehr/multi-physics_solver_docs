@@ -1,8 +1,9 @@
 <map id="oxide_mesh::check_for_crack_in_SiC" name="oxide_mesh::check_for_crack_in_SiC">
-<area shape="rect" id="node1" title="check to see if the crack has left the oxide and entered the SiC material" alt="" coords="5,163,162,205"/>
+<area shape="rect" id="node1" title="check to see if the crack has left the oxide and entered the SiC material" alt="" coords="5,196,162,238"/>
 <area shape="rect" id="node2" href="$de/d0a/classoxide__mesh.html#ade7237459e203b7a287a545d358e7df0" title="convert a list of indices to points" alt="" coords="232,5,375,47"/>
 <area shape="rect" id="node3" href="$de/d0a/classoxide__mesh.html#a3e3bf68832adf49423313d920576e21f" title="find elements connected to node_index" alt="" coords="210,96,397,138"/>
 <area shape="rect" id="node4" href="$de/d0a/classoxide__mesh.html#ad025b69b56c646f71b4f6a561ac7da1c" title="get boundary between defined elements and other elements" alt="" coords="218,163,389,205"/>
 <area shape="rect" id="node5" href="$dc/d8a/classmaterial.html#a5091eba4b46382b40a3a0286e996d4bf" title=" " alt="" coords="239,229,368,271"/>
 <area shape="rect" id="node6" href="$d9/df1/classbase__mesh.html#a1cc96b26afdebb1b1f7426cc9e951d56" title=" " alt="" coords="221,296,386,338"/>
+<area shape="rect" id="node7" href="$dc/d8a/classmaterial.html#a5dc927f8cabb3d43e462f23857878f53" title="swap bounding points in a boundary" alt="" coords="221,363,386,405"/>
 </map>

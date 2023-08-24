@@ -1,0 +1,4 @@
+<map id="elastic_element::Calc_stored_strains" name="elastic_element::Calc_stored_strains">
+<area shape="rect" id="node1" title="calculate and store the new strains stored in the mesh based on the displacements at the nodes" alt="" coords="5,5,153,47"/>
+<area shape="rect" id="node2" href="$d5/d5d/classelastic__element.html#ae30b71f3ab55f2fc7fe92f41c3906111" title="calculate the stored strains based on the displacements at the nodes" alt="" coords="201,5,339,47"/>
+</map>

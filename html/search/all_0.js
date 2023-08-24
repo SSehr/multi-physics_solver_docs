@@ -16,10 +16,11 @@ var searchData=
   ['area_13',['Area',['../d3/d58/classtriangular__element.html#a6f0b3184d20a34afc3aa58dfe8bd23b7',1,'triangular_element']]],
   ['arrays_5finitialized_14',['arrays_initialized',['../dd/d4d/class_f_e_a__equations.html#ab5150c6effb63e6ee0061e0b8dec8bb1',1,'FEA_equations']]],
   ['assemble_5fall_15',['assemble_all',['../de/d0a/classoxide__mesh.html#a74a3cd546a91ebf2d220fe18af9b05bb',1,'oxide_mesh']]],
-  ['assemble_5fmech_16',['assemble_mech',['../de/d0a/classoxide__mesh.html#a1c427accdf57b0a93d1a5acd37189868',1,'oxide_mesh']]],
-  ['assemble_5fmech_5ffor_5fcracking_17',['assemble_mech_for_cracking',['../de/d0a/classoxide__mesh.html#afa8c8b21113ac4aab42f3271c7181026',1,'oxide_mesh']]],
-  ['assign_5fproperties_18',['assign_properties',['../dc/d8a/classmaterial.html#aee032ffaf82b4180213c2e1a05bdb5a0',1,'material']]],
-  ['at_19',['At',['../da/d9f/classnode.html#a12543b45b4469a2ce46fd2df3f82f86a',1,'node']]],
-  ['ats_20',['Ats',['../da/d9f/classnode.html#aa241d2246cc8ba3578dbd8a921afc509',1,'node']]],
-  ['ax_21',['Ax',['../dd/d4d/class_f_e_a__equations.html#af47657b18e4a6d2738cdae498d1ba59f',1,'FEA_equations']]]
+  ['assemble_5fglobal_5ff_16',['Assemble_global_F',['../d5/d5d/classelastic__element.html#a407dd839802178369d54e5c68db675d2',1,'elastic_element']]],
+  ['assemble_5fmech_17',['assemble_mech',['../de/d0a/classoxide__mesh.html#a1c427accdf57b0a93d1a5acd37189868',1,'oxide_mesh']]],
+  ['assemble_5fmech_5ffor_5fcracking_18',['assemble_mech_for_cracking',['../de/d0a/classoxide__mesh.html#afa8c8b21113ac4aab42f3271c7181026',1,'oxide_mesh']]],
+  ['assign_5fproperties_19',['assign_properties',['../dc/d8a/classmaterial.html#aee032ffaf82b4180213c2e1a05bdb5a0',1,'material']]],
+  ['at_20',['At',['../da/d9f/classnode.html#a12543b45b4469a2ce46fd2df3f82f86a',1,'node']]],
+  ['ats_21',['Ats',['../da/d9f/classnode.html#aa241d2246cc8ba3578dbd8a921afc509',1,'node']]],
+  ['ax_22',['Ax',['../dd/d4d/class_f_e_a__equations.html#af47657b18e4a6d2738cdae498d1ba59f',1,'FEA_equations']]]
 ];

@@ -10,7 +10,7 @@ Collaboration diagram for material\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=218pt]{d1/d4a/classmaterial__coll__graph}
+\includegraphics[width=219pt]{d1/d4a/classmaterial__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
@@ -48,12 +48,10 @@ bool \mbox{\hyperlink{classmaterial_a08ba160b2e51514cb27680acbedbd02d}{node\+\_\
 \item 
 int \mbox{\hyperlink{classmaterial_a5091eba4b46382b40a3a0286e996d4bf}{get\+\_\+node\+\_\+index}} (const int test\+\_\+node)
 \item 
-\mbox{\Hypertarget{classmaterial_aee032ffaf82b4180213c2e1a05bdb5a0}\label{classmaterial_aee032ffaf82b4180213c2e1a05bdb5a0}} 
-void {\bfseries assign\+\_\+properties} (\mbox{\hyperlink{classmp__element}{mp\+\_\+element}} \&el)
+void \mbox{\hyperlink{classmaterial_aee032ffaf82b4180213c2e1a05bdb5a0}{assign\+\_\+properties}} (\mbox{\hyperlink{classmp__element}{mp\+\_\+element}} \&el)
 \begin{DoxyCompactList}\small\item\em assign material properties to element \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classmaterial_a5dc927f8cabb3d43e462f23857878f53}\label{classmaterial_a5dc927f8cabb3d43e462f23857878f53}} 
-void {\bfseries swap\+\_\+bounding\+\_\+points} (std\+::vector$<$ int $>$ \&boundary, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&boundary\+\_\+pts)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classmaterial_a5dc927f8cabb3d43e462f23857878f53}{swap\+\_\+bounding\+\_\+points}} (std\+::vector$<$ int $>$ \&boundary, std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&boundary\+\_\+pts)
+\begin{DoxyCompactList}\small\item\em swap bounding points in a boundary \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -105,9 +103,9 @@ std\+::vector$<$ int $>$ {\bfseries poly\+\_\+nodes}
 \mbox{\Hypertarget{classmaterial_a7844e680d6cf63aacadb787bc911a68e}\label{classmaterial_a7844e680d6cf63aacadb787bc911a68e}} 
 bool {\bfseries is\+\_\+reacting} = false
 \begin{DoxyCompactList}\small\item\em flag to mark a material as reacting \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classmaterial_a11777c589a48ecb0f955e0f3cf97ba09}\label{classmaterial_a11777c589a48ecb0f955e0f3cf97ba09}} 
-double($\ast$ {\bfseries eta\+\_\+func} )(\mbox{\hyperlink{classmp__element}{mp\+\_\+element}} \&el) = nullptr
-\end{DoxyCompactItemize}
+\mbox{\Hypertarget{classmaterial_a47252384239c390c351782047130937b}\label{classmaterial_a47252384239c390c351782047130937b}} 
+\mbox{\hyperlink{classproperty}{property}} {\bfseries eta\+\_\+func}
+\begin{DoxyCompactList}\small\item\em function for user-\/defined eta \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -125,6 +123,40 @@ Function takes in a point and the integer index from the global node list and th
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{dc/d8a/classmaterial_a3b5caea229b7aac32952c1a06ebe560b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmaterial_aee032ffaf82b4180213c2e1a05bdb5a0}\label{classmaterial_aee032ffaf82b4180213c2e1a05bdb5a0}} 
+\index{material@{material}!assign\_properties@{assign\_properties}}
+\index{assign\_properties@{assign\_properties}!material@{material}}
+\doxysubsubsection{\texorpdfstring{assign\_properties()}{assign\_properties()}}
+{\footnotesize\ttfamily void material\+::assign\+\_\+properties (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmp__element}{mp\+\_\+element}} \&}]{el }\end{DoxyParamCaption})}
+
+
+
+assign material properties to element 
+
+assign properties to an element
+
+
+\begin{DoxyParams}{Parameters}
+{\em el} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d8a/classmaterial_aee032ffaf82b4180213c2e1a05bdb5a0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d8a/classmaterial_aee032ffaf82b4180213c2e1a05bdb5a0_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classmaterial_a5091eba4b46382b40a3a0286e996d4bf}\label{classmaterial_a5091eba4b46382b40a3a0286e996d4bf}} 
@@ -159,7 +191,41 @@ Given a global node index, returns true if node is in poly\+\_\+node list, false
 \doxysubsubsection{\texorpdfstring{store\_property()}{store\_property()}}
 {\footnotesize\ttfamily bool material\+::store\+\_\+property (\begin{DoxyParamCaption}\item[{std\+::string}]{label,  }\item[{std\+::string}]{in\+\_\+var\+\_\+name,  }\item[{std\+::string}]{in\+\_\+val }\end{DoxyParamCaption})}
 
-Function used to parse from plain text input files and store material properties correctly. This is only used if the framework is incorporated using the API. The label is used to differentiate between different materials. For example, the oxide would have have a label of \char`\"{}\+Si\+O2\char`\"{} and the in\+\_\+var\+\_\+name is \char`\"{}\+E\+\_\+\+Si\+O2\char`\"{} The function returns true if in\+\_\+var\+\_\+name ends with label and in\+\_\+val is properly stored. Otherwise, false is returned. 
+Function used to parse from plain text input files and store material properties correctly. This is only used if the framework is incorporated using the API. The label is used to differentiate between different materials. For example, the oxide would have have a label of \char`\"{}\+Si\+O2\char`\"{} and the in\+\_\+var\+\_\+name is \char`\"{}\+E\+\_\+\+Si\+O2\char`\"{} The function returns true if in\+\_\+var\+\_\+name ends with label and in\+\_\+val is properly stored. Otherwise, false is returned. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d8a/classmaterial_af2a5c9c8cff587143fa978cd2cc33912_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmaterial_a5dc927f8cabb3d43e462f23857878f53}\label{classmaterial_a5dc927f8cabb3d43e462f23857878f53}} 
+\index{material@{material}!swap\_bounding\_points@{swap\_bounding\_points}}
+\index{swap\_bounding\_points@{swap\_bounding\_points}!material@{material}}
+\doxysubsubsection{\texorpdfstring{swap\_bounding\_points()}{swap\_bounding\_points()}}
+{\footnotesize\ttfamily void material\+::swap\+\_\+bounding\+\_\+points (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$ \&}]{boundary,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classpoint}{point}} $>$ \&}]{boundary\+\_\+pts }\end{DoxyParamCaption})}
+
+
+
+swap bounding points in a boundary 
+
+
+\begin{DoxyParams}{Parameters}
+{\em boundary} & \\
+\hline
+{\em boundary\+\_\+pts} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d8a/classmaterial_a5dc927f8cabb3d43e462f23857878f53_icgraph}
+\end{center}
+\end{figure}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

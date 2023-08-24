@@ -35,38 +35,33 @@ void \mbox{\hyperlink{classelastic__element_a7c7da78b8f1438aec183c2836c2ca363}{C
 \item 
 \mbox{\Hypertarget{classelastic__element_a7a48c35d52f0a031975ac5f3fccc8890}\label{classelastic__element_a7a48c35d52f0a031975ac5f3fccc8890}} 
 void {\bfseries Calc\+\_\+local\+\_\+F} ()
-\begin{DoxyCompactList}\small\item\em calculate the local nodal force matrix \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em calculate the local RHS \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classelastic__element_a8e1f9eeb60dee3ffbd3810e2678cc43f}\label{classelastic__element_a8e1f9eeb60dee3ffbd3810e2678cc43f}} 
 void {\bfseries get\+\_\+stresses} (double ux0, double uy0, double ux1, double uy1, double ux2, double uy2, double ux3, double uy3, double ux4, double uy4, double ux5, double uy5, const \mbox{\hyperlink{classpoint}{point}} \&test\+\_\+pt, double f\+\_\+stresses\mbox{[}$\,$\mbox{]})
 \item 
 void \mbox{\hyperlink{classelastic__element_acce8199a451c49829a9886864549c307}{Calc\+\_\+stress}} (double ux0, double uy0, double ux1, double uy1, double ux2, double uy2)
-\item 
+\begin{DoxyCompactList}\small\item\em calculate the stresses and store them in s11, s22, s12 \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classelastic__element_a01421edfb1166da686def94b86e4033a}\label{classelastic__element_a01421edfb1166da686def94b86e4033a}} 
 void {\bfseries Calc\+\_\+stress} (double ux0, double uy0, double ux1, double uy1, double ux2, double uy2, double ux3, double uy3, double ux4, double uy4, double ux5, double uy5)
 \item 
-\mbox{\Hypertarget{classelastic__element_ae30b71f3ab55f2fc7fe92f41c3906111}\label{classelastic__element_ae30b71f3ab55f2fc7fe92f41c3906111}} 
-std\+::vector$<$ double $>$ {\bfseries get\+\_\+stored\+\_\+strains} (double u0, double u1, double u2, double u3, double u4, double u5)
-\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classelastic__element_ae30b71f3ab55f2fc7fe92f41c3906111}{get\+\_\+stored\+\_\+strains}} (double u0, double u1, double u2, double u3, double u4, double u5)
+\begin{DoxyCompactList}\small\item\em calculate the stored strains based on the displacements at the nodes \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classelastic__element_a61b3b19a3a516cf8ac08c79bce707bad}\label{classelastic__element_a61b3b19a3a516cf8ac08c79bce707bad}} 
 std\+::vector$<$ double $>$ {\bfseries get\+\_\+stored\+\_\+strains} (double u0, double u1, double u2, double u3, double u4, double u5, double u6, double u7, double u8, double u9, double u10, double u11, \mbox{\hyperlink{classpoint}{point}} \&test\+\_\+pt)
 \item 
 void \mbox{\hyperlink{classelastic__element_a71cfe9d2dd42c72a2da04d8ca985e728}{Calc\+\_\+stored\+\_\+strains}} (double u0, double u1, double u2, double u3, double u4, double u5)
-\item 
+\begin{DoxyCompactList}\small\item\em calculate and store the new strains stored in the mesh based on the displacements at the nodes \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classelastic__element_a6a22dd51746bb029f65e1aa879ab9dd6}\label{classelastic__element_a6a22dd51746bb029f65e1aa879ab9dd6}} 
 void {\bfseries Calc\+\_\+stored\+\_\+strains} (double u0, double u1, double u2, double u3, double u4, double u5, double u6, double u7, double u8, double u9, double u10, double u11)
 \item 
-\mbox{\Hypertarget{classelastic__element_a43e59ebd1b91510a165bd47742027d8b}\label{classelastic__element_a43e59ebd1b91510a165bd47742027d8b}} 
-void {\bfseries Calc\+\_\+local\+\_\+dk} (const \mbox{\hyperlink{classpoint}{point}} \&crack\+\_\+tip, \mbox{\hyperlink{classpoint}{point}} \&shift, double shift\+\_\+radius)
-\item 
-\mbox{\Hypertarget{classelastic__element_afddf7f3914acc8f0d573d8b84365a437}\label{classelastic__element_afddf7f3914acc8f0d573d8b84365a437}} 
-void {\bfseries Calc\+\_\+local\+\_\+dF} (const \mbox{\hyperlink{classpoint}{point}} \&crack\+\_\+tip, \mbox{\hyperlink{classpoint}{point}} \&shift, double shift\+\_\+radius)
-\item 
-\mbox{\Hypertarget{classelastic__element_a407dd839802178369d54e5c68db675d2}\label{classelastic__element_a407dd839802178369d54e5c68db675d2}} 
-void {\bfseries Assemble\+\_\+global\+\_\+F} (double $\ast$F)
-\item 
-\mbox{\Hypertarget{classelastic__element_a8546c53ff7634ea42bb511f5c98d6ced}\label{classelastic__element_a8546c53ff7634ea42bb511f5c98d6ced}} 
-void {\bfseries Remove\+\_\+local\+\_\+F} (double $\ast$F)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classelastic__element_a43e59ebd1b91510a165bd47742027d8b}{Calc\+\_\+local\+\_\+dk}} (const \mbox{\hyperlink{classpoint}{point}} \&crack\+\_\+tip, \mbox{\hyperlink{classpoint}{point}} \&shift, double shift\+\_\+radius)
+\begin{DoxyCompactList}\small\item\em calculate the approximate derivative of the k matrix for stiffness derivative method \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classelastic__element_afddf7f3914acc8f0d573d8b84365a437}{Calc\+\_\+local\+\_\+dF}} (const \mbox{\hyperlink{classpoint}{point}} \&crack\+\_\+tip, \mbox{\hyperlink{classpoint}{point}} \&shift, double shift\+\_\+radius)
+\begin{DoxyCompactList}\small\item\em calculate the approximate derivative of the local RHS for the stiffness derivative method \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classelastic__element_a407dd839802178369d54e5c68db675d2}{Assemble\+\_\+global\+\_\+F}} (double $\ast$F)
+\begin{DoxyCompactList}\small\item\em assemble the local RHS into the global RHS \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classelastic__element_a8546c53ff7634ea42bb511f5c98d6ced}{Remove\+\_\+local\+\_\+F}} (double $\ast$F)
+\begin{DoxyCompactList}\small\item\em remove the local RHS from global RHS \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -163,6 +158,82 @@ static double {\bfseries Temperature}
 class defining an elastic continuum element that inherits from \mbox{\hyperlink{classtriangular__element}{triangular\+\_\+element}} 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classelastic__element_a407dd839802178369d54e5c68db675d2}\label{classelastic__element_a407dd839802178369d54e5c68db675d2}} 
+\index{elastic\_element@{elastic\_element}!Assemble\_global\_F@{Assemble\_global\_F}}
+\index{Assemble\_global\_F@{Assemble\_global\_F}!elastic\_element@{elastic\_element}}
+\doxysubsubsection{\texorpdfstring{Assemble\_global\_F()}{Assemble\_global\_F()}}
+{\footnotesize\ttfamily void elastic\+\_\+element\+::\+Assemble\+\_\+global\+\_\+F (\begin{DoxyParamCaption}\item[{double $\ast$}]{F }\end{DoxyParamCaption})}
+
+
+
+assemble the local RHS into the global RHS 
+
+
+\begin{DoxyParams}{Parameters}
+{\em F} & global RHS \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d5d/classelastic__element_a407dd839802178369d54e5c68db675d2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classelastic__element_afddf7f3914acc8f0d573d8b84365a437}\label{classelastic__element_afddf7f3914acc8f0d573d8b84365a437}} 
+\index{elastic\_element@{elastic\_element}!Calc\_local\_dF@{Calc\_local\_dF}}
+\index{Calc\_local\_dF@{Calc\_local\_dF}!elastic\_element@{elastic\_element}}
+\doxysubsubsection{\texorpdfstring{Calc\_local\_dF()}{Calc\_local\_dF()}}
+{\footnotesize\ttfamily void elastic\+\_\+element\+::\+Calc\+\_\+local\+\_\+dF (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classpoint}{point}} \&}]{crack\+\_\+tip,  }\item[{\mbox{\hyperlink{classpoint}{point}} \&}]{shift,  }\item[{double}]{shift\+\_\+radius }\end{DoxyParamCaption})}
+
+
+
+calculate the approximate derivative of the local RHS for the stiffness derivative method 
+
+
+\begin{DoxyParams}{Parameters}
+{\em crack\+\_\+tip} & \\
+\hline
+{\em shift} & \\
+\hline
+{\em shift\+\_\+radius} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{d5/d5d/classelastic__element_afddf7f3914acc8f0d573d8b84365a437_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classelastic__element_a43e59ebd1b91510a165bd47742027d8b}\label{classelastic__element_a43e59ebd1b91510a165bd47742027d8b}} 
+\index{elastic\_element@{elastic\_element}!Calc\_local\_dk@{Calc\_local\_dk}}
+\index{Calc\_local\_dk@{Calc\_local\_dk}!elastic\_element@{elastic\_element}}
+\doxysubsubsection{\texorpdfstring{Calc\_local\_dk()}{Calc\_local\_dk()}}
+{\footnotesize\ttfamily void elastic\+\_\+element\+::\+Calc\+\_\+local\+\_\+dk (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classpoint}{point}} \&}]{crack\+\_\+tip,  }\item[{\mbox{\hyperlink{classpoint}{point}} \&}]{shift,  }\item[{double}]{shift\+\_\+radius }\end{DoxyParamCaption})}
+
+
+
+calculate the approximate derivative of the k matrix for stiffness derivative method 
+
+
+\begin{DoxyParams}{Parameters}
+{\em crack\+\_\+tip} & \\
+\hline
+{\em shift} & \\
+\hline
+{\em shift\+\_\+radius} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{d5/d5d/classelastic__element_a43e59ebd1b91510a165bd47742027d8b_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classelastic__element_a7c7da78b8f1438aec183c2836c2ca363}\label{classelastic__element_a7c7da78b8f1438aec183c2836c2ca363}} 
 \index{elastic\_element@{elastic\_element}!Calc\_local\_k@{Calc\_local\_k}}
 \index{Calc\_local\_k@{Calc\_local\_k}!elastic\_element@{elastic\_element}}
@@ -175,7 +246,34 @@ calculate the local stiffness matrix \mbox{\Hypertarget{classelastic__element_a7
 \doxysubsubsection{\texorpdfstring{Calc\_stored\_strains()}{Calc\_stored\_strains()}}
 {\footnotesize\ttfamily void elastic\+\_\+element\+::\+Calc\+\_\+stored\+\_\+strains (\begin{DoxyParamCaption}\item[{double}]{u0,  }\item[{double}]{u1,  }\item[{double}]{u2,  }\item[{double}]{u3,  }\item[{double}]{u4,  }\item[{double}]{u5 }\end{DoxyParamCaption})}
 
-calculate and store the new strains stored in the mesh based on the displacements Here is the caller graph for this function\+:\nopagebreak
+
+
+calculate and store the new strains stored in the mesh based on the displacements at the nodes 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u0} & \\
+\hline
+{\em u1} & \\
+\hline
+{\em u2} & \\
+\hline
+{\em u3} & \\
+\hline
+{\em u4} & \\
+\hline
+{\em u5} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{d5/d5d/classelastic__element_a71cfe9d2dd42c72a2da04d8ca985e728_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -188,13 +286,85 @@ calculate and store the new strains stored in the mesh based on the displacement
 \doxysubsubsection{\texorpdfstring{Calc\_stress()}{Calc\_stress()}}
 {\footnotesize\ttfamily void elastic\+\_\+element\+::\+Calc\+\_\+stress (\begin{DoxyParamCaption}\item[{double}]{ux0,  }\item[{double}]{uy0,  }\item[{double}]{ux1,  }\item[{double}]{uy1,  }\item[{double}]{ux2,  }\item[{double}]{uy2 }\end{DoxyParamCaption})}
 
-calculate the stresses and store them in s11, s22, s12 Here is the caller graph for this function\+:\nopagebreak
+
+
+calculate the stresses and store them in s11, s22, s12 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ux0} & \\
+\hline
+{\em uy0} & \\
+\hline
+{\em ux1} & \\
+\hline
+{\em uy1} & \\
+\hline
+{\em ux2} & \\
+\hline
+{\em uy2} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{d5/d5d/classelastic__element_acce8199a451c49829a9886864549c307_icgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{classelastic__element_ae30b71f3ab55f2fc7fe92f41c3906111}\label{classelastic__element_ae30b71f3ab55f2fc7fe92f41c3906111}} 
+\index{elastic\_element@{elastic\_element}!get\_stored\_strains@{get\_stored\_strains}}
+\index{get\_stored\_strains@{get\_stored\_strains}!elastic\_element@{elastic\_element}}
+\doxysubsubsection{\texorpdfstring{get\_stored\_strains()}{get\_stored\_strains()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ elastic\+\_\+element\+::get\+\_\+stored\+\_\+strains (\begin{DoxyParamCaption}\item[{double}]{u0,  }\item[{double}]{u1,  }\item[{double}]{u2,  }\item[{double}]{u3,  }\item[{double}]{u4,  }\item[{double}]{u5 }\end{DoxyParamCaption})}
+
+
+
+calculate the stored strains based on the displacements at the nodes 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u0} & \\
+\hline
+{\em u1} & \\
+\hline
+{\em u2} & \\
+\hline
+{\em u3} & \\
+\hline
+{\em u4} & \\
+\hline
+{\em u5} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the stored strains in a vector 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d5d/classelastic__element_ae30b71f3ab55f2fc7fe92f41c3906111_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classelastic__element_a8546c53ff7634ea42bb511f5c98d6ced}\label{classelastic__element_a8546c53ff7634ea42bb511f5c98d6ced}} 
+\index{elastic\_element@{elastic\_element}!Remove\_local\_F@{Remove\_local\_F}}
+\index{Remove\_local\_F@{Remove\_local\_F}!elastic\_element@{elastic\_element}}
+\doxysubsubsection{\texorpdfstring{Remove\_local\_F()}{Remove\_local\_F()}}
+{\footnotesize\ttfamily void elastic\+\_\+element\+::\+Remove\+\_\+local\+\_\+F (\begin{DoxyParamCaption}\item[{double $\ast$}]{F }\end{DoxyParamCaption})}
+
+
+
+remove the local RHS from global RHS 
+
+
+\begin{DoxyParams}{Parameters}
+{\em F} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

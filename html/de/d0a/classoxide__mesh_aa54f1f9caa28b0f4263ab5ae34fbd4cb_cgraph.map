@@ -2,36 +2,37 @@
 <area shape="rect" id="node1" title="get the node numbers of the crack advance" alt="" coords="5,603,162,645"/>
 <area shape="rect" id="node2" href="$de/d0a/classoxide__mesh.html#aa946598bcb1c79a43806daf29962cf3f" title="advance the crack" alt="" coords="220,256,369,298"/>
 <area shape="rect" id="node3" href="$de/d0a/classoxide__mesh.html#afa8c8b21113ac4aab42f3271c7181026" title="reassemble just the mechanics FEA arrays" alt="" coords="217,323,372,365"/>
-<area shape="rect" id="node12" href="$dd/d4d/class_f_e_a__equations.html#add8c8ae5d2db911774b657af4c2e1d91" title=" " alt="" coords="458,507,598,549"/>
-<area shape="rect" id="node17" href="$de/d0a/classoxide__mesh.html#ad61f3452da58429a1c7c99907d8909c8" title="Calculate the ERR using stiffness derivative method." alt="" coords="210,610,379,637"/>
-<area shape="rect" id="node18" href="$dd/dd1/classpoint.html#a2e6587f35b9596aa034084ca83497e02" title=" " alt="" coords="250,661,339,688"/>
-<area shape="rect" id="node19" href="$de/d0a/classoxide__mesh.html#adafce3ae3e752eff9dae8119e7ac5b0d" title=" " alt="" coords="216,712,373,754"/>
-<area shape="rect" id="node23" href="$de/d0a/classoxide__mesh.html#ac76e5714b9a139b84bdd810119512c8d" title="remove list of nodes from mechanical constraint denoted by constraint_index" alt="" coords="210,778,379,835"/>
-<area shape="rect" id="node26" href="$de/d0a/classoxide__mesh.html#ab51a4206e50a3ba0905cb57b291d3291" title="save output file with all data to file_path" alt="" coords="211,1001,378,1028"/>
-<area shape="rect" id="node34" href="$de/d0a/classoxide__mesh.html#a56952c56a4d69502ca5eec6f5fc78fba" title="solve mechanics problem for crack advance" alt="" coords="210,544,379,586"/>
-<area shape="rect" id="node4" href="$dd/d4d/class_f_e_a__equations.html#ada08f07bdee779d374af083df015e2a7" title=" " alt="" coords="459,72,598,114"/>
+<area shape="rect" id="node12" href="$dd/d4d/class_f_e_a__equations.html#add8c8ae5d2db911774b657af4c2e1d91" title="free the dynamically allocated memory" alt="" coords="458,507,598,549"/>
+<area shape="rect" id="node18" href="$de/d0a/classoxide__mesh.html#ad61f3452da58429a1c7c99907d8909c8" title="Calculate the ERR using stiffness derivative method." alt="" coords="210,610,379,637"/>
+<area shape="rect" id="node19" href="$dd/dd1/classpoint.html#a2e6587f35b9596aa034084ca83497e02" title=" " alt="" coords="250,661,339,688"/>
+<area shape="rect" id="node20" href="$de/d0a/classoxide__mesh.html#adafce3ae3e752eff9dae8119e7ac5b0d" title=" " alt="" coords="216,712,373,754"/>
+<area shape="rect" id="node24" href="$de/d0a/classoxide__mesh.html#ac76e5714b9a139b84bdd810119512c8d" title="remove list of nodes from mechanical constraint denoted by constraint_index" alt="" coords="210,778,379,835"/>
+<area shape="rect" id="node27" href="$de/d0a/classoxide__mesh.html#ab51a4206e50a3ba0905cb57b291d3291" title="save output file with all data to file_path" alt="" coords="211,1001,378,1028"/>
+<area shape="rect" id="node35" href="$de/d0a/classoxide__mesh.html#a56952c56a4d69502ca5eec6f5fc78fba" title="solve mechanics problem for crack advance" alt="" coords="210,544,379,586"/>
+<area shape="rect" id="node4" href="$dd/d4d/class_f_e_a__equations.html#ada08f07bdee779d374af083df015e2a7" title="add in a vector of constraints to K matrix and RHS vector" alt="" coords="459,72,598,114"/>
 <area shape="rect" id="node5" href="$de/d0a/classoxide__mesh.html#a9b3a8185370620b009c781275c10d9c9" title="check and see if a point is constrained and create the proper contraint if so" alt="" coords="451,139,606,181"/>
 <area shape="rect" id="node6" href="$de/d0a/classoxide__mesh.html#a1c427accdf57b0a93d1a5acd37189868" title="assemble just the mechanics problem" alt="" coords="431,205,625,232"/>
 <area shape="rect" id="node7" href="$de/d0a/classoxide__mesh.html#a6d1aaa3976cc65c44df4ced0720981fa" title="clear the force and displacment constraint vectors" alt="" coords="445,256,611,298"/>
-<area shape="rect" id="node8" href="$dd/d4d/class_f_e_a__equations.html#ae8ca7b818448a7bef81701dd011a0737" title=" " alt="" coords="448,440,609,482"/>
+<area shape="rect" id="node8" href="$dd/d4d/class_f_e_a__equations.html#ae8ca7b818448a7bef81701dd011a0737" title="perform the LU factorization of the stiffness matrix" alt="" coords="448,440,609,482"/>
 <area shape="rect" id="node9" href="$d6/d88/classtimer.html#a9aa894a57748b2bdf3adce46f5736794" title=" " alt="" coords="724,473,808,500"/>
 <area shape="rect" id="node13" href="$de/d0a/classoxide__mesh.html#a74193af0cc10b1e5b9198313f0fb3c7c" title="initialize the mechanics problem arrays" alt="" coords="455,5,601,47"/>
 <area shape="rect" id="node15" href="$de/d0a/classoxide__mesh.html#ade5caadbf9adc2dca6fa93737f68533c" title="set element properties" alt="" coords="443,323,613,365"/>
 <area shape="rect" id="node10" href="$d6/d88/classtimer.html#a3218d61649e284071544b17c8c915ecc" title=" " alt="" coords="724,549,808,576"/>
 <area shape="rect" id="node11" href="$d6/d88/classtimer.html#a008803602e2aacdebcc10bbd72209631" title=" " alt="" coords="724,422,808,449"/>
-<area shape="rect" id="node14" href="$dd/d4d/class_f_e_a__equations.html#ad32fb85d57a21d75acbd7f3d684a8aab" title=" " alt="" coords="683,5,849,47"/>
+<area shape="rect" id="node14" href="$dd/d4d/class_f_e_a__equations.html#ad32fb85d57a21d75acbd7f3d684a8aab" title="dynamically allocate the various arrays needed for the solver" alt="" coords="683,5,849,47"/>
 <area shape="rect" id="node16" href="$dc/d8a/classmaterial.html#aee032ffaf82b4180213c2e1a05bdb5a0" title="assign material properties to element" alt="" coords="677,330,855,357"/>
-<area shape="rect" id="node20" href="$de/d0a/classoxide__mesh.html#a1921ed64426311619aaa665efeb35130" title="convert list of points to corresponding list of node nubmers" alt="" coords="457,712,599,754"/>
-<area shape="rect" id="node22" href="$de/d0a/classoxide__mesh.html#a41501b35a068a1fec431fbeaa141f0e4" title="get the index of in_constraints the corresponds to the concentration constraint" alt="" coords="427,645,629,687"/>
-<area shape="rect" id="node21" href="$d9/df1/classbase__mesh.html#aa5d09f7aad92b89f45f401cff16bbb9f" title=" " alt="" coords="689,712,843,754"/>
-<area shape="rect" id="node24" href="$de/d0a/classoxide__mesh.html#ade7237459e203b7a287a545d358e7df0" title="convert a list of indices to points" alt="" coords="457,859,599,901"/>
-<area shape="rect" id="node25" href="$de/d0a/classoxide__mesh.html#ae31976f082b183c5a19c5f2132de64e8" title="remove list of points from mechanical constraint denoted by constraint_index" alt="" coords="444,778,613,835"/>
-<area shape="rect" id="node27" href="$d7/d16/classvtu_file.html#a37d9f0187d7bb51032a1cbfc7b7397a6" title=" " alt="" coords="480,1026,576,1053"/>
-<area shape="rect" id="node28" href="$d7/d16/classvtu_file.html#aa7ae82bfdecb67785ae29b91551a5aab" title=" " alt="" coords="468,976,589,1003"/>
-<area shape="rect" id="node30" href="$d7/d16/classvtu_file.html#a3dc62dc934576f60099e717f91b2348c" title=" " alt="" coords="456,1077,600,1104"/>
-<area shape="rect" id="node32" href="$d7/d16/classvtu_file.html#ae0bab7716fcb7c29340d2cce08194927" title=" " alt="" coords="452,925,604,952"/>
-<area shape="rect" id="node33" href="$d7/d16/classvtu_file.html#a944a2d2ef716046611d97e706dba42cd" title=" " alt="" coords="453,1128,604,1155"/>
-<area shape="rect" id="node29" href="$d7/d16/classvtu_file.html#a308ee165ce8bf699a457126b7b49c029" title="inserts text into an element and then inserts the element into the document tree" alt="" coords="689,1013,843,1040"/>
-<area shape="rect" id="node31" href="$d7/d16/classvtu_file.html#ae4e084a0bfe1869c196bbeb738b8b461" title=" " alt="" coords="686,1102,846,1129"/>
-<area shape="rect" id="node35" href="$dd/d4d/class_f_e_a__equations.html#aa0ee8731aea304da3b13c3438041a2fe" title=" " alt="" coords="454,573,603,600"/>
+<area shape="rect" id="node17" href="$d6/d4d/classproperty.html#a53bf212b2cbeac50ae8b154b9efa0961" title="return the function pointer" alt="" coords="903,330,1057,357"/>
+<area shape="rect" id="node21" href="$de/d0a/classoxide__mesh.html#a1921ed64426311619aaa665efeb35130" title="convert list of points to corresponding list of node nubmers" alt="" coords="457,712,599,754"/>
+<area shape="rect" id="node23" href="$de/d0a/classoxide__mesh.html#a41501b35a068a1fec431fbeaa141f0e4" title="get the index of in_constraints the corresponds to the concentration constraint" alt="" coords="427,645,629,687"/>
+<area shape="rect" id="node22" href="$d9/df1/classbase__mesh.html#aa5d09f7aad92b89f45f401cff16bbb9f" title=" " alt="" coords="689,712,843,754"/>
+<area shape="rect" id="node25" href="$de/d0a/classoxide__mesh.html#ade7237459e203b7a287a545d358e7df0" title="convert a list of indices to points" alt="" coords="457,859,599,901"/>
+<area shape="rect" id="node26" href="$de/d0a/classoxide__mesh.html#ae31976f082b183c5a19c5f2132de64e8" title="remove list of points from mechanical constraint denoted by constraint_index" alt="" coords="444,778,613,835"/>
+<area shape="rect" id="node28" href="$d7/d16/classvtu_file.html#a37d9f0187d7bb51032a1cbfc7b7397a6" title=" " alt="" coords="480,1026,576,1053"/>
+<area shape="rect" id="node29" href="$d7/d16/classvtu_file.html#aa7ae82bfdecb67785ae29b91551a5aab" title=" " alt="" coords="468,976,589,1003"/>
+<area shape="rect" id="node31" href="$d7/d16/classvtu_file.html#a3dc62dc934576f60099e717f91b2348c" title=" " alt="" coords="456,1077,600,1104"/>
+<area shape="rect" id="node33" href="$d7/d16/classvtu_file.html#ae0bab7716fcb7c29340d2cce08194927" title=" " alt="" coords="452,925,604,952"/>
+<area shape="rect" id="node34" href="$d7/d16/classvtu_file.html#a944a2d2ef716046611d97e706dba42cd" title=" " alt="" coords="453,1128,604,1155"/>
+<area shape="rect" id="node30" href="$d7/d16/classvtu_file.html#a308ee165ce8bf699a457126b7b49c029" title="inserts text into an element and then inserts the element into the document tree" alt="" coords="689,1013,843,1040"/>
+<area shape="rect" id="node32" href="$d7/d16/classvtu_file.html#ae4e084a0bfe1869c196bbeb738b8b461" title=" " alt="" coords="686,1102,846,1129"/>
+<area shape="rect" id="node36" href="$dd/d4d/class_f_e_a__equations.html#aa0ee8731aea304da3b13c3438041a2fe" title="solve the system once it is factorized" alt="" coords="454,573,603,600"/>
 </map>

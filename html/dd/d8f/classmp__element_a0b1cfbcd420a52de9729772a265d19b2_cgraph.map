@@ -1,4 +1,5 @@
 <map id="mp_element::Calc_flux" name="mp_element::Calc_flux">
-<area shape="rect" id="node1" title=" " alt="" coords="5,13,161,40"/>
-<area shape="rect" id="node2" href="$d3/d58/classtriangular__element.html#adc2c20be5558cfa7856b7253a980fc01" title=" " alt="" coords="209,5,336,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,42,161,69"/>
+<area shape="rect" id="node2" href="$d3/d58/classtriangular__element.html#adc2c20be5558cfa7856b7253a980fc01" title=" " alt="" coords="225,5,353,47"/>
+<area shape="rect" id="node3" href="$dd/d8f/classmp__element.html#a4d286aa039ebb5cdc81d376d839c3275" title="calculate the fluxes at a test point" alt="" coords="209,72,369,99"/>
 </map>

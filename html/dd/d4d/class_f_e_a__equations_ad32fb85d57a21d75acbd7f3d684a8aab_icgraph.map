@@ -1,5 +1,5 @@
 <map id="FEA_equations::initialize_arrays" name="FEA_equations::initialize_arrays">
-<area shape="rect" id="node1" title=" " alt="" coords="1534,139,1699,181"/>
+<area shape="rect" id="node1" title="dynamically allocate the various arrays needed for the solver" alt="" coords="1534,139,1699,181"/>
 <area shape="rect" id="node2" href="$de/d0a/classoxide__mesh.html#aecfd65a7b48fe7f7f7f9c6d0a65754b6" title="initialize the diffusion problem arrays" alt="" coords="1339,72,1486,114"/>
 <area shape="rect" id="node11" href="$de/d0a/classoxide__mesh.html#a74193af0cc10b1e5b9198313f0fb3c7c" title="initialize the mechanics problem arrays" alt="" coords="1339,139,1486,181"/>
 <area shape="rect" id="node16" href="$de/d0a/classoxide__mesh.html#a8ef1417ccaaeb8179f265c359361f513" title="way to run cracking simulation with a cohesive element method" alt="" coords="689,256,863,298"/>

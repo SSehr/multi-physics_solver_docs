@@ -24,21 +24,108 @@ void {\bfseries set} (double($\ast$user\+\_\+value\+\_\+function\+\_\+)(double p
 \mbox{\Hypertarget{classproperty_a324c614bb89537c426830bd076bc317d}\label{classproperty_a324c614bb89537c426830bd076bc317d}} 
 dfptr {\bfseries get\+\_\+function} ()
 \item 
-\mbox{\Hypertarget{classproperty_a53bf212b2cbeac50ae8b154b9efa0961}\label{classproperty_a53bf212b2cbeac50ae8b154b9efa0961}} 
-elfptr {\bfseries get\+\_\+function2} ()
-\item 
-\mbox{\Hypertarget{classproperty_aa637c0fee8d883b06ca66f310960d881}\label{classproperty_aa637c0fee8d883b06ca66f310960d881}} 
-bool {\bfseries store\+\_\+property} (std\+::string prop\+\_\+name, std\+::string in\+\_\+var\+\_\+name, std\+::string in\+\_\+val)
-\item 
+elfptr \mbox{\hyperlink{classproperty_a53bf212b2cbeac50ae8b154b9efa0961}{get\+\_\+function2}} ()
+\begin{DoxyCompactList}\small\item\em return the function pointer \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classproperty_aa637c0fee8d883b06ca66f310960d881}{store\+\_\+property}} (std\+::string prop\+\_\+name, std\+::string in\+\_\+var\+\_\+name, std\+::string in\+\_\+val)
+\begin{DoxyCompactList}\small\item\em store the default value for a property \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classproperty_a873d9bcd923d511405c68da2db0beddf}\label{classproperty_a873d9bcd923d511405c68da2db0beddf}} 
 {\bfseries property} (double($\ast$user\+\_\+value\+\_\+function2\+\_\+)(\mbox{\hyperlink{classmp__element}{mp\+\_\+element}} \&el\+\_\+))
 \item 
-\mbox{\Hypertarget{classproperty_a1ae65b2cb8e200f3565f30a355e184d6}\label{classproperty_a1ae65b2cb8e200f3565f30a355e184d6}} 
-void {\bfseries set} (double($\ast$user\+\_\+value\+\_\+function2\+\_\+)(\mbox{\hyperlink{classmp__element}{mp\+\_\+element}} \&el\+\_\+))
-\item 
+void \mbox{\hyperlink{classproperty_a1ae65b2cb8e200f3565f30a355e184d6}{set}} (double($\ast$user\+\_\+value\+\_\+function2\+\_\+)(\mbox{\hyperlink{classmp__element}{mp\+\_\+element}} \&el\+\_\+))
+\begin{DoxyCompactList}\small\item\em set the user defined function for the property \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classproperty_a1b8abdfd91903be4235dd978ece8de33}{get}} (\mbox{\hyperlink{classmp__element}{mp\+\_\+element}} \&el)
+\begin{DoxyCompactList}\small\item\em return the value of the property for a specific element \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classproperty_a1b8abdfd91903be4235dd978ece8de33}\label{classproperty_a1b8abdfd91903be4235dd978ece8de33}} 
-double {\bfseries get} (\mbox{\hyperlink{classmp__element}{mp\+\_\+element}} \&el)
-\end{DoxyCompactItemize}
+\index{property@{property}!get@{get}}
+\index{get@{get}!property@{property}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily double property\+::get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmp__element}{mp\+\_\+element}} \&}]{el\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+return the value of the property for a specific element 
+
+
+\begin{DoxyParams}{Parameters}
+{\em el\+\_\+} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classproperty_a53bf212b2cbeac50ae8b154b9efa0961}\label{classproperty_a53bf212b2cbeac50ae8b154b9efa0961}} 
+\index{property@{property}!get\_function2@{get\_function2}}
+\index{get\_function2@{get\_function2}!property@{property}}
+\doxysubsubsection{\texorpdfstring{get\_function2()}{get\_function2()}}
+{\footnotesize\ttfamily elfptr property\+::get\+\_\+function2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+return the function pointer 
+
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d4d/classproperty_a53bf212b2cbeac50ae8b154b9efa0961_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classproperty_a1ae65b2cb8e200f3565f30a355e184d6}\label{classproperty_a1ae65b2cb8e200f3565f30a355e184d6}} 
+\index{property@{property}!set@{set}}
+\index{set@{set}!property@{property}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily void property\+::set (\begin{DoxyParamCaption}\item[{double($\ast$)(\mbox{\hyperlink{classmp__element}{mp\+\_\+element}} \&el\+\_\+)}]{user\+\_\+value\+\_\+function2\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+set the user defined function for the property 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+\_\+value\+\_\+function2\+\_\+} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classproperty_aa637c0fee8d883b06ca66f310960d881}\label{classproperty_aa637c0fee8d883b06ca66f310960d881}} 
+\index{property@{property}!store\_property@{store\_property}}
+\index{store\_property@{store\_property}!property@{property}}
+\doxysubsubsection{\texorpdfstring{store\_property()}{store\_property()}}
+{\footnotesize\ttfamily bool property\+::store\+\_\+property (\begin{DoxyParamCaption}\item[{std\+::string}]{prop\+\_\+name,  }\item[{std\+::string}]{in\+\_\+var\+\_\+name,  }\item[{std\+::string}]{in\+\_\+val }\end{DoxyParamCaption})}
+
+
+
+store the default value for a property 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prop\+\_\+name} & \\
+\hline
+{\em in\+\_\+var\+\_\+name} & \\
+\hline
+{\em in\+\_\+val} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d4d/classproperty_aa637c0fee8d883b06ca66f310960d881_icgraph}
+\end{center}
+\end{figure}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

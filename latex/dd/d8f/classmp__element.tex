@@ -28,18 +28,16 @@ Collaboration diagram for mp\+\_\+element\+:\nopagebreak
 \mbox{\Hypertarget{classmp__element_a94a992320188719eca8da2701badb610}\label{classmp__element_a94a992320188719eca8da2701badb610}} 
 {\bfseries mp\+\_\+element} (int ns\mbox{[}6\mbox{]}, \mbox{\hyperlink{classpoint}{point}} p\+\_\+\mbox{[}6\mbox{]}, int neighs\mbox{[}3\mbox{]}, int in\+\_\+reg, element\+\_\+type\+::type el\+\_\+type\+\_\+, symmetry\+\_\+type\+::type plane\+\_\+type\+\_\+)
 \item 
-\mbox{\Hypertarget{classmp__element_a4d286aa039ebb5cdc81d376d839c3275}\label{classmp__element_a4d286aa039ebb5cdc81d376d839c3275}} 
-std\+::vector$<$ double $>$ {\bfseries get\+\_\+fluxes} (const std\+::vector$<$ \mbox{\hyperlink{classnode}{node}} $>$ \&n\+\_\+list, const \mbox{\hyperlink{classpoint}{point}} \&test\+\_\+pt)
-\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmp__element_a4d286aa039ebb5cdc81d376d839c3275}{get\+\_\+fluxes}} (const std\+::vector$<$ \mbox{\hyperlink{classnode}{node}} $>$ \&n\+\_\+list, const \mbox{\hyperlink{classpoint}{point}} \&test\+\_\+pt)
+\begin{DoxyCompactList}\small\item\em calculate the fluxes at a test point \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classmp__element_a0b1cfbcd420a52de9729772a265d19b2}{Calc\+\_\+flux}} (const std\+::vector$<$ \mbox{\hyperlink{classnode}{node}} $>$ \&n\+\_\+list)
 \item 
 void \mbox{\hyperlink{classmp__element_ad9cdf14bbdae1c8716a357cf400dae87}{Calc\+\_\+local\+\_\+k\+\_\+diff}} ()
 \item 
 void \mbox{\hyperlink{classmp__element_ab08531ddff2b8dd1955869207a03ec3c}{Calc\+\_\+local\+\_\+\+R\+\_\+diff}} (const std\+::vector$<$ \mbox{\hyperlink{classnode}{node}} $>$ \&n\+\_\+list)
 \item 
-\mbox{\Hypertarget{classmp__element_a400feeabec355555645169cf1d134de8}\label{classmp__element_a400feeabec355555645169cf1d134de8}} 
-std\+::vector$<$ double $>$ {\bfseries get\+\_\+stored\+\_\+strains} (const std\+::vector$<$ \mbox{\hyperlink{classnode}{node}} $>$ \&n\+\_\+list, \mbox{\hyperlink{classpoint}{point}} \&test\+\_\+pt)
-\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmp__element_a400feeabec355555645169cf1d134de8}{get\+\_\+stored\+\_\+strains}} (const std\+::vector$<$ \mbox{\hyperlink{classnode}{node}} $>$ \&n\+\_\+list, \mbox{\hyperlink{classpoint}{point}} \&test\+\_\+pt)
+\begin{DoxyCompactList}\small\item\em get the stored strains \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classmp__element_a3f1e3b248f6fa09562ade22e696bd595}{Calc\+\_\+stored\+\_\+strains}} (const std\+::vector$<$ \mbox{\hyperlink{classnode}{node}} $>$ \&n\+\_\+list)
 \item 
 void \mbox{\hyperlink{classmp__element_a4b4c21879c1789e632ab03688bbbe337}{Calc\+\_\+stress}} (const std\+::vector$<$ \mbox{\hyperlink{classnode}{node}} $>$ \&n\+\_\+list)
@@ -168,11 +166,12 @@ class the inherits from elastic element but adds on diffusion and oxidation func
 \doxysubsubsection{\texorpdfstring{Calc\_flux()}{Calc\_flux()}}
 {\footnotesize\ttfamily void mp\+\_\+element\+::\+Calc\+\_\+flux (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classnode}{node}} $>$ \&}]{n\+\_\+list }\end{DoxyParamCaption})}
 
-calculate and store the element fluxes Here is the call graph for this function\+:\nopagebreak
+calculate and store the element fluxes Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=328pt]{dd/d8f/classmp__element_a0b1cfbcd420a52de9729772a265d19b2_cgraph}
+\includegraphics[width=350pt]{dd/d8f/classmp__element_a0b1cfbcd420a52de9729772a265d19b2_cgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classmp__element_ad9cdf14bbdae1c8716a357cf400dae87}\label{classmp__element_ad9cdf14bbdae1c8716a357cf400dae87}} 
@@ -284,6 +283,64 @@ function to calculate eyring eta0 Here is the caller graph for this function\+:\
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{dd/d8f/classmp__element_abf04d438ec65a6df91073afeb88402c3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmp__element_a4d286aa039ebb5cdc81d376d839c3275}\label{classmp__element_a4d286aa039ebb5cdc81d376d839c3275}} 
+\index{mp\_element@{mp\_element}!get\_fluxes@{get\_fluxes}}
+\index{get\_fluxes@{get\_fluxes}!mp\_element@{mp\_element}}
+\doxysubsubsection{\texorpdfstring{get\_fluxes()}{get\_fluxes()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mp\+\_\+element\+::get\+\_\+fluxes (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classnode}{node}} $>$ \&}]{n\+\_\+list,  }\item[{const \mbox{\hyperlink{classpoint}{point}} \&}]{test\+\_\+pt }\end{DoxyParamCaption})}
+
+
+
+calculate the fluxes at a test point 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n\+\_\+list} & \\
+\hline
+{\em test\+\_\+pt} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d8f/classmp__element_a4d286aa039ebb5cdc81d376d839c3275_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmp__element_a400feeabec355555645169cf1d134de8}\label{classmp__element_a400feeabec355555645169cf1d134de8}} 
+\index{mp\_element@{mp\_element}!get\_stored\_strains@{get\_stored\_strains}}
+\index{get\_stored\_strains@{get\_stored\_strains}!mp\_element@{mp\_element}}
+\doxysubsubsection{\texorpdfstring{get\_stored\_strains()}{get\_stored\_strains()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mp\+\_\+element\+::get\+\_\+stored\+\_\+strains (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classnode}{node}} $>$ \&}]{n\+\_\+list,  }\item[{\mbox{\hyperlink{classpoint}{point}} \&}]{test\+\_\+pt }\end{DoxyParamCaption})}
+
+
+
+get the stored strains 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n\+\_\+list} & \\
+\hline
+{\em test\+\_\+pt} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{dd/d8f/classmp__element_a400feeabec355555645169cf1d134de8_cgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classmp__element_aa601498dd92a029f5b4a1f78d8be89cd}\label{classmp__element_aa601498dd92a029f5b4a1f78d8be89cd}} 

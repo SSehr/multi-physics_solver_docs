@@ -105,38 +105,40 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a7c7da78b8f1438aec183c2836c2ca363"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a48c35d52f0a031975ac5f3fccc8890"><td class="memItemLeft" align="right" valign="top"><a id="a7a48c35d52f0a031975ac5f3fccc8890" name="a7a48c35d52f0a031975ac5f3fccc8890"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Calc_local_F</b> ()</td></tr>
-<tr class="memdesc:a7a48c35d52f0a031975ac5f3fccc8890"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculate the local nodal force matrix <br /></td></tr>
+<tr class="memdesc:a7a48c35d52f0a031975ac5f3fccc8890"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculate the local RHS <br /></td></tr>
 <tr class="separator:a7a48c35d52f0a031975ac5f3fccc8890"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e1f9eeb60dee3ffbd3810e2678cc43f"><td class="memItemLeft" align="right" valign="top"><a id="a8e1f9eeb60dee3ffbd3810e2678cc43f" name="a8e1f9eeb60dee3ffbd3810e2678cc43f"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>get_stresses</b> (double ux0, double uy0, double ux1, double uy1, double ux2, double uy2, double ux3, double uy3, double ux4, double uy4, double ux5, double uy5, const <a class="el" href="../../dd/dd1/classpoint.html">point</a> &amp;test_pt, double f_stresses[])</td></tr>
 <tr class="separator:a8e1f9eeb60dee3ffbd3810e2678cc43f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acce8199a451c49829a9886864549c307"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5d/classelastic__element.html#acce8199a451c49829a9886864549c307">Calc_stress</a> (double ux0, double uy0, double ux1, double uy1, double ux2, double uy2)</td></tr>
+<tr class="memdesc:acce8199a451c49829a9886864549c307"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculate the stresses and store them in s11, s22, s12  <a href="../../d5/d5d/classelastic__element.html#acce8199a451c49829a9886864549c307">More...</a><br /></td></tr>
 <tr class="separator:acce8199a451c49829a9886864549c307"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01421edfb1166da686def94b86e4033a"><td class="memItemLeft" align="right" valign="top"><a id="a01421edfb1166da686def94b86e4033a" name="a01421edfb1166da686def94b86e4033a"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Calc_stress</b> (double ux0, double uy0, double ux1, double uy1, double ux2, double uy2, double ux3, double uy3, double ux4, double uy4, double ux5, double uy5)</td></tr>
 <tr class="separator:a01421edfb1166da686def94b86e4033a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae30b71f3ab55f2fc7fe92f41c3906111"><td class="memItemLeft" align="right" valign="top"><a id="ae30b71f3ab55f2fc7fe92f41c3906111" name="ae30b71f3ab55f2fc7fe92f41c3906111"></a>
-std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>get_stored_strains</b> (double u0, double u1, double u2, double u3, double u4, double u5)</td></tr>
+<tr class="memitem:ae30b71f3ab55f2fc7fe92f41c3906111"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5d/classelastic__element.html#ae30b71f3ab55f2fc7fe92f41c3906111">get_stored_strains</a> (double u0, double u1, double u2, double u3, double u4, double u5)</td></tr>
+<tr class="memdesc:ae30b71f3ab55f2fc7fe92f41c3906111"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculate the stored strains based on the displacements at the nodes  <a href="../../d5/d5d/classelastic__element.html#ae30b71f3ab55f2fc7fe92f41c3906111">More...</a><br /></td></tr>
 <tr class="separator:ae30b71f3ab55f2fc7fe92f41c3906111"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61b3b19a3a516cf8ac08c79bce707bad"><td class="memItemLeft" align="right" valign="top"><a id="a61b3b19a3a516cf8ac08c79bce707bad" name="a61b3b19a3a516cf8ac08c79bce707bad"></a>
 std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>get_stored_strains</b> (double u0, double u1, double u2, double u3, double u4, double u5, double u6, double u7, double u8, double u9, double u10, double u11, <a class="el" href="../../dd/dd1/classpoint.html">point</a> &amp;test_pt)</td></tr>
 <tr class="separator:a61b3b19a3a516cf8ac08c79bce707bad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71cfe9d2dd42c72a2da04d8ca985e728"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5d/classelastic__element.html#a71cfe9d2dd42c72a2da04d8ca985e728">Calc_stored_strains</a> (double u0, double u1, double u2, double u3, double u4, double u5)</td></tr>
+<tr class="memdesc:a71cfe9d2dd42c72a2da04d8ca985e728"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculate and store the new strains stored in the mesh based on the displacements at the nodes  <a href="../../d5/d5d/classelastic__element.html#a71cfe9d2dd42c72a2da04d8ca985e728">More...</a><br /></td></tr>
 <tr class="separator:a71cfe9d2dd42c72a2da04d8ca985e728"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a22dd51746bb029f65e1aa879ab9dd6"><td class="memItemLeft" align="right" valign="top"><a id="a6a22dd51746bb029f65e1aa879ab9dd6" name="a6a22dd51746bb029f65e1aa879ab9dd6"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Calc_stored_strains</b> (double u0, double u1, double u2, double u3, double u4, double u5, double u6, double u7, double u8, double u9, double u10, double u11)</td></tr>
 <tr class="separator:a6a22dd51746bb029f65e1aa879ab9dd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43e59ebd1b91510a165bd47742027d8b"><td class="memItemLeft" align="right" valign="top"><a id="a43e59ebd1b91510a165bd47742027d8b" name="a43e59ebd1b91510a165bd47742027d8b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Calc_local_dk</b> (const <a class="el" href="../../dd/dd1/classpoint.html">point</a> &amp;crack_tip, <a class="el" href="../../dd/dd1/classpoint.html">point</a> &amp;shift, double shift_radius)</td></tr>
+<tr class="memitem:a43e59ebd1b91510a165bd47742027d8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5d/classelastic__element.html#a43e59ebd1b91510a165bd47742027d8b">Calc_local_dk</a> (const <a class="el" href="../../dd/dd1/classpoint.html">point</a> &amp;crack_tip, <a class="el" href="../../dd/dd1/classpoint.html">point</a> &amp;shift, double shift_radius)</td></tr>
+<tr class="memdesc:a43e59ebd1b91510a165bd47742027d8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculate the approximate derivative of the k matrix for stiffness derivative method  <a href="../../d5/d5d/classelastic__element.html#a43e59ebd1b91510a165bd47742027d8b">More...</a><br /></td></tr>
 <tr class="separator:a43e59ebd1b91510a165bd47742027d8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afddf7f3914acc8f0d573d8b84365a437"><td class="memItemLeft" align="right" valign="top"><a id="afddf7f3914acc8f0d573d8b84365a437" name="afddf7f3914acc8f0d573d8b84365a437"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Calc_local_dF</b> (const <a class="el" href="../../dd/dd1/classpoint.html">point</a> &amp;crack_tip, <a class="el" href="../../dd/dd1/classpoint.html">point</a> &amp;shift, double shift_radius)</td></tr>
+<tr class="memitem:afddf7f3914acc8f0d573d8b84365a437"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5d/classelastic__element.html#afddf7f3914acc8f0d573d8b84365a437">Calc_local_dF</a> (const <a class="el" href="../../dd/dd1/classpoint.html">point</a> &amp;crack_tip, <a class="el" href="../../dd/dd1/classpoint.html">point</a> &amp;shift, double shift_radius)</td></tr>
+<tr class="memdesc:afddf7f3914acc8f0d573d8b84365a437"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculate the approximate derivative of the local RHS for the stiffness derivative method  <a href="../../d5/d5d/classelastic__element.html#afddf7f3914acc8f0d573d8b84365a437">More...</a><br /></td></tr>
 <tr class="separator:afddf7f3914acc8f0d573d8b84365a437"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a407dd839802178369d54e5c68db675d2"><td class="memItemLeft" align="right" valign="top"><a id="a407dd839802178369d54e5c68db675d2" name="a407dd839802178369d54e5c68db675d2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Assemble_global_F</b> (double *F)</td></tr>
+<tr class="memitem:a407dd839802178369d54e5c68db675d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5d/classelastic__element.html#a407dd839802178369d54e5c68db675d2">Assemble_global_F</a> (double *F)</td></tr>
+<tr class="memdesc:a407dd839802178369d54e5c68db675d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">assemble the local RHS into the global RHS  <a href="../../d5/d5d/classelastic__element.html#a407dd839802178369d54e5c68db675d2">More...</a><br /></td></tr>
 <tr class="separator:a407dd839802178369d54e5c68db675d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8546c53ff7634ea42bb511f5c98d6ced"><td class="memItemLeft" align="right" valign="top"><a id="a8546c53ff7634ea42bb511f5c98d6ced" name="a8546c53ff7634ea42bb511f5c98d6ced"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Remove_local_F</b> (double *F)</td></tr>
+<tr class="memitem:a8546c53ff7634ea42bb511f5c98d6ced"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5d/classelastic__element.html#a8546c53ff7634ea42bb511f5c98d6ced">Remove_local_F</a> (double *F)</td></tr>
+<tr class="memdesc:a8546c53ff7634ea42bb511f5c98d6ced"><td class="mdescLeft">&#160;</td><td class="mdescRight">remove the local RHS from global RHS  <a href="../../d5/d5d/classelastic__element.html#a8546c53ff7634ea42bb511f5c98d6ced">More...</a><br /></td></tr>
 <tr class="separator:a8546c53ff7634ea42bb511f5c98d6ced"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classtriangular__element"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classtriangular__element')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d3/d58/classtriangular__element.html">triangular_element</a></td></tr>
 <tr class="memitem:a6f0b3184d20a34afc3aa58dfe8bd23b7 inherit pub_methods_classtriangular__element"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d58/classtriangular__element.html#a6f0b3184d20a34afc3aa58dfe8bd23b7">Area</a> ()</td></tr>
@@ -307,6 +309,149 @@ static double&#160;</td><td class="memItemRight" valign="bottom"><b>Temperature<
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >class defining an elastic continuum element that inherits from <a class="el" href="../../d3/d58/classtriangular__element.html">triangular_element</a> </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a407dd839802178369d54e5c68db675d2" name="a407dd839802178369d54e5c68db675d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a407dd839802178369d54e5c68db675d2">&#9670;&nbsp;</a></span>Assemble_global_F()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void elastic_element::Assemble_global_F </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>F</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>assemble the local RHS into the global RHS </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">F</td><td>global RHS </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/d5d/classelastic__element_a407dd839802178369d54e5c68db675d2_cgraph.png" border="0" usemap="#ad5/d5d/classelastic__element_a407dd839802178369d54e5c68db675d2_cgraph" alt=""/></div>
+<map name="ad5/d5d/classelastic__element_a407dd839802178369d54e5c68db675d2_cgraph" id="ad5/d5d/classelastic__element_a407dd839802178369d54e5c68db675d2_cgraph">
+<area shape="rect" title="assemble the local RHS into the global RHS" alt="" coords="5,5,184,47"/>
+<area shape="rect" href="../../d5/d5d/classelastic__element.html#a7a48c35d52f0a031975ac5f3fccc8890" title="calculate the local RHS" alt="" coords="232,5,379,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afddf7f3914acc8f0d573d8b84365a437" name="afddf7f3914acc8f0d573d8b84365a437"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afddf7f3914acc8f0d573d8b84365a437">&#9670;&nbsp;</a></span>Calc_local_dF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void elastic_element::Calc_local_dF </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dd/dd1/classpoint.html">point</a> &amp;&#160;</td>
+          <td class="paramname"><em>crack_tip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../dd/dd1/classpoint.html">point</a> &amp;&#160;</td>
+          <td class="paramname"><em>shift</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>shift_radius</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>calculate the approximate derivative of the local RHS for the stiffness derivative method </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">crack_tip</td><td></td></tr>
+    <tr><td class="paramname">shift</td><td></td></tr>
+    <tr><td class="paramname">shift_radius</td><td><br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/d5d/classelastic__element_afddf7f3914acc8f0d573d8b84365a437_cgraph.png" border="0" usemap="#ad5/d5d/classelastic__element_afddf7f3914acc8f0d573d8b84365a437_cgraph" alt=""/></div>
+<map name="ad5/d5d/classelastic__element_afddf7f3914acc8f0d573d8b84365a437_cgraph" id="ad5/d5d/classelastic__element_afddf7f3914acc8f0d573d8b84365a437_cgraph">
+<area shape="rect" title="calculate the approximate derivative of the local RHS for the stiffness derivative method" alt="" coords="5,5,153,47"/>
+<area shape="rect" href="../../dd/dd1/classpoint.html#a07e03afbdcc1a51890b72ced5eea8a34" title=" " alt="" coords="201,13,283,40"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a43e59ebd1b91510a165bd47742027d8b" name="a43e59ebd1b91510a165bd47742027d8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43e59ebd1b91510a165bd47742027d8b">&#9670;&nbsp;</a></span>Calc_local_dk()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void elastic_element::Calc_local_dk </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dd/dd1/classpoint.html">point</a> &amp;&#160;</td>
+          <td class="paramname"><em>crack_tip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../dd/dd1/classpoint.html">point</a> &amp;&#160;</td>
+          <td class="paramname"><em>shift</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>shift_radius</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>calculate the approximate derivative of the k matrix for stiffness derivative method </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">crack_tip</td><td></td></tr>
+    <tr><td class="paramname">shift</td><td></td></tr>
+    <tr><td class="paramname">shift_radius</td><td><br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/d5d/classelastic__element_a43e59ebd1b91510a165bd47742027d8b_cgraph.png" border="0" usemap="#ad5/d5d/classelastic__element_a43e59ebd1b91510a165bd47742027d8b_cgraph" alt=""/></div>
+<map name="ad5/d5d/classelastic__element_a43e59ebd1b91510a165bd47742027d8b_cgraph" id="ad5/d5d/classelastic__element_a43e59ebd1b91510a165bd47742027d8b_cgraph">
+<area shape="rect" title="calculate the approximate derivative of the k matrix for stiffness derivative method" alt="" coords="5,5,153,47"/>
+<area shape="rect" href="../../dd/dd1/classpoint.html#a07e03afbdcc1a51890b72ced5eea8a34" title=" " alt="" coords="201,13,283,40"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a7c7da78b8f1438aec183c2836c2ca363" name="a7c7da78b8f1438aec183c2836c2ca363"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7c7da78b8f1438aec183c2836c2ca363">&#9670;&nbsp;</a></span>Calc_local_k()</h2>
 
@@ -374,13 +519,35 @@ static double&#160;</td><td class="memItemRight" valign="bottom"><b>Temperature<
         </tr>
       </table>
 </div><div class="memdoc">
-<p >calculate and store the new strains stored in the mesh based on the displacements </p>
+
+<p>calculate and store the new strains stored in the mesh based on the displacements at the nodes </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">u0</td><td></td></tr>
+    <tr><td class="paramname">u1</td><td></td></tr>
+    <tr><td class="paramname">u2</td><td></td></tr>
+    <tr><td class="paramname">u3</td><td></td></tr>
+    <tr><td class="paramname">u4</td><td></td></tr>
+    <tr><td class="paramname">u5</td><td><br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/d5d/classelastic__element_a71cfe9d2dd42c72a2da04d8ca985e728_cgraph.png" border="0" usemap="#ad5/d5d/classelastic__element_a71cfe9d2dd42c72a2da04d8ca985e728_cgraph" alt=""/></div>
+<map name="ad5/d5d/classelastic__element_a71cfe9d2dd42c72a2da04d8ca985e728_cgraph" id="ad5/d5d/classelastic__element_a71cfe9d2dd42c72a2da04d8ca985e728_cgraph">
+<area shape="rect" title="calculate and store the new strains stored in the mesh based on the displacements at the nodes" alt="" coords="5,5,153,47"/>
+<area shape="rect" href="../../d5/d5d/classelastic__element.html#ae30b71f3ab55f2fc7fe92f41c3906111" title="calculate the stored strains based on the displacements at the nodes" alt="" coords="201,5,339,47"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d5/d5d/classelastic__element_a71cfe9d2dd42c72a2da04d8ca985e728_icgraph.png" border="0" usemap="#ad5/d5d/classelastic__element_a71cfe9d2dd42c72a2da04d8ca985e728_icgraph" alt=""/></div>
 <map name="ad5/d5d/classelastic__element_a71cfe9d2dd42c72a2da04d8ca985e728_icgraph" id="ad5/d5d/classelastic__element_a71cfe9d2dd42c72a2da04d8ca985e728_icgraph">
-<area shape="rect" title=" " alt="" coords="224,5,371,47"/>
+<area shape="rect" title="calculate and store the new strains stored in the mesh based on the displacements at the nodes" alt="" coords="224,5,371,47"/>
 <area shape="rect" href="../../dd/d8f/classmp__element.html#a3f1e3b248f6fa09562ade22e696bd595" title=" " alt="" coords="5,5,176,47"/>
 </map>
 </div>
@@ -436,19 +603,136 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >calculate the stresses and store them in s11, s22, s12 </p>
+
+<p>calculate the stresses and store them in s11, s22, s12 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ux0</td><td></td></tr>
+    <tr><td class="paramname">uy0</td><td></td></tr>
+    <tr><td class="paramname">ux1</td><td></td></tr>
+    <tr><td class="paramname">uy1</td><td></td></tr>
+    <tr><td class="paramname">ux2</td><td></td></tr>
+    <tr><td class="paramname">uy2</td><td><br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d5/d5d/classelastic__element_acce8199a451c49829a9886864549c307_icgraph.png" border="0" usemap="#ad5/d5d/classelastic__element_acce8199a451c49829a9886864549c307_icgraph" alt=""/></div>
 <map name="ad5/d5d/classelastic__element_acce8199a451c49829a9886864549c307_icgraph" id="ad5/d5d/classelastic__element_acce8199a451c49829a9886864549c307_icgraph">
-<area shape="rect" title=" " alt="" coords="652,35,800,77"/>
+<area shape="rect" title="calculate the stresses and store them in s11, s22, s12" alt="" coords="652,35,800,77"/>
 <area shape="rect" href="../../dd/d8f/classmp__element.html#a4b4c21879c1789e632ab03688bbbe337" title=" " alt="" coords="434,42,604,69"/>
 <area shape="rect" href="../../dd/d8f/classmp__element.html#a61d86f786d25cbc32a9275cbb64a2f55" title=" " alt="" coords="220,5,380,47"/>
 <area shape="rect" href="../../dd/d8f/classmp__element.html#a729feffd816d133c26d40720821e9951" title=" " alt="" coords="214,72,386,99"/>
 <area shape="rect" href="../../dd/d8f/classmp__element.html#aa601498dd92a029f5b4a1f78d8be89cd" title=" " alt="" coords="5,5,166,47"/>
 </map>
 </div>
+
+</div>
+</div>
+<a id="ae30b71f3ab55f2fc7fe92f41c3906111" name="ae30b71f3ab55f2fc7fe92f41c3906111"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae30b71f3ab55f2fc7fe92f41c3906111">&#9670;&nbsp;</a></span>get_stored_strains()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; double &gt; elastic_element::get_stored_strains </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>u0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>u1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>u2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>u3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>u4</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>u5</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>calculate the stored strains based on the displacements at the nodes </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">u0</td><td></td></tr>
+    <tr><td class="paramname">u1</td><td></td></tr>
+    <tr><td class="paramname">u2</td><td></td></tr>
+    <tr><td class="paramname">u3</td><td></td></tr>
+    <tr><td class="paramname">u4</td><td></td></tr>
+    <tr><td class="paramname">u5</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the stored strains in a vector </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/d5d/classelastic__element_ae30b71f3ab55f2fc7fe92f41c3906111_icgraph.png" border="0" usemap="#ad5/d5d/classelastic__element_ae30b71f3ab55f2fc7fe92f41c3906111_icgraph" alt=""/></div>
+<map name="ad5/d5d/classelastic__element_ae30b71f3ab55f2fc7fe92f41c3906111_icgraph" id="ad5/d5d/classelastic__element_ae30b71f3ab55f2fc7fe92f41c3906111_icgraph">
+<area shape="rect" title="calculate the stored strains based on the displacements at the nodes" alt="" coords="433,39,571,81"/>
+<area shape="rect" href="../../d5/d5d/classelastic__element.html#a71cfe9d2dd42c72a2da04d8ca985e728" title="calculate and store the new strains stored in the mesh based on the displacements at the nodes" alt="" coords="231,5,378,47"/>
+<area shape="rect" href="../../dd/d8f/classmp__element.html#a400feeabec355555645169cf1d134de8" title="get the stored strains" alt="" coords="224,72,385,114"/>
+<area shape="rect" href="../../dd/d8f/classmp__element.html#a3f1e3b248f6fa09562ade22e696bd595" title=" " alt="" coords="5,5,176,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8546c53ff7634ea42bb511f5c98d6ced" name="a8546c53ff7634ea42bb511f5c98d6ced"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8546c53ff7634ea42bb511f5c98d6ced">&#9670;&nbsp;</a></span>Remove_local_F()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void elastic_element::Remove_local_F </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>F</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>remove the local RHS from global RHS </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">F</td><td><br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

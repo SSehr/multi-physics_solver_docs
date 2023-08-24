@@ -24,7 +24,8 @@ var searchData=
   ['equal2_21',['equal2',['../dd/dd1/classpoint.html#a1157e81849782c6c863981dc43eaaee5',1,'point']]],
   ['error_5flog_22',['error_log',['../de/d0a/classoxide__mesh.html#a2ba41bf958c24ccdd10ce76dbe01e717',1,'oxide_mesh']]],
   ['eta0_23',['eta0',['../dd/d8f/classmp__element.html#a490c463716581051cc5c91625ad06d7c',1,'mp_element']]],
-  ['eyring_5feoverr_24',['eyring_EoverR',['../dd/d8f/classmp__element.html#a89e5a7c5f047c84a6bbbcb664b3451dd',1,'mp_element::eyring_EoverR()'],['../d4/dc1/classparam.html#ae56abd6eeb56c39915675016ac97e74e',1,'param::eyring_EoverR()']]],
-  ['eyring_5fprefactor_25',['eyring_prefactor',['../dd/d8f/classmp__element.html#a5950627ce42372226b7c8e49f43cde50',1,'mp_element::eyring_prefactor()'],['../d4/dc1/classparam.html#a3799b3b6f8a5ec1c4f6629d163374ca5',1,'param::eyring_prefactor()']]],
-  ['eyring_5ftau_5fc_26',['eyring_tau_c',['../dd/d8f/classmp__element.html#ab17940368b5e1b06108e96da88865f11',1,'mp_element::eyring_tau_c()'],['../d4/dc1/classparam.html#aa3aba995ad7cc786b53637dcce0de110',1,'param::eyring_tau_c()']]]
+  ['eta_5ffunc_24',['eta_func',['../dc/d8a/classmaterial.html#a47252384239c390c351782047130937b',1,'material']]],
+  ['eyring_5feoverr_25',['eyring_EoverR',['../dd/d8f/classmp__element.html#a89e5a7c5f047c84a6bbbcb664b3451dd',1,'mp_element::eyring_EoverR()'],['../d4/dc1/classparam.html#ae56abd6eeb56c39915675016ac97e74e',1,'param::eyring_EoverR()']]],
+  ['eyring_5fprefactor_26',['eyring_prefactor',['../dd/d8f/classmp__element.html#a5950627ce42372226b7c8e49f43cde50',1,'mp_element::eyring_prefactor()'],['../d4/dc1/classparam.html#a3799b3b6f8a5ec1c4f6629d163374ca5',1,'param::eyring_prefactor()']]],
+  ['eyring_5ftau_5fc_27',['eyring_tau_c',['../dd/d8f/classmp__element.html#ab17940368b5e1b06108e96da88865f11',1,'mp_element::eyring_tau_c()'],['../d4/dc1/classparam.html#aa3aba995ad7cc786b53637dcce0de110',1,'param::eyring_tau_c()']]]
 ];

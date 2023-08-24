@@ -10,7 +10,8 @@ var searchData=
   ['advance_5fcrack_7',['advance_crack',['../de/d0a/classoxide__mesh.html#aa946598bcb1c79a43806daf29962cf3f',1,'oxide_mesh']]],
   ['area_8',['Area',['../d3/d58/classtriangular__element.html#a6f0b3184d20a34afc3aa58dfe8bd23b7',1,'triangular_element']]],
   ['assemble_5fall_9',['assemble_all',['../de/d0a/classoxide__mesh.html#a74a3cd546a91ebf2d220fe18af9b05bb',1,'oxide_mesh']]],
-  ['assemble_5fmech_10',['assemble_mech',['../de/d0a/classoxide__mesh.html#a1c427accdf57b0a93d1a5acd37189868',1,'oxide_mesh']]],
-  ['assemble_5fmech_5ffor_5fcracking_11',['assemble_mech_for_cracking',['../de/d0a/classoxide__mesh.html#afa8c8b21113ac4aab42f3271c7181026',1,'oxide_mesh']]],
-  ['assign_5fproperties_12',['assign_properties',['../dc/d8a/classmaterial.html#aee032ffaf82b4180213c2e1a05bdb5a0',1,'material']]]
+  ['assemble_5fglobal_5ff_10',['Assemble_global_F',['../d5/d5d/classelastic__element.html#a407dd839802178369d54e5c68db675d2',1,'elastic_element']]],
+  ['assemble_5fmech_11',['assemble_mech',['../de/d0a/classoxide__mesh.html#a1c427accdf57b0a93d1a5acd37189868',1,'oxide_mesh']]],
+  ['assemble_5fmech_5ffor_5fcracking_12',['assemble_mech_for_cracking',['../de/d0a/classoxide__mesh.html#afa8c8b21113ac4aab42f3271c7181026',1,'oxide_mesh']]],
+  ['assign_5fproperties_13',['assign_properties',['../dc/d8a/classmaterial.html#aee032ffaf82b4180213c2e1a05bdb5a0',1,'material']]]
 ];

@@ -10,7 +10,7 @@
 <area shape="rect" id="node24" href="$d6/d88/classtimer.html#a3218d61649e284071544b17c8c915ecc" title=" " alt="" coords="751,1444,834,1471"/>
 <area shape="rect" id="node50" href="$d6/d88/classtimer.html#a804d780498a78114651fa61ee7bcfacf" title=" " alt="" coords="271,1749,386,1776"/>
 <area shape="rect" id="node4" href="$de/d0a/classoxide__mesh.html#ace6d9495c95364ee6f41846d4fd93a79" title="save polygons to a file defined as file_prefix + lable + out_ctr.vtu" alt="" coords="931,544,1117,571"/>
-<area shape="rect" id="node6" href="$dd/d4d/class_f_e_a__equations.html#add8c8ae5d2db911774b657af4c2e1d91" title=" " alt="" coords="722,174,863,216"/>
+<area shape="rect" id="node6" href="$dd/d4d/class_f_e_a__equations.html#add8c8ae5d2db911774b657af4c2e1d91" title="free the dynamically allocated memory" alt="" coords="722,174,863,216"/>
 <area shape="rect" id="node8" href="$d6/d88/classtimer.html#aa92b07c8266c52b4f4de61342946cd9d" title=" " alt="" coords="743,240,842,267"/>
 <area shape="rect" id="node9" href="$de/d0a/classoxide__mesh.html#a9d584b95fbcb8366c3e1bc0a5b87fc99" title="load output file from file_path" alt="" coords="480,5,642,32"/>
 <area shape="rect" id="node11" href="$de/d0a/classoxide__mesh.html#a737c7766251d76392c77f4945380c624" title="store the default output streams" alt="" coords="490,57,632,99"/>
@@ -22,7 +22,7 @@
 <area shape="rect" id="node16" href="$d7/d16/classvtu_file.html#a3dc62dc934576f60099e717f91b2348c" title=" " alt="" coords="720,291,865,318"/>
 <area shape="rect" id="node17" href="$d7/d16/classvtu_file.html#ae0bab7716fcb7c29340d2cce08194927" title=" " alt="" coords="716,341,869,368"/>
 <area shape="rect" id="node18" href="$d7/d16/classvtu_file.html#a944a2d2ef716046611d97e706dba42cd" title=" " alt="" coords="717,392,868,419"/>
-<area shape="rect" id="node22" href="$dd/d4d/class_f_e_a__equations.html#ae8ca7b818448a7bef81701dd011a0737" title=" " alt="" coords="481,1315,642,1357"/>
+<area shape="rect" id="node22" href="$dd/d4d/class_f_e_a__equations.html#ae8ca7b818448a7bef81701dd011a0737" title="perform the LU factorization of the stiffness matrix" alt="" coords="481,1315,642,1357"/>
 <area shape="rect" id="node23" href="$d6/d88/classtimer.html#a9aa894a57748b2bdf3adce46f5736794" title=" " alt="" coords="750,1264,835,1291"/>
 <area shape="rect" id="node26" href="$d9/df1/classbase__mesh.html#a4e2e47bd6ca96042d4042c8825cafbed" title=" " alt="" coords="477,1449,646,1491"/>
 <area shape="rect" id="node27" href="$de/d0a/classoxide__mesh.html#a766c95070edf4eaec8b2f90b941373fa" title="apply the displacment step to the mesh" alt="" coords="472,1515,650,1542"/>

@@ -1,5 +1,5 @@
 <map id="mp_element::Get_strain_energy_density" name="mp_element::Get_strain_energy_density">
 <area shape="rect" id="node1" title=" " alt="" coords="5,5,166,47"/>
 <area shape="rect" id="node2" href="$dd/d8f/classmp__element.html#a4b4c21879c1789e632ab03688bbbe337" title=" " alt="" coords="214,13,384,40"/>
-<area shape="rect" id="node3" href="$d5/d5d/classelastic__element.html#acce8199a451c49829a9886864549c307" title=" " alt="" coords="432,5,579,47"/>
+<area shape="rect" id="node3" href="$d5/d5d/classelastic__element.html#acce8199a451c49829a9886864549c307" title="calculate the stresses and store them in s11, s22, s12" alt="" coords="432,5,579,47"/>
 </map>

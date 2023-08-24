@@ -1,0 +1,4 @@
+<map id="mp_element::get_stored_strains" name="mp_element::get_stored_strains">
+<area shape="rect" id="node1" title="get the stored strains" alt="" coords="5,5,167,47"/>
+<area shape="rect" id="node2" href="$d5/d5d/classelastic__element.html#ae30b71f3ab55f2fc7fe92f41c3906111" title="calculate the stored strains based on the displacements at the nodes" alt="" coords="215,5,353,47"/>
+</map>

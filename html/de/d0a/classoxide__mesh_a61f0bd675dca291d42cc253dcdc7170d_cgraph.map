@@ -2,6 +2,7 @@
 <area shape="rect" id="node1" title="open the log files" alt="" coords="5,49,157,91"/>
 <area shape="rect" id="node2" href="$d6/d88/classtimer.html#aa92b07c8266c52b4f4de61342946cd9d" title=" " alt="" coords="237,5,335,32"/>
 <area shape="rect" id="node3" href="$de/d0a/classoxide__mesh.html#a9d584b95fbcb8366c3e1bc0a5b87fc99" title="load output file from file_path" alt="" coords="205,56,367,83"/>
-<area shape="rect" id="node5" href="$de/d0a/classoxide__mesh.html#a737c7766251d76392c77f4945380c624" title="store the default output streams" alt="" coords="215,107,357,149"/>
+<area shape="rect" id="node6" href="$de/d0a/classoxide__mesh.html#a737c7766251d76392c77f4945380c624" title="store the default output streams" alt="" coords="215,107,357,149"/>
 <area shape="rect" id="node4" href="$dc/d8a/classmaterial.html#aee032ffaf82b4180213c2e1a05bdb5a0" title="assign material properties to element" alt="" coords="415,56,592,83"/>
+<area shape="rect" id="node5" href="$d6/d4d/classproperty.html#a53bf212b2cbeac50ae8b154b9efa0961" title="return the function pointer" alt="" coords="640,56,795,83"/>
 </map>
